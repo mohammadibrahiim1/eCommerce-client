@@ -24,41 +24,68 @@ const Nav = () => {
 
           <Navbar.Container
             tag="ul"
-            className="lg:flex hidden items-center justify-between gap-8 "
+            className="lg:flex md:flex  hidden items-center justify-between gap-8 "
           >
             <Dropdown
-              className="px-5"
+              className="px-5 text-body-6"
               label="All Category"
               size="sm"
               type="outlineGray"
               dismissOnClick={true}
             >
-              <Dropdown.Item icon={<SquaresFour size={20} color="#5E718D" />}>
-                Dashboard
+              <Dropdown.Item
+                className="flex gap-2"
+                icon={<SquaresFour size={20} color="#5E718D" />}
+              >
+                <p>Electronics</p>
                 <span className="ml-auto">
                   <CaretRight size={20} color="#5E718D" />
                 </span>
               </Dropdown.Item>
-              <Dropdown.Item icon={<Gear size={20} color="#5E718D" />}>
-                Settings
+              <Dropdown.Item
+                className="flex gap-2"
+                icon={<Gear size={20} color="#5E718D" />}
+              >
+                <p>Fashion & Beauty</p>
                 <span className="ml-auto">
                   <CaretRight size={20} color="#5E718D" />
                 </span>
               </Dropdown.Item>
-              <Dropdown.Item icon={<Money size={20} color="#5E718D" />}>
-                Earnings
+              <Dropdown.Item
+                className="flex gap-2"
+                icon={<Money size={20} color="#5E718D" />}
+              >
+                <p>Accessories</p>
                 <span className="ml-auto">
                   <CaretRight size={20} color="#5E718D" />
                 </span>
               </Dropdown.Item>
-              <Dropdown.Item icon={<SignOut size={20} color="#5E718D" />}>
-                Sign out
+              <Dropdown.Item
+                className="flex gap-2"
+                icon={<SignOut size={20} color="#5E718D" />}
+              >
+                <p>Vegetable & Fruits</p>
                 <span className="ml-auto">
                   <CaretRight size={20} color="#5E718D" />
                 </span>
               </Dropdown.Item>
             </Dropdown>
+          </Navbar.Container>
 
+          <Navbar.Container>
+            <Navbar.Container
+              tag="ul"
+              className="lg:flex hidden items-center justify-between gap-8"
+            >
+              <Navbar.Link linkName="Home" />
+              <Navbar.Link linkName="Shop" />
+              <Navbar.Link linkName="Others" />
+              <Navbar.Link linkName="Blog" />
+              <Navbar.Link linkName="Seller" />
+            </Navbar.Container>
+          </Navbar.Container>
+
+          <Navbar.Container className="hidden lg:block md:block">
             <TextInput
               id="#id-10"
               placeholder="Search anything"
@@ -73,10 +100,10 @@ const Nav = () => {
           <Navbar.Collapse collapseType="sidebar">
             <Navbar.Container tag="ul" className="flex flex-col gap-5">
               <Navbar.Link linkName="Home" />
-              <Navbar.Link linkName="Projects" />
-              <Navbar.Link linkName="Blogs" />
-              <Navbar.Link linkName="News" />
-              <Navbar.Link linkName="Resources" />
+              <Navbar.Link linkName="Shop" />
+              <Navbar.Link linkName="Others" />
+              <Navbar.Link linkName="Blog" />
+              <Navbar.Link linkName="Seller" />
             </Navbar.Container>
           </Navbar.Collapse>
 
@@ -111,6 +138,17 @@ const Nav = () => {
           </Navbar.Container>
         </Navbar.Container>
       </Navbar>
+      <Navbar.Container className="lg:hidden md:hidden">
+        <TextInput
+          id="#id-10"
+          placeholder="Search anything"
+          color="gray"
+          sizing="md"
+          type="text"
+          addon={<MagnifyingGlass size={20} color="#5E718D" />}
+          addonPosition="left"
+        />
+      </Navbar.Container>
     </div>
   );
 };
