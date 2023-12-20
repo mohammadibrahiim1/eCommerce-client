@@ -1,17 +1,23 @@
 /* eslint-disable react/jsx-no-undef */
-import { Button, Dropdown, Navbar, TextInput } from "keep-react";
 import {
-  CaretRight,
-  Gear,
+  Button,
+  //  Dropdown,
+  Navbar,
+  TextInput,
+} from "keep-react";
+import {
+  // CaretRight,
+  // Gear,
   Heart,
   MagnifyingGlass,
-  Money,
+  // Money,
   Phone,
   ShoppingCart,
-  SignOut,
-  SquaresFour,
+  // SignOut,
+  // SquaresFour,
   User,
 } from "phosphor-react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -22,7 +28,7 @@ const Nav = () => {
             <img src="/images/keep.svg" alt="keep" width="100" height="40" />
           </Navbar.Brand>
 
-          <Navbar.Container
+          {/* <Navbar.Container
             tag="ul"
             className="lg:flex md:flex  hidden items-center justify-between gap-8 "
           >
@@ -70,6 +76,18 @@ const Nav = () => {
                 </span>
               </Dropdown.Item>
             </Dropdown>
+          </Navbar.Container> */}
+
+          <Navbar.Container className="hidden lg:block md:block">
+            <TextInput
+              id="#id-10"
+              placeholder="Search anything"
+              color="gray"
+              sizing="md"
+              type="text"
+              addon={<MagnifyingGlass size={20} color="#5E718D" />}
+              addonPosition="left"
+            />
           </Navbar.Container>
 
           <Navbar.Container>
@@ -85,22 +103,14 @@ const Nav = () => {
             </Navbar.Container>
           </Navbar.Container>
 
-          <Navbar.Container className="hidden lg:block md:block">
-            <TextInput
-              id="#id-10"
-              placeholder="Search anything"
-              color="gray"
-              sizing="md"
-              type="text"
-              addon={<MagnifyingGlass size={20} color="#5E718D" />}
-              addonPosition="left"
-            />
-          </Navbar.Container>
-
           <Navbar.Collapse collapseType="sidebar">
             <Navbar.Container tag="ul" className="flex flex-col gap-5">
-              <Navbar.Link linkName="Home" />
-              <Navbar.Link linkName="Shop" />
+              <Link to={"/"}>
+                <Navbar.Link linkName="Home" />
+              </Link>
+              <Link to="/shop">
+                <Navbar.Link linkName="Shop" />
+              </Link>
               <Navbar.Link linkName="Others" />
               <Navbar.Link linkName="Blog" />
               <Navbar.Link linkName="Seller" />

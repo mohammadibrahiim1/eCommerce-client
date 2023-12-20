@@ -1,0 +1,2936 @@
+{
+  "electronics": [
+    {
+      "accessories": [
+        {
+          "id": 9,
+          "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+          "slug": "WD-TB-Elements-Portable-External-Hard-Drive-USB-3.0 ",
+          "price": 64,
+          "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+          "category": "electronics",
+          "sub_category": "Hard Drive",
+          "brand": "WESTERN DIGITAL",
+          "stock": 8,
+          "is_in_inventory": true,
+          "imageURL": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
+        },
+        {
+          "id": 10,
+          "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+          "slug": "SanDisk-SSD-PLUS-1TB-Internal-SSD-SATA-III-6-Gb/s",
+          "price": 109,
+          "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+          "category": "electronics",
+          "sub_category": "Hard Drive",
+          "brand": "SANDISK",
+          "stock": 10,
+          "is_in_inventory": true,
+          "imageURL": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
+        },
+        {
+          "id": 11,
+          "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+          "slug": "Silicon-Power-256GB-SSD-3D-NAND-A55-SLC-Cache-Performance-Boost-SATA-III-2.5",
+          "price": 109,
+          "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+          "category": "electronics",
+          "sub_category": "Hard Drive",
+          "brand": "PNY",
+          "stock": 14,
+          "is_in_inventory": true,
+          "imageURL": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
+        },
+        {
+          "id": 12,
+          "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+          "slug": "WD-4TB-Gaming-Drive-Works-with-Playstation-4-Portable-External-Hard-Drive",
+          "price": 114,
+          "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+          "category": "electronics",
+          "sub_category": "Hard Drive",
+          "brand": "WESTERN DIGITAL",
+          "stock": 13,
+          "is_in_inventory": true,
+          "imageURL": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
+        },
+        {
+          "id": 13,
+          "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+          "slug": "Acer-SB220Q-bi-21.5-inches-Full-HD-(1920 x 1080)-IPS-Ultra-Thin",
+          "price": 599,
+          "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+          "category": "electronics",
+          "sub_category": "Monitors",
+          "brand": "ACER",
+          "stock": 10,
+          "is_in_inventory": true,
+          "imageURL": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
+        },
+        {
+          "id": 14,
+          "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+          "slug": "Samsung-49-Inch-CHG90-144Hz-Curved-Gaming-Monitor-(LC49HG90DMNXZA)–Super-Ultrawide-Screen-QLED ",
+          "price": 999.99,
+          "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+          "category": "electronics",
+          "sub_category": "Monitors",
+          "brand": "SAMSUNG",
+          "stock": 20,
+          "is_in_inventory": true,
+          "imageURL": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
+        }
+      ]
+    },
+    {
+      "computer": [
+        {
+          "id": 1,
+          "model": "AMD Ryzen 5 5600X Gaming PC",
+          "image": "https://live.staticflickr.com/65535/52522584794_4a9898a992_o.jpg",
+          "status": true,
+          "keyFeature": [
+            "Gigabyte B550M DS3H AM4 AMD Micro ATX Motherboard",
+            "PNY GeForce RTX 3070 8GB UPRISING Dual Fan LHR GDDR6 Graphics Card",
+            "AMD RYZEN 5 5600X PROCESSOR",
+            "16GB 3200MHz DDR4 RAM+ 128GB M.2 PCIe SSD"
+          ],
+          "price": 128200,
+          "rating": 3,
+          "spec": [
+            {
+              "processor": "AMD RYZEN 5 5600X PROCESSOR"
+            },
+            {
+              "motherboard": "Gigabyte B550M DS3H AM4 AMD Micro ATX Motherboard"
+            },
+            {
+              "ram": "Corsair Vengeance LPX 16GB DDR4 DRAM 3200MHz RAM"
+            },
+            {
+              "graphics": "PNY GeForce RTX 3070 8GB UPRISING Dual Fan LHR GDDR6 Graphics Card"
+            },
+            {
+              "storage": "Team MP33 128GB M.2 PCIe SSD Toshiba P300 1TB Desktop PC Internal Hard Drive"
+            },
+            {
+              "casing": "Antec NX420 Mid Tower ARGB Gaming Case"
+            },
+            {
+              "psu": "Antec CUPRUM STRIKE CSK 650W 80 Plus Bronze Power Supply"
+            },
+            {
+              "cooler": "Gamdias Boreas M1-610 ARGB CPU Cooler"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "model": "Intel 10th Gen Core i3-10100 Gaming PC",
+          "image": "https://live.staticflickr.com/65535/52521844202_dd853335c9_o.jpg",
+          "status": true,
+          "keyFeature": [
+            "MSI H510M-A PRO Intel 10th Gen and 11th Gen Mirco-ATX Motherboard",
+            "Intel i3-10100 10th Gen Processor",
+            "8GB 2666MHz DDR4 RAM +1TB HDD",
+            "GIGABYTE GT 730 2GB DDR3 PCI EXPRESS Graphics Card"
+          ],
+          "price": 41800,
+          "rating": 4,
+          "spec": [
+            {
+              "processor": "Intel Core i3-10100 10th Gen Processor"
+            },
+            {
+              "motherboard": "MSI H510M-A PRO Intel 10th Gen and 11th Gen Mirco-ATX Motherboard"
+            },
+            {
+              "ram": "TEAM ELITE PLUS RED 8GB 2666MHz DDR4 RAM"
+            },
+            {
+              "graphics": "GIGABYTE GeForce GT 730 2GB DDR3 PCI EXPRESS Graphics Card"
+            },
+            {
+              "storage": "Toshiba P300 1TB Desktop PC Internal Hard Drive"
+            },
+            {
+              "casing": "Revenger A1 Mid Tower RGB ATX Gaming Case"
+            },
+            {
+              "psu": "Antec Atom V450 Non-Modular IN SMPS Gaming Power Supply"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "model": "AMD Ryzen 5 3600 Gaming PC",
+          "image": "https://live.staticflickr.com/65535/52522855818_98bdd4c07a_o.jpg",
+          "status": true,
+          "keyFeature": [
+            "MSI B450 TOMAHAWK MAX AM4 AMD ATX Motherboard (China)",
+            "128GB SSD + 16GB 3200MHz RAM + 1TB HDD",
+            "AMD Ryzen 5 3600 Processor",
+            "ZOTAC GAMING GTX 1660 SUPER 6GB Twin Fan Graphics Card"
+          ],
+          "price": 84400,
+          "rating": 5,
+          "spec": [
+            {
+              "processor": "AMD Ryzen 5 3600 Processor"
+            },
+            {
+              "motherboard": "MSI B450 TOMAHAWK MAX AM4 AMD ATX Motherboard (China)"
+            },
+            {
+              "ram": "Team T-Force VULCAN Z Red 8GB DDR4 3200MHz Desktop Gaming RAM- 2 unit"
+            },
+            {
+              "graphics": "ZOTAC GAMING GeForce GTX 1660 SUPER 6GB GDDR6 Twin Fan Graphics Card"
+            },
+            {
+              "storage": "Team MP33 128GB M.2 PCIe SSD Western Digital 1TB Blue Desktop HDD"
+            },
+            {
+              "casing": "Xtreme XJOGOS 200-22 RGB Mid Tower Black ATX Gaming Casing"
+            },
+            {
+              "psu": "Antec CUPRUM STRIKE CSK 650W 80 Plus Bronze Power Supply"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "model": "Gaming PC 10th Gen Core i5-10400f",
+          "image": "https://live.staticflickr.com/65535/52522584684_9fa14a3332_o.jpg",
+          "status": true,
+          "keyFeature": [
+            "MSI B560M-A PRO Intel 11th Gen mATX Motherboard",
+            "Intel 10th Gen i5-10400F Processor",
+            "8GB RAM +1TB HDD + 128GB SSD",
+            "ASUS GeForce GT 1030 2GB GDDR5 Low Profile Graphics Card"
+          ],
+          "price": 56700,
+          "rating": 3,
+          "spec": [
+            {
+              "processor": "Intel 10th Gen Core i5-10400F Processor"
+            },
+            {
+              "motherboard": "MSI B560M-A PRO Intel 11th Gen mATX Motherboard"
+            },
+            {
+              "ram": "Team T-Force VULCAN Z Red 8GB DDR4 3200MHz Desktop Gaming RAM"
+            },
+            {
+              "graphics": "ASUS GeForce GT 1030 2GB GDDR5 Low Profile Graphics Card"
+            },
+            {
+              "storage": "Toshiba P300 1TB Desktop PC Internal Hard Drive Team MP33 128GB M.2 PCIe SSD"
+            },
+            {
+              "casing": "Antec NX270 RGB TG Mid Tower Gaming Case"
+            },
+            {
+              "psu": "Antec VP450P PLUS 450W Continuous Power Supply"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "model": "Intel 10th Gen Core i7-10700 Gaming PC",
+          "image": "https://live.staticflickr.com/65535/52522308736_8453894269_o.jpg",
+          "status": true,
+          "rating": 5,
+          "keyFeature": [
+            "ASRock B560M Steel Legend 10th and 11th Gen Micro ATX Motherboard",
+            "Intel 10th Gen Core i7-10700 Processor",
+            "16GB RAM + 1TB HDD + 256GB SSD",
+            "GeForce GTX 1660 Super NB 6GB-V2 Graphics Card"
+          ],
+          "price": 102200,
+          "spec": [
+            {
+              "processor": "Intel 10th Gen Core i7-10700 Processor"
+            },
+            {
+              "motherboard": "ASRock B560M Steel Legend 10th and 11th Gen Micro ATX Motherboard"
+            },
+            {
+              "ram": "TEAM T-Force DELTA TUF Gaming RGB 16GB 3200MHz DDR4 CL16 RAM"
+            },
+            {
+              "graphics": "Colorful GeForce GTX 1660 Super NB 6GB-V2 Graphics Card"
+            },
+            {
+              "storage": "Seagate Internal 1TB SATA Barracuda HDD Team MP33 256GB M.2 PCIe SSD"
+            },
+            {
+              "casing": "Corsair CARBIDE SPEC-DELTA RGB ATX Gaming Case"
+            },
+            {
+              "psu": "Antec CUPRUM STRIKE CSK 550W 80 Plus Bronze Power Supply"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "model": "Intel Core i5-11400 11th Gen Gaming PC",
+          "image": "https://live.staticflickr.com/65535/52522308721_4f2de69503_o.jpg",
+          "status": true,
+          "keyFeature": [
+            "Intel 11th Gen Core i5-11400 Rocket Lake Processor",
+            "MSI B560M-A PRO Intel 11th Gen mATX Motherboard",
+            "16GB RAM + 1TB HDD + 256GB M.2 PCIe SSD",
+            "ZOTAC GAMING GTX 1660 SUPER 6GB Graphics Card"
+          ],
+          "price": 86200,
+          "rating": 2,
+          "spec": [
+            {
+              "processor": "Intel 11th Gen Core i5-11400 Rocket Lake Processor"
+            },
+            {
+              "motherboard": "TEAM T-Force DELTA TUF Gaming RGB 16GB 3200MHz DDR4 CL16 RAM"
+            },
+            {
+              "ram": "Team T-Force VULCAN Z Red 8GB DDR4 3200MHz Desktop Gaming RAM- 2 unit"
+            },
+            {
+              "graphics": "ZOTAC GAMING GeForce GTX 1660 SUPER 6GB GDDR6 Twin Fan Graphics Card"
+            },
+            {
+              "storage": "Toshiba P300 1TB Desktop PC Internal Hard Drive Team MP33 256GB M.2 PCIe SSD"
+            },
+            {
+              "casing": "Montech X2 MESH Black Mid-Tower ATX Gaming Case"
+            },
+            {
+              "psu": "DeepCool PK650D 650 Watt 80 PLUS Bronze Power Supply"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "model": "Intel 11th Gen Core i5-11400f Gaming PC",
+          "image": "https://live.staticflickr.com/65535/52522855818_98bdd4c07a_o.jpg",
+          "status": true,
+          "keyFeature": [
+            "Intel 11th Gen Core i5-11400F Rocket Lake Processor",
+            "ASRock B560M Steel Legend 10th and 11th Gen Micro ATX Motherboard",
+            "Team 16GB DDR4 3200MHz RAM + 128GB M.2 PCIe SSD + Seagate 1TB HDD",
+            "Asus Phoenix GeForce GTX 1050Ti 4GB GDDR5 Graphics Card"
+          ],
+          "price": 84000,
+          "rating": 5,
+          "spec": [
+            {
+              "processor": "Intel 11th Gen Core i5-11400F Rocket Lake Processor (3 Years Warranty)"
+            },
+            {
+              "motherboard": "ASRock B560M Steel Legend 10th and 11th Gen Micro ATX Motherboard (3 Years Warranty)"
+            },
+            {
+              "ram": "Team T-Force VULCAN Z Red 16GB DDR4 3200MHz Desktop Gaming RAM (Lifetime Warranty)"
+            },
+            {
+              "graphics": "Asus Phoenix GeForce GTX 1050Ti 4GB GDDR5 Graphics Card (2 Years Warranty)"
+            },
+            {
+              "storage": "Team MP33 128GB M.2 PCIe SSD (5 Years Warranty) Seagate Internal 1TB SATA Barracuda HDD (2 Years Warranty)"
+            },
+            {
+              "casing": "Antec NX410 Mid Tower ARGB Black Gaming Case"
+            },
+            {
+              "psu": "Antec CUPRUM STRIKE CSK 550W 80 Plus Bronze Power Supply (3 Years Warranty)"
+            },
+            {
+              "cooler": "Gamdias CHIONE M2-240 Lite RGB CPU Cooler (02-Year Warranty)"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "model": "AMD Ryzen 7 5800X3D Gaming PC",
+          "image": "https://live.staticflickr.com/65535/52521844332_5f738162d8_o.jpg",
+          "status": true,
+          "keyFeature": [
+            "AMD Ryzen 7 5800X3D Processor",
+            "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+            "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+            "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+          ],
+          "price": 399999,
+          "rating": 3,
+          "spec": [
+            {
+              "processor": "AMD Ryzen 7 5800X3D Processor"
+            },
+            {
+              "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+            },
+            {
+              "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+            },
+            {
+              "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+            },
+            {
+              "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+            },
+            {
+              "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+            },
+            {
+              "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+            },
+            {
+              "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "laptops": [
+        {
+          "id": 1,
+          "modelName": "Asus Tuf Dash F15 2022",
+          "company": "Asus",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i7 12th generation 12650h"],
+          "graphicsCard": ["RTX 3070"],
+          "display": [
+            "15.6-inch, WQHD (2560 x 1440) 16:9, anti-glare display, DCI-P3:100, Refresh Rate:165Hz, Response Time:3ms, IPS-level, Adaptive-Sync, MUX Switch + Optimus"
+          ],
+          "memory": "16gb",
+          "storage": "1tb ssd",
+          "link": "https://www.asus.com/Laptops/For-Gaming/TUF-Gaming/ASUS-TUF-Dash-F15-2022/",
+          "price": "Rs 1.65L"
+        },
+        {
+          "id": 2,
+          "modelName": "Alienware X17",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i9-12900H", "i7-12700H "],
+          "graphicsCard": ["RTX 3080 Ti", "RTX 3070Ti", " RTX 3060"],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 64GB",
+          "storage": "up to 4TB SSD (2x2TB)",
+          "link": "https://www.gamesradar.com/alienware-gaming-laptop-guide/",
+          "price": "Rs 2L+"
+        },
+        {
+          "id": 3,
+          "modelName": "HP Pavilion Gaming - 15-dk0272tx",
+          "company": "HP",
+          "operatingSystem": "Windows 10 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i5-9300H 9th generation CPU @ 2.40GHz"],
+          "graphicsCard": ["GTX 1650"],
+          "display": [
+            "39.62 cm(15.6) diagonal FHD, 144 Hz, IPS, anti-glare, micro-edge, WLED-backlit, 250 nits, 45% NTSC (1920 x 1080)"
+          ],
+          "memory": "8gb",
+          "storage": "256gb ssd + 1tb hdd",
+          "link": "https://support.hp.com/in-en/document/c06715803",
+          "price": "Rs 70k"
+        },
+        {
+          "id": 4,
+          "modelName": "Rog Zephyrus Duo 16",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["AMDS Ryzen 6000"],
+          "graphicsCard": ["Nvidia GeForce RTX 3080"],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 64GB",
+          "storage": "up to 4TB SSD (2x2TB)",
+          "link": "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-duo-16-2022-series/",
+          "price": "Rs 2L+"
+        },
+        {
+          "id": 5,
+          "modelName": "Inspiron 5518",
+          "company": "Dell",
+          "operatingSystem": "Windows 11",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel core i5 11thgen"],
+          "graphicsCard": ["Nvidia GeForce MX450"],
+          "display": ["FHD at 165Hz"],
+          "memory": "16gb",
+          "storage": "512gb SSD",
+          "link": "https://www.dell.com/support/manuals/en-in/inspiron-15-5510-laptop/inspiron-5518-setup-and-specifications/chipset?guid=guid-642dc450-441c-4a82-894b-f0e48e84c89b&lang=en-us",
+          "price": "Rs 75k"
+        },
+        {
+          "id": 6,
+          "name": "Dell LATITUDE E6430",
+          "company": "Dell",
+          "operatingSystem": "Windows 10 PRO",
+          "processorCompany": "Intel",
+          "processorModel": "Intel(R) Core(TM) i5-3320M",
+          "graphicsCard": "Intel HD Graphics 4000",
+          "display": "14-inch screen, Intel HD Graphics 4000 Graphics",
+          "memory": "4 GB",
+          "storage": "256 GB SSD",
+          "link": "https://www.amazon.in/Renewed-Latitude-E6430-Integrated-Graphics/dp/B07KKNW8X9",
+          "price": "₹16,579"
+        },
+        {
+          "id": 7,
+          "modelName": "Lenova T460",
+          "company": "Lenova",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i7 6th generation 12650h"],
+          "graphicsCard": ["RTX 3070"],
+          "display": [
+            "15.6-inch, WQHD (2560 x 1440) 16:9, anti-glare display, DCI-P3:100, Refresh Rate:165Hz, Response Time:3ms, IPS-level, Adaptive-Sync, MUX Switch + Optimus"
+          ],
+          "memory": "8gb",
+          "storage": "1tb ssd",
+          "link": "https://www.sunraysystems.in/product/lenovo-thinkpad-t460-i7-6600u-refurbished-laptop/",
+          "price": "Rs 1.10L"
+        },
+        {
+          "id": 8,
+          "modelName": "Asus Tuf Gaming F15",
+          "company": "Asus",
+          "operatingSystem": "Windows 10/11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["10th Gen Intel Core i5-10300H"],
+          "graphicsCard": ["NVIDIA GeForce GTX 1650"],
+          "display": [
+            "15.6-inch (39.62 cms) FHD (1920 x 1080) 16:9, 250nits, 144Hz Refresh rate, vIPS-level Anti-Glare Plane"
+          ],
+          "memory": "8gb",
+          "storage": "512GB ssd",
+          "link": "https://www.amazon.in/ASUS-15-6-inch-i5-10300H-GeForce-GTX-FX506LHB-HN355WS/dp/B09ZXM2B4N/ref=sxin_13_hcs-la-eu-prod?content-id=amzn1.sym.481d1d0d-8833-4bb8-a881-465fe12a0fea%3Aamzn1.sym.481d1d0d-8833-4bb8-a881-465fe12a0fea&crid=U5EKHAVH699H&cv_ct_cx=asus+tuf+15&keywords=asus+tuf+15&pd_rd_i=B09ZXM2B4N&pd_rd_r=c60c702e-1ca7-44fa-a4c3-17adfecc2794&pd_rd_w=ZS22G&pd_rd_wg=u667P&pf_rd_p=481d1d0d-8833-4bb8-a881-465fe12a0fea&pf_rd_r=T66YBXP70RRWSRWD846A&qid=1664561296&qu=eyJxc2MiOiI0LjIxIiwicXNhIjoiMy43MCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=asus+tuf+1%2Caps%2C672&sr=1-1-ac0bdd50-84e6-4489-b88d-24b84e792074",
+          "price": "Rs 52990"
+        },
+        {
+          "id": 9,
+          "modelName": "Lenova ideapad gaming laptop",
+          "company": "Lenova",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "AMD Ryzon",
+          "processorModel": ["AMD Ryzon"],
+          "graphicsCard": ["Nvdia"],
+          "display": [
+            "15.6-inch, WQHD (2560 x 1440) 16:9, anti-glare display, DCI-P3:100, Refresh Rate:165Hz, Response Time:3ms, IPS-level, Adaptive-Sync, MUX Switch + Optimus"
+          ],
+          "memory": "8gb",
+          "storage": "512gb ssd",
+          "link": "https://amzn.eu/d/1T7f74K",
+          "price": "Rs 56000"
+        },
+        {
+          "id": 10,
+          "modelName": "Hp victus ",
+          "company": "Hp",
+          "operatingSystem": "Windows 11 ",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 12th generation 12450H"],
+          "graphicsCard": ["NVIDIA GeForce GTX 1650 Laptop GPU"],
+          "display": [
+            "39.6 cm (15.6) diagonal, FHD, 144 Hz, 9 ms response time, micro-edge, anti-glare, 250 nits, 141 ppi, 1920 x 1080"
+          ],
+          "memory": "8gb",
+          "storage": "512 ssd",
+          "link": "https://www.amazon.in/HP-Graphics-Response-Backlit-15-fa0070TX/dp/B0B74ZY9R1/ref=sr_1_3?keywords=hp%2Bvictus%2Bi5%2B12th%2Bgen&qid=1664560251&qu=eyJxc2MiOiIyLjU4IiwicXNhIjoiMi4yMiIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=hp%2Bvictus%2Bi%2Caps%2C388&sr=8-3&th=1",
+          "price": "Rs 59990"
+        },
+        {
+          "id": 11,
+          "name": "Lenovo IdeaPad Slim 3",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 10",
+          "processorCompany": "Intel",
+          "processorModel": "10th Gen Intel Core i5-1035G1",
+          "graphicsCard": "Intel",
+          "display": "15.6 FHD screen",
+          "memory": "8 GB",
+          "storage": "1 TB + 256 GB SSD",
+          "link": "https://www.amazon.in/Lenovo-Ideapad-Windows-Platinum-81WE00H0IN/dp/B08BXC5YW4",
+          "price": "₹50,990"
+        },
+        {
+          "id": 12,
+          "modelName": "Asus Tuf A15",
+          "company": "Asus",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["Ryzen 7 4800H"],
+          "graphicsCard": ["RTX 3050"],
+          "display": [
+            "15.6-inch (39.62 cms) FHD (1920 x 1080) 16:9, 250nits, 144Hz Refresh rate, vIPS-level Anti-Glare Plane, Adaptive-Sync "
+          ],
+          "memory": "16gb",
+          "storage": "512tb ssd",
+          "link": "https://amzn.eu/d/5CClZ0L/",
+          "price": "Rs 71,990"
+        },
+        {
+          "id": 13,
+          "modelName": "HP PAVILION GAMING LAPTOP 15 -ec2xxx",
+          "company": "HP",
+          "operatingSystem": "Windows 10 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["AMD Ryzen 5 "],
+          "graphicsCard": ["Nvidia GeForce RTX "],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 64GB",
+          "storage": "upto 476 GB",
+          "link": "https://www.amazon.in/HP-Pavilion-Processor-Graphics-15-ec2150AX/dp/B09MF8KMRW/ref=sr_1_3?hvadid=72224354675972&hvbmt=be&hvdev=c&hvqmt=e&keywords=hp%2Bpavilio",
+          "price": "Rs 63000"
+        },
+        {
+          "id": 14,
+          "modelName": "acer aspire 5",
+          "company": "Acer",
+          "operatingSystem": "Windows 11",
+          "processorCompany": "Intel ",
+          "processorModel": ["I5 gen 11 "],
+          "graphicsCard": ["Intel iRIS  "],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 256 GB",
+          "storage": "upto 1 TB",
+          "link": "https://www.amazon.in/HP-Pavilion-Processor-Graphics-15-ec2150AX/dp/B09MF8KMRW/ref=sr_1_3?hvadid=72224354675972&hvbmt=be&hvdev=c&hvqmt=e&keywords=hp%2Bpavilio",
+          "price": "Rs 50000"
+        },
+        {
+          "id": 15,
+          "modelName": "ASUS TUF Gaming A15",
+          "company": "ASUS",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": [
+            "AMD Ryzen™ 7 4800H Mobile Processor (8-core/16-thread, 12MB Cache, 4.2 GHz max boost"
+          ],
+          "graphicsCard": ["NVIDIA® GeForce RTX™ 2060, 6GB GDDR6"],
+          "display": [
+            "15.6 - inch, FHD(1920 x 1080) 16: 9, anti - glare display, sRGB: 62.5 % , Adobe: 47.1 % , Refresh Rate: 144 Hz, Value IPS - level, Optimus "
+          ],
+          "memory": "16gb",
+          "storage": "512tb ssd",
+          "link": "https://www.amazon.in/ASUS-GeForce-RTX-3050-Graphics-Windows-FA506ICB-HN075W/dp/B0B56ZQ95M/ref=asc_df_B0B56ZQ95M/?tag=googleshopdes-21&linkCode=df0&hvadid=586293583898&hvpos=&hvnetw=g&hvrand=11173180973234990858&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007789&hvtargid=pla-1730956806615&psc=1",
+          "price": "Rs 94990"
+        },
+        {
+          "id": 16,
+          "modelName": "Lenovo Ideapad Flex 5",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel I7 11th Generation"],
+          "graphicsCard": [" Integrated Intel Iris Xe Graphics"],
+          "display": ["14-inch, FHD"],
+          "memory": "16gb",
+          "storage": "512tb ssd",
+          "link": "https://www.amazon.in/Lenovo-Convertible-Keyboard-Graphite-82HS00W4IN/dp/B09MM5HN29/ref=asc_df_B09MM5HN29/?tag=googleshopdes-21&linkCode=df0&hvadid=544956768920&hvpos=&hvnetw=g&hvrand=18446349500210168628&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007799&hvtargid=pla-1539885107491&th=1",
+          "price": "Rs 85900"
+        },
+        {
+          "id": 17,
+          "modelName": "Lenovo Ideapad gaming 3",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Amd",
+          "processorModel": ["Ryzen 5600h"],
+          "graphicsCard": ["Gtx 1650"],
+          "display": ["39.62 cm (15.6 inch) FHD IPS"],
+          "memory": "8gb",
+          "storage": "512 ssd",
+          "link": "https://www.reliancedigital.in/lenovo-a4in-ideapad-g3-gaming-laptop-11th-gen-intel-core-i5-11320h-8gb-512gb-ssd-4gb-nvidia-geforce-gtx-1650-graphics-windows-11-mso-fhd-39-62-cm-15-6-inch-/p/492850669?gclid=CjwKCAjwp9qZBhBkEiwAsYFsbxt97SZPRcp-WUb1n9tH3kamlQHng98GmoqbUHY71XWXyMQDkDvKChoChtgQAvD_BwE",
+          "price": "Rs 51990"
+        },
+        {
+          "id": 18,
+          "modelName": "Rog Zephyrus Duo 16",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["AMDS Ryzen 6000"],
+          "graphicsCard": ["Nvidia GeForce RTX 3080"],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 64GB",
+          "storage": "up to 4TB SSD (2x2TB)",
+          "link": "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-duo-16-2022-series/",
+          "price": "Rs 2L+"
+        },
+        {
+          "id": 19,
+          "modelName": "Mac mini (M1, 2020)",
+          "company": "Apple",
+          "operatingSystem": "macOS Monterey",
+          "processorCompany": "Apple",
+          "processorModel": ["Apple M1"],
+          "graphicsCard": ["M1 8-Core GPU"],
+          "display": ["D1918H Display 18.5-inch (1920 × 1080"],
+          "memory": "8gb",
+          "storage": "256GBssd",
+          "link": "https://www.apple.com/in/shop/buy-mac/mac-mini/apple-m1-chip-with-8-core-cpu-and-8-core-gpu-256gb",
+          "price": "₹64900.00"
+        },
+        {
+          "id": 20,
+          "modelName": "Asus Vivobook 15",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel i5 10th Gen"],
+          "graphicsCard": ["Intel UHD 620"],
+          "display": "UHD at 60Hz",
+          "memory": "up to 64GB",
+          "storage": "up to 2TB SSD ",
+          "link": "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-duo-16-2022-series/https://www.asus.com/in/Laptops/For-Home/All-series/ASUS-X515/",
+          "price": "Rs 40K"
+        },
+        {
+          "id": 21,
+          "modelName": "ACER Aspire 7 Gaming",
+          "company": "ACER",
+          "operatingSystem": "Windows 11 home",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 12th gen 1240p"],
+          "graphicsCard": [
+            "Nvidia GeForce RTX 3050",
+            "Nvidia GeForce GTX 1650"
+          ],
+          "display": ["FHD at 60Hz"],
+          "memory": "up to 32GB",
+          "storage": "up to 2TB SSD (1x2TB)",
+          "link": "https://www.acer.com/ac/en/IN/content/series/aspire7",
+          "price": "Rs 50,000 to 70,000"
+        },
+        {
+          "id": 22,
+          "modelName": "Lenova Ideapad gaming 3",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 10",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 10th generation 11300Hz"],
+          "graphicsCard": [
+            "NVIDIA GeForce GTX 1650 4GB GDDR6 Dedicated Graphics"
+          ],
+          "display": [
+            "15.6",
+            "FHD (1920x1080) | IPS | 120 Hz Refresh Rate | 250Nits Brightness | Anti-glare | 45% NTSC || Memory: 8GB RAM DDR4-3200, Upgradable Up to 16GB || Storage:512GB SSD"
+          ],
+          "memory": "8gb",
+          "storage": "1tb + ssd",
+          "link": "https://www.amazon.in/Lenovo-IdeaPad-39-62cm-Backlit-82K10198IN/dp/B0B4JQ9X9C/ref=sr_1_1_sspa?crid=2LXFI47KD9W4G&keywords=lenovo+ideapad+gaming+3&qid=1664561027&qu=eyJxc2MiOiI0LjkyIiwicXNhIjoiNC42MiIsInFzcCI6IjIuOTcifQ%3D%3D&s=computers&sprefix=lenovo+ide%2Ccomputers%2C4662&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExNEhZRTYwU1Y1OVlDJmVuY3J5cHRlZElkPUEwMjU2MTI4MkRMRVBTUU9HQlVUMCZlbmNyeXB0ZWRBZElkPUEwOTE5OTMyMjIwVk1YTjRKVlI2NyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU",
+          "price": "Rs 70k"
+        },
+        {
+          "id": 23,
+          "modelName": "Alienware X17",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i9-12900H", "i7-12700H "],
+          "graphicsCard": ["RTX 3080 Ti", "RTX 3070Ti", " RTX 3060"],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 64GB",
+          "storage": "up to 4TB SSD (2x2TB)",
+          "link": "https://www.gamesradar.com/alienware-gaming-laptop-guide/",
+          "price": "Rs 2L+"
+        },
+        {
+          "id": 24,
+          "modelName": "Dell Inspiron 15 3000",
+          "company": "DEll",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 11th generation 1135G7"],
+          "graphicsCard": ["Intel UHD Graphics"],
+          "display": [
+            "15.6",
+            "FHD 1920x1080, 60Hz, Non-Touch, AG, WVA, LED-Backlit, Narrow Border"
+          ],
+          "storage": "1tb ssd",
+          "link": "https://www.dell.com/en-in/shop/laptops-2-in-1-pcs/inspiron-15-3000-laptop/spd/inspiron-15-3511-laptop/d560749win9s",
+          "price": "Rs 44,989"
+        },
+        {
+          "id": 25,
+          "modelName": "Inspiron 14 2-in-1",
+          "company": "DEll",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["Processor 12th Gen Intel® Core™ i5-1235U"],
+          "graphicsCard": ["Intel® Iris® Xe Graphics"],
+          "display": [
+            "14",
+            "FHD+ 1920x1200, 60Hz, Touch, WVA, TrueLife™, Narrow Border, Pen Support"
+          ],
+          "storage": "512 ssd",
+          "link": "https://www.dell.com/en-in/shop/laptops-2-in-1-pcs/inspiron-14-2-in-1-laptop/spd/inspiron-14-7420-2-in-1-laptop/d560776win9s",
+          "price": "Rs ₹ 80,989.99"
+        },
+        {
+          "id": 26,
+          "modelName": "Macbook air ",
+          "company": "Apple",
+          "operatingSystem": "macOS",
+          "processorCompany": "Apple",
+          "processorModel": ["Apple M1"],
+          "graphicsCard": ["7-Core GPU"],
+          "display": [
+            "33.74 cm / 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560x1600 native resolution at 227 pixels per inch with support for millions of colours"
+          ],
+          "memory": "8gb",
+          "storage": "256gb ssd",
+          "link": "https://www.apple.com/in/shop/buy-mac/macbook-air/with-m1-chip",
+          "price": "Rs99900.00"
+        },
+        {
+          "id": 27,
+          "modelName": "HP Pavilion",
+          "company": "HP",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "RYZEN",
+          "processorModel": ["i7 6th generation 12650h"],
+          "graphicsCard": ["nil"],
+          "display": ["15.6-inch, QHD "],
+          "memory": "8gb",
+          "storage": "512tb ssd",
+          "link": "https://www.reliancedigital.in/hp-pavilion-15-ec2144ax-gaming-laptop-amd-ryzen-5-5600h-8-gb-512gb-ssd-nvidia-geforce-gtx-1650-windows-11-mso-fhd-39-62-cm-15-6-inch-/p/492574688",
+          "price": "Rs 1.10L"
+        },
+        {
+          "id": 28,
+          "modelName": "Asus Tuf A15",
+          "company": "Asus",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["Ryzen 7 4800H"],
+          "graphicsCard": ["RTX 3050"],
+          "display": [
+            "15.6-inch (39.62 cms) FHD (1920 x 1080) 16:9, 250nits, 144Hz Refresh rate, vIPS-level Anti-Glare Plane, Adaptive-Sync "
+          ],
+          "memory": "16gb",
+          "storage": "512tb ssd",
+          "link": "https://amzn.eu/d/5CClZ0L/",
+          "price": "Rs 71,990"
+        },
+        {
+          "id": 29,
+          "modelName": "Dell G3",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 10th generation "],
+          "graphicsCard": ["NVDIA GEFORCE GTX"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "1tb hhd,256 ssd",
+          "link": "https://www.dell.com/support/manuals/en-in/g-series-15-3500-laptop/dell-g3-15-3500-setup-and-specifications/set-up-your-dell-g3-15-3500",
+          "price": "Rs 76 thousand"
+        },
+        {
+          "id": 30,
+          "modelName": "Dell Inspirion 3511",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 11th generation "],
+          "graphicsCard": ["NVDIA GEFORCE GTX"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "512 ssd",
+          "link": "https://www.dell.com/en-in/shop/laptops/amd/spd/inspiron-15-5515-laptop",
+          "price": "Rs 58 thousand"
+        },
+        {
+          "id": 31,
+          "modelName": "Acer Aspire 7",
+          "company": "Acer",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 10th generation 10300H"],
+          "graphicsCard": ["NVDIA GEFORCE GTX1650"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "512GB SSD",
+          "link": "https://www.acer.com/ac/en/IN/content/series/aspire7",
+          "price": "Rs 58 thousand"
+        },
+        {
+          "id": 32,
+          "modelName": "Dell G3 3500",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": "[Intel(R) Core(TM) i7-10750H CPU]",
+          "graphicsCard": "[NVIDIA GEFORCE GTX 1650]",
+          "display": "15.6 Inches",
+          "memory": "16 GB",
+          "storage": "1 TB HDD 256 GB SSD",
+          "link": "https://www.flipkart.com/dell-g3-core-i7-10th-gen-16-gb-1-tb-hdd-256-gb-ssd-windows-10-home-4-graphics-nvidia-geforce-gtx-1650-120-hz-3500-gaming-laptop/p/itm2f97d9ce34e03",
+          "price": "86,990 INR"
+        },
+        {
+          "id": 33,
+          "modelName": "ASUS Vivobook Pro 14X OLED (2021)",
+          "company": "ASUS",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i9 12th generation"],
+          "graphicsCard": ["NVDIA GEFORCE RTX 3050"],
+          "display": ["14.5-inch"],
+          "memory": "32gb",
+          "storage": "1TB SSD",
+          "link": "Vivobook/Vivobook-Pro-14X-OLED-N74017",
+          "price": "Rs 1 lakh 10 thousand"
+        },
+        {
+          "id": 34,
+          "modelName": "Asus ZenBook Flip 13",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i7 8th generation 10300H"],
+          "graphicsCard": ["NVDIA GEFORCE GTX1650"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "512GB SSD",
+          "link": "https://www.firstpost.com/tech/laptops/asus-zenbook-flip-13-ux362fael701t-laptop-8th-gen-core-i7-8gb-512gb-ssd-win10-2071",
+          "price": "Rs 89 thousand"
+        },
+        {
+          "id": 35,
+          "modelName": "ASUS 15 ROG Strix",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 Home",
+          "processorCompany": "AMD",
+          "processorModel": ["AMD Ryzen 7"],
+          "graphicsCard": ["NVDIA GEFORCE GTX1650"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "512GB SSD",
+          "link": "https://www.croma.com/asus-15-rog-strix-amd-ryzen-7-15-6-inch-8gb-512gb-windows-10-nvidia-geforce-gtx-1650-graphics-fhd-ips-display-electro-punk-90nr07p3-m02390-/p/245802?utm_source=google&utm_medium=ps&utm_campaign=Sok_Pmax_Laptop_Windows&gclid=CjwKCAjwp9qZBhBkEiwAsYFsbx4sXlG8yLd9LUW8HWVguNHFEAO9rPz9QG7HJs8otYwayJ-J6SsZAhoCcuMQAvD_BwE",
+          "price": "Rs 72 thousand"
+        },
+        {
+          "id": 36,
+          "modelName": "LENOVO THINKPAD T15 GEN 2 CORE I7- 11800H 32GB RAM 512GB SSD 8GB RTX 3070 MAX-Q 15.6INCH FHD W10PRO",
+          "company": "lenovo",
+          "operatingSystem": "Windows 10 Pro",
+          "processorCompany": "intel",
+          "processorModel": ["intel CORE I7- 11800H"],
+          "graphicsCard": ["8GB RTX 3070 MAX-Q"],
+          "display": ["15.6-inch"],
+          "memory": "32gb",
+          "storage": "512GB SSD",
+          "link": "https://www.amazon.in/LENOVO-THINKPAD-11800H-15-6INCH-W10PRO/dp/B0B369C7LF/ref=asc_df_B0B369C7LF/?tag=googleshopdes-21&linkCode=df0&hvadid=586198302882&hvpos=&hvnetw=g&hvrand=13003976077960644643&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9299716&hvtargid=pla-1719341370622&psc=1",
+          "price": "Rs 2 lakh 45 thousand"
+        },
+        {
+          "id": 37,
+          "modelName": "OMEN by HP Laptop 17-ck1022TX",
+          "company": "hp",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "intel",
+          "processorModel": ["12th Generation Intel® Core™ i7 processor"],
+          "graphicsCard": ["NVIDIA® GeForce RTX™ 3070 Ti"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "1TB SSD",
+          "link": "https://www.hp.com/in-en/shop/omen-by-hp-laptop-17-ck1022tx-6j0w2pa.html?facetref=aa6e25d1f12e795f",
+          "price": "Rs 2 lakh 1 thousand"
+        },
+        {
+          "id": 38,
+          "modelName": "Lenovo V15 Gen 2",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 Home Single Language 64",
+          "processorCompany": "Intel",
+          "processorModel": "[ Intel® Core™ i3-1115G4 Processor]",
+          "graphicsCard": "[Integrated Intel® UHD Graphics]",
+          "display": "15.6 Inches",
+          "memory": "8 GB",
+          "storage": "256 GB SSD",
+          "link": "https://www.lenovo.com/in/en/laptops/lenovo/v-series/Lenovo-V15-Gen-2-15-inch-Intel/p/82KBA02UIH",
+          "price": "36,990 INR"
+        },
+        {
+          "id": 39,
+          "modelName": "Lenovo Legion 5",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 Home Single Language 64",
+          "processorCompany": "AMD",
+          "processorModel": "[ AMD RYZEN 5]",
+          "graphicsCard": "[AMD Ryzen™ 7 5800H]",
+          "display": "15 Inches",
+          "memory": "8 GB",
+          "storage": "512 GB SSD",
+          "link": "https://www.lenovo.com/in/en/laptops/legion-laptops/legion-5-series/Legion-5-15ACH6H/p/88GMY501582",
+          "price": "72,790 INR"
+        },
+        {
+          "id": 40,
+          "modelName": "ASUS TUF A15",
+          "company": "Asus",
+          "operatingSystem": "Windows 11 Home Single Language 64",
+          "processorCompany": "AMD",
+          "processorModel": "[ AMD RYZEN 9]",
+          "graphicsCard": "[AMD Ryzen™ 9 4900H]",
+          "display": "15 Inches",
+          "memory": "16 GB",
+          "storage": "1 TB SSD",
+          "link": "https://www.asus.com/Laptops/For-Gaming/TUF-Gaming/ASUS-TUF-Gaming-A15/",
+          "price": "89,999 INR"
+        },
+        {
+          "id": 41,
+          "modelName": "Asus Tuf A15",
+          "company": "Asus",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["Ryzen 7 4800H"],
+          "graphicsCard": ["RTX 3050"],
+          "display": [
+            "15.6-inch (39.62 cms) FHD (1920 x 1080) 16:9, 250nits, 144Hz Refresh rate, vIPS-level Anti-Glare Plane, Adaptive-Sync "
+          ],
+          "memory": "16gb",
+          "storage": "512tb ssd",
+          "link": "https://amzn.eu/d/5CClZ0L/",
+          "price": "Rs 71,990"
+        },
+        {
+          "id": 42,
+          "modelName": "HP PAVILION GAMING LAPTOP 15 -ec2xxx",
+          "company": "HP",
+          "operatingSystem": "Windows 10 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["AMD Ryzen 5 "],
+          "graphicsCard": ["Nvidia GeForce RTX "],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 64GB",
+          "storage": "upto 476 GB",
+          "link": "https://www.amazon.in/HP-Pavilion-Processor-Graphics-15-ec2150AX/dp/B09MF8KMRW/ref=sr_1_3?hvadid=72224354675972&hvbmt=be&hvdev=c&hvqmt=e&keywords=hp%2Bpavilio",
+          "price": "Rs 63000"
+        },
+        {
+          "id": 43,
+          "modelName": "acer aspire 5",
+          "company": "Acer",
+          "operatingSystem": "Windows 11",
+          "processorCompany": "Intel ",
+          "processorModel": ["I5 gen 11 "],
+          "graphicsCard": ["Intel iRIS  "],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 256 GB",
+          "storage": "upto 1 TB",
+          "link": "https://www.amazon.in/HP-Pavilion-Processor-Graphics-15-ec2150AX/dp/B09MF8KMRW/ref=sr_1_3?hvadid=72224354675972&hvbmt=be&hvdev=c&hvqmt=e&keywords=hp%2Bpavilio",
+          "price": "Rs 50000"
+        },
+        {
+          "id": 44,
+          "modelName": "ASUS TUF Gaming A15",
+          "company": "ASUS",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": [
+            "AMD Ryzen™ 7 4800H Mobile Processor (8-core/16-thread, 12MB Cache, 4.2 GHz max boost"
+          ],
+          "graphicsCard": ["NVIDIA® GeForce RTX™ 2060, 6GB GDDR6"],
+          "display": [
+            "15.6-inch, FHD (1920 x 1080) 16:9, anti-glare display, sRGB:62.5%, Adobe:47.1%, Refresh Rate:144Hz, Value IPS-level, Optimus"
+          ],
+          "memory": "16gb",
+          "storage": "512tb ssd",
+          "link": "https://www.amazon.in/ASUS-GeForce-RTX-3050-Graphics-Windows-FA506ICB-HN075W/dp/B0B56ZQ95M/ref=asc_df_B0B56ZQ95M/?tag=googleshopdes-21&linkCode=df0&hvadid=586293583898&hvpos=&hvnetw=g&hvrand=11173180973234990858&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007789&hvtargid=pla-1730956806615&psc=1",
+          "price": "Rs 94990"
+        },
+        {
+          "id": 45,
+          "modelName": "Lenovo Ideapad Flex 5",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel I7 11th Generation"],
+          "graphicsCard": [" Integrated Intel Iris Xe Graphics"],
+          "display": ["14-inch, FHD"],
+          "memory": "16gb",
+          "storage": "512tb ssd",
+          "link": "https://www.amazon.in/Lenovo-Convertible-Keyboard-Graphite-82HS00W4IN/dp/B09MM5HN29/ref=asc_df_B09MM5HN29/?tag=googleshopdes-21&linkCode=df0&hvadid=544956768920&hvpos=&hvnetw=g&hvrand=18446349500210168628&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007799&hvtargid=pla-1539885107491&th=1",
+          "price": "Rs 85900"
+        },
+        {
+          "id": 46,
+          "modelName": "Lenovo Ideapad gaming 3",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Amd",
+          "processorModel": ["Ryzen 5600h"],
+          "graphicsCard": ["Gtx 1650"],
+          "display": ["39.62 cm (15.6 inch) FHD IPS"],
+          "memory": "8gb",
+          "storage": "512 ssd",
+          "link": "https://www.reliancedigital.in/lenovo-a4in-ideapad-g3-gaming-laptop-11th-gen-intel-core-i5-11320h-8gb-512gb-ssd-4gb-nvidia-geforce-gtx-1650-graphics-windows-11-mso-fhd-39-62-cm-15-6-inch-/p/492850669?gclid=CjwKCAjwp9qZBhBkEiwAsYFsbxt97SZPRcp-WUb1n9tH3kamlQHng98GmoqbUHY71XWXyMQDkDvKChoChtgQAvD_BwE",
+          "price": "Rs 51990"
+        },
+        {
+          "id": 47,
+          "modelName": "Rog Zephyrus Duo 16",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["AMDS Ryzen 6000"],
+          "graphicsCard": ["Nvidia GeForce RTX 3080"],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 64GB",
+          "storage": "up to 4TB SSD (2x2TB)",
+          "link": "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-duo-16-2022-series/",
+          "price": "Rs 2L+"
+        },
+        {
+          "id": 48,
+          "modelName": "Mac mini (M1, 2020)",
+          "company": "Apple",
+          "operatingSystem": "macOS Monterey",
+          "processorCompany": "Apple",
+          "processorModel": ["Apple M1"],
+          "graphicsCard": ["M1 8-Core GPU"],
+          "display": ["D1918H Display 18.5-inch (1920 × 1080"],
+          "memory": "8gb",
+          "storage": "256GBssd",
+          "link": "https://www.apple.com/in/shop/buy-mac/mac-mini/apple-m1-chip-with-8-core-cpu-and-8-core-gpu-256gb",
+          "price": "₹64900.00"
+        },
+        {
+          "id": 49,
+          "modelName": "Asus Vivobook 15",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel i5 10th Gen"],
+          "graphicsCard": ["Intel UHD 620"],
+          "display": "UHD at 60Hz",
+          "memory": "up to 64GB",
+          "storage": "up to 2TB SSD ",
+          "link": "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-duo-16-2022-series/https://www.asus.com/in/Laptops/For-Home/All-series/ASUS-X515/",
+          "price": "Rs 40K"
+        },
+        {
+          "id": 50,
+          "modelName": "ACER Aspire 7 Gaming",
+          "company": "ACER",
+          "operatingSystem": "Windows 11 home",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 12th gen 1240p"],
+          "graphicsCard": [
+            "Nvidia GeForce RTX 3050",
+            "Nvidia GeForce GTX 1650"
+          ],
+          "display": ["FHD at 60Hz"],
+          "memory": "up to 32GB",
+          "storage": "up to 2TB SSD (1x2TB)",
+          "link": "https://www.acer.com/ac/en/IN/content/series/aspire7",
+          "price": "Rs 50,000 to 70,000"
+        },
+        {
+          "id": 51,
+          "modelName": "Lenova Ideapad gaming 3",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 10",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 10th generation 11300Hz"],
+          "graphicsCard": [
+            "NVIDIA GeForce GTX 1650 4GB GDDR6 Dedicated Graphics"
+          ],
+          "display": [
+            "15.6",
+            "FHD (1920x1080) | IPS | 120 Hz Refresh Rate | 250Nits Brightness | Anti-glare | 45% NTSC || Memory: 8GB RAM DDR4-3200, Upgradable Up to 16GB || Storage:512GB SSD"
+          ],
+          "memory": "8gb",
+          "storage": "1tb + ssd",
+          "link": "https://www.amazon.in/Lenovo-IdeaPad-39-62cm-Backlit-82K10198IN/dp/B0B4JQ9X9C/ref=sr_1_1_sspa?crid=2LXFI47KD9W4G&keywords=lenovo+ideapad+gaming+3&qid=1664561027&qu=eyJxc2MiOiI0LjkyIiwicXNhIjoiNC42MiIsInFzcCI6IjIuOTcifQ%3D%3D&s=computers&sprefix=lenovo+ide%2Ccomputers%2C4662&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExNEhZRTYwU1Y1OVlDJmVuY3J5cHRlZElkPUEwMjU2MTI4MkRMRVBTUU9HQlVUMCZlbmNyeXB0ZWRBZElkPUEwOTE5OTMyMjIwVk1YTjRKVlI2NyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU",
+          "price": "Rs 70k"
+        },
+        {
+          "id": 52,
+          "modelName": "Alienware X17",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i9-12900H", "i7-12700H "],
+          "graphicsCard": ["RTX 3080 Ti", "RTX 3070Ti", " RTX 3060"],
+          "display": ["FHD at 165Hz / 360Hz", "UHD at 120Hz"],
+          "memory": "up to 64GB",
+          "storage": "up to 4TB SSD (2x2TB)",
+          "link": "https://www.gamesradar.com/alienware-gaming-laptop-guide/",
+          "price": "Rs 2L+"
+        },
+        {
+          "id": 53,
+          "modelName": "Dell Inspiron 15 3000",
+          "company": "DEll",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 11th generation 1135G7"],
+          "graphicsCard": ["Intel UHD Graphics"],
+          "display": [
+            "15.6",
+            "FHD 1920x1080, 60Hz, Non-Touch, AG, WVA, LED-Backlit, Narrow Border"
+          ],
+          "storage": "1tb ssd",
+          "link": "https://www.dell.com/en-in/shop/laptops-2-in-1-pcs/inspiron-15-3000-laptop/spd/inspiron-15-3511-laptop/d560749win9s",
+          "price": "Rs 44,989"
+        },
+        {
+          "id": 54,
+          "modelName": "Inspiron 14 2-in-1",
+          "company": "DEll",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["Processor 12th Gen Intel® Core™ i5-1235U"],
+          "graphicsCard": ["Intel® Iris® Xe Graphics"],
+          "display": [
+            "14",
+            "FHD+ 1920x1200, 60Hz, Touch, WVA, TrueLife™, Narrow Border, Pen Support"
+          ],
+          "storage": "512 ssd",
+          "link": "https://www.dell.com/en-in/shop/laptops-2-in-1-pcs/inspiron-14-2-in-1-laptop/spd/inspiron-14-7420-2-in-1-laptop/d560776win9s",
+          "price": "Rs ₹ 80,989.99"
+        },
+        {
+          "id": 55,
+          "modelName": "Macbook air ",
+          "company": "Apple",
+          "operatingSystem": "macOS",
+          "processorCompany": "Apple",
+          "processorModel": ["Apple M1"],
+          "graphicsCard": ["7-Core GPU"],
+          "display": [
+            "33.74 cm / 13.3-inch (diagonal) LED-backlit display with IPS technology; 2560x1600 native resolution at 227 pixels per inch with support for millions of colours"
+          ],
+          "memory": "8gb",
+          "storage": "256gb ssd",
+          "link": "https://www.apple.com/in/shop/buy-mac/macbook-air/with-m1-chip",
+          "price": "Rs99900.00"
+        },
+        {
+          "id": 56,
+          "modelName": "HP Pavilion",
+          "company": "HP",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "RYZEN",
+          "processorModel": ["i7 6th generation 12650h"],
+          "graphicsCard": ["nil"],
+          "display": ["15.6-inch, QHD "],
+          "memory": "8gb",
+          "storage": "512tb ssd",
+          "link": "https://www.reliancedigital.in/hp-pavilion-15-ec2144ax-gaming-laptop-amd-ryzen-5-5600h-8-gb-512gb-ssd-nvidia-geforce-gtx-1650-windows-11-mso-fhd-39-62-cm-15-6-inch-/p/492574688",
+          "price": "Rs 1.10L"
+        },
+        {
+          "id": 57,
+          "modelName": "Asus Tuf A15",
+          "company": "Asus",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Ryzen",
+          "processorModel": ["Ryzen 7 4800H"],
+          "graphicsCard": ["RTX 3050"],
+          "display": [
+            "15.6-inch (39.62 cms) FHD (1920 x 1080) 16:9, 250nits, 144Hz Refresh rate, vIPS-level Anti-Glare Plane, Adaptive-Sync "
+          ],
+          "memory": "16gb",
+          "storage": "512tb ssd",
+          "link": "https://amzn.eu/d/5CClZ0L/",
+          "price": "Rs 71,990"
+        },
+        {
+          "id": 58,
+          "modelName": "Dell G3",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 10th generation "],
+          "graphicsCard": ["NVDIA GEFORCE GTX"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "1tb hhd,256 ssd",
+          "link": "https://www.dell.com/support/manuals/en-in/g-series-15-3500-laptop/dell-g3-15-3500-setup-and-specifications/set-up-your-dell-g3-15-3500",
+          "price": "Rs 76 thousand"
+        },
+        {
+          "id": 59,
+          "modelName": "Dell Inspirion 3511",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 11th generation "],
+          "graphicsCard": ["NVDIA GEFORCE GTX"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "512 ssd",
+          "link": "https://www.dell.com/en-in/shop/laptops/amd/spd/inspiron-15-5515-laptop",
+          "price": "Rs 58 thousand"
+        },
+        {
+          "id": 60,
+          "modelName": "Acer Aspire 7",
+          "company": "Acer",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i5 10th generation 10300H"],
+          "graphicsCard": ["NVDIA GEFORCE GTX1650"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "512GB SSD",
+          "link": "https://www.acer.com/ac/en/IN/content/series/aspire7",
+          "price": "Rs 58 thousand"
+        },
+        {
+          "id": 61,
+          "modelName": "Dell G3 3500",
+          "company": "Dell",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": "[Intel(R) Core(TM) i7-10750H CPU]",
+          "graphicsCard": "[NVIDIA GEFORCE GTX 1650]",
+          "display": "15.6 Inches",
+          "memory": "16 GB",
+          "storage": "1 TB HDD 256 GB SSD",
+          "link": "https://www.flipkart.com/dell-g3-core-i7-10th-gen-16-gb-1-tb-hdd-256-gb-ssd-windows-10-home-4-graphics-nvidia-geforce-gtx-1650-120-hz-3500-gaming-laptop/p/itm2f97d9ce34e03",
+          "price": "86,990 INR"
+        },
+        {
+          "id": 62,
+          "modelName": "ASUS Vivobook Pro 14X OLED (2021)",
+          "company": "ASUS",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i9 12th generation"],
+          "graphicsCard": ["NVDIA GEFORCE RTX 3050"],
+          "display": ["14.5-inch"],
+          "memory": "32gb",
+          "storage": "1TB SSD",
+          "link": "Vivobook/Vivobook-Pro-14X-OLED-N74017",
+          "price": "Rs 1 lakh 10 thousand"
+        },
+        {
+          "id": 63,
+          "modelName": "Asus ZenBook Flip 13",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["i7 8th generation 10300H"],
+          "graphicsCard": ["NVDIA GEFORCE GTX1650"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "512GB SSD",
+          "link": "https://www.firstpost.com/tech/laptops/asus-zenbook-flip-13-ux362fael701t-laptop-8th-gen-core-i7-8gb-512gb-ssd-win10-2071",
+          "price": "Rs 89 thousand"
+        },
+        {
+          "id": 64,
+          "modelName": "ASUS 15 ROG Strix",
+          "company": "Asus",
+          "operatingSystem": "Windows 10 Home",
+          "processorCompany": "AMD",
+          "processorModel": ["AMD Ryzen 7"],
+          "graphicsCard": ["NVDIA GEFORCE GTX1650"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "512GB SSD",
+          "link": "https://www.croma.com/asus-15-rog-strix-amd-ryzen-7-15-6-inch-8gb-512gb-windows-10-nvidia-geforce-gtx-1650-graphics-fhd-ips-display-electro-punk-90nr07p3-m02390-/p/245802?utm_source=google&utm_medium=ps&utm_campaign=Sok_Pmax_Laptop_Windows&gclid=CjwKCAjwp9qZBhBkEiwAsYFsbx4sXlG8yLd9LUW8HWVguNHFEAO9rPz9QG7HJs8otYwayJ-J6SsZAhoCcuMQAvD_BwE",
+          "price": "Rs 72 thousand"
+        },
+        {
+          "id": 65,
+          "modelName": "LENOVO THINKPAD T15 GEN 2 CORE I7- 11800H 32GB RAM 512GB SSD 8GB RTX 3070 MAX-Q 15.6INCH FHD W10PRO",
+          "company": "lenovo",
+          "operatingSystem": "Windows 10 Pro",
+          "processorCompany": "intel",
+          "processorModel": ["intel CORE I7- 11800H"],
+          "graphicsCard": ["8GB RTX 3070 MAX-Q"],
+          "display": ["15.6-inch"],
+          "memory": "32gb",
+          "storage": "512GB SSD",
+          "link": "https://www.amazon.in/LENOVO-THINKPAD-11800H-15-6INCH-W10PRO/dp/B0B369C7LF/ref=asc_df_B0B369C7LF/?tag=googleshopdes-21&linkCode=df0&hvadid=586198302882&hvpos=&hvnetw=g&hvrand=13003976077960644643&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9299716&hvtargid=pla-1719341370622&psc=1",
+          "price": "Rs 2 lakh 45 thousand"
+        },
+        {
+          "id": 66,
+          "modelName": "OMEN by HP Laptop 17-ck1022TX",
+          "company": "hp",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "intel",
+          "processorModel": ["12th Generation Intel® Core™ i7 processor"],
+          "graphicsCard": ["NVIDIA® GeForce RTX™ 3070 Ti"],
+          "display": ["15.6-inch"],
+          "memory": "8gb",
+          "storage": "1TB SSD",
+          "link": "https://www.hp.com/in-en/shop/omen-by-hp-laptop-17-ck1022tx-6j0w2pa.html?facetref=aa6e25d1f12e795f",
+          "price": "Rs 2 lakh 1 thousand"
+        },
+        {
+          "id": 67,
+          "modelName": "Lenovo V15 Gen 2",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 Home Single Language 64",
+          "processorCompany": "Intel",
+          "processorModel": "[ Intel® Core™ i3-1115G4 Processor]",
+          "graphicsCard": "[Integrated Intel® UHD Graphics]",
+          "display": "15.6 Inches",
+          "memory": "8 GB",
+          "storage": "256 GB SSD",
+          "link": "https://www.lenovo.com/in/en/laptops/lenovo/v-series/Lenovo-V15-Gen-2-15-inch-Intel/p/82KBA02UIH",
+          "price": "36,990 INR"
+        },
+        {
+          "id": 68,
+          "modelName": "Lenovo Legion 5",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 Home Single Language 64",
+          "processorCompany": "AMD",
+          "processorModel": "[ AMD RYZEN 5]",
+          "graphicsCard": "[AMD Ryzen™ 7 5800H]",
+          "display": "15 Inches",
+          "memory": "8 GB",
+          "storage": "512 GB SSD",
+          "link": "https://www.lenovo.com/in/en/laptops/legion-laptops/legion-5-series/Legion-5-15ACH6H/p/88GMY501582",
+          "price": "72,790 INR"
+        },
+        {
+          "id": 69,
+          "modelName": "Apple Macbook Air M1",
+          "company": "apple",
+          "operatingSystem": "MacOS",
+          "processorCompany": "M1 Silicon",
+          "processorModel": "M1 chip",
+          "graphicsCard": "apple graphic",
+          "display": "13inches",
+          "memory": "8 GB",
+          "storage": "256 GB SSD",
+          "link": "idk",
+          "price": "92,000 INR"
+        },
+        {
+          "id": 70,
+          "modelName": "HP Pavilion x360 Convertible 14-dy0208TU",
+          "company": "HP",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": "11th Generation Intel Core I3 processor",
+          "graphicsCard": "[Integrated Intel® UHD Graphics]",
+          "display": "35.6 cm (14) diagonal FHD touch display",
+          "memory": "8 GB",
+          "storage": "512 GB SSD",
+          "link": "https://www.hp.com/in-en/shop/hp-pavilion-x360-convertible-14-dy0208tu-67g61pa.html?gclsrc=ds&gclsrc=ds",
+          "price": "Rs. 55702"
+        },
+        {
+          "id": 71,
+          "modelName": "DELL G15-5515",
+          "company": "DELL",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Ryzen",
+          "processorModel": ["AMD Ryzen5-5600H"],
+          "graphicsCard": ["Nvidia GeForce RTX 3050"],
+          "display": [
+            "15.6 inch FHD, (1920 x 1080), 120Hz, 250 nits, WVA, Anti- Glare LED"
+          ],
+          "memory": "upto 32 GB",
+          "storage": "512 GB, M.2, PCIe NVMe, SSD",
+          "link": "https://www.dell.com/en-in/shop/gaming-and-games/g15-ryzen-edition-gaming-laptop/spd/g-series-15-5515-laptop",
+          "price": "Rs 75,000+"
+        },
+        {
+          "id": 72,
+          "modelName": "HP Laptop 15s-du3xxx",
+          "company": "HP",
+          "operatingSystem": "Microsoft Windows 10 Home Single Language (64-bit)",
+          "processorCompany": "Intel",
+          "processorModel": "11th Gen Intel Core i5-1135G",
+          "graphicsCard": "NVIDIA GeForce® MX350",
+          "display": "15 inch",
+          "memory": "8 GB",
+          "storage": "1TB HDD + 256 GB SSD",
+          "link": "https://browser.geekbench.com/v5/cpu/compare/12169040?baseline=5515825",
+          "price": "Rs 60,000+"
+        },
+        {
+          "id": 73,
+          "modelName": "Acer Nitro 7",
+          "company": "Acer",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel Core-i7 10800H"],
+          "graphicsCard": ["Nvidia GeForce RTX 3060"],
+          "display": [
+            "15.6 inch FHD, (1920 x 1080),IPS Display, 144Hz 3ms, 250 nits, WVA, Anti- Glare LED"
+          ],
+          "memory": "upto 32 GB",
+          "storage": "1TB, M.2, 8GB PCIe RAM, NVMe SSD",
+          "link": "https://www.acer.com/us-en/laptops/nitro/nitro-7",
+          "price": "Rs 75,000+"
+        },
+        {
+          "id": 74,
+          "modelName": "Acer Aspire 5",
+          "company": "Acer",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel Core-i5 1135G7"],
+          "graphicsCard": ["Nvidia MX 350"],
+          "display": [
+            "13.0 inch FHD, (1920 x 1080),IPS Display, 60Hz 3ms, 250 nits, WVA, Anti- Glare FHD"
+          ],
+          "memory": "upto 8 GB",
+          "storage": "512GB, M.2, 8GB PCIe RAM, NVMe SSD",
+          "link": "https://www.acer.com/us-en/laptops/aspire/aspire-5",
+          "price": "Rs 65,000+"
+        },
+        {
+          "id": 75,
+          "modelName": "DELL inspiron 3501",
+          "company": "DELL",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "intel core i5",
+          "processorModel": ["intel core i5 1105"],
+          "graphicsCard": ["Nvidia GeForce RTX 1650"],
+          "display": [
+            "15.6 inch FHD, (1920 x 1080), 120Hz, 250 nits, WVA, Anti- Glare LED"
+          ],
+          "memory": "upto 32 GB",
+          "storage": "256GB, M.2, PCIe NVMe, SSD",
+          "link": "https://www.dell.com/en-in/shop/laptops-2-in-1-pcs/sr/laptops/inspiron-laptops?gacd=10415953-9016-5761040-285981356-0&dgc=ST&gclsrc=aw.ds&nclid=BV-_KbXvPPI_x99ugvSd2d3WwYviVRV9xpJdkVBFaHw3D1clsk0EteQ2pzLjJ0CB",
+          "price": "Rs 61000+"
+        },
+
+        {
+          "id": "54",
+          "modelName": "MacBook Air",
+          "company": "Apple",
+          "operatingSystem": "Mac OS Montrey",
+          "processorCompany": "Apple",
+          "processorModel": "M1",
+          "graphicsCard": "M1",
+          "display": "Retina display",
+          "memory": "8 GB",
+          "storage": "256GB SSD",
+          "link": "https://www.apple.com/in/macbook-air-m1/specs/",
+          "price": "₹99900.00"
+        },
+
+        {
+          "id": 76,
+          "modelName": "MacBook Air",
+          "company": "Apple",
+          "operatingSystem": "Mac OS Montrey",
+          "processorCompany": "Apple",
+          "processorModel": "M1",
+          "graphicsCard": "M1",
+          "display": "Retina display",
+          "memory": "8 GB",
+          "storage": "256GB SSD",
+          "link": "https://www.apple.com/in/macbook-air-m1/specs/",
+          "price": "₹99900.00"
+        },
+        {
+          "id": 77,
+          "modelName": "HP Victus 16",
+          "company": "HP",
+          "operatingSystem": "Windows 10",
+          "processorCompany": "AMD",
+          "processorModel": "Ryzen 7 5800h",
+          "graphicsCard": "Nvidia RTX 3050",
+          "display": "10 BIT Anti glare IPS",
+          "memory": "8 GB",
+          "storage": "512GB SSD",
+          "link": "https://amzn.eu/d/5k0cEzO",
+          "price": "₹75,000.00"
+        },
+        {
+          "id": 78,
+          "modelName": "HP Victus 16",
+          "company": "HP",
+          "operatingSystem": "Windows 10",
+          "processorCompany": "AMD",
+          "processorModel": "Ryzen 7 5800h",
+          "graphicsCard": "Nvidia RTX 3050",
+          "display": "10 BIT Anti glare IPS",
+          "memory": "8 GB",
+          "storage": "512GB SSD",
+          "link": "https://amzn.eu/d/5k0cEzO",
+          "price": "₹75,000.00"
+        },
+
+        {
+          "id": "59",
+          "modelName": "IdeaPad 3 15ITL05",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel Core i3-1115G4",
+          "processorModel": "11th Gen Core i3-1115G4",
+          "graphicsCard": "Integrated",
+          "display": "15.6 FHD(1920x1080),TN Technology,220 Nits brightness,Anti-Glare",
+          "memory": "8 GB",
+          "storage": "256GB SSD",
+          "link": "https://www.amazon.in/Lenovo-IdeaPad-Warranty-Platinum-81X800LGIN/dp/B0B2RBP83P/ref=sr_1_11_sspa?crid=V620LS106QOU&keywords=lenovo+laptops&qid=1665204577&qu=eyJxc2MiOiI3LjA4IiwicXNhIjoiNy4wMSIsInFzcCI6IjQuODQifQ%3D%3D&sprefix=lenovo+lapt%2Caps%2C840&sr=8-11-spons&psc=1",
+          "price": "₹36,990"
+        },
+        {
+          "id": 79,
+          "modelName": "Lenovo Ideapad Slim",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 10 Home",
+          "processorCompany": "Intel",
+          "processorModel": "intel Core i5",
+          "graphicsCard": "Intel Integrated Iris Xe",
+          "display": "Full HD LED Backlit, Anti-Glare IPS Display (300 nits Brightness, 45% NTSC Color Gamut)",
+          "memory": "16 GB",
+          "storage": "512GB SSD",
+          "link": "https://amzn.eu/d/5k0cEzO",
+          "price": "₹75,000.00"
+        },
+        {
+          "id": 79,
+          "modelName": "Lenovo V15 Gen 2",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 Home Single Language 64",
+          "processorCompany": "Intel",
+          "processorModel": "[ Intel® Core™ i3-1115G4 Processor]",
+          "graphicsCard": "[Integrated Intel® UHD Graphics]",
+          "display": "15.6 Inches",
+          "memory": "8 GB",
+          "storage": "256 GB SSD",
+          "link": "https://www.lenovo.com/in/en/laptops/lenovo/v-series/Lenovo-V15-Gen-2-15-inch-Intel/p/82KBA02UIH",
+          "price": "36,990 INR"
+        },
+        {
+          "id": 68,
+          "modelName": "Lenovo Legion 5",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 Home Single Language 64",
+          "processorCompany": "AMD",
+          "processorModel": "[ AMD RYZEN 5]",
+          "graphicsCard": "[AMD Ryzen™ 7 5800H]",
+          "display": "15 Inches",
+          "memory": "8 GB",
+          "storage": "512 GB SSD",
+          "link": "https://www.lenovo.com/in/en/laptops/legion-laptops/legion-5-series/Legion-5-15ACH6H/p/88GMY501582",
+          "price": "72,790 INR"
+        },
+        {
+          "id": 69,
+          "modelName": "Apple Macbook Air M1",
+          "company": "apple",
+          "operatingSystem": "MacOS",
+          "processorCompany": "M1 Silicon",
+          "processorModel": "M1 chip",
+          "graphicsCard": "apple graphic",
+          "display": "13inches",
+          "memory": "8 GB",
+          "storage": "256 GB SSD",
+          "link": "idk",
+          "price": "92,000 INR"
+        },
+        {
+          "id": 70,
+          "modelName": "HP Pavilion x360 Convertible 14-dy0208TU",
+          "company": "HP",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": "11th Generation Intel Core I3 processor",
+          "graphicsCard": "[Integrated Intel® UHD Graphics]",
+          "display": "35.6 cm (14) diagonal FHD touch display",
+          "memory": "8 GB",
+          "storage": "512 GB SSD",
+          "link": "https://www.hp.com/in-en/shop/hp-pavilion-x360-convertible-14-dy0208tu-67g61pa.html?gclsrc=ds&gclsrc=ds",
+          "price": "Rs. 55702"
+        },
+        {
+          "id": 71,
+          "modelName": "DELL G15-5515",
+          "company": "DELL",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Ryzen",
+          "processorModel": ["AMD Ryzen5-5600H"],
+          "graphicsCard": ["Nvidia GeForce RTX 3050"],
+          "display": [
+            "15.6 inch FHD, (1920 x 1080), 120Hz, 250 nits, WVA, Anti- Glare LED"
+          ],
+          "memory": "upto 32 GB",
+          "storage": "512 GB, M.2, PCIe NVMe, SSD",
+          "link": "https://www.dell.com/en-in/shop/gaming-and-games/g15-ryzen-edition-gaming-laptop/spd/g-series-15-5515-laptop",
+          "price": "Rs 75,000+"
+        },
+        {
+          "id": 72,
+          "modelName": "HP Laptop 15s-du3xxx",
+          "company": "HP",
+          "operatingSystem": "Microsoft Windows 10 Home Single Language (64-bit)",
+          "processorCompany": "Intel",
+          "processorModel": "11th Gen Intel Core i5-1135G",
+          "graphicsCard": "NVIDIA GeForce® MX350",
+          "display": "15 inch",
+          "memory": "8 GB",
+          "storage": "1TB HDD + 256 GB SSD",
+          "link": "https://browser.geekbench.com/v5/cpu/compare/12169040?baseline=5515825",
+          "price": "Rs 60,000+"
+        },
+        {
+          "id": 73,
+          "modelName": "Acer Nitro 7",
+          "company": "Acer",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel Core-i7 10800H"],
+          "graphicsCard": ["Nvidia GeForce RTX 3060"],
+          "display": [
+            "15.6 inch FHD, (1920 x 1080),IPS Display, 144Hz 3ms, 250 nits, WVA, Anti- Glare LED"
+          ],
+          "memory": "upto 32 GB",
+          "storage": "1TB, M.2, 8GB PCIe RAM, NVMe SSD",
+          "link": "https://www.acer.com/us-en/laptops/nitro/nitro-7",
+          "price": "Rs 75,000+"
+        },
+        {
+          "id": 74,
+          "modelName": "Acer Aspire 5",
+          "company": "Acer",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel",
+          "processorModel": ["Intel Core-i5 1135G7"],
+          "graphicsCard": ["Nvidia MX 350"],
+          "display": [
+            "13.0 inch FHD, (1920 x 1080),IPS Display, 60Hz 3ms, 250 nits, WVA, Anti- Glare FHD"
+          ],
+          "memory": "upto 8 GB",
+          "storage": "512GB, M.2, 8GB PCIe RAM, NVMe SSD",
+          "link": "https://www.acer.com/us-en/laptops/aspire/aspire-5",
+          "price": "Rs 65,000+"
+        },
+        {
+          "id": 75,
+          "modelName": "DELL inspiron 3501",
+          "company": "DELL",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "intel core i5",
+          "processorModel": ["intel core i5 1105"],
+          "graphicsCard": ["Nvidia GeForce RTX 1650"],
+          "display": [
+            "15.6 inch FHD, (1920 x 1080), 120Hz, 250 nits, WVA, Anti- Glare LED"
+          ],
+          "memory": "upto 32 GB",
+          "storage": "256GB, M.2, PCIe NVMe, SSD",
+          "link": "https://www.dell.com/en-in/shop/laptops-2-in-1-pcs/sr/laptops/inspiron-laptops?gacd=10415953-9016-5761040-285981356-0&dgc=ST&gclsrc=aw.ds&nclid=BV-_KbXvPPI_x99ugvSd2d3WwYviVRV9xpJdkVBFaHw3D1clsk0EteQ2pzLjJ0CB",
+          "price": "Rs 61000+"
+        },
+
+        {
+          "id": "54",
+          "modelName": "MacBook Air",
+          "company": "Apple",
+          "operatingSystem": "Mac OS Montrey",
+          "processorCompany": "Apple",
+          "processorModel": "M1",
+          "graphicsCard": "M1",
+          "display": "Retina display",
+          "memory": "8 GB",
+          "storage": "256GB SSD",
+          "link": "https://www.apple.com/in/macbook-air-m1/specs/",
+          "price": "₹99900.00"
+        },
+
+        {
+          "id": 76,
+          "modelName": "MacBook Air",
+          "company": "Apple",
+          "operatingSystem": "Mac OS Montrey",
+          "processorCompany": "Apple",
+          "processorModel": "M1",
+          "graphicsCard": "M1",
+          "display": "Retina display",
+          "memory": "8 GB",
+          "storage": "256GB SSD",
+          "link": "https://www.apple.com/in/macbook-air-m1/specs/",
+          "price": "₹99900.00"
+        },
+        {
+          "id": 77,
+          "modelName": "HP Victus 16",
+          "company": "HP",
+          "operatingSystem": "Windows 10",
+          "processorCompany": "AMD",
+          "processorModel": "Ryzen 7 5800h",
+          "graphicsCard": "Nvidia RTX 3050",
+          "display": "10 BIT Anti glare IPS",
+          "memory": "8 GB",
+          "storage": "512GB SSD",
+          "link": "https://amzn.eu/d/5k0cEzO",
+          "price": "₹75,000.00"
+        },
+        {
+          "id": 78,
+          "modelName": "HP Victus 16",
+          "company": "HP",
+          "operatingSystem": "Windows 10",
+          "processorCompany": "AMD",
+          "processorModel": "Ryzen 7 5800h",
+          "graphicsCard": "Nvidia RTX 3050",
+          "display": "10 BIT Anti glare IPS",
+          "memory": "8 GB",
+          "storage": "512GB SSD",
+          "link": "https://amzn.eu/d/5k0cEzO",
+          "price": "₹75,000.00"
+        },
+
+        {
+          "id": "59",
+          "modelName": "IdeaPad 3 15ITL05",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 Home",
+          "processorCompany": "Intel Core i3-1115G4",
+          "processorModel": "11th Gen Core i3-1115G4",
+          "graphicsCard": "Integrated",
+          "display": "15.6 FHD(1920x1080),TN Technology,220 Nits brightness,Anti-Glare",
+          "memory": "8 GB",
+          "storage": "256GB SSD",
+          "link": "https://www.amazon.in/Lenovo-IdeaPad-Warranty-Platinum-81X800LGIN/dp/B0B2RBP83P/ref=sr_1_11_sspa?crid=V620LS106QOU&keywords=lenovo+laptops&qid=1665204577&qu=eyJxc2MiOiI3LjA4IiwicXNhIjoiNy4wMSIsInFzcCI6IjQuODQifQ%3D%3D&sprefix=lenovo+lapt%2Caps%2C840&sr=8-11-spons&psc=1",
+          "price": "₹36,990"
+        },
+        {
+          "id": 81,
+          "modelName": "Acer Nitro AN515-54",
+          "company": "Acer",
+          "operatingSystem": "Windows 10 OS",
+          "processorCompany": "Intel",
+          "processorModel": "Intel Core i7 9th Gen",
+          "graphicsCard": "6 GB NVIDIA Graphics Card",
+          "display": "15.6 inches, 1920 x 1080 pixels",
+          "memory": "8 GB",
+          "storage": "256 GB SSD",
+          "link": "https://www.firstpost.com/tech/laptops/acer-nitro-an51554-nhq5bsi002-gaming-laptop-9th-gen-core-i7-8gb-2tb-256gb-ssd-win10-6gb-graph-2083",
+          "price": "Rs. 84990"
+        },
+
+        {
+          "id": 80,
+          "modelName": "Aspire A715-75G",
+          "company": "Acer",
+          "operatingSystem": "Windows 11",
+          "processorCompany": "intel",
+          "processorModel": "core i5 9th Gen",
+          "graphicsCard": "nVDIA",
+          "display": "15.6 inch",
+          "memory": "8gb",
+          "storage": "512gb ssd",
+          "link": "https://www.acer.com/us-en/laptops/aspire/aspire-7-amd",
+          "price": "₹56,000"
+        },
+        {
+          "id": 81,
+          "modelName": "HP 245 G7 Notebook",
+          "company": "HP",
+          "operatingSystem": "Windows 10 Pro 64-bit (National Academic only)",
+          "processorCompany": "AMD",
+          "processorModel": "AMD Radeon Vega 8 Mobile Graphics",
+          "graphicsCard": "Vega",
+          "display": "14 inch",
+          "memory": "8gb",
+          "storage": "1Tb hdd",
+          "link": "https://www.reliancedigital.in/hp-245-g7-notebook-amd-ryzen-5-3500u-8gb-1tb-hdd-amd-radeon-vega-graphics-windows-10-hd-35-6-cm-14-inch-/p/491901526?gclid=CjwKCAjw79iaBhAJEiwAPYwoCHTGYI9aez_xeF8jvh7MsmPN2N2vkrWLgm8SPyP_Hpukq0_FwPLYqBoC880QAvD_BwE",
+          "price": "₹39,999"
+        },
+
+        {
+          "id": 82,
+          "modelName": "Lenovo Ideapad Slim 5i pro",
+          "company": "Lenovo",
+          "operatingSystem": "Windows 11 pro",
+          "processorCompany": "Intel",
+          "processorModel": ["i7"],
+          "graphicsCard": ["no"],
+          "display": ["39.62 cm (15.6 inch) FHD 2.2k led"],
+          "memory": "16gb",
+          "storage": "512 ssd",
+          "link": "https://www.amazon.in/Lenovo-IdeaPad-Keyboard-Warranty-82L3006XIN/dp/B09QD4X1GZ",
+          "price": "Rs 76990"
+        }
+      ]
+    },
+    {
+      "smartphones": [
+        {
+          "id": 1,
+          "model": "Google Pixel 3",
+          "img": "img/phone_1-min.jpg",
+          "price": 799.0,
+          "company": "Google Inc.",
+          "info": "Staying too far from your loved ones? Video call them for hours on end. The weather is romantic? Listen to your favourite playlists all day long. Don’t want to go out this weekend? Then binge watch your favourite series on the Internet. The Pixel 3 ensures that there’s never a dull moment, all thanks to its powerful battery, impressive cameras and its expansive bezel-less display.",
+          "specs": {
+            "body": "145.6 x 68.2 x 7.9 mm (5.73 x 2.69 x 0.31 in)",
+            "display": "5.5 inches, 1080 x 2160 pixels, 18:9 ratio (~443 ppi density)",
+            "platform": "OS Android 9.0 (Pie)",
+            "chipset": "Qualcomm SDM845 Snapdragon 845 (10 nm)",
+            "memory": "64/128 GB, 4 GB RAM",
+            "camera": {
+              "main": "12.2 MP (wide) dual pixel",
+              "selfie": "8 MP (ultrawide), no AF",
+              "features": "Dual-LED flash, Auto-HDR, panorama"
+            },
+            "battery": "Non-removable Li-Po 2915 mAh battery",
+            "features": "NFC, USB 3.1 Type-C 1.0, fingerprint (rear-mounted), fast battery charging, Gorilla Glass 5, aluminum frame, IP68 dust/water resistant, Always-on display, HDR"
+          }
+        },
+        {
+          "id": 2,
+          "model": "Samsung Note 9",
+          "img": "img/phone_2-min.jpg",
+          "price": 999.0,
+          "company": "Samsung Electronics",
+          "info": "Galaxy Note 9 puts powerful technology in the hands of pioneers who demand more. Innovative features and design make it the only phone to keep up with the next generation of achievers.",
+          "specs": {
+            "body": "161.9 x 76.4 x 8.8 mm (6.37 x 3.01 x 0.35 in)",
+            "display": "6.4 inches, 1440 x 2960 pixels, 18.5:9 ratio (~516 ppi density)",
+            "platform": "Android 8.1 (Oreo), upgradable to Android 9.0 (Pie); One UI",
+            "chipset": "Exynos 9810 Octa (10 nm)",
+            "memory": "512 GB/8 GB RAM or 128 GB/6 GB RAM",
+            "camera": {
+              "main": "12 MP, f/1.5-2.4, 26mm (wide), 1/2.55\", 1.4µm, dual pixel PDAF, OIS + 12 MP, f/2.4, 52mm (telephoto), 1/3.4\", 1.0µm, AF, OIS, 2x optical zoom",
+              "selfie": "8 MP, f/1.7, 25mm (wide), 1/3.6\", 1.22µm, AF",
+              "features": "LED flash, auto-HDR, panorama"
+            },
+            "battery": "Non-removable Li-Ion 4000 mAh battery",
+            "features": "NFC, front/back glass (Gorilla Glass 5), aluminum frame, S Pen, Samsung Pay, IP68 dust/water proof, Always-on display, USB 3.1 Type-C 1.0, Iris scanner, fingerprint (rear-mounted), Samsung DeX (desktop experience support), Fast battery charging (Quick Charge 2.0), Bixby natural language commands and dictation"
+          }
+        },
+        {
+          "id": 3,
+          "model": "Apple iPhone XS",
+          "img": "img/phone_3-min.jpg",
+          "price": 999.0,
+          "company": "Apple Inc.",
+          "info": "Welcome to the big screens! Super Retina in two sizes — including the largest display ever on an iPhone. Even faster Face ID. The smartest, most powerful chip in a smartphone. And a breakthrough dual‑camera system. iPhone XS is everything you love about iPhone. Taken to the extreme.",
+          "specs": {
+            "body": "143.6 x 70.9 x 7.7 mm (5.65 x 2.79 x 0.30 in)",
+            "display": "Super AMOLED, 5.8 inches, 1125 x 2436 pixels, 19.5:9 ratio (~458 ppi density)",
+            "platform": "iOS 12, upgradable to iOS 12.1.3",
+            "chipset": "Apple A12 Bionic (7 nm)",
+            "memory": "64/256/512 GB, 4 GB RAM",
+            "camera": {
+              "main": "12 MP (wide) + 12 MP (telephoto), 2x optical zoom",
+              "selfie": "7 MP (standard)",
+              "features": "Quad-LED dual-tone flash, HDR (photo/panorama)"
+            },
+            "battery": "Non-removable Li-Ion 2658 mAh battery",
+            "features": "NFC, Face ID, fast battery charging, stainless steel frame, IP68 dust/water resistant, Apple Pay, Dolby Vision, HDR10, Wide color gamut, 3D Touch, Siri"
+          }
+        },
+        {
+          "id": 4,
+          "model": "Samsung Galaxy S9+",
+          "img": "img/phone_4-min.jpg",
+          "price": 840.0,
+          "company": "Samsung Electronics",
+          "info": "The perfect formula of a gorgeous 5.8-inch screen, sexy dual-curved design and terrific camera. Whiplash-fast speeds, wireless charging and water resistance complete the package.",
+          "specs": {
+            "body": "158.1 x 73.8 x 8.5 mm (6.22 x 2.91 x 0.33 in)",
+            "display": "Super AMOLED, 6.2 inches, 1440 x 2960 pixels, 18.5:9 ratio (~529 ppi density)",
+            "platform": "Android 8.0 (Oreo)",
+            "chipset": "Exynos 9810 Octa (10 nm)/Qualcomm SDM845 Snapdragon 845 (10 nm)",
+            "memory": "64/128/256 GB, 6 GB RAM",
+            "camera": {
+              "main": "12 MP (wide) Dual Pixel + 12 MP (telephoto), 2x optical zoom",
+              "selfie": "8 MP, AF",
+              "features": "LED flash, auto-HDR, panorama"
+            },
+            "battery": "Non-removable Li-Ion 3500 mAh battery",
+            "features": "Iris scanner, fingerprint (rear-mounted), heart rate, NFC, front/back glass (Gorilla Glass 5), aluminum frame, Samsung Pay, IP68 dust/water proof, HDR10, 3D Touch (home button only), Always-on display, Samsung DeX, Quick Charge 2.0, Qi/PMA wireless charging, Bixby, ANT+"
+          }
+        },
+        {
+          "id": 5,
+          "model": "Pocophone F1",
+          "img": "img/phone_5-min.jpg",
+          "price": 300.0,
+          "company": "Xiaomi Inc.",
+          "info": "Pocophone F1 runs on the Qualcomm® Snapdragon™ 845 mobile platform, meaning you get Snapdragon's powerful AI engine on their most advanced flagship 10nm class chip. Enjoy unbeatable performance and lower power consumption.",
+          "specs": {
+            "body": "155.5 x 75.3 x 8.8 mm (6.12 x 2.96 x 0.35 in)",
+            "display": "IPS LCD, 6.18 inches, 1080 x 2246 pixels, 18.7:9 ratio (~403 ppi density)",
+            "platform": "Android 8.1 (Oreo), upgradable to Android 9.0 (Pie); MIUI 10.2 POCO",
+            "chipset": "Qualcomm SDM845 Snapdragon 845 (10 nm)",
+            "memory": "256 GB, 8 GB RAM or 64/128 GB, 6 GB RAM",
+            "camera": {
+              "main": "12 MP dual pixel + 5 MP, depth sensor",
+              "selfie": "20 MP",
+              "features": "Dual-LED flash, HDR, panorama"
+            },
+            "battery": "Non-removable Li-Po 4000 mAh battery",
+            "features": "USB 2.0 Type-C 1.0, infrared face recognition, fingerprint (rear-mounted), fast battery charging (Quick Charge 3.0), Gorilla Glass"
+          }
+        },
+        {
+          "id": 6,
+          "model": "Xiaomi Mi 8",
+          "img": "img/phone_6-min.jpg",
+          "price": 400.0,
+          "company": "Xiaomi Inc.",
+          "info": "Astonishing value, insane performance, awesome photography, a larger than ever 18.7:9 AMOLED display and a cool new 3D Face recognition feature are all reasons why it is an amazing phone.",
+          "specs": {
+            "body": "154.9 x 74.8 x 7.6 mm (6.10 x 2.94 x 0.30 in)",
+            "display": "Super AMOLED, 6.21 inches, 1080 x 2248 pixels (~402 ppi density)",
+            "platform": "Android 8.1 (Oreo), upgradable to Android 9.0 (Pie); MIUI 10.1",
+            "chipset": "Qualcomm SDM845 Snapdragon 845 (10 nm)",
+            "memory": "64/128/256 GB, 6 GB RAM or 128 GB, 8 GB RAM",
+            "camera": {
+              "main": "12 MP dual pixel + 12 MP (telephoto), AF, 2x optical zoom",
+              "selfie": "20 MP",
+              "features": "Dual-LED flash, HDR, panorama"
+            },
+            "battery": "Non-removable Li-Po 3400 mAh battery",
+            "features": "NFC, USB Type-C 1.0, infrared face recognition, fingerprint (rear-mounted), fast battery charging (Quick Charge 4.0+), Gorilla Glass 5, aluminum frame"
+          }
+        },
+        {
+          "id": 7,
+          "model": "Huawei Mate 10 Pro",
+          "img": "img/phone_7-min.jpg",
+          "price": 800.0,
+          "company": "Huawei Technologies Co.",
+          "info": "Supported by the revolutionary GPU Turbo technology, the image processing speed is greatly accelerated to bring you a smooth and immersive visual experience.",
+          "specs": {
+            "body": "154.2 x 74.5 x 7.9 mm (6.07 x 2.93 x 0.31 in)",
+            "display": "AMOLED, 6.0 inches, 1080 x 2160 pixels, 18:9 ratio (~402 ppi density)",
+            "platform": "Android 8.0 (Oreo), upgradable to Android 9.0 (Pie); EMUI 8",
+            "chipset": "HiSilicon Kirin 970 (10 nm)",
+            "memory": "128 GB, 6 GB RAM or 64 GB, 4 GB RAM",
+            "camera": {
+              "main": "12 MP (wide), laser AF + 20 MP (wide), 2x lossless zoom, PDAF & laser AF",
+              "selfie": "8 MP (wide), AF",
+              "features": "Leica optics, dual-LED dual-tone flash, panorama, HDR"
+            },
+            "battery": "Non-removable Li-Po 4000 mAh battery",
+            "features": "NFC, USB 3.1 Type-C 1.0, fingerprint (rear-mounted), fast battery charging, Gorilla Glass, front/back glass, aluminum frame, IP67 dust/water resistant"
+          }
+        },
+        {
+          "id": 8,
+          "model": "Honor 10 Lite",
+          "img": "img/phone_8-min.jpg",
+          "price": 330.0,
+          "company": "Huawei Technologies Co.",
+          "info": "The Honor 10 Lite is a fashion icon you can hold in the palm of your hand. Inspired by the beautiful color of the sky, HONOR chose a youthful, energetic and natural design that fades gradually from light to dark – Sky Blue.",
+          "specs": {
+            "body": "154.8 x 73.6 x 8 mm (6.09 x 2.90 x 0.31 in)",
+            "display": "IPS LCD, 6.21 inches, 1080 x 2340 pixels, 19.5:9 ratio (~415 ppi density)",
+            "platform": "Android 9.0 (Pie); EMUI 9",
+            "chipset": "Hisilicon Kirin 710 (12 nm)",
+            "memory": "64/128 GB, 6 GB RAM or 64 GB, 4 GB RAM",
+            "camera": {
+              "main": "13 MP (wide) + 2 MP, depth sensor",
+              "selfie": "24 MP (wide)",
+              "features": "LED flash, HDR, panorama"
+            },
+            "battery": "Non-removable Li-Po 3400 mAh battery",
+            "features": "NFC, microUSB 2.0, USB On-The-Go, fingerprint (rear-mounted), HDR"
+          }
+        }
+      ]
+    }
+  ],
+
+  "furniture": [
+    {
+      "name": "Bean Bag",
+      "price": "2,999",
+      "real_price": "3,999",
+      "img": "http://www.coolbeanbags.in/image/cache/data/Processed%20Images/Classic%20bean%20bags/bean-bag-purple-500x500.png"
+    },
+    {
+      "name": "Sofa Set",
+      "price": "20,000",
+      "real_price": "23,999",
+      "img": "http://www.reformatapecaria.com.br/public/img/default/servicos-de-tapecaria/home/reforma-de-sofa-3-lugares.png"
+    },
+    {
+      "name": "Almirah",
+      "price": "11,500",
+      "real_price": "15,999",
+      "img": "https://img3.exportersindia.com/product_images/bc-small/dir_150/4491558/stainless-steel-almirah-1506398699-3355017.jpeg"
+    },
+    {
+      "name": "Bed",
+      "price": "45,000",
+      "real_price": "55,999",
+      "img": "http://pngimg.com/uploads/bed/bed_PNG17401.png"
+    },
+    {
+      "name": "Office Chair",
+      "price": "6,999",
+      "real_price": "15,999",
+      "img": "http://www.freepngimg.com/thumb/chair/4-office-chair-png-image-thumb.png"
+    },
+    {
+      "name": "Dining Table",
+      "price": "16,999",
+      "real_price": "25,999",
+      "img": "http://lisa-grahner.com/wp-content/uploads/2016/03/zio-table-oak.png"
+    }
+  ],
+
+  "Home Appliance": [
+    {
+      "name": "Iron",
+      "price": "1,999",
+      "real_price": "5,999",
+      "img": "http://pngimg.com/uploads/iron/iron_PNG15563.png"
+    },
+    {
+      "name": "Mixer Juicer",
+      "price": "8,999",
+      "real_price": "15,999",
+      "img": "https://images.philips.com/is/image/PhilipsConsumer/HL7715_00-IMS-en_IN?wid=494&hei=435&$pnglarge$"
+    },
+    {
+      "name": "Food Processor",
+      "price": "4,999",
+      "real_price": "5,999",
+      "img": "http://www.220-electronics.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/l/black-decker-fx810-220-volt-food-processor.png"
+    },
+    {
+      "name": "Microwave",
+      "price": "10,000",
+      "real_price": "11,999",
+      "img": "http://www.pngpix.com/wp-content/uploads/2016/04/Black-Microwave-Oven-PNG-image.png"
+    },
+    {
+      "name": "Sandwich Maker",
+      "price": "1800",
+      "real_price": "2,999",
+      "img": "http://www.pngpix.com/wp-content/uploads/2016/04/Sandwich-Maker-and-Grill-PNG-image-500x453.png"
+    },
+    {
+      "name": "Air Fryer",
+      "price": "5,500",
+      "real_price": "5,999",
+      "img": "https://i.ebayimg.com/images/g/2qYAAOSwpvZaAvVD/s-l300.jpg"
+    },
+    {
+      "name": "Playstation",
+      "price": "36,000",
+      "real_price": "40,999",
+      "img": "https://www.loveroms.com/assets/img/consoles/logos/playstation.png"
+    }
+  ],
+
+  "fashion": [
+    {
+      "id": 1,
+      "title": "Fjallraven  Fold sack No. 1 Backpack, Fits 15 Laptops",
+      "slug": "Fjallraven-Foldsack-No.-1-Backpack-Fits-15-Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "MEN",
+      "sub_category": "Backpacks",
+      "brand": "NORTH STAR",
+      "stock": 10,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Mens Casual Premium Slim Fit T-Shirts ",
+      "slug": "Mens-Casual-Premium-Slim-Fit-T-Shirts ",
+      "price": 22.3,
+      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+      "brand": "AMERICAN APPAREL",
+      "category": "MEN",
+      "sub_category": "T-Shirts",
+      "stock": 7,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Mens Cotton Jacket",
+      "slug": "Mens-Cotton-Jacket",
+      "price": 55.99,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "category": "MEN",
+      "sub_category": "Jackets",
+      "brand": "STANLEY STELLA",
+      "stock": 11,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Mens Casual Slim Fit",
+      "slug": "Mens-Casual-Slim-Fit",
+      "price": 15.99,
+      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      "category": "MEN",
+      "sub_category": "Casual",
+      "brand": "JACK & JONES",
+      "stock": 9,
+      "is_in_inventory": false,
+      "imageURL": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+    },
+    {
+      "id": 15,
+      "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+      "slug": "BIYLACLESEN-Women's-3-in-1-Snowboard-Jacket-Winter-Coats",
+      "price": 56.99,
+      "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+      "category": "WOMEN",
+      "sub_category": "Jackets",
+      "brand": "BIYLACLESEN",
+      "stock": 10,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "slug": "Lock-and-Love-Women's-Removable-Hooded-Faux-Leather-Moto-Biker-Jacket",
+      "price": 29.95,
+      "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+      "category": "WOMEN",
+      "sub_category": "Jackets",
+      "brand": "LOCK AND LOVE",
+      "stock": 10,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+      "slug": "Rain-Jacket-Women-Windbreaker-Striped-Climbing-Raincoats",
+      "price": 39.99,
+      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+      "category": "WOMEN",
+      "sub_category": "Raincoats",
+      "brand": "THE NORTH FACE",
+      "stock": 10,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
+    },
+    {
+      "id": 18,
+      "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+      "slug": "MBJ-Women's-Solid-Short-Sleeve-Boat-Neck-V ",
+      "price": 9.85,
+      "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+      "category": "WOMEN",
+      "sub_category": " Boat Neck",
+      "brand": "MBJ",
+      "stock": 10,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Opna Women's Short Sleeve Moisture",
+      "slug": "Opna-Women's-Short-Sleeve-Moisture",
+      "price": 7.95,
+      "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+      "category": "WOMEN",
+      "sub_category": " Short Sleeve",
+      "brand": "OPNA",
+      "stock": 10,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    },
+    {
+      "id": 20,
+      "title": "DANVOUY Womens T-Shirt Casual Cotton Short",
+      "slug": "DANVOUY-Womens-T-Shirt-Casual-Cotton-Short",
+      "price": 12.99,
+      "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+      "category": "WOMEN",
+      "sub_category": "T-Shirts",
+      "brand": "TREBIN",
+      "stock": 10,
+      "is_in_inventory": true,
+      "imageURL": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Nike React Infinity Run Fly knit",
+      "brand": "NIKE",
+      "category": "MEN",
+      "sub_category": "RUNNING",
+      "price": 160,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg",
+      "slug": "nike-react-infinity-run-fly-knit",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 22,
+      "title": "Nike React Miler",
+      "brand": "NIKE",
+      "category": "MEN",
+      "sub_category": "RUNNING",
+      "price": 130,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-5cc7de3b-2afc-49c2-a1e4-0508997d09e6/react-miler-mens-running-shoe-DgF6nr.jpg",
+      "slug": "nike-react-miler",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 23,
+      "title": "Nike Air Zoom Pegasus 37",
+      "brand": "NIKE",
+      "category": "WOMEN",
+      "sub_category": "RUNNING",
+      "price": 120,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-33b0a0a5-c171-46cc-ad20-04a768703e47/air-zoom-pegasus-37-womens-running-shoe-Jl0bDf.jpg",
+      "slug": "nike-air-zoom-pegasus-37",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 24,
+      "title": "Nike Joyride Run Fly knit",
+      "brand": "NIKE",
+      "category": "WOMEN",
+      "sub_category": "RUNNING",
+      "price": 180,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/99a7d3cb-e40c-4474-91c2-0f2e6d231fd2/joyride-run-flyknit-womens-running-shoe-HcfnJd.jpg",
+      "slug": "nike-joyride-run-fly-knit",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 25,
+      "title": "Nike Mercurial Vapor 13 Elite FG",
+      "brand": "NIKE",
+      "category": "WOMEN",
+      "sub_category": "FOOTBALL",
+      "price": 250,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/9dda6202-e2ff-4711-9a09-0fcb7d90c164/mercurial-vapor-13-elite-fg-firm-ground-soccer-cleat-14MsF2.jpg",
+      "slug": "nike-mercurial-vapor-13-elite-fg",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 26,
+      "title": "Nike Phantom Vision Elite Dynamic Fit FG",
+      "brand": "NIKE",
+      "category": "WOMEN",
+      "sub_category": "FOOTBALL",
+      "price": 150,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/s1amp7uosrn0nqpsxeue/phantom-vision-elite-dynamic-fit-fg-firm-ground-soccer-cleat-19Kv1V.jpg",
+      "slug": "nike-phantom-vision-elite-dynamic-fit-fg",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 27,
+      "title": "Nike Phantom Venom Academy FG",
+      "brand": "NIKE",
+      "category": "WOMEN",
+      "sub_category": "FOOTBALL",
+      "price": 80,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/whegph8z9ornhxklc8rp/phantom-venom-academy-fg-firm-ground-soccer-cleat-6JVNll.jpg",
+      "slug": "nike-phantom-venom-academy-fg",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 28,
+      "title": "Nike Mercurial Vapor 13 Elite Tech Craft FG",
+      "brand": "NIKE",
+      "category": "MEN",
+      "sub_category": "FOOTBALL",
+      "price": 145,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/vhbwnkor8sxt8qtecgia/mercurial-vapor-13-elite-tech-craft-fg-firm-ground-soccer-cleat-l38JPj.jpg",
+      "slug": "nike-mercurial-vapor-13-elite-tech-craft-fg",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 29,
+      "title": "Nike Mercurial Super fly 7 Pro MDS FG",
+      "brand": "NIKE",
+      "category": "MEN",
+      "sub_category": "FOOTBALL",
+      "price": 137,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-a52a8aec-22dc-4982-961b-75c5f4c72805/mercurial-superfly-7-pro-mds-fg-firm-ground-soccer-cleat-mhcpdN.jpg",
+      "slug": "nike-mercurial-super-fly-7-pro-mds-fg",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 30,
+      "title": "Nike Air Force 1",
+      "brand": "NIKE",
+      "category": "KIDS",
+      "sub_category": "CASUAL",
+      "price": 90,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/178b2a46-3ee4-492b-882e-f71efdd53a36/air-force-1-big-kids-shoe-2zqp8D.jpg",
+      "slug": "nike-air-force-1",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 31,
+      "title": "Nike Air Max 90",
+      "brand": "NIKE",
+      "category": "KIDS",
+      "sub_category": "CASUAL",
+      "price": 100,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8439f823-86cf-4086-81d2-4f9ff9a66866/air-max-90-big-kids-shoe-1wzwJM.jpg",
+      "slug": "nike-air-max-90",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 32,
+      "title": "Nike Air Max 90 LTR",
+      "brand": "NIKE",
+      "category": "KIDS",
+      "sub_category": "CASUAL",
+      "price": 110,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-620aeb37-1b28-44b0-9b14-5572f8cbc948/air-max-90-ltr-big-kids-shoe-hdNLQ5.jpg",
+      "slug": "nike-air-max-90-ltr",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 33,
+      "title": "Nike Joyride Dual Run",
+      "brand": "NIKE",
+      "category": "KIDS",
+      "sub_category": "RUNNING",
+      "price": 110,
+      "is_in_inventory": false,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/33888130-0320-41a1-ba53-a026decd8aa2/joyride-dual-run-big-kids-running-shoe-1HDJF8.jpg",
+      "slug": "nike-joyride-dual-run",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 34,
+      "title": "Nike Renew Run",
+      "brand": "NIKE",
+      "category": "KIDS",
+      "sub_category": "RUNNING",
+      "price": 80,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-73e54c0b-11a6-478b-9f90-bd97fcde872d/renew-run-big-kids-running-shoe-5Bpz93.jpg",
+      "slug": "nike-renew-run",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 35,
+      "title": "Bridgeport Advice",
+      "brand": "HUSH PUPPIES",
+      "category": "MEN",
+      "sub_category": "FORMAL",
+      "price": 30,
+      "is_in_inventory": true,
+      "stock": 4,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/BRIDGPORT_ADVICE-BLACK_1_800x800.jpg?v=1576567903",
+      "slug": "bridgeport-advice",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 36,
+      "title": "Beck",
+      "brand": "HUSH PUPPIES",
+      "category": "MEN",
+      "sub_category": "FORMAL",
+      "price": 80,
+      "is_in_inventory": true,
+      "stock": 5,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/Beck-Black_800x800.jpg",
+      "slug": "beck",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 37,
+      "title": "Fester",
+      "brand": "HUSH PUPPIES",
+      "category": "MEN",
+      "sub_category": "FORMAL",
+      "price": 70,
+      "is_in_inventory": true,
+      "stock": 6,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/fester-Tan_800x800.jpg?v=1575537531",
+      "slug": "fester",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 38,
+      "title": "Pixel",
+      "brand": "HUSH PUPPIES",
+      "category": "MEN",
+      "sub_category": "FORMAL",
+      "price": 75,
+      "is_in_inventory": true,
+      "stock": 7,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/PIXEL-TAN_800x800.jpg?v=1577420506",
+      "slug": "pixel",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 39,
+      "title": "Austin",
+      "brand": "HUSH PUPPIES",
+      "category": "MEN",
+      "sub_category": "FORMAL",
+      "price": 75,
+      "is_in_inventory": true,
+      "stock": 2,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/Austin-Coffee_800x800.jpg?v=1574772988",
+      "slug": "austin",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 40,
+      "title": "SS-HL-0135",
+      "brand": "HUSH PUPPIES",
+      "category": "WOMEN",
+      "sub_category": "FORMAL",
+      "price": 30,
+      "is_in_inventory": true,
+      "stock": 6,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/009240000-11-SS-HL-0135-Black_800x800.jpg?v=1572264270",
+      "slug": "ss-hl-0135",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 41,
+      "title": "SS-HL-0136",
+      "brand": "HUSH PUPPIES",
+      "category": "WOMEN",
+      "sub_category": "FORMAL",
+      "price": 50,
+      "is_in_inventory": true,
+      "stock": 4,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/009250000-779-SS-HL-0136-Coffee_800x800.jpg?v=1571900372",
+      "slug": "ss-hl-0136",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 42,
+      "title": "SS-HL-0128",
+      "brand": "HUSH PUPPIES",
+      "category": "WOMEN",
+      "sub_category": "FORMAL",
+      "price": 35,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/000300242-484-SS-HL-0128-Blue_800x800.jpg?v=1583235174",
+      "slug": "ss-hl-0128",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 43,
+      "title": "SS-MS-0075",
+      "brand": "HUSH PUPPIES",
+      "category": "WOMEN",
+      "sub_category": "CASUAL",
+      "price": 25,
+      "is_in_inventory": true,
+      "stock": 7,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/009170000-479-SS-MS-0075-Red_800x800.jpg?v=1570688687",
+      "slug": "ss-ms-0075",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 44,
+      "title": "SS-PM-0093",
+      "brand": "HUSH PUPPIES",
+      "category": "WOMEN",
+      "sub_category": "CASUAL",
+      "price": 30,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://cdn.shopify.com/s/files/1/0016/0074/9623/products/SS-PM-0093_1_800x800.jpg?v=1570601253",
+      "slug": "ss-pm-0093",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 45,
+      "title": "Nizza X Disney",
+      "brand": "ADIDAS",
+      "category": "KIDS",
+      "sub_category": "CASUAL",
+      "price": 55,
+      "is_in_inventory": true,
+      "stock": 6,
+      "imageURL": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/ef901c7aeac042578eceab9d0159196c_9366/Nizza_x_Disney_Sport_Goofy_Shoes_White_FW0651_01_standard.jpg",
+      "slug": "nizza-x-disney",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 46,
+      "title": "X_PLR",
+      "brand": "ADIDAS",
+      "category": "KIDS",
+      "sub_category": "CASUAL",
+      "price": 65,
+      "is_in_inventory": true,
+      "stock": 5,
+      "imageURL": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/a36518227134495da766ab9d01772fa2_9366/X_PLR_Shoes_Red_FY9063_01_standard.jpg",
+      "slug": "x_plr",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 47,
+      "title": "Stan Smith",
+      "brand": "ADIDAS",
+      "category": "KIDS",
+      "sub_category": "CASUAL",
+      "price": 55,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/d0720712d81e42b1b30fa80800826447_9366/Stan_Smith_Shoes_White_M20607_M20607_01_standard.jpg",
+      "slug": "stan-smith",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 48,
+      "title": "NMD_R1",
+      "brand": "ADIDAS",
+      "category": "KIDS",
+      "sub_category": "RUNNING",
+      "price": 120,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/99ca762cb9054caf82fbabc500fd146e_9366/NMD_R1_Shoes_Blue_FY9392_01_standard.jpg",
+      "slug": "nmd_r1",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 49,
+      "title": "NMD_R1 Flash Red",
+      "brand": "ADIDAS",
+      "category": "WOMEN",
+      "sub_category": "CASUAL",
+      "price": 140,
+      "is_in_inventory": true,
+      "stock": 5,
+      "imageURL": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/90f85768e3894aeaab67aba0014a3379_9366/NMD_R1_Shoes_Red_FY9389_01_standard.jpg",
+      "slug": "nmd_r1-flash-red",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 50,
+      "title": "Superstar",
+      "brand": "ADIDAS",
+      "category": "WOMEN",
+      "sub_category": "CASUAL",
+      "price": 90,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/12365dbc7c424288b7cdab4900dc7099_9366/Superstar_Shoes_White_FW3553_FW3553_01_standard.jpg",
+      "slug": "superstar",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 41,
+      "title": "Club C Revenge Mens",
+      "brand": "Reebok",
+      "category": "MEN",
+      "sub_category": "CASUAL",
+      "price": 70,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/7599294868804d78a1b1ab6f01718a5e_9366/Club_C_Revenge_Men's_Shoes_White_FV9877_01_standard.jpg",
+      "slug": "club-c-revenge-mens",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 52,
+      "title": "SK80-Low",
+      "brand": "Vans",
+      "category": "MEN",
+      "sub_category": "CASUAL",
+      "price": 60,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://images.vans.com/is/image/Vans/UUK24I-HERO?$583x583$",
+      "slug": "sk80-low",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    },
+    {
+      "id": 53,
+      "title": "Michael Feburary SK8-Hi",
+      "brand": "Vans",
+      "category": "MEN",
+      "sub_category": "CASUAL",
+      "price": 72,
+      "is_in_inventory": true,
+      "stock": 3,
+      "imageURL": "https://images.vans.com/is/image/Vans/MV122M-HERO?$583x583$",
+      "slug": "michael-feburary-sk8-hi",
+      "description": "Pretty in pleats! Our Pleats Be With You closed-toe pumps are accented with a pleat and buckle detail over the toe. A soft rounded toe and a small heel complete these slip-on pumps. The memory foam footbed on the interior provides the cushioned comfort you need for long days on your feet."
+    }
+  ],
+
+  "jewelry": [
+    {
+      "id": 5,
+      "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+      "slug": "John-Hardy-Women's-Legends-Naga-Gold-&-Silver-Dragon-Station-Chain-Bracelet",
+      "price": 695,
+      "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+      "category": "jewelry",
+      "sub_category": "Bracelet",
+      "brand": "NAGA",
+      "stock": 7,
+      "is_in_inventory": false,
+      "imageURL": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Solid Gold Petite Micro Pave ",
+      "slug": "Solid-Gold-Petite-Micro-Pave ",
+      "price": 168,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+      "category": "jewelry",
+      "sub_category": "Bracelet",
+      "brand": "MICRO PAVE",
+      "stock": 6,
+      "is_in_inventory": false,
+      "imageURL": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg"
+    },
+    {
+      "id": 7,
+      "title": "White Gold Plated Princess",
+      "slug": "White-Gold-Plated-Princess",
+      "price": 9.99,
+      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+      "category": "jewelry",
+      "sub_category": "Ring",
+      "brand": " MICRO PAVE",
+      "stock": 3,
+      "is_in_inventory": false,
+      "imageURL": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+      "slug": "Pierced-Owl-Rose-Gold-Plated-Stainless-Steel-Double",
+      "price": 10.99,
+      "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+      "category": "jewelry",
+      "sub_category": "Earrings",
+      "brand": "NAGA",
+      "stock": 4,
+      "is_in_inventory": false,
+      "imageURL": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
+    }
+  ],
+
+  "guns": [
+    {
+      "id": 1,
+      "name": "GLOCK 17 Gen5",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/glock.png",
+      "bullet": "9mm",
+      "capacity": "17 + 1",
+      "action": "Semi-Automatic",
+      "price": "540",
+      "category": "Pistol"
+    },
+    {
+      "id": 2,
+      "name": "FN 509 Tactical",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/FN.png",
+      "bullet": "9mm",
+      "capacity": "10 + 1",
+      "action": "Semi-Automatic",
+      "price": "900",
+      "category": "Pistol"
+    },
+    {
+      "id": 3,
+      "name": "Kimber Custom 1911",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/ki%2Cber.png",
+      "bullet": "45 ACP",
+      "capacity": "7 + 1",
+      "action": "Semi-Automatic",
+      "price": "900",
+      "category": "Pistol"
+    },
+    {
+      "id": 4,
+      "name": "Beretta M9A4 RDO",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/beretta.png",
+      "bullet": "9mm",
+      "capacity": "18 + 1",
+      "action": "Semi-Automatic",
+      "price": "1000",
+      "category": "Pistol"
+    },
+    {
+      "id": 5,
+      "name": "Beretta A400 Xcel",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/beretta-shotgun.png",
+      "bullet": "12 Gauge",
+      "capacity": "3 + 1",
+      "action": "Semi-Automatic",
+      "price": "1720",
+      "category": "Shotgun"
+    },
+    {
+      "id": 6,
+      "name": "Benelli M1014",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/benalim4.png",
+      "bullet": "12 Gauge",
+      "capacity": "5 + 1",
+      "action": "Semi-Automatic",
+      "price": "1900",
+      "category": "Shotgun"
+    },
+    {
+      "id": 7,
+      "name": "Browning Citori 725",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/Browning.png",
+      "bullet": "12 Gauge",
+      "capacity": "2",
+      "action": "Double Shot",
+      "price": "5430",
+      "category": "Shotgun"
+    },
+    {
+      "id": 8,
+      "name": "Winchester SXP",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/winchester.png",
+      "bullet": "12 Gauge",
+      "capacity": "5 + 1",
+      "action": "Pump",
+      "price": "570",
+      "category": "Shotgun"
+    },
+    {
+      "id": 9,
+      "name": "Bergara B-14 HMR",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/bergara.png",
+      "bullet": "6.5 Creedmoor",
+      "capacity": "5",
+      "action": "Semi-Automatic",
+      "price": "970",
+      "category": "Rifle"
+    },
+    {
+      "id": 10,
+      "name": "Smith & Wesson M&P15",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/S%26WM%26P15.png",
+      "bullet": "5.56x45mm NATO",
+      "capacity": "30 + 1",
+      "action": "Semi-Automatic",
+      "price": "800",
+      "category": "Rifle"
+    },
+    {
+      "id": 11,
+      "name": "Ruger AR-556",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/RugerAR556.png",
+      "bullet": ".223 NATO",
+      "capacity": "30+1",
+      "action": "Semi-Automatic",
+      "price": "750",
+      "category": "Rifle"
+    },
+    {
+      "id": 12,
+      "name": "Ruger AR-556 MPR",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/RugerAR556RMP.png",
+      "bullet": ".223 NATO",
+      "capacity": "30 + 1",
+      "action": "Semi-Automatic",
+      "price": "880",
+      "category": "Rifle"
+    },
+    {
+      "id": 13,
+      "name": "Savage 110 Elite",
+      "img": "https://raw.githubusercontent.com/mir-hussain/guns/main/guns/savage110.png",
+      "bullet": ".300 Winchester Magnum",
+      "capacity": "5",
+      "action": "Bolt",
+      "price": "1870",
+      "category": "Rifle"
+    }
+  ],
+  "fresh_mart": [
+    {
+      "id": 1,
+      "productName": "Fresh Avocados",
+      "image": "🥑",
+      "from": "Spain",
+      "nutrients": "Vitamin B, Vitamin K",
+      "quantity": "4 🥑",
+      "price": "6.50",
+      "organic": true,
+      "description": "A ripe avocado yields to gentle pressure when held in the palm of the hand and squeezed. The fruit is not sweet, but distinctly and subtly flavored, with smooth texture. The avocado is popular in vegetarian cuisine as a substitute for meats in sandwiches and salads because of its high fat content. Generally, avocado is served raw, though some cultivars, including the common 'Hass', can be cooked for a short time without becoming bitter. It is used as the base for the Mexican dip known as guacamole, as well as a spread on corn tortillas or toast, served with spices."
+    },
+    {
+      "id": 2,
+      "productName": "Goat and Sheep Cheese",
+      "image": "🧀",
+      "from": "Portugal",
+      "nutrients": "Vitamin A, Calcium",
+      "quantity": "250g",
+      "price": "5.00",
+      "organic": false,
+      "description": "Creamy and distinct in flavor, goat cheese is a dairy product enjoyed around the world. Goat cheese comes in a wide variety of flavors and textures, from soft and spreadable fresh cheese to salty, crumbly aged cheese. Although it’s made using the same coagulation and separation process as cheese made from cow’s milk, goat cheese differs in nutrient content."
+    },
+    {
+      "id": 3,
+      "productName": "Apollo Broccoli",
+      "image": "🥦",
+      "from": "Portugal",
+      "nutrients": "Vitamin C, Vitamin K",
+      "quantity": "3 🥦",
+      "price": "5.50",
+      "organic": true,
+      "description": "Broccoli is known to be a hearty and tasty vegetable which is rich in dozens of nutrients. It is said to pack the most nutritional punch of any vegetable. When we think about green vegetables to include in our diet, broccoli is one of the foremost veggies to come to our mind. Broccoli is a cruciferous vegetable and part of the cabbage family, which includes vegetables such as Brussel sprouts and kale. Although the tastes are different, broccoli and these other vegetables are from the same family."
+    },
+    {
+      "id": 4,
+      "productName": "Baby Carrots",
+      "image": "🥕",
+      "from": "France",
+      "nutrients": "Vitamin A, Vitamin K",
+      "quantity": "20 🥕",
+      "price": "3.00",
+      "organic": true,
+      "description": "The carrot is a root vegetable that is often claimed to be the perfect health food. It is crunchy, tasty and highly nutritious. Carrots are a particularly good source of beta-carotene, fiber, vitamin K, potassium and antioxidants. Carrots have a number of health benefits. They are a weight loss friendly food and have been linked to lower cholesterol levels and improved eye health."
+    },
+    {
+      "id": 5,
+      "productName": "Sweet Corncobs",
+      "image": "🌽",
+      "from": "Germany",
+      "nutrients": "Vitamin C, Magnesium",
+      "quantity": "2 🌽",
+      "price": "2.00",
+      "organic": false,
+      "description": "Also known as maize, corn is one of the most popular cereal grains in the world. Popcorn and sweet corn are commonly eaten varieties, but refined corn products are also widely consumed, frequently as ingredients in foods. These include tortillas, tortilla chips, polenta, cornmeal, corn flour, corn syrup, and corn oil. Whole-grain corn is as healthy as any cereal grain, rich in fiber and many vitamins, minerals, and antioxidants."
+    }
+  ]
+}
