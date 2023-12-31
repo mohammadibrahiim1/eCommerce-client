@@ -96,7 +96,9 @@ const Nav = () => {
               className="lg:flex hidden items-center justify-between gap-8"
             >
               <Navbar.Link linkName="Home" />
-              <Navbar.Link linkName="Shop" />
+              <Link to={"/shop"}>
+                <Navbar.Link linkName="shop" />
+              </Link>
               <Navbar.Link linkName="Others" />
               <Navbar.Link linkName="Blog" />
               <Navbar.Link linkName="Seller" />
@@ -109,7 +111,7 @@ const Nav = () => {
                 <Navbar.Link linkName="Home" />
               </Link>
               <Link to="/shop">
-                <Navbar.Link linkName="Shop" />
+                <Navbar.Link linkName="shop" />
               </Link>
               <Navbar.Link linkName="Others" />
               <Navbar.Link linkName="Blog" />

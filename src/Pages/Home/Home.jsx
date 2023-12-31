@@ -7,7 +7,7 @@ const Home = () => {
       <Header></Header>
 
       <section>
-        <div className="flex justify-between items-center container mx-auto bg-[#FFEDD5] rounded-lg p-6">
+        <div className="flex justify-between items-center container mx-auto bg-[#FFEDD5] rounded-lg p-6 mt-5">
           <div>
             <h3 className="text-xl font-bold">
               100% Natural Quality Organic Product
