@@ -12,23 +12,20 @@ const Header = () => {
   return (
     <div>
       <div className=" container flex  justify-center items-center mx-auto">
-        <div>
+        {/* <div>
           <img
             className="header_side_img rounded-md"
             src="https://i.ibb.co/WvLcy0b/smart-bazar-carousel-2.jpg"
             alt=""
           />
-        </div>
+        </div> */}
 
         <Carousel
           indicatorsType="ring"
           indicators={true}
           className="w-[920px] mx-auto my-5"
         >
-          <img
-            src="https://i.ibb.co/mJxjqTj/smart-bazar-carousel-1.jpg"
-            alt="slider-1"
-          />
+          <img src="https://i.ibb.co/PhpCFqn/image-26.png" alt="slider-1" />
           <img
             src="https://i.ibb.co/sCBtPKY/smart-bazar-carousel-3.jpg"
             alt="slider-2"
@@ -43,13 +40,13 @@ const Header = () => {
           />
         </Carousel>
 
-        <div>
+        {/* <div>
           <img
             className="header_side_img rounded-md"
             src="https://i.ibb.co/F70TZ7d/pexels-pixabay-39579.jpg"
             alt=""
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

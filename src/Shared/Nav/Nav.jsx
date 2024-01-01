@@ -22,7 +22,7 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <div>
-      <Navbar Container={true}>
+      <Navbar>
         <Navbar.Container className="flex items-center justify-between">
           <Navbar.Brand>
             <img src="/images/keep.svg" alt="keep" width="100" height="40" />
@@ -97,7 +97,7 @@ const Nav = () => {
             >
               <Navbar.Link linkName="Home" />
               <Link to={"/shop"}>
-                <Navbar.Link linkName="shop" />
+                <Navbar.Link linkName="Shop" />
               </Link>
               <Navbar.Link linkName="Others" />
               <Navbar.Link linkName="Blog" />
@@ -111,7 +111,7 @@ const Nav = () => {
                 <Navbar.Link linkName="Home" />
               </Link>
               <Link to="/shop">
-                <Navbar.Link linkName="shop" />
+                <Navbar.Link linkName="Shop" />
               </Link>
               <Navbar.Link linkName="Others" />
               <Navbar.Link linkName="Blog" />
