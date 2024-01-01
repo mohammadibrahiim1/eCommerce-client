@@ -22,8 +22,16 @@ const Product = ({ product }) => {
           </Card.Container>
           <Card.Container className="p-6">
             <Card.Container className="flex items-center justify-between">
-              <Badge size="xs" colorType="light" color="success">
-                {status}
+              <Badge
+                size="xs"
+                colorType="light"
+                color="success"
+                className="flex gap-3"
+              >
+                <span>{status}</span>
+                <span>
+                  {stock ? <span className="text-xs"> : {stock} </span> : null}
+                </span>
               </Badge>
               <Card.Title className="!text-sm  text-[#191C1F]">
                 ${price}
