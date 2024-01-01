@@ -6,8 +6,7 @@ import { Heart, ShoppingCart } from "phosphor-react";
 const Product = ({ product }) => {
   console.log(product);
 
-  const { model, brand, category, image, price, rating, status, stock } =
-    product;
+  const { model, image, price, status, stock } = product;
   return (
     <div>
       <div>
@@ -47,7 +46,7 @@ const Product = ({ product }) => {
                 size="xs"
               >
                 <Card.Title className="!text-xs text-[#191C1F] capitalize hover:text-red-500 duration-300 cursor-pointer">
-                  {model?.slice(0, 35)}
+                  {model?.slice(0, 35)}...
                 </Card.Title>
               </Tooltip>
             </Card.Container>

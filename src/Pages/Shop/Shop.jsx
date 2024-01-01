@@ -59,7 +59,7 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 justify-center items-center gap-3">
+        <div className="grid grid-cols-4 justify-center items-center gap-3 mt-2">
           {products.map((product) => (
             <Product product={product} key={product._id}></Product>
           ))}
