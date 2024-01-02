@@ -1,6 +1,7 @@
 import { Dropdown, Spinner } from "keep-react";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import Product from "../../Components/Header/Product/Product";
+import Categories from "../../Components/Categories/Categories";
 
 const Shop = () => {
   const { data, error, isLoading } = useGetProductsQuery();
@@ -28,9 +29,11 @@ const Shop = () => {
   }
 
   return (
-    <div className=" grid grid-cols-6 items-center container mx-auto my-12">
+    <div className=" grid grid-cols-6 items-startcd container mx-auto my-12">
       <div className="col-span-1">
         <h1 className="text-[#191C1F] font-semibold">Category</h1>
+
+        <Categories></Categories>
       </div>
 
       <div className="col-span-5">

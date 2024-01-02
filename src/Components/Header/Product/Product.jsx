@@ -4,8 +4,6 @@ import "./Product.css";
 import { Heart, ShoppingCart } from "phosphor-react";
 
 const Product = ({ product }) => {
-  console.log(product);
-
   const { model, image, price, status, stock } = product;
   return (
     <div>
