@@ -1,37 +1,56 @@
 /* eslint-disable react/prop-types */
-import { Dropdown } from "keep-react";
+/* eslint-disable no-unused-vars */
+import { Button } from "keep-react";
+import { CaretDown, Plus } from "phosphor-react";
+import React, { useState } from "react";
 
-const Category = ({ category }) => {
-  //   console.log(category);
+const Category = ({ category, setSelectedCategory }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   const { children } = category;
+
+  const handleCategory = (value) => {
+    setSelectedCategory(value);
+  };
+
   return (
-    <div>
-      <div>
-        {children?.map((item) => (
-          <>
-            <Dropdown
-              label={item?.name}
-              size="sm"
-              type="primary"
-              dismissOnClick={true}
-            >
-              {item?.children?.map((subCategory) => (
+    <div className="mt-3">
+      {children?.map((item, index) => (
+        <>
+          <div
+            type={"primary"}
+            className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+              activeIndex === index ? "active" : ""
+            }`}
+            onClick={() => toggleAccordion(index)}
+          >
+            <div className="flex items-center gap-3">
+              <img className="h-5 w-5" src={item?.icon} alt="" />
+              {item?.name}
+            </div>
+            <CaretDown size={18} />
+          </div>
+
+          {activeIndex === index && (
+            <div>
+              {item?.children?.map((subItem) => (
                 <>
-                  <div key={subCategory._id}>
-                    <Dropdown.Item>{subCategory.name}</Dropdown.Item>
+                  <div
+                    onClick={() => handleCategory(subItem?.name)}
+                    className="font-semibold text-sm text-gray-500 hover:text-green-400 cursor-pointer p-1 ms-12 hover:bg-gray-100 capitalize"
+                  >
+                    <span>-{subItem?.name}</span>
                   </div>
                 </>
               ))}
-              {/* <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
-              <Dropdown.Item>Sign out</Dropdown.Item> */}
-            </Dropdown>
-            {/* <div>{item?.name}</div> */}
-          </>
-        ))}
-      </div>
+            </div>
+          )}
+        </>
+      ))}
     </div>
   );
 };

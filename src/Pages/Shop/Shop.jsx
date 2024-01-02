@@ -2,10 +2,13 @@ import { Dropdown, Spinner } from "keep-react";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import Product from "../../Components/Header/Product/Product";
 import Categories from "../../Components/Categories/Categories";
+import { useState } from "react";
 
 const Shop = () => {
-  const { data, error, isLoading } = useGetProductsQuery();
-  console.log(data);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  console.log(selectedCategory);
+
+  const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
 
   const products = data?.data;
   console.log(products);
@@ -29,11 +32,15 @@ const Shop = () => {
   }
 
   return (
-    <div className=" grid grid-cols-6 items-startcd container mx-auto my-12">
+    <div className=" grid grid-cols-6 items-startcd container mx-auto my-12 gap-1">
       <div className="col-span-1">
-        <h1 className="text-[#191C1F] font-semibold">Category</h1>
-
-        <Categories></Categories>
+        <h1 className="text-[#191C1F] font-semibold text-xl  pt-3 =">
+          Categories
+        </h1>
+        <Categories
+          setSelectedCategory={setSelectedCategory}
+          selectedCategory={selectedCategory}
+        ></Categories>
       </div>
 
       <div className="col-span-5">
