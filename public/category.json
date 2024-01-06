@@ -22,6 +22,37 @@
             "icon": ""
           }
         ]
+      },
+      {
+        "name": "HealthCare & Hygiene",
+        "description": "healthCare & hygiene products",
+        "icon": "https://i.ibb.co/zShSTcM/Health-Care-Hygiene.png",
+        "children": [
+          {
+            "name": "hand sanitizer",
+            "icon": ""
+          },
+          {
+            "name": "hand wash(lemon)",
+            "icon": ""
+          },
+          {
+            "name": "hand wash(lavender)",
+            "icon": ""
+          },
+          {
+            "name": "antiseptic solution",
+            "icon": ""
+          },
+          {
+            "name": "coconut oil",
+            "icon": ""
+          },
+          {
+            "name": "olive oil",
+            "icon": ""
+          }
+        ]
       }
     ]
   }

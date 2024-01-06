@@ -20,7 +20,7 @@ const Category = ({ category, setSelectedCategory }) => {
   return (
     <div className="mt-3">
       {children?.map((item, index) => (
-        <>
+        <div key={item?._id}>
           <div
             type={"primary"}
             className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
@@ -49,7 +49,7 @@ const Category = ({ category, setSelectedCategory }) => {
               ))}
             </div>
           )}
-        </>
+        </div>
       ))}
     </div>
   );
