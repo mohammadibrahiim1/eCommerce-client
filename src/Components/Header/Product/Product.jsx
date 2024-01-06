@@ -2,9 +2,17 @@
 import { Badge, Button, Card, Tooltip } from "keep-react";
 import "./Product.css";
 import { Heart, ShoppingCart } from "phosphor-react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../redux/features/cart/cartSlice";
 
 const Product = ({ product }) => {
+  const dispatch = useDispatch();
   const { model, image, price, status, stock, name } = product;
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <div>
       <div>
@@ -49,7 +57,12 @@ const Product = ({ product }) => {
               </Tooltip>
             </Card.Container>
             <Card.Container className="flex items-center justify-start gap-5">
-              <Button size="xs" type="outlineGray" color={"error"}>
+              <Button
+                onClick={handleAddToCart}
+                size="xs"
+                type="outlineGray"
+                color={"error"}
+              >
                 <span className="pr-2 ">
                   <ShoppingCart size={18} />
                 </span>

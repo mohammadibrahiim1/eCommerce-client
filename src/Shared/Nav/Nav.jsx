@@ -140,12 +140,14 @@ const Nav = () => {
               />
             </Navbar.Container>
 
-            <Button size="xs" type="outlineGray">
-              <span>
-                <ShoppingCart size={20} color="#444" />
-              </span>
-              <span className="ml-1 text-metal-600">Cart $0.00</span>
-            </Button>
+            <Link to={"/cart"}>
+              <Button size="xs" type="outlineGray">
+                <span>
+                  <ShoppingCart size={20} color="#444" />
+                </span>
+                <span className="ml-1 text-metal-600">Cart $0.00</span>
+              </Button>
+            </Link>
             <Navbar.Toggle />
           </Navbar.Container>
         </Navbar.Container>
