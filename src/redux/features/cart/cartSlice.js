@@ -1,20 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
-const fetchFromLocalStorage = () => {
-  let cart = localStorage.getItem("cart");
-  if (cart) {
-    return JSON.parse(localStorage.getItem("cart"));
-  } else {
-    return [];
-  }
-};
+// const fetchFromLocalStorage = () => {
+//   let cart = localStorage.getItem("cart");
+//   if (cart) {
+//     return JSON.parse(localStorage.getItem("cart"));
+//   } else {
+//     return [];
+//   }
+// };
 
-const storedInLocalStorage = (data) => {
-  localStorage.setItem("cart", JSON.stringify(data));
-};
+// const storedInLocalStorage = (data) => {
+//   localStorage.setItem("cart", JSON.stringify(data));
+// };
 
 const initialState = {
-  cartItems: fetchFromLocalStorage(),
+  cartItems: localStorage.getItem("cartItems")
+    ? JSON.parse(localStorage.getItem("cartItems"))
+    : [],
   cartTotalQuantity: 0,
   totalAmount: 0,
 };
@@ -30,19 +33,18 @@ const cartSlice = createSlice({
 
       if (itemIndex >= 0) {
         state.cartItems[itemIndex].quantity += 1;
+        toast.success(`Updated ${payload.model}  quantity`, {
+          position: "top-right",
+        });
       } else {
         const tempItem = { ...payload, quantity: 1 };
         state.cartItems.push(tempItem);
+        toast.success(`${payload.model} added to cart`, {
+          position: "top-right",
+        });
       }
-      // console.log(itemsInCart);
 
-      // if (itemsInCart) {
-      //   itemsInCart.quantity += 1;
-      //   storedInLocalStorage(state.cartItems);
-      // } else {
-      //   state.cartItems.push({ ...payload, quantity: 1 });
-      //   storedInLocalStorage(state.cartItems);
-      // }
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
 
     // incrementQuantity: (state, { payload }) => {
@@ -50,21 +52,25 @@ const cartSlice = createSlice({
     //   item.quantity ++;
     // },
 
-    // decrementQuantity: (state, { payload }) => {
-    //   const item = state.cart.find((item) => item._id === payload._id);
-    //   if (item.quantity === 1) {
-    //     item.quantity = 1;
-    //   } else {
-    //     item.quantity--;
-    //   }
-    // },
+    decrementQuantity: (state, { payload }) => {
+      const item = state.cart.find((item) => item._id === payload._id);
+      if (item.quantity === 1) {
+        item.quantity = 1;
+      } else {
+        item.quantity--;
+      }
+    },
 
     removeFromCart: (state, { payload }) => {
       const removeItem = state.cartItems.filter(
         (item) => item._id !== payload._id
       );
       state.cartItems = removeItem;
-      storedInLocalStorage(state.cartItems);
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+
+      toast.error(`${payload.model} removed from cart`, {
+        position: "top-right",
+      });
     },
   },
 });

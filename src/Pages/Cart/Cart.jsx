@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/features/cart/cartSlice";
+import { addToCart, removeFromCart } from "../../redux/features/cart/cartSlice";
+import { X } from "phosphor-react";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,10 @@ const Cart = () => {
     });
   }, [dispatch]);
 
+  const handleRemoveFromCart = (cartItem) => {
+    dispatch(removeFromCart(cartItem));
+  };
+
   return (
     <div>
       <div className="container">
@@ -25,72 +30,95 @@ const Cart = () => {
               </h2>
             </div>
 
-            <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-              <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                <table className="min-w-full leading-normal">
-                  <thead>
-                    <tr>
-                      <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Products
-                      </th>
-                      <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Price
-                      </th>
-                      <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Quantity
-                      </th>
-                      <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Sub-total
-                      </th>
-                    </tr>
-                  </thead>
+            {itemsInCart.length ? (
+              <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                  <table className="min-w-full leading-normal">
+                    <thead>
+                      <tr>
+                        <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          Products
+                        </th>
+                        <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          Price
+                        </th>
+                        <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          Quantity
+                        </th>
+                        <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          Sub-total
+                        </th>
+                        <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
 
-                  {itemsInCart?.map(({ image, model, price, quantity }) => (
-                    <>
-                      <tbody>
-                        <tr>
-                          <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
-                            <div className="flex items-center">
-                              <div className="flex-shrink-0 w-16 h-16">
-                                <img
-                                  className="w-full h-full rounded"
-                                  src={image}
-                                  alt=""
-                                />
+                    {itemsInCart?.map((cartItem) => (
+                      <>
+                        <tbody>
+                          <tr>
+                            <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                              <div className="flex items-center">
+                                <div className="flex-shrink-0 w-16 h-16">
+                                  <img
+                                    className="w-full h-full rounded"
+                                    src={cartItem.image}
+                                    alt=""
+                                  />
+                                </div>
+                                <div className="ml-3">
+                                  <p className="text-gray-900 whitespace-no-wrap">
+                                    {cartItem.model}
+                                  </p>
+                                </div>
                               </div>
-                              <div className="ml-3">
-                                <p className="text-gray-900 whitespace-no-wrap">
-                                  {model}
-                                </p>
-                              </div>
-                            </div>
-                          </td>
-                          <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
-                            <p className="text-gray-900 whitespace-no-wrap">
-                              {price}
-                            </p>
-                          </td>
-                          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p className="text-gray-900 whitespace-no-wrap">
-                              {quantity}
-                            </p>
-                          </td>
-                          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                            </td>
+                            <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
+                                {cartItem.price}
+                              </p>
+                            </td>
+                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
+                                {cartItem.quantity}
+                              </p>
+                            </td>
+                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+                              <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                <span
+                                  aria-hidden
+                                  className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                                ></span>
+                                <span className="relative">Action</span>
+                              </span>
+                            </td>
+                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                               <span
-                                aria-hidden
-                                className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-                              ></span>
-                              <span className="relative">Activo</span>
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>{" "}
-                    </>
-                  ))}
-                </table>
+                                onClick={() => handleRemoveFromCart(cartItem)}
+                                className="relative inline-block p-2  font-semibold text-red-900 leading-tight cursor-pointer"
+                              >
+                                <span
+                                  aria-hidden
+                                  className="absolute inset-0 bg-red-500 opacity-50 rounded-full"
+                                ></span>
+                                <span className="relative">
+                                  <X />
+                                </span>
+                              </span>
+                            </td>
+                          </tr>
+                        </tbody>{" "}
+                      </>
+                    ))}
+                  </table>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="text-center text-error-500 font-semibold text-2xl">
+                No product found in Cart
+              </div>
+            )}
           </div>
         </div>
       </div>

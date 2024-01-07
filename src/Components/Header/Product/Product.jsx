@@ -11,29 +11,6 @@ const Product = ({ product }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
-
-    // const currentCart = JSON.parse(localStorage.getItem("cart")) || [];
-    // console.log(currentCart);
-
-    // let addedItems = {};
-    // currentCart.forEach((item, i) => {
-    //   if (item._id === product._id) {
-    //     currentCart[i] = { ...item, quantity: item.quantity + 1 };
-    //     console.log(item.quantity + 1);
-    //     addedItems = item;
-    //   }
-    // });
-    // console.log(addedItems);
-    // if (addedItems) {
-    //   localStorage.setItem("cart", JSON.stringify([...currentCart]));
-    // } else {
-    //   localStorage.setItem(
-    //     "cart",
-    //     JSON.stringify([...currentCart, { ...product, quantity: 1 }])
-    //   );
-    // }
-
-    // console.log("cartItems", JSON.parse(localStorage.getItem("cart")));
   };
 
   return (
