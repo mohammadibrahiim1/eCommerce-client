@@ -15,7 +15,7 @@ const storedInLocalStorage = (data) => {
 
 const initialState = {
   cartItems: fetchFromLocalStorage(),
-  itemCount: 0,
+  cartTotalQuantity: 0,
   totalAmount: 0,
 };
 
@@ -24,42 +24,56 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload }) => {
-      const itemsInCart = state.cartItems.find(
+      const itemIndex = state.cartItems.findIndex(
         (item) => item._id === payload._id
       );
 
-      if (itemsInCart) {
-        const tempCart = state.cartItems.map((item) => {
-          if (item._id === payload._id) {
-            let tempQty = item.quantity + payload.quantity;
-            let tempTotalPrice = tempQty + item.price;
-            return {
-              ...item,
-              quantity: tempQty,
-              totalPrice: tempTotalPrice,
-            };
-          } else {
-            return item;
-          }
-        });
-        state.cartItems = tempCart;
-        storedInLocalStorage(state.cartItems);
+      if (itemIndex >= 0) {
+        state.cartItems[itemIndex].quantity += 1;
       } else {
-        state.cartItems.push(payload);
-        storedInLocalStorage(state.cartItems);
+        const tempItem = { ...payload, quantity: 1 };
+        state.cartItems.push(tempItem);
       }
+      // console.log(itemsInCart);
+
+      // if (itemsInCart) {
+      //   itemsInCart.quantity += 1;
+      //   storedInLocalStorage(state.cartItems);
+      // } else {
+      //   state.cartItems.push({ ...payload, quantity: 1 });
+      //   storedInLocalStorage(state.cartItems);
+      // }
     },
 
+    // incrementQuantity: (state, { payload }) => {
+    //   const item = state.cartItems.find((item) => item._id === payload._id);
+    //   item.quantity ++;
+    // },
+
+    // decrementQuantity: (state, { payload }) => {
+    //   const item = state.cart.find((item) => item._id === payload._id);
+    //   if (item.quantity === 1) {
+    //     item.quantity = 1;
+    //   } else {
+    //     item.quantity--;
+    //   }
+    // },
+
     removeFromCart: (state, { payload }) => {
-      const tempCart = state.cartItems.filter(
+      const removeItem = state.cartItems.filter(
         (item) => item._id !== payload._id
       );
-      state.cartItems = tempCart;
+      state.cartItems = removeItem;
       storedInLocalStorage(state.cartItems);
     },
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  incrementQuantity,
+  decrementQuantity,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
