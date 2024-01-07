@@ -1,8 +1,18 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/features/cart/cartSlice";
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.items);
-  console.log(cartItems);
+  const dispatch = useDispatch();
+  const itemsInCart = useSelector((state) => state.cart.cartItems);
+  console.log(itemsInCart);
+
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    savedCart.forEach((item) => {
+      dispatch(addToCart(item));
+    });
+  }, [dispatch]);
 
   return (
     <div>
@@ -35,7 +45,7 @@ const Cart = () => {
                     </tr>
                   </thead>
 
-                  {cartItems.map(({ image, model, price, quantity }) => (
+                  {itemsInCart?.map(({ image, model, price, quantity }) => (
                     <>
                       <tbody>
                         <tr>
@@ -44,25 +54,25 @@ const Cart = () => {
                               <div className="flex-shrink-0 w-16 h-16">
                                 <img
                                   className="w-full h-full rounded"
-                                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                                  src={image}
                                   alt=""
                                 />
                               </div>
                               <div className="ml-3">
                                 <p className="text-gray-900 whitespace-no-wrap">
-                                  Product Name
+                                  {model}
                                 </p>
                               </div>
                             </div>
                           </td>
                           <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              Admin
+                              {price}
                             </p>
                           </td>
                           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              Jan 21, 2020
+                              {quantity}
                             </p>
                           </td>
                           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
