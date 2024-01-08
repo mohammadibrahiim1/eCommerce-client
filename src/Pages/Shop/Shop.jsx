@@ -32,7 +32,7 @@ const Shop = () => {
   }
 
   return (
-    <div className=" grid grid-cols-6 items-startcd container mx-auto my-12 gap-1">
+    <div className=" grid grid-cols-6 items-started container mx-auto my-12 gap-1">
       <div className="col-span-1">
         <h1 className="text-[#191C1F] font-semibold text-xl  pt-3 =">
           Categories
