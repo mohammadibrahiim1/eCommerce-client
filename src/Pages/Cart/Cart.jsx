@@ -1,37 +1,26 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  // addToCart,
   decrementQuantity,
   getTotal,
   incrementQuantity,
   removeFromCart,
 } from "../../redux/features/cart/cartSlice";
-import { X } from "phosphor-react";
+import { ArrowLeft, ArrowRight, X } from "phosphor-react";
 import { Button } from "keep-react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const itemsInCart = useSelector((state) => state.cart.cartItems);
-  const totalQuantity = useSelector((state) => state.cart);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-  console.log(totalQuantity, totalAmount);
-  console.log(itemsInCart);
 
   let shipping = 25;
   let taxRate = 2;
   const taxDue = totalAmount * (taxRate / 100);
 
   const total = totalAmount + shipping + taxDue;
-  console.log(total);
-
-  // useEffect(() => {
-  //   const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   savedCart.forEach((item) => {
-  //     dispatch(addToCart(item));
-  //   });
-  // }, [dispatch]);
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -163,10 +152,29 @@ const Cart = () => {
                                 </span>
                               </td>
                             </tr>
-                          </tbody>{" "}
+                          </tbody>
                         </>
                       ))}
                     </table>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <Link to={"/shop"}>
+                      <Button
+                        size={"xs"}
+                        className="flex items-center justify-between"
+                      >
+                        <ArrowLeft className="mx-2" size={17} />
+                        <span>Shop more</span>
+                      </Button>
+                    </Link>
+
+                    <Button
+                      size={"xs"}
+                      color={"error"}
+                      className="flex items-center justify-between"
+                    >
+                      <span>Sub-total : ${totalAmount}</span>
+                    </Button>
                   </div>
                 </div>
 
@@ -198,7 +206,8 @@ const Cart = () => {
                     </h2>
 
                     <Button size={"xs"} width="full">
-                      Proceed to Checkout
+                      <span>Proceed to Checkout</span>
+                      <ArrowRight className="mx-2" size={16} />
                     </Button>
                   </div>
                 </div>

@@ -2,19 +2,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 
-// const fetchFromLocalStorage = () => {
-//   let cart = localStorage.getItem("cart");
-//   if (cart) {
-//     return JSON.parse(localStorage.getItem("cart"));
-//   } else {
-//     return [];
-//   }
-// };
-
-// const storedInLocalStorage = (data) => {
-//   localStorage.setItem("cart", JSON.stringify(data));
-// };
-
 const initialState = {
   cartItems: localStorage.getItem("cartItems")
     ? JSON.parse(localStorage.getItem("cartItems"))
@@ -60,11 +47,6 @@ const cartSlice = createSlice({
       });
     },
 
-    // incrementQuantity: (state, { payload }) => {
-    //   const item = state.cartItems.find((item) => item._id === payload._id);
-    //   item.quantity ++;
-    // },
-
     incrementQuantity: (state, { payload }) => {
       const itemIndex = state.cartItems.findIndex(
         (cartItem) => cartItem._id === payload._id
@@ -77,23 +59,7 @@ const cartSlice = createSlice({
         });
       }
 
-      // else if (state.cartItems[itemIndex].cartQuantity === 1) {
-      //   const removeItem = state.cartItems.filter(
-      //     (item) => item._id !== payload._id
-      //   );
-      //   state.cartItems = removeItem;
-
-      //   toast.error(`${payload.model} removed from cart`, {
-      //     position: "top-right",
-      //   });
-      // }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-      // const item = state.cart.find((item) => item._id === payload._id);
-      // if (item.cartQuantity === 1) {
-      //   item.cartQuantity = 1;
-      // } else {
-      //   item.cartQuantity--;
-      // }
     },
 
     decrementQuantity: (state, { payload }) => {
@@ -108,23 +74,7 @@ const cartSlice = createSlice({
         });
       }
 
-      // else if (state.cartItems[itemIndex].cartQuantity === 1) {
-      //   const removeItem = state.cartItems.filter(
-      //     (item) => item._id !== payload._id
-      //   );
-      //   state.cartItems = removeItem;
-
-      //   toast.error(`${payload.model} removed from cart`, {
-      //     position: "top-right",
-      //   });
-      // }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-      // const item = state.cart.find((item) => item._id === payload._id);
-      // if (item.cartQuantity === 1) {
-      //   item.cartQuantity = 1;
-      // } else {
-      //   item.cartQuantity--;
-      // }
     },
 
     // eslint-disable-next-line no-unused-vars
