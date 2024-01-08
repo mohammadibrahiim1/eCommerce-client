@@ -17,7 +17,6 @@ const Nav = () => {
   const cart = useSelector((state) => state.cart);
   const itemsInCart = useSelector((state) => state.cart.cartItems);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-  console.log(totalAmount);
 
   useEffect(() => {
     dispatch(getTotal());

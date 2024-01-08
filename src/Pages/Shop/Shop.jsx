@@ -6,12 +6,10 @@ import { useState } from "react";
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
-  console.log(selectedCategory);
 
   const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
 
   const products = data?.data;
-  console.log(products);
 
   if (isLoading) {
     return (
