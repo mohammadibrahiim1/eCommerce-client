@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
   decrementQuantity,
+  incrementQuantity,
   removeFromCart,
 } from "../../redux/features/cart/cartSlice";
 import { X } from "phosphor-react";
@@ -26,6 +27,10 @@ const Cart = () => {
 
   const handleDecrementQuantity = (cartItem) => {
     dispatch(decrementQuantity(cartItem));
+  };
+
+  const handleIncrementQuantity = (cartItem) => {
+    dispatch(incrementQuantity(cartItem));
   };
 
   return (
@@ -99,7 +104,9 @@ const Cart = () => {
                               </Button>
                               <span>{cartItem.quantity}</span>
                               <Button
-                              //  onClick={increaseQuantity}
+                                onClick={() =>
+                                  handleIncrementQuantity(cartItem)
+                                }
                               >
                                 +
                               </Button>
