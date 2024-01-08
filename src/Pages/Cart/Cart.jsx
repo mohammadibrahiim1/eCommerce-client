@@ -1,7 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../../redux/features/cart/cartSlice";
+import {
+  addToCart,
+  decrementQuantity,
+  removeFromCart,
+} from "../../redux/features/cart/cartSlice";
 import { X } from "phosphor-react";
+import { Button } from "keep-react";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -17,6 +22,10 @@ const Cart = () => {
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
+  };
+
+  const handleDecrementQuantity = (cartItem) => {
+    dispatch(decrementQuantity(cartItem));
   };
 
   return (
@@ -80,9 +89,23 @@ const Cart = () => {
                               </p>
                             </td>
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                              <p className="text-gray-900 whitespace-no-wrap">
+                              <Button
+                                onClick={() =>
+                                  handleDecrementQuantity(cartItem)
+                                }
+                              >
+                                {" "}
+                                -{" "}
+                              </Button>
+                              <span>{cartItem.quantity}</span>
+                              <Button
+                              //  onClick={increaseQuantity}
+                              >
+                                +
+                              </Button>
+                              {/* <p className="text-gray-900 whitespace-no-wrap">
                                 {cartItem.quantity}
-                              </p>
+                              </p> */}
                             </td>
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
                               <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">

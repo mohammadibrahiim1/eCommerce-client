@@ -53,12 +53,34 @@ const cartSlice = createSlice({
     // },
 
     decrementQuantity: (state, { payload }) => {
-      const item = state.cart.find((item) => item._id === payload._id);
-      if (item.quantity === 1) {
-        item.quantity = 1;
-      } else {
-        item.quantity--;
+      const itemIndex = state.cartItems.findIndex(
+        (cartItem) => cartItem._id === payload._id
+      );
+      if (state.cartItems[itemIndex].quantity > 1) {
+        state.cartItems[itemIndex].quantity -= 1;
+
+        toast.error(`Decreased ${payload.model} quantity`, {
+          position: "top-right",
+        });
       }
+
+      // else if (state.cartItems[itemIndex].quantity === 1) {
+      //   const removeItem = state.cartItems.filter(
+      //     (item) => item._id !== payload._id
+      //   );
+      //   state.cartItems = removeItem;
+
+      //   toast.error(`${payload.model} removed from cart`, {
+      //     position: "top-right",
+      //   });
+      // }
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      // const item = state.cart.find((item) => item._id === payload._id);
+      // if (item.quantity === 1) {
+      //   item.quantity = 1;
+      // } else {
+      //   item.quantity--;
+      // }
     },
 
     removeFromCart: (state, { payload }) => {
