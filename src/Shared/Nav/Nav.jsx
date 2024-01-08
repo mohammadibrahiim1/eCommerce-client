@@ -1,25 +1,28 @@
 /* eslint-disable react/jsx-no-undef */
+import { Button, Navbar, TextInput } from "keep-react";
 import {
-  Button,
-  //  Dropdown,
-  Navbar,
-  TextInput,
-} from "keep-react";
-import {
-  // CaretRight,
-  // Gear,
   Heart,
   MagnifyingGlass,
-  // Money,
   Phone,
   ShoppingCart,
-  // SignOut,
-  // SquaresFour,
   User,
 } from "phosphor-react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getTotal } from "../../redux/features/cart/cartSlice";
 
 const Nav = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const itemsInCart = useSelector((state) => state.cart.cartItems);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+  console.log(totalAmount);
+
+  useEffect(() => {
+    dispatch(getTotal());
+  }, [cart, dispatch]);
+
   return (
     <div>
       <Navbar>
@@ -27,56 +30,6 @@ const Nav = () => {
           <Navbar.Brand>
             <img src="/images/keep.svg" alt="keep" width="100" height="40" />
           </Navbar.Brand>
-
-          {/* <Navbar.Container
-            tag="ul"
-            className="lg:flex md:flex  hidden items-center justify-between gap-8 "
-          >
-            <Dropdown
-              className="px-5 text-body-6"
-              label="All Category"
-              size="sm"
-              type="outlineGray"
-              dismissOnClick={true}
-            >
-              <Dropdown.Item
-                className="flex gap-2"
-                icon={<SquaresFour size={20} color="#5E718D" />}
-              >
-                <p>Electronics</p>
-                <span className="ml-auto">
-                  <CaretRight size={20} color="#5E718D" />
-                </span>
-              </Dropdown.Item>
-              <Dropdown.Item
-                className="flex gap-2"
-                icon={<Gear size={20} color="#5E718D" />}
-              >
-                <p>Fashion & Beauty</p>
-                <span className="ml-auto">
-                  <CaretRight size={20} color="#5E718D" />
-                </span>
-              </Dropdown.Item>
-              <Dropdown.Item
-                className="flex gap-2"
-                icon={<Money size={20} color="#5E718D" />}
-              >
-                <p>Accessories</p>
-                <span className="ml-auto">
-                  <CaretRight size={20} color="#5E718D" />
-                </span>
-              </Dropdown.Item>
-              <Dropdown.Item
-                className="flex gap-2"
-                icon={<SignOut size={20} color="#5E718D" />}
-              >
-                <p>Vegetable & Fruits</p>
-                <span className="ml-auto">
-                  <CaretRight size={20} color="#5E718D" />
-                </span>
-              </Dropdown.Item>
-            </Dropdown>
-          </Navbar.Container> */}
 
           <Navbar.Container className="hidden lg:block md:block">
             <TextInput
@@ -143,9 +96,12 @@ const Nav = () => {
             <Link to={"/cart"}>
               <Button size="xs" type="outlineGray">
                 <span>
-                  <ShoppingCart size={20} color="#444" />
+                  <ShoppingCart size={19} color="#444" />
                 </span>
-                <span className="ml-1 text-metal-600">Cart $0.00</span>
+                <span className="ml-1 text-metal-600">Cart ${totalAmount}</span>
+                <span className="ml-1 text-metal-600">
+                  ({itemsInCart?.length})
+                </span>
               </Button>
             </Link>
             <Navbar.Toggle />
