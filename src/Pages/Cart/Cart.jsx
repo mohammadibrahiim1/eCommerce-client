@@ -195,7 +195,7 @@ const Cart = () => {
                     </h2>
                     <h2 className="flex  justify-between items-center py-1 text-[#5F6C72]  font-semibold text-sm">
                       <span>Tax : </span>
-                      <span> ${taxDue} </span>
+                      <span> ${taxDue.toFixed()} </span>
                     </h2>
 
                     <hr />

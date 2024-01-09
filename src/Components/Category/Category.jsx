@@ -12,6 +12,7 @@ const Category = ({ category, setSelectedCategory }) => {
   };
 
   const { children } = category;
+  console.log(children);
 
   const handleCategory = (value) => {
     setSelectedCategory(value);
@@ -40,10 +41,12 @@ const Category = ({ category, setSelectedCategory }) => {
               {item?.children?.map((subItem) => (
                 <>
                   <div
-                    onClick={() => handleCategory(subItem?.name)}
+                    onClick={() => handleCategory(subItem?.slug)}
                     className="font-semibold text-sm text-gray-500 hover:text-green-400 cursor-pointer p-1 ms-12 hover:bg-gray-100 capitalize"
                   >
-                    <span>-{subItem?.name}</span>
+                    <div>
+                      <span> -{subItem?.name}</span>
+                    </div>
                   </div>
                 </>
               ))}
