@@ -6,54 +6,106 @@ import React, { useState } from "react";
 
 const Category = ({ category, setSelectedCategory }) => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [activeChildIndex, setActiveChildIndex] = useState(null);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const { children } = category;
-  console.log(children);
+  const childAccordion = (i) => {
+    setActiveChildIndex(activeChildIndex === i ? null : i);
+  };
 
+  console.log(category);
+
+  const { name, _id, index, subCategories, i } = category;
   const handleCategory = (value) => {
     setSelectedCategory(value);
   };
 
   return (
     <div className="mt-3">
-      {children?.map((item, index) => (
-        <div key={item?._id}>
-          <div
-            type={"primary"}
-            className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
-              activeIndex === index ? "active" : ""
-            }`}
-            onClick={() => toggleAccordion(index)}
-          >
-            <div className="flex items-center gap-3">
-              <img className="h-5 w-5" src={item?.icon} alt="" />
-              {item?.name}
-            </div>
-            <CaretDown size={18} />
-          </div>
-
-          {activeIndex === index && (
-            <div>
-              {item?.children?.map((subItem) => (
-                <>
-                  <div
-                    onClick={() => handleCategory(subItem?.slug)}
-                    className="font-semibold text-sm text-gray-500 hover:text-green-400 cursor-pointer p-1 ms-12 hover:bg-gray-100 capitalize"
-                  >
-                    <div>
-                      <span> -{subItem?.name}</span>
-                    </div>
-                  </div>
-                </>
-              ))}
-            </div>
-          )}
+      <div key={_id}>
+        <div
+          type={"primary"}
+          className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+            activeIndex === index ? "active" : ""
+          }`}
+          onClick={() => toggleAccordion(index)}
+        >
+          <div className="flex items-center gap-3">{name}</div>
+          <CaretDown size={18} />
         </div>
-      ))}
+
+        {activeIndex === i && (
+          <div>
+            {subCategories?.map((subItem, i) => (
+              <>
+                <div
+                  type={"primary"}
+                  className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                    activeChildIndex === i ? "active" : ""
+                  }`}
+                  onClick={() => childAccordion(i)}
+                >
+                  <div className="flex items-center gap-3 ms-4">
+                    -{subItem?.name}
+                  </div>
+                  <CaretDown size={18} />
+                </div>
+
+                {activeChildIndex === i && (
+                  <div>
+                    {subItem?.subCategories?.map((child, i) => (
+                      <>
+                        <div
+                          type={"primary"}
+                          className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                            activeChildIndex === i ? "active" : ""
+                          }`}
+                          onClick={() => childAccordion(i)}
+                        >
+                          <div className="flex items-center gap-3 ms-4">
+                            -{child?.name}
+                          </div>
+
+                          <CaretDown size={18} />
+                        </div>
+
+                        {activeChildIndex === i && (
+                  <div>
+                    {subItem?.subCategories?.map((child, i) => (
+                      <>
+                        <div
+                          type={"primary"}
+                          className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                            activeChildIndex === i ? "active" : ""
+                          }`}
+                          onClick={() => childAccordion(i)}
+                        >
+                          <div className="flex items-center gap-3 ms-4">
+                            -{child?.name}
+                          </div>
+
+                          <CaretDown size={18} />
+                        </div>
+
+
+                        
+                      </>
+                    ))}
+                  </div>
+                )}
+
+                      </>
+                    ))}
+                  </div>
+                )}
+              </>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
