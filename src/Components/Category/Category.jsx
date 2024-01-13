@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { Button } from "keep-react";
-import { CaretDown, Plus } from "phosphor-react";
+import { ArrowElbowDownRight, CaretDown, Plus } from "phosphor-react";
 import React, { useState } from "react";
 
 const Category = ({ category, setSelectedCategory }) => {
@@ -40,7 +40,7 @@ const Category = ({ category, setSelectedCategory }) => {
           onClick={() => toggleAccordion(index)}
         >
           <div className="flex items-center gap-3">{name}</div>
-          <CaretDown size={18} />
+          <CaretDown size={16} />
         </div>
 
         {activeIndex === i && (
@@ -49,7 +49,7 @@ const Category = ({ category, setSelectedCategory }) => {
               <>
                 <div
                   type={"primary"}
-                  className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                  className={`flex items-center justify-between  font-semibold text-[#86B6F6] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
                     activeChildIndex === i ? "active" : ""
                   }`}
                   onClick={() => childAccordion(i)}
@@ -57,7 +57,7 @@ const Category = ({ category, setSelectedCategory }) => {
                   <div className="flex items-center gap-3 ms-4">
                     -{subItem?.name}
                   </div>
-                  <CaretDown size={18} />
+                  <CaretDown size={16} />
                 </div>
 
                 {activeChildIndex === i && (
@@ -66,16 +66,16 @@ const Category = ({ category, setSelectedCategory }) => {
                       <>
                         <div
                           type={"primary"}
-                          className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                          className={`flex items-center justify-between  font-semibold text-[#176B87] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
                             activeChildSubIndex === idx ? "active" : ""
                           }`}
                           onClick={() => childSubAccordion(idx)}
                         >
-                          <div className="flex items-center gap-3 ms-4">
+                          <div className="flex items-center gap-3 ms-7">
                             -{child?.name}
                           </div>
 
-                          <CaretDown size={18} />
+                          <CaretDown size={16} />
                         </div>
 
                         {activeChildSubIndex === idx && (
@@ -84,16 +84,16 @@ const Category = ({ category, setSelectedCategory }) => {
                               <>
                                 <div
                                   type={"primary"}
-                                  className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                                  className={`flex items-center justify-between  font-semibold text-[#2F58CD] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
                                     activeChildSubIndex === idx ? "active" : ""
                                   }`}
                                   onClick={() => childSubAccordion(idx)}
                                 >
-                                  <div className="flex items-center gap-3 ms-4">
+                                  <div className="flex items-center gap-3 ms-12">
                                     -{subChild?.name}
                                   </div>
 
-                                  <CaretDown size={18} />
+                                  <CaretDown size={16} />
                                 </div>
                               </>
                             ))}
