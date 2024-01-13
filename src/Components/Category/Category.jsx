@@ -47,62 +47,95 @@ const Category = ({ category, setSelectedCategory }) => {
           <div>
             {subCategories?.map((subItem, i) => (
               <>
-                <div
-                  type={"primary"}
-                  className={`flex items-center justify-between  font-semibold text-[#86B6F6] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
-                    activeChildIndex === i ? "active" : ""
-                  }`}
-                  onClick={() => childAccordion(i)}
-                >
-                  <div className="flex items-center gap-3 ms-4">
-                    -{subItem?.name}
+                <div>
+                  <div
+                    type={"primary"}
+                    className={`flex items-center justify-between  font-semibold text-[#86B6F6] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                      activeChildIndex === i ? "active" : ""
+                    }`}
+                    onClick={
+                      subItem?.subCategories?.length > 0
+                        ? () => childAccordion(i)
+                        : () => handleCategory(subItem?.slug)
+                    }
+                  >
+                    <div className="flex items-center gap-3 ms-4">
+                      -{subItem?.name}
+                    </div>
+                    {subItem?.subCategories?.length > 0 ? (
+                      <CaretDown size={16} />
+                    ) : (
+                      ""
+                    )}
                   </div>
-                  <CaretDown size={16} />
-                </div>
 
-                {activeChildIndex === i && (
-                  <div>
-                    {subItem?.subCategories?.map((child, idx) => (
-                      <>
-                        <div
-                          type={"primary"}
-                          className={`flex items-center justify-between  font-semibold text-[#176B87] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
-                            activeChildSubIndex === idx ? "active" : ""
-                          }`}
-                          onClick={() => childSubAccordion(idx)}
-                        >
-                          <div className="flex items-center gap-3 ms-7">
-                            -{child?.name}
-                          </div>
-
-                          <CaretDown size={16} />
-                        </div>
-
-                        {activeChildSubIndex === idx && (
+                  {activeChildIndex === i && (
+                    <div>
+                      {subItem?.subCategories?.map((child, idx) => (
+                        <>
                           <div>
-                            {child?.subCategories?.map((subChild, idx) => (
-                              <>
-                                <div
-                                  type={"primary"}
-                                  className={`flex items-center justify-between  font-semibold text-[#2F58CD] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
-                                    activeChildSubIndex === idx ? "active" : ""
-                                  }`}
-                                  onClick={() => childSubAccordion(idx)}
-                                >
-                                  <div className="flex items-center gap-3 ms-12">
-                                    -{subChild?.name}
-                                  </div>
+                            <div
+                              type={"primary"}
+                              className={`flex items-center justify-between  font-semibold text-[#176B87] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                                activeChildSubIndex === idx ? "active" : ""
+                              }`}
+                              onClick={
+                                child?.subCategories?.length > 0
+                                  ? () => childSubAccordion(idx)
+                                  : () => handleCategory(child?.slug)
+                              }
+                            >
+                              <div className="flex items-center gap-3 ms-7">
+                                -{child?.name}
+                              </div>
 
-                                  <CaretDown size={16} />
-                                </div>
-                              </>
-                            ))}
+                              {child?.subCategories?.length > 0 ? (
+                                <CaretDown size={16} />
+                              ) : (
+                                ""
+                              )}
+                            </div>
+
+                            {activeChildSubIndex === idx && (
+                              <div>
+                                {child?.subCategories?.map((subChild, idx) => (
+                                  <>
+                                    <div>
+                                      <div
+                                        type={"primary"}
+                                        className={`flex items-center justify-between  font-semibold text-[#2F58CD] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                                          activeChildSubIndex === idx
+                                            ? "active"
+                                            : ""
+                                        }`}
+                                        onClick={
+                                          subChild?.subCategories?.length > 0
+                                            ? () => childSubAccordion(idx)
+                                            : () =>
+                                                handleCategory(subChild?.slug)
+                                        }
+                                      >
+                                        <div className="flex items-center gap-3 ms-12">
+                                          -{subChild?.name}
+                                        </div>
+
+                                        {subChild?.subCategories?.length > 0 ? (
+                                          <CaretDown size={16} />
+                                        ) : (
+                                          ""
+                                        )}
+                                      </div>
+                                    </div>
+                                  </>
+                                ))}
+                              </div>
+                            )}
                           </div>
-                        )}
-                      </>
-                    ))}
-                  </div>
-                )}
+                        </>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </>
             ))}
           </div>
