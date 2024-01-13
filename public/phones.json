@@ -2,12 +2,15 @@
   "products": {
     "phones": [
       {
-        "id": "kzp0en6knn",
-        "date": "21-06-2017",
-        "name": "Moto Z2",
-        "price": "3999 SEK",
-        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41ddMNyQe6L.jpg",
-        "features": [
+        "model": "Moto Z2",
+        "price": 929,
+        "stock": 39,
+        "status": "in-stock",
+        "rating": 4,
+        "category": "smartphones",
+        "brand": "motorola",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/41ddMNyQe6L.jpg",
+        "keyFeature": [
           "Up to 30-hour battery†",
           "Focus faster",
           "Fast memory and tons of space for music, movies, and photos",
@@ -16,31 +19,38 @@
           "5.5\" full HD super AMOLED display",
           "Carrier versions"
         ],
-        "readmore": "https://www.motorola.com/us/products/moto-z-play-gen-2"
+        "spec": [
+          {
+            "processor": "Qualcomm MSM8998 Snapdragon 835 (10 nm)"
+          },
+          {
+            "motherboard": "Octa-core (4x2.35 GHz Kryo & 4x1.9 GHz Kryo)"
+          },
+          { "ram": "4GB" },
+          {
+            "graphics": "PNY GeForce RTX 3070 8GB UPRISING Dual Fan LHR GDDR6 Graphics Card"
+          },
+          {
+            "storage": "64GB 4GB RAM, 64GB 6GB RAM, 128GB 6GB RAM"
+          },
+          { "casing": "Plastic front, aluminum back, aluminum frame" },
+          {
+            "psu": "P-OLED5.5 inches, 83.4 cm2 (~70.4% screen-to-body ratio) 1440 x 2560 pixels, 16:9 ratio (~534 ppi density) Shatterproof"
+          },
+          { "cooler": "Gamdias Boreas M1-610 ARGB CPU Cooler" }
+        ]
       },
+
       {
-        "id": "699mutjv45",
-        "date": "01-05-2018",
-        "name": "Iphone X",
-        "price": "12999 SEK",
-        "imageUrl": "https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-x/space-gray/Apple-iPhoneX-SpaceGray-1-3x.jpg",
-        "features": [
-          "Big screen",
-          "Brilliant in every way",
-          "Air pods",
-          "IOS 12",
-          "Augmented reality",
-          "Get more of your photos"
-        ],
-        "readmore": "https://www.apple.com/lae/iphone-xs/"
-      },
-      {
-        "id": "l9v8cy2a8z",
-        "date": "12-08-2018",
-        "name": "Samsung s9",
-        "price": "11999 SEK",
-        "imageUrl": "https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/samsung/samsung-galaxy-s9-plus/lilac-purple/Samsung-Galaxy-S9-Plus-Lilac-Purple-2-3x.jpg",
-        "features": [
+        "model": "Samsung s9",
+        "price": 119,
+        "stock": 79,
+        "status": "in-stock",
+        "rating": 5,
+        "category": "smartphones",
+        "brand": "samsung",
+        "image": "https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/samsung/samsung-galaxy-s9-plus/lilac-purple/Samsung-Galaxy-S9-Plus-Lilac-Purple-2-3x.jpg",
+        "keyFeature": [
           "Super slow motion",
           "Personal emojis",
           "Improved security",
@@ -48,15 +58,37 @@
           "12 MP Camera",
           "64 GB of internal memory"
         ],
-        "readmore": "https://www.samsung.com/se/smartphones/galaxy-s9-sm-g960/SM-G960FZPDNEE/"
+        "spec": [
+          {
+            "processor": "Qualcomm MSM8998 Snapdragon 735 (10 nm)"
+          },
+          {
+            "motherboard": "Octa-core (4x2.35 GHz Kryo & 4x1.9 GHz Kryo)"
+          },
+          { "ram": "4GB" },
+          {
+            "graphics": "PNY GeForce RTX 3070 8GB UPRISING Dual Fan LHR GDDR6 Graphics Card"
+          },
+          {
+            "storage": "64GB 4GB RAM, 64GB 6GB RAM, 128GB 6GB RAM"
+          },
+          { "casing": "Plastic front, aluminum back, aluminum frame" },
+          {
+            "psu": "P-OLED5.5 inches, 83.4 cm2 (~70.4% screen-to-body ratio) 1440 x 2560 pixels, 16:9 ratio (~534 ppi density) Shatterproof"
+          },
+          { "cooler": "Gamdias Boreas M1-610 ARGB CPU Cooler" }
+        ]
       },
       {
-        "id": "0bsjehplb1",
-        "date": "11-01-2017",
-        "name": "Nokia 6",
-        "price": "5999 SEK",
+        "model": "Nokia 6",
+        "price": 599,
+        "stock": 36,
+        "status": "in-stock",
+        "rating": 5,
+        "category": "smartphones",
+        "brand": "nokia",
         "imageUrl": "https://static.toiimg.com/photo/56420863/Nokia-6.jpg",
-        "features": [
+        "keyFeature": [
           "A phone you can rely on",
           "Nokia 6.1 with Android One",
           "All power you need",
@@ -66,29 +98,73 @@
           "ZEISS optics - exclusively with Nokia",
           "Built like a tank!"
         ],
-        "readmore": "https://www.nokia.com/en_int/phones/nokia-6"
+        "spec": [
+          {
+            "processor": "Qualcomm MSM8998 Snapdragon 636 (10 nm)"
+          },
+          {
+            "motherboard": "Octa-core (4x2.35 GHz Kryo & 4x1.9 GHz Kryo)"
+          },
+          { "ram": "4GB,6GB" },
+          {
+            "graphics": "PNY GeForce RTX 3070 8GB UPRISING Dual Fan LHR GDDR6 Graphics Card"
+          },
+          {
+            "storage": "64GB 4GB RAM, 64GB 6GB RAM, 128GB 6GB RAM"
+          },
+          { "casing": "Plastic front, aluminum back, aluminum frame" },
+          {
+            "psu": "P-OLED5.5 inches, 83.4 cm2 (~70.4% screen-to-body ratio) 1440 x 2560 pixels, 16:9 ratio (~534 ppi density) Shatterproof"
+          },
+          { "cooler": "Gamdias Boreas M1-610 ARGB CPU Cooler" }
+        ]
       },
       {
-        "id": "cqiwhz6jq8",
-        "date": "11-08-2017",
-        "name": "Lenovo P2",
-        "price": "8999 SEK",
-        "imageUrl": "https://www.91-img.com/pictures/lenovo-p2-3gb-ram-mobile-phone-large-1.jpg",
-        "features": [
+        "model": "Lenovo P2",
+        "price": 389,
+        "stock": 79,
+        "status": "in-stock",
+        "rating": 5,
+        "category": "smartphones",
+        "brand": "lenovo",
+        "image": "https://www.91-img.com/pictures/lenovo-p2-3gb-ram-mobile-phone-large-1.jpg",
+        "keyFeature": [
           "177 g weight and 8.3 mm thin",
           "Qualcomm Snapdragon 625 true octa-core 2.0 GHz processor Android 6.0.1, Marshmallow 13.97cm",
           "(5.5) (1920 x 1080) Full HD Super AMOLED display",
           "3 GB / 4 GB RAM memory and 32 GB ROM storage, expandable up to 128 GB with microSD",
           "Up to 78.69 hours’ talk time, up to 32 days’ standby with embedded 5100 mAh battery"
         ],
-        "readmore": "https://www.lenovo.com/in/en/smartphones/p-series/P2c72/p/PPIPPIP2C72"
+        "spec": [
+          {
+            "processor": "Qualcomm MSM8953 Snapdragon 625 (14 nm)"
+          },
+          {
+            "motherboard": "Octa-core 2.0 GHz Cortex-A53"
+          },
+          { "ram": "3GB,4GB,6GB" },
+          {
+            "graphics": "PNY GeForce RTX 3070 8GB UPRISING Dual Fan LHR GDDR6 Graphics Card"
+          },
+          {
+            "storage": "64GB 4GB RAM, 64GB 6GB RAM, 128GB 6GB RAM"
+          },
+          { "casing": "Plastic front, aluminum back, aluminum frame" },
+          {
+            "psu": "P-OLED5.5 inches, 83.4 cm2 (~70.4% screen-to-body ratio) 1440 x 2560 pixels, 16:9 ratio (~534 ppi density) Shatterproof"
+          },
+          { "cooler": "Gamdias Boreas M1-610 ARGB CPU Cooler" }
+        ]
       },
       {
-        "id": "vaingspk0a",
-        "date": "10-08-2018",
-        "name": "OnePlus 6T",
-        "price": "8999 SEK",
-        "imageUrl": "https://www.theinquirer.net/w-images/d1417a96-037b-41d8-9260-8c6dadc4ad78/1/JrASRUyl-300x500.jpg",
+        "model": "OnePlus 6T",
+        "price": 899,
+        "stock": 51,
+        "status": "in-stock",
+        "rating": 4,
+        "category": "smartphones",
+        "brand": "oneplus",
+        "image": "https://www.theinquirer.net/w-images/d1417a96-037b-41d8-9260-8c6dadc4ad78/1/JrASRUyl-300x500.jpg",
         "features": [
           "The speed you need",
           "More to see!",
@@ -97,7 +173,26 @@
           "Protection against rain",
           "Do more with less!"
         ],
-        "readmore": "https://www.oneplus.com/se/6"
+        "spec": [
+          {
+            "processor": "Android 9.0 (Pie), upgradable to Android 11, OxygenOS 11.1.1.1 Qualcomm SDM845 Snapdragon 845 (10 nm)"
+          },
+          {
+            "motherboard": "Octa-core 2.0 GHz Cortex-A53"
+          },
+          { "ram": "6GB,8GB" },
+          {
+            "graphics": "PNY GeForce RTX 3070 8GB UPRISING Dual Fan LHR GDDR6 Graphics Card"
+          },
+          {
+            "storage": "128GB 6GB RAM, 128GB 8GB RAM, 256GB 8GB RAM"
+          },
+          { "casing": "Plastic front, aluminum back, aluminum frame" },
+          {
+            "psu": "P-OLED5.5 inches, 83.4 cm2 (~70.4% screen-to-body ratio) 1440 x 2560 pixels, 16:9 ratio (~534 ppi density) Shatterproof"
+          },
+          { "cooler": "Gamdias Boreas M1-610 ARGB CPU Cooler" }
+        ]
       }
     ]
   }
