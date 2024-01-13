@@ -7,6 +7,7 @@ import React, { useState } from "react";
 const Category = ({ category, setSelectedCategory }) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeChildIndex, setActiveChildIndex] = useState(null);
+  const [activeChildSubIndex, setActiveChildSubIndex] = useState(null);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -16,9 +17,14 @@ const Category = ({ category, setSelectedCategory }) => {
     setActiveChildIndex(activeChildIndex === i ? null : i);
   };
 
+  const childSubAccordion = (idx) => {
+    setActiveChildSubIndex(activeChildIndex === idx ? null : idx);
+  };
+
   console.log(category);
 
   const { name, _id, index, subCategories, i } = category;
+
   const handleCategory = (value) => {
     setSelectedCategory(value);
   };
@@ -56,14 +62,14 @@ const Category = ({ category, setSelectedCategory }) => {
 
                 {activeChildIndex === i && (
                   <div>
-                    {subItem?.subCategories?.map((child, i) => (
+                    {subItem?.subCategories?.map((child, idx) => (
                       <>
                         <div
                           type={"primary"}
                           className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
-                            activeChildIndex === i ? "active" : ""
+                            activeChildSubIndex === idx ? "active" : ""
                           }`}
-                          onClick={() => childAccordion(i)}
+                          onClick={() => childSubAccordion(idx)}
                         >
                           <div className="flex items-center gap-3 ms-4">
                             -{child?.name}
@@ -72,31 +78,27 @@ const Category = ({ category, setSelectedCategory }) => {
                           <CaretDown size={18} />
                         </div>
 
-                        {activeChildIndex === i && (
-                  <div>
-                    {subItem?.subCategories?.map((child, i) => (
-                      <>
-                        <div
-                          type={"primary"}
-                          className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
-                            activeChildIndex === i ? "active" : ""
-                          }`}
-                          onClick={() => childAccordion(i)}
-                        >
-                          <div className="flex items-center gap-3 ms-4">
-                            -{child?.name}
+                        {activeChildSubIndex === idx && (
+                          <div>
+                            {child?.subCategories?.map((subChild, idx) => (
+                              <>
+                                <div
+                                  type={"primary"}
+                                  className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                                    activeChildSubIndex === idx ? "active" : ""
+                                  }`}
+                                  onClick={() => childSubAccordion(idx)}
+                                >
+                                  <div className="flex items-center gap-3 ms-4">
+                                    -{subChild?.name}
+                                  </div>
+
+                                  <CaretDown size={18} />
+                                </div>
+                              </>
+                            ))}
                           </div>
-
-                          <CaretDown size={18} />
-                        </div>
-
-
-                        
-                      </>
-                    ))}
-                  </div>
-                )}
-
+                        )}
                       </>
                     ))}
                   </div>
