@@ -85,11 +85,13 @@ const Nav = () => {
                 icon={<User size={20} color="#444" />}
                 iconAnimation={false}
               />
-              <Navbar.Link
-                // eslint-disable-next-line react/jsx-no-undef
-                icon={<Heart size={20} color="#444" />}
-                iconAnimation={false}
-              />
+              <Link to={"/wishList"}>
+                <Navbar.Link
+                  // eslint-disable-next-line react/jsx-no-undef
+                  icon={<Heart size={20} color="#444" />}
+                  iconAnimation={false}
+                />
+              </Link>
             </Navbar.Container>
 
             <Link to={"/cart"}>

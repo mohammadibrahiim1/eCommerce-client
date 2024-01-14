@@ -44,10 +44,10 @@ const Cart = () => {
         <div className=" px-4 sm:px-8">
           <div className="py-8">
             <div className="flex justify-between items-center ">
-              <h2 className="text-xl font-semibold leading-tight text-red-500 mb-3">
+              <h2 className="text-xl font-semibold leading-tight text-[#1B6392] mb-3">
                 Shopping Cart
               </h2>
-              <h2 className="text-xl font-semibold leading-tight text-red-500 mb-3">
+              <h2 className="text-xl font-semibold leading-tight text-[#1B6392] mb-3">
                 Total-items : {itemsInCart.length}
               </h2>
             </div>
@@ -60,19 +60,19 @@ const Cart = () => {
                     <table className="min-w-full leading-normal">
                       <thead>
                         <tr>
-                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
                             Products
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
                             Price
                           </th>
-                          <th className="ps-12 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          <th className="ps-12 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
                             Quantity
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
                             Sub-total
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
                             Action
                           </th>
                         </tr>
@@ -105,20 +105,20 @@ const Cart = () => {
                               </td>
                               <td className=" flex items-center gap-3 px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <Button
-                                  className="px-1 rounded-full"
-                                  size={"xs"}
+                                  className=" px-0.5 rounded-full"
+                                  size={"sm"}
                                   onClick={() =>
                                     handleDecrementQuantity(cartItem)
                                   }
                                 >
                                   -
                                 </Button>
-                                <span className="text-red-500 font-semibold text-md  ">
+                                <span className="text-[#2DA5F3] font-semibold text-md  ">
                                   {cartItem.cartQuantity}
                                 </span>
                                 <Button
-                                  className="px-1 rounded-full"
-                                  size={"xs"}
+                                  className="rounded-full"
+                                  size={"sm"}
                                   onClick={() =>
                                     handleIncrementQuantity(cartItem)
                                   }
@@ -161,7 +161,7 @@ const Cart = () => {
                     <Link to={"/shop"}>
                       <Button
                         size={"xs"}
-                        className="flex items-center justify-between"
+                        className="flex items-center justify-between text-[#2DA5F3]"
                       >
                         <ArrowLeft className="mx-2" size={17} />
                         <span>Shop more</span>
@@ -202,12 +202,16 @@ const Cart = () => {
 
                     <h2 className="flex  justify-between items-center py-5 text-[#5F6C72]  font-semibold text-sm">
                       <span>Total : </span>
-                      <span> ${total} </span>
+                      <span className="text-red-500 font-semibold">
+                        ${total.toFixed()}
+                      </span>
                     </h2>
 
                     <Button size={"xs"} width="full">
-                      <span>Proceed to Checkout</span>
-                      <ArrowRight className="mx-2" size={16} />
+                      <span className="text-[#2DA5F3]">
+                        Proceed to Checkout
+                      </span>
+                      <ArrowRight className="mx-2 text-[#2DA5F3]" size={16} />
                     </Button>
                   </div>
                 </div>

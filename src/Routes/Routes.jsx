@@ -3,6 +3,7 @@ import Root from "../Layout/Root/Root";
 import Home from "../Pages/Home/Home";
 import Shop from "../Pages/Shop/Shop";
 import Cart from "../Pages/Cart/Cart";
+import WishList from "../Pages/WishList/WishList";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart></Cart>,
+      },
+      {
+        path: "/wishList",
+        element: <WishList></WishList>,
       },
     ],
   },

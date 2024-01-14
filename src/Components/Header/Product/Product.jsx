@@ -4,6 +4,7 @@ import "./Product.css";
 import { Heart, ShoppingCart } from "phosphor-react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/features/cart/cartSlice";
+import { addToWishList } from "../../../redux/features/wishList/wishListSlice";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -11,6 +12,11 @@ const Product = ({ product }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
+  };
+
+  const handleAddToWishList = () => {
+    console.log("addtowishlist");
+    dispatch(addToWishList(product));
   };
 
   return (
@@ -23,7 +29,12 @@ const Product = ({ product }) => {
           imgStyle="p-5"
         >
           <Card.Container className="absolute right-3.5 top-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[#1b629262] bg-[#1b629262]">
-            <Heart size={20} weight="bold" color="white" />
+            <Heart
+              onClick={handleAddToWishList}
+              size={20}
+              weight="bold"
+              color="white"
+            />
           </Card.Container>
           <Card.Container className="p-6">
             <Card.Container className="flex items-center justify-between">

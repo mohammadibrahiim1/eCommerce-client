@@ -68,10 +68,18 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 justify-center items-center gap-3 mt-2">
-          {products.map((product) => (
-            <Product product={product} key={product._id}></Product>
-          ))}
+        <div>
+          {products.length ? (
+            <div className="grid grid-cols-4 justify-center items-center gap-3 mt-2">
+              {products.map((product) => (
+                <Product product={product} key={product._id}></Product>
+              ))}
+            </div>
+          ) : (
+            <div className="text-red-500 text-center mt-12 font-semibold text-xl">
+              No items found
+            </div>
+          )}
         </div>
       </div>
     </div>
