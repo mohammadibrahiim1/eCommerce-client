@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { Button } from "keep-react";
-import { ArrowElbowDownRight, CaretDown, Plus } from "phosphor-react";
+import { CaretDown } from "phosphor-react";
 import React, { useState } from "react";
 
 const Category = ({ category, setSelectedCategory }) => {

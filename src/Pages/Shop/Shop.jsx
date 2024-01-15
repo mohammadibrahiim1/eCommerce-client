@@ -3,14 +3,25 @@ import { useGetProductsQuery } from "../../redux/features/api/productsApi/produc
 import Product from "../../Components/Header/Product/Product";
 import Categories from "../../Components/Categories/Categories";
 import { useState } from "react";
+import PriceRangeSlider from "../../Components/PriceRangeSlider/PriceRangeSlider";
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
-  console.log(selectedCategory);
+
+  const [priceRange, setPriceRange] = useState([0, 100]);
 
   const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
 
   const products = data?.data;
+
+  const handleSliderChange = (e) => {
+    setPriceRange([priceRange[0], parseInt(e.target.value, 10)]);
+  };
+
+  // const products = products.filter((product) => {
+  //   const productPrice = product.price;
+  //   return productPrice >= priceRange[0] && productPrice <= priceRange[1];
+  // });
 
   if (isLoading) {
     return (
@@ -40,6 +51,13 @@ const Shop = () => {
           setSelectedCategory={setSelectedCategory}
           selectedCategory={selectedCategory}
         ></Categories>
+
+        <div>
+          <PriceRangeSlider
+            priceRange={priceRange}
+            handleSliderChange={handleSliderChange}
+          ></PriceRangeSlider>
+        </div>
       </div>
 
       <div className="col-span-5">
@@ -69,11 +87,14 @@ const Shop = () => {
         </div>
 
         <div>
-          {products.length ? (
+          {products?.length ? (
             <div className="grid grid-cols-4 justify-center items-center gap-3 mt-2">
-              {products.map((product) => (
+              {products?.map((product) => (
                 <Product product={product} key={product._id}></Product>
               ))}
+              {/* { products.filter()  products.map((product) => (
+                <Product product={product} key={product._id}></Product>
+              ))} */}
             </div>
           ) : (
             <div className="text-red-500 text-center mt-12 font-semibold text-xl">
