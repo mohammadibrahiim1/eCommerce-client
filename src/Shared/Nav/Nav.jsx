@@ -1,125 +1,154 @@
-/* eslint-disable react/jsx-no-undef */
-import { Button, Navbar, TextInput } from "keep-react";
-import {
-  Heart,
-  MagnifyingGlass,
-  Phone,
-  ShoppingCart,
-  User,
-} from "phosphor-react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+/* eslint-disable no-unused-vars */
+import React from "react";
+import { FaHeart, FaHome, FaUser } from "react-icons/fa";
+import { FaCartShopping } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { getTotal } from "../../redux/features/cart/cartSlice";
 
 const Nav = () => {
-  const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
-  const itemsInCart = useSelector((state) => state.cart.cartItems);
-  const totalAmount = useSelector((state) => state.cart.totalAmount);
-
-  useEffect(() => {
-    dispatch(getTotal());
-  }, [cart, dispatch]);
-
   return (
-    <div>
-      <Navbar>
-        <Navbar.Container className="flex items-center justify-between">
-          <Navbar.Brand>
-            <img src="/images/keep.svg" alt="keep" width="100" height="40" />
-          </Navbar.Brand>
-
-          <Navbar.Container className="hidden lg:block md:block">
-            <TextInput
-              id="#id-10"
-              placeholder="Search anything"
-              color="gray"
-              sizing="md"
-              type="text"
-              addon={<MagnifyingGlass size={20} color="#5E718D" />}
-              addonPosition="left"
-            />
-          </Navbar.Container>
-
-          <Navbar.Container>
-            <Navbar.Container
-              tag="ul"
-              className="lg:flex hidden items-center justify-between gap-8"
-            >
-              <Navbar.Link linkName="Home" />
-              <Link to={"/shop"}>
-                <Navbar.Link linkName="Shop" />
-              </Link>
-              <Navbar.Link linkName="Others" />
-              <Navbar.Link linkName="Blog" />
-              <Navbar.Link linkName="Seller" />
-            </Navbar.Container>
-          </Navbar.Container>
-
-          <Navbar.Collapse collapseType="sidebar">
-            <Navbar.Container tag="ul" className="flex flex-col gap-5">
-              <Link to={"/"}>
-                <Navbar.Link linkName="Home" />
-              </Link>
-              <Link to="/shop">
-                <Navbar.Link linkName="Shop" />
-              </Link>
-              <Navbar.Link linkName="Others" />
-              <Navbar.Link linkName="Blog" />
-              <Navbar.Link linkName="Seller" />
-            </Navbar.Container>
-          </Navbar.Collapse>
-
-          <Navbar.Container className="flex items-center gap-5">
-            <Navbar.Container
-              tag="ul"
-              className="lg:flex hidden items-center justify-between gap-5"
-            >
-              <span className="flex justify-center items-center gap-1">
-                <>{<Phone size={20} color="#444" />}</>01625619689
-              </span>
-
-              <Navbar.Link
-                // eslint-disable-next-line react/jsx-no-undef
-                icon={<User size={20} color="#444" />}
-                iconAnimation={false}
-              />
-              <Link to={"/wishList"}>
-                <Navbar.Link
-                  // eslint-disable-next-line react/jsx-no-undef
-                  icon={<Heart size={20} color="#444" />}
-                  iconAnimation={false}
-                />
-              </Link>
-            </Navbar.Container>
-
-            <Link to={"/cart"}>
-              <Button size="xs" type="outlineGray">
-                <span>
-                  <ShoppingCart size={19} color="#444" />
-                </span>
-                <span className="ml-1 text-metal-600">Cart ${totalAmount}</span>
-                <span className="ml-1 text-metal-600">
-                  ({itemsInCart?.length})
-                </span>
-              </Button>
+    <div className="bg-[#1B6392]">
+      <div>
+        <div className="navbar w-[1320px] mx-auto pt-5">
+          <div className="navbar-start">
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link>Item 1</Link>
+                </li>
+                <li>
+                  <Link>Parent</Link>
+                  <ul className="p-2">
+                    <li>
+                      <Link>Submenu 1</Link>
+                    </li>
+                    <li>
+                      <Link>Submenu 2</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link>Item 3</Link>
+                </li>
+              </ul>
+            </div>
+            <Link to={"/"} className=" text-xl text-white">
+              CLICON
             </Link>
-            <Navbar.Toggle />
-          </Navbar.Container>
-        </Navbar.Container>
-      </Navbar>
-      <Navbar.Container className="lg:hidden md:hidden">
-        <TextInput
-          id="#id-10"
-          placeholder="Search anything"
-          color="gray"
-          sizing="md"
-          type="text"
-          addon={<MagnifyingGlass size={20} color="#5E718D" />}
-          addonPosition="left"
-        />
-      </Navbar.Container>
+          </div>
+          <div>
+            <input
+              className="border w-[646px] h-[42px] p-2 rounded focus-outline:none "
+              type="search"
+              name="search"
+              placeholder="search..."
+              id="search"
+            />
+          </div>
+          {/* <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <Link>Item 1</Link>
+            </li>
+            <li>
+              <details>
+                <summary>Parent</summary>
+                <ul className="p-2">
+                  <li>
+                    <Link>Submenu 1</Link>
+                  </li>
+                  <li>
+                    <Link>Submenu 2</Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <Link>Item 3</Link>
+            </li>
+          </ul>
+        </div> */}
+          <div className="navbar-end gap-5 ">
+            <Link to={"/cart"}>
+              <FaCartShopping className="text-[#FFF] w-6 h-6" />
+            </Link>
+
+            <Link to={"/wishList"}>
+              <FaHeart className="text-[#FFF] w-6 h-6" />
+            </Link>
+            <Link to={"/signUp"}>
+              <FaUser className="text-[#FFF] w-6 h-6" />
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[#1B6392] flex justify-between items-center w-[1320px] mx-auto mt-3">
+        <div className="dropdown">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-sm  rounded-none m-1"
+          >
+            All category
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a>Item 1</a>
+            </li>
+            <li>
+              <a>Item 2</a>
+            </li>
+          </ul>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 text-md font-semibold text-[#FFF]">
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link to={"/shop"}>Shop</Link>
+            </li>
+
+            <li>
+              <Link to={"/trackOrder"}>Track Order</Link>
+            </li>
+            <li>
+              <Link to={"/customerSupport"}>Customer Support</Link>
+            </li>
+            <li>
+              <Link to={"/compare"}>Compare</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h1 className="text-[#fff] font-semibold text-md">+8801625619689</h1>
+        </div>
+      </div>
     </div>
   );
 };

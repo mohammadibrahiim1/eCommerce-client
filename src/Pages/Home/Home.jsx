@@ -1,5 +1,7 @@
-import { Button } from "keep-react";
 import Header from "../../Components/Header/Header";
+import { TbTruckDelivery, TbTruckReturn } from "react-icons/tb";
+import { RiSecurePaymentLine } from "react-icons/ri";
+import { BiSupport } from "react-icons/bi";
 
 const Home = () => {
   return (
@@ -8,24 +10,41 @@ const Home = () => {
 
       <section>
         <div className="flex justify-between items-center container mx-auto bg-[#FFEDD5] rounded-lg p-6 mt-5">
-          <div>
-            <h3 className="text-xl font-bold">
-              100% Natural Quality Organic Product
-            </h3>
-            <h6 className="text-md font-semibold text-[#049669]">
-              See Our latest discounted products from here and get a special
-              discount product
-            </h6>
+          <div className="flex justify-between items-center gap-2">
+            <TbTruckDelivery className="w-8 h-8" />
+            <div>
+              <h1 className="font-semibold">Fastest Delivery</h1>
+              <h6 className="text-xs font-semibold text-gray-600">
+                Delivery in 24/H
+              </h6>
+            </div>
           </div>
-
-          <div>
-            <Button
-              className="rounded-full bg-[#049669] text-gray-100 px-5 hover:bg-[#047857]  "
-              size="sm"
-              color="success"
-            >
-              Shop now
-            </Button>
+          <div className="flex justify-between items-center gap-2">
+            <TbTruckReturn className="w-8 h-8" />
+            <div>
+              <h1 className="font-semibold">24 Hours Return</h1>
+              <h6 className="text-xs font-semibold text-gray-600">
+                100% money-back guarantee
+              </h6>
+            </div>
+          </div>
+          <div className="flex justify-between items-center gap-2">
+            <RiSecurePaymentLine className="w-8 h-8" />
+            <div>
+              <h1 className="font-semibold">Secure Payment</h1>
+              <h6 className="text-xs font-semibold text-gray-600">
+                Your money is safe
+              </h6>
+            </div>
+          </div>
+          <div className="flex justify-between items-center gap-2">
+            <BiSupport className="w-8 h-8" />
+            <div>
+              <h1 className="font-semibold">Support 24/7</h1>
+              <h6 className="text-xs font-semibold text-gray-600">
+                Live contact/message
+              </h6>
+            </div>
           </div>
         </div>
       </section>

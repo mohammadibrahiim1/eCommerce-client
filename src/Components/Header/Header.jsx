@@ -1,52 +1,65 @@
-import { Carousel } from "keep-react";
 import "./Header.css";
 
 const Header = () => {
-  // https://i.ibb.co/mJxjqTj/smart-bazar-carousel-1.jpg
-  // https://i.ibb.co/WvLcy0b/smart-bazar-carousel-2.jpg
-  // https://i.ibb.co/F70TZ7d/pexels-pixabay-39579.jpg
-  // https://i.ibb.co/sCBtPKY/smart-bazar-carousel-3.jpg
-  // https://i.ibb.co/ZH2WpDf/smart-bazar-carousel-5.jpg
-  // https://i.ibb.co/2Z6DXP2/smart-bazar-carousel-4.jpg
-
   return (
     <div>
-      <div className=" container flex  justify-center items-center mx-auto">
-        {/* <div>
+      <div className="carousel w-full">
+        <div id="slide1" className="carousel-item relative w-full">
           <img
-            className="header_side_img rounded-md"
-            src="https://i.ibb.co/WvLcy0b/smart-bazar-carousel-2.jpg"
-            alt=""
+            src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+            className="w-full"
           />
-        </div> */}
-
-        <Carousel
-          indicatorsType="ring"
-          indicators={true}
-          className="w-[920px] mx-auto my-5"
-        >
-          <img src="https://i.ibb.co/PhpCFqn/image-26.png" alt="slider-1" />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide2" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide2" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/sCBtPKY/smart-bazar-carousel-3.jpg"
-            alt="slider-2"
+            src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+            className="w-full"
           />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide3" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide3" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/ZH2WpDf/smart-bazar-carousel-5.jpg"
-            alt="slider-3"
+            src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+            className="w-full"
           />
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide4" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
+        <div id="slide4" className="carousel-item relative w-full">
           <img
-            src="https://i.ibb.co/2Z6DXP2/smart-bazar-carousel-4.jpg"
-            alt="slider-4"
+            src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
+            className="w-full"
           />
-        </Carousel>
-
-        {/* <div>
-          <img
-            className="header_side_img rounded-md"
-            src="https://i.ibb.co/F70TZ7d/pexels-pixabay-39579.jpg"
-            alt=""
-          />
-        </div> */}
+          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" className="btn btn-circle">
+              ❮
+            </a>
+            <a href="#slide1" className="btn btn-circle">
+              ❯
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

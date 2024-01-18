@@ -5,9 +5,12 @@ import Nav from "../../Shared/Nav/Nav";
 const Root = () => {
   return (
     <div>
-      <div className="w-[1320px] mx-auto">
+      <div>
         <Nav></Nav>
-        <Outlet></Outlet>
+        <div className="w-[1320px] mx-auto">
+          <Outlet></Outlet>
+        </div>
+
         <Footer></Footer>
       </div>
     </div>
