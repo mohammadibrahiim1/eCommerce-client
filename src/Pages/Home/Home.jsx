@@ -2,12 +2,13 @@ import Header from "../../Components/Header/Header";
 import { TbTruckDelivery, TbTruckReturn } from "react-icons/tb";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { BiSupport } from "react-icons/bi";
+import BestDeals from "../../Components/BestDeals/BestDeals";
+
 
 const Home = () => {
   return (
     <div>
       <Header></Header>
-
       <section>
         <div className="flex justify-between items-center container mx-auto bg-[#FFEDD5] rounded-lg p-6 mt-5">
           <div className="flex justify-between items-center gap-2">
@@ -48,6 +49,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <BestDeals></BestDeals>
     </div>
   );
 };

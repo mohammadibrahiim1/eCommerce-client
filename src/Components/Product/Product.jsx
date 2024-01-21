@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Badge, Button, Card, Tooltip } from "keep-react";
-import "./Product.css";
 import { Heart, ShoppingCart } from "phosphor-react";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../../redux/features/cart/cartSlice";
-import { addToWishList } from "../../../redux/features/wishList/wishListSlice";
+import { addToCart } from "../../redux/features/cart/cartSlice";
+import { addToWishList } from "../../redux/features/wishList/wishListSlice";
+import "./Product.css";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -22,6 +22,25 @@ const Product = ({ product }) => {
   return (
     <div>
       <div>
+        {/* <div className="card w-96 bg-base-100 shadow-xl">
+          <figure>
+            <img
+              src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+              alt="Shoes"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">
+              Shoes!
+              <div className="badge badge-secondary">NEW</div>
+            </h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-actions justify-end">
+              <div className="badge badge-outline">Fashion</div>
+              <div className="badge badge-outline">Products</div>
+            </div>
+          </div>
+        </div> */}
         <Card
           className="max-w-[320px] overflow-hidden rounded-md"
           imgSrc={image}

@@ -1,9 +1,9 @@
 import { Dropdown, Spinner } from "keep-react";
-import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
-import Product from "../../Components/Header/Product/Product";
-import Categories from "../../Components/Categories/Categories";
 import { useState } from "react";
+import Categories from "../../Components/Categories/Categories";
 import PriceRangeSlider from "../../Components/PriceRangeSlider/PriceRangeSlider";
+import Product from "../../Components/Product/Product";
+import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -92,9 +92,6 @@ const Shop = () => {
               {products?.map((product) => (
                 <Product product={product} key={product._id}></Product>
               ))}
-              {/* { products.filter()  products.map((product) => (
-                <Product product={product} key={product._id}></Product>
-              ))} */}
             </div>
           ) : (
             <div className="text-red-500 text-center mt-12 font-semibold text-xl">
