@@ -3,7 +3,7 @@ import { TbTruckDelivery, TbTruckReturn } from "react-icons/tb";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { BiSupport } from "react-icons/bi";
 import BestDeals from "../../Components/BestDeals/BestDeals";
-
+import ShopWithCategories from "../../Components/ShopWithCategories/ShopWithCategories";
 
 const Home = () => {
   return (
@@ -50,6 +50,7 @@ const Home = () => {
         </div>
       </section>
       <BestDeals></BestDeals>
+      <ShopWithCategories></ShopWithCategories>
     </div>
   );
 };
