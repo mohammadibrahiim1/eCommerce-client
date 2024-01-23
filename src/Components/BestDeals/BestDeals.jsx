@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import { Spinner } from "keep-react";
+import CountDown from "../CountDown/CountDown";
 
 const BestDeals = () => {
+  // Set your target date here
+  const targetDate = new Date("2024-12-31T23:59:59").getTime();
   const { data, error, isLoading } = useGetProductsQuery("");
 
   const products = data?.data;
@@ -33,7 +36,8 @@ const BestDeals = () => {
       <section>
         <div className="flex justify-between items-center ">
           <h2 className="text-[#191C1F] font-semibold text-[22px]">
-            Best Deals
+            <span>Best Deals</span>
+            <CountDown targetDate={targetDate}></CountDown>
           </h2>
           <Link className="flex items-center gap-2 text-[#2DA5F3]" to={"/shop"}>
             <span className="font-semibold text-sm capitalize">
@@ -44,7 +48,7 @@ const BestDeals = () => {
         </div>
 
         <div className="grid grid-cols-5 justify-between items-center gap-2">
-          {products?.slice(0, 8)?.map((product) => (
+          {products?.slice(0, 10)?.map((product) => (
             <>
               <div className="card w-[248px] h-[296px] bg-base-100 shadow-xl rounded-none">
                 <img
