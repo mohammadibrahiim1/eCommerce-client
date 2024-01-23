@@ -1,21 +1,21 @@
 /* eslint-disable react/prop-types */
-import { Badge, Button, Card, Tooltip } from "keep-react";
-import { Heart, ShoppingCart } from "phosphor-react";
+
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { addToWishList } from "../../redux/features/wishList/wishListSlice";
 import "./Product.css";
+import { FaCartShopping } from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const { model, image, price, status, stock, name } = product;
+  const { model, image, price } = product;
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
   };
 
   const handleAddToWishList = () => {
-    console.log("addtowishlist");
     dispatch(addToWishList(product));
   };
 
@@ -41,7 +41,7 @@ const Product = ({ product }) => {
             </div>
           </div>
         </div> */}
-        <Card
+        {/* <Card
           className="max-w-[320px] overflow-hidden rounded-md"
           imgSrc={image}
           imgSize="md"
@@ -100,7 +100,38 @@ const Product = ({ product }) => {
               </Button>
             </Card.Container>
           </Card.Container>
-        </Card>
+        </Card> */}
+
+        <div className="card w-[248px] h-[296px] bg-base-100 shadow-xl rounded-none">
+          <img
+            className="w-[216px] h-[188px] mx-auto rounded-sm py-3"
+            src={image}
+            alt={model}
+          />
+
+          <div className="px-4 py-1">
+            <p className="font-semibold text-[14px]">
+              If a dog chews shoes whose shoes does he choose?
+            </p>
+            <div className="card-actions font-semibold justify-between items-center mt-2 flex  ">
+              <div className="badge badge-outline text-[#2DA5F3]">${price}</div>
+              <div className="flex justify-between items-center gap-1">
+                <div
+                  onClick={handleAddToWishList}
+                  className="btn btn-sm text-[#2DA5F3] px-3"
+                >
+                  <FaHeart />
+                </div>
+                <div
+                  onClick={handleAddToCart}
+                  className="btn btn-sm text-[#2DA5F3] px-3"
+                >
+                  <FaCartShopping />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

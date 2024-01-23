@@ -13,7 +13,7 @@ import {
 } from "phosphor-react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../../redux/features/cart/cartSlice";
+import { addToCart } from "../../redux/features/cart/cartSlice";
 import { removeFromWishList } from "../../redux/features/wishList/wishListSlice";
 import { Link } from "react-router-dom";
 
@@ -21,15 +21,14 @@ const WishList = () => {
   const dispatch = useDispatch();
   const wishList = useSelector((state) => state.wishList);
   console.log(wishList);
-  const [disabled, setDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleAddToCart = (item) => {
-    setDisabled(true);
     dispatch(addToCart(item));
+    setIsDisabled(true);
   };
 
   const handleRemoveFromWishList = (item) => {
-    console.log("wishlist");
     dispatch(removeFromWishList(item));
   };
   return (
@@ -103,7 +102,7 @@ const WishList = () => {
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm flex items-center gap-3">
                         <Button
                           onClick={() => handleAddToCart(item)}
-                          disabled={disabled}
+                          disabled={isDisabled}
                           size="xs"
                           type="outlineGray"
                           color={"error"}

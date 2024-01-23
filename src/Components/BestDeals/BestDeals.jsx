@@ -6,14 +6,21 @@ import { useGetProductsQuery } from "../../redux/features/api/productsApi/produc
 import { Spinner } from "keep-react";
 import CountDown from "../CountDown/CountDown";
 import { FaCartShopping } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/features/cart/cartSlice";
 
 const BestDeals = () => {
+  const dispatch = useDispatch();
   // Set your target date here
   const targetDate = new Date("2024-12-31T23:59:59").getTime();
   const { data, error, isLoading } = useGetProductsQuery("");
 
   const products = data?.data;
   //   console.log(products);
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
 
   if (isLoading) {
     return (
@@ -66,7 +73,10 @@ const BestDeals = () => {
                     <div className="badge badge-outline text-[#2DA5F3]">
                       ${product?.price}
                     </div>
-                    <div className="btn btn-sm text-[#2DA5F3] px-3">
+                    <div
+                      onClick={() => handleAddToCart(product)}
+                      className="btn btn-sm text-[#2DA5F3] px-3"
+                    >
                       <FaCartShopping />
                     </div>
                   </div>
