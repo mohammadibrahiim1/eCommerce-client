@@ -5,6 +5,7 @@ import { HiMiniArrowLongRight } from "react-icons/hi2";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import { Spinner } from "keep-react";
 import CountDown from "../CountDown/CountDown";
+import { FaCartShopping } from "react-icons/fa6";
 
 const BestDeals = () => {
   // Set your target date here
@@ -33,9 +34,9 @@ const BestDeals = () => {
   }
   return (
     <div>
-      <section>
-        <div className="flex justify-between items-center ">
-          <h2 className="text-[#191C1F] font-semibold text-[22px]">
+      <section className="mt-[72px]">
+        <div className="flex justify-between items-center">
+          <h2 className="text-[#191C1F] font-semibold text-[22px] flex justify-between items-center gap-10">
             <span>Best Deals</span>
             <CountDown targetDate={targetDate}></CountDown>
           </h2>
@@ -47,7 +48,7 @@ const BestDeals = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-5 justify-between items-center gap-2">
+        <div className="grid grid-cols-5 justify-between items-center gap-2 mt-[20px]">
           {products?.slice(0, 10)?.map((product) => (
             <>
               <div className="card w-[248px] h-[296px] bg-base-100 shadow-xl rounded-none">
@@ -61,9 +62,12 @@ const BestDeals = () => {
                   <p className="font-semibold text-[14px]">
                     If a dog chews shoes whose shoes does he choose?
                   </p>
-                  <div className="card-actions justify-start mt-2">
+                  <div className="card-actions font-semibold justify-between items-center mt-2 flex  ">
                     <div className="badge badge-outline text-[#2DA5F3]">
                       ${product?.price}
+                    </div>
+                    <div className="btn btn-sm text-[#2DA5F3] px-3">
+                      <FaCartShopping />
                     </div>
                   </div>
                 </div>

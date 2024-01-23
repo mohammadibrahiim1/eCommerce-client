@@ -46,7 +46,7 @@ const CountDown = ({ targetDate }) => {
         <div className="flex justify-between items-center gap-1">
           <h2 className="text-sm font-semibold">Deals ends in : </h2>
 
-          <div className="flex justify-between items-center gap-3 bg-yellow-200 rounded-sm py-1 px-2">
+          <div className="flex justify-between items-center gap-3 bg-[#F3DE6D] rounded-sm py-1 px-2">
             <section className="flex items-center justify-between text-sm font-semibold">
               <p>{timeLeft.days}</p>
               <h1>d</h1>
@@ -56,12 +56,12 @@ const CountDown = ({ targetDate }) => {
               <p>{timeLeft.hours}</p>
               <h1>h</h1>
             </section>
-         <span className="text-sm font-semibold">:</span>
+            <span className="text-sm font-semibold">:</span>
             <section className="flex items-center justify-between text-sm font-semibold">
               <p>{timeLeft.minutes}</p>
               <h1>m</h1>
             </section>
-         <span className="text-sm font-semibold">:</span>
+            <span className="text-sm font-semibold">:</span>
             <section className="flex items-center justify-between text-sm font-semibold">
               <p>{timeLeft.seconds}</p>
               <h1>s</h1>
