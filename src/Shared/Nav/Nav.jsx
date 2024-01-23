@@ -55,7 +55,7 @@ const Nav = () => {
               </ul>
             </div>
             <Link to={"/"} className=" text-xl text-white">
-              CLICON
+              Army Pharma
             </Link>
           </div>
           <div>
