@@ -4,6 +4,7 @@ import { useGetProductsQuery } from "../../redux/features/api/productsApi/produc
 import { FaArrowRightLong, FaCartShopping } from "react-icons/fa6";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import { Spinner } from "keep-react";
 
 const FeaturesProducts = () => {
   const dispatch = useDispatch();
@@ -12,12 +13,31 @@ const FeaturesProducts = () => {
   const products = data?.data;
   console.log(products);
 
+  if (isLoading) {
+    return (
+      <Spinner
+        className="flex justify-center items-center mx-auto my-12"
+        color="failure"
+        size="lg"
+      />
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-red-500 text-center  py-12 font-semibold text-2xl">
+        Something went wrong!
+      </div>
+    );
+  }
+
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
+
   return (
     <div>
-      <section className="flex justify-center gap-2">
+      <section className="flex justify-center gap-5 mt-[72px]">
         <div>
           <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-2 py-5">
             <h2 className="text-[#BE4646] font-semibold text-xs ">
@@ -52,11 +72,33 @@ const FeaturesProducts = () => {
 
         <div>
           <div>
-            <h1 className="text-[#191C1F] font-semibold text-[24px] ">
-              Features Product
-            </h1>
+            <div className="flex justify-between items-center gap-1 ">
+              <h1 className="text-[#191C1F] font-semibold text-[24px] ">
+                Features Product
+              </h1>
 
-            <div className="grid grid-cols-4 justify-between items-center gap-3 mt-[20px]">
+              <div className="flex justify-center items-center gap-5">
+                <h1 className="font-semibold text-sm text-[#191C1F]">
+                  All products
+                </h1>
+                <h1 className="font-semibold text-sm text-[#191C1F]">
+                  Smart phones
+                </h1>
+                <h1 className="font-semibold text-sm text-[#191C1F]">
+                  Laptops
+                </h1>
+                <h1 className="font-semibold text-sm text-[#191C1F]">TV</h1>
+                <h1 className="font-semibold text-sm text-[#191C1F]">
+                  HeadPhones
+                </h1>
+                <div className="font-semibold text-sm text-[#191C1F] flex items-center gap-1">
+                  <span> Browse All Products</span>
+                  <FaArrowRightLong />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-4 justify-between items-center gap-3 mt-[24px]">
               {products?.slice(6, 14)?.map((product) => (
                 <>
                   <div className="card w-[248px] h-[296px] bg-base-100 shadow-xl rounded-none">
