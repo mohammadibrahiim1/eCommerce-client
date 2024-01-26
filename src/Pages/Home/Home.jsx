@@ -4,6 +4,7 @@ import { RiSecurePaymentLine } from "react-icons/ri";
 import { BiSupport } from "react-icons/bi";
 import BestDeals from "../../Components/BestDeals/BestDeals";
 import ShopWithCategories from "../../Components/ShopWithCategories/ShopWithCategories";
+import FeaturesProducts from "../../Components/FeaturesProducts/FeaturesProducts";
 
 const Home = () => {
   return (
@@ -51,6 +52,7 @@ const Home = () => {
       </section>
       <BestDeals></BestDeals>
       <ShopWithCategories></ShopWithCategories>
+      <FeaturesProducts></FeaturesProducts>
     </div>
   );
 };

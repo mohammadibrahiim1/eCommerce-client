@@ -67,29 +67,7 @@ const Nav = () => {
               id="search"
             />
           </div>
-          {/* <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link>Item 1</Link>
-            </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <Link>Submenu 1</Link>
-                  </li>
-                  <li>
-                    <Link>Submenu 2</Link>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <Link>Item 3</Link>
-            </li>
-          </ul>
-        </div> */}
+
           <div className="navbar-end gap-5 ">
             <Link to={"/cart"}>
               <FaCartShopping className="text-[#FFF] w-6 h-6" />

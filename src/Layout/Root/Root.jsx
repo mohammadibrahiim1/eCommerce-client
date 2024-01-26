@@ -10,7 +10,6 @@ const Root = () => {
         <div className="w-[1320px] mx-auto">
           <Outlet></Outlet>
         </div>
-
         <Footer></Footer>
       </div>
     </div>
