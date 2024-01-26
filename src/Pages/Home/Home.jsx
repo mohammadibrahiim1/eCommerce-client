@@ -6,6 +6,7 @@ import BestDeals from "../../Components/BestDeals/BestDeals";
 import ShopWithCategories from "../../Components/ShopWithCategories/ShopWithCategories";
 import FeaturesProducts from "../../Components/FeaturesProducts/FeaturesProducts";
 import Extras from "../../Components/Extras/Extras";
+import Accessories from "../../Components/Accessories/Accessories";
 
 const Home = () => {
   return (
@@ -55,6 +56,7 @@ const Home = () => {
       <ShopWithCategories></ShopWithCategories>
       <FeaturesProducts></FeaturesProducts>
       <Extras></Extras>
+      <Accessories></Accessories>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const Extras = () => {
   return (
     <div>
-      <section>
+      <section className="mt-[72px]">
         <div className="flex justify-between items-center gap-[40px]">
           <div className="flex items-center gap-[40px] p-[44px] bg-[#F2F4F5] w-[648px] h-[336px]">
             <div>
