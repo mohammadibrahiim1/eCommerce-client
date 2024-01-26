@@ -87,10 +87,10 @@ const FeaturesProducts = () => {
                 <h1 className="font-semibold text-sm text-[#191C1F]">
                   Laptops
                 </h1>
-                <h1 className="font-semibold text-sm text-[#191C1F]">TV</h1>
                 <h1 className="font-semibold text-sm text-[#191C1F]">
                   HeadPhones
                 </h1>
+                <h1 className="font-semibold text-sm text-[#191C1F]">TV</h1>
                 <div className="font-semibold text-sm text-[#191C1F] flex items-center gap-1">
                   <span> Browse All Products</span>
                   <FaArrowRightLong />
