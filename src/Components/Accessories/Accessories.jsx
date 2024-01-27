@@ -98,8 +98,8 @@ const Accessories = () => {
           </div>
         </div>
 
-        <div className="flex flex-col  gap-[24px]">
-          <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-2 py-5">
+        <div className="flex flex-col  gap-[24px] ">
+          <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-4 h-[375px]">
             <h2 className="text-[#BE4646] font-semibold text-xs ">
               COMPUTER & ACCESSORIES
             </h2>
@@ -127,7 +127,12 @@ const Accessories = () => {
           </div>
 
           <div>
-            <img src="https://i.ibb.co/GdcLrWZ/Image.jpg" alt="" srcSet="" />
+            <img
+              className="h-[264px] w-[312px]"
+              src="https://i.ibb.co/GdcLrWZ/Image.jpg"
+              alt=""
+              srcSet=""
+            />
           </div>
         </div>
       </section>
