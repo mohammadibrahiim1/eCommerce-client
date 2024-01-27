@@ -65,7 +65,7 @@ const Accessories = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-4 justify-between items-center gap-3 mt-[24px]">
+            <div className="grid grid-cols-4 justify-between items-center gap-x-3 gap-y-1 mt-[24px]">
               {products?.slice(10, 18)?.map((product) => (
                 <>
                   <div className="card w-[248px] h-[296px] bg-base-100 shadow-xl rounded-none">
@@ -98,8 +98,8 @@ const Accessories = () => {
           </div>
         </div>
 
-        <div className="flex flex-col  gap-[24px] ">
-          <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-4 h-[375px] w-[312px] ">
+        <div className="flex flex-col  gap-[24px]">
+          <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-4 h-[368px] w-[312px]">
             <h2 className="text-[#BE4646] font-semibold text-xs ">
               COMPUTER & ACCESSORIES
             </h2>
