@@ -7,6 +7,7 @@ import ShopWithCategories from "../../Components/ShopWithCategories/ShopWithCate
 import FeaturesProducts from "../../Components/FeaturesProducts/FeaturesProducts";
 import Extras from "../../Components/Extras/Extras";
 import Accessories from "../../Components/Accessories/Accessories";
+import Advertise from "../../Components/Advertise/Advertise";
 
 const Home = () => {
   return (
@@ -57,6 +58,7 @@ const Home = () => {
       <FeaturesProducts></FeaturesProducts>
       <Extras></Extras>
       <Accessories></Accessories>
+      <Advertise></Advertise>
     </div>
   );
 };
