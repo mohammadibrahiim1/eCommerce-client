@@ -99,7 +99,7 @@ const Accessories = () => {
         </div>
 
         <div className="flex flex-col  gap-[24px] ">
-          <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-4 h-[375px]">
+          <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-4 h-[375px] w-[312px] ">
             <h2 className="text-[#BE4646] font-semibold text-xs ">
               COMPUTER & ACCESSORIES
             </h2>
@@ -127,12 +127,25 @@ const Accessories = () => {
           </div>
 
           <div>
-            <img
-              className="h-[264px] w-[312px]"
-              src="https://i.ibb.co/GdcLrWZ/Image.jpg"
-              alt=""
-              srcSet=""
-            />
+            <div className="bg-[#124261] flex flex-col justify-center items-center gap-4 h-[264px] w-[312px] ">
+              <h2 className="text-[#FFF] border-[#FFFFFF1F] p-1 bg-[#FFFFFF1F] font-semibold text-xs ">
+                SUMMER SALES
+              </h2>
+              <h1 className="text-[#FFFFFF] text-[28px] font-semibold ">
+                37% DISCOUNT
+              </h1>
+              <h4 className="text-[#FFF] font-semibold text-[15px] capitalize">
+                only for <span className="text-[#EBC80C]">SmartPhone</span>{" "}
+                product.
+              </h4>
+
+              <button className="flex items-center gap-2 bg-[#2DA5F3] text-[#FFFFFF] font-semibold px-12 py-2 my-3">
+                <span>Shop now</span>
+                <span className="mt-1">
+                  <FaArrowRightLong />
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
