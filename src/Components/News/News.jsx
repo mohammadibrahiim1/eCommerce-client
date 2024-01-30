@@ -14,10 +14,6 @@ const News = () => {
           </h1>
         </div>
 
-        {/* 
-
- */}
-
         <div className="grid grid-cols-3 justify-center items-center gap-5">
           <div className="max-w-[424px] h-[572px] mx-auto mt-[40px]">
             <div className="bg-white shadow-md border border-gray-200 rounded-none max-w-sm dark:bg-gray-800 dark:border-gray-700  p-5">
