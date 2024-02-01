@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const TrackOrder = () => {
   return (
@@ -7,7 +8,7 @@ const TrackOrder = () => {
       <section>
         <div className="bg-gray-100 py-16 my-24">
           <div className="max-w-4xl  px-4">
-            <h2 className="text-3xl font-semibold text-gray-800">
+            <h2 className="text-3xl font-semibold text-indigo-500">
               Track Your Order
             </h2>
             <h4 className="mb-4 text-sm font-semibold mt-2">
@@ -52,9 +53,10 @@ const TrackOrder = () => {
               <div className="text-start">
                 <button
                   type="submit"
-                  className="bg-indigo-500 text-white px-6 py-3 rounded-md font-semibold uppercase tracking-wide focus:outline-none hover:bg-indigo-600"
+                  className="bg-indigo-500 text-white px-6 py-3 rounded-md font-semibold uppercase tracking-wide focus:outline-none hover:bg-indigo-600 flex gap-2 items-center"
                 >
-                  Track Order
+                  <span> Track Order</span>
+                  <FaArrowRightLong />
                 </button>
               </div>
             </form>
