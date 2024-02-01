@@ -6,10 +6,10 @@ const Newsletter = () => {
     <div>
       <section>
         <div
-          className=" mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:py-16 lg:px-8"
+          className=" mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:py-12 lg:px-8"
           style={{ "background-color": "#1B6392" }}
         >
-          <div className="px-6 py-6 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
+          <div className="px-6 py-6 rounded-lg md:py-12 md:px-12 lg:py-10 lg:px-16 xl:flex xl:items-center">
             <div className="xl:w-0 xl:flex-1">
               <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9">
                 Subscribe to our newsletter
