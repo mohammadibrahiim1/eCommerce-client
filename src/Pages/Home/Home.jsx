@@ -11,6 +11,7 @@ import Advertise from "../../Components/Advertise/Advertise";
 import News from "../../Components/News/News";
 import ExclusiveItems from "../../Components/ExclusiveItems/ExclusiveItems";
 import Newsletter from "../../Components/Newsletter/Newsletter";
+import Popup from "../../Components/Popup/Popup";
 
 const Home = () => {
   return (
@@ -65,6 +66,7 @@ const Home = () => {
       <ExclusiveItems></ExclusiveItems>
       <News></News>
       <Newsletter></Newsletter>
+      <Popup></Popup>
     </div>
   );
 };
