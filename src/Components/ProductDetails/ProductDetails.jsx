@@ -1,7 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
+  const product = useLoaderData();
+  console.log(product);
+
+  const { model, image, price } = product;
   return (
     <div>
       <section className="py-10 font-poppins dark:bg-gray-800">
@@ -30,7 +35,7 @@ const ProductDetails = () => {
                   </a>
                   <img
                     className="object-contain w-full lg:h-full"
-                    src="https://i.postimg.cc/0jwyVgqz/Microprocessor1-removebg-preview.png"
+                    src={image}
                     alt=""
                   />
                   <a
@@ -111,8 +116,7 @@ const ProductDetails = () => {
                     New Arrival
                   </span>
                   <h2 className="max-w-xl mt-6 mb-6 text-xl font-semibold leading-loose tracking-wide text-gray-700 md:text-2xl dark:text-gray-300">
-                    Intel® Core™ i5-12600HX Processor (18M Cache, up to 4.60
-                    GHz)
+                    {model}
                   </h2>
                   <div className="flex flex-wrap items-center mb-6">
                     <ul className="flex mb-4 mr-2 lg:mb-0">
@@ -181,9 +185,9 @@ const ProductDetails = () => {
                     </a>
                   </div>
                   <p className="inline-block text-2xl font-semibold text-gray-700 dark:text-gray-400 ">
-                    <span>Rs.7,000.00</span>
+                    <span>Usd. ${price}</span>
                     <span className="ml-3 text-base font-normal text-gray-500 line-through dark:text-gray-400">
-                      Rs.10,000.00
+                      Usd. ${price}
                     </span>
                   </p>
                 </div>

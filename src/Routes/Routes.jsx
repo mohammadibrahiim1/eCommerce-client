@@ -31,8 +31,10 @@ export const router = createBrowserRouter([
         element: <WishList></WishList>,
       },
       {
-        path: "/productDetails",
+        path: "/productDetails/:id",
         element: <ProductDetails></ProductDetails>,
+        loader: async ({ params }) =>
+        fetch(`http://localhost:5000/api/v1/products/${params.id}`),
       },
       {
         path: "/signUp",

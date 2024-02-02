@@ -6,10 +6,11 @@ import { addToWishList } from "../../redux/features/wishList/wishListSlice";
 import "./Product.css";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const { model, image, price } = product;
+  const { model, image, price, _id } = product;
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
@@ -110,9 +111,12 @@ const Product = ({ product }) => {
           />
 
           <div className="px-4 py-1">
-            <p className="font-semibold text-[14px]">
-              If a dog chews shoes whose shoes does he choose?
-            </p>
+            <Link
+              to={`/productDetails/${_id} `}
+              className="font-semibold text-[14px]"
+            >
+              {model}
+            </Link>
             <div className="card-actions font-semibold justify-between items-center mt-2 flex  ">
               <div className="badge badge-outline text-[#2DA5F3]">${price}</div>
               <div className="flex justify-between items-center gap-1">
