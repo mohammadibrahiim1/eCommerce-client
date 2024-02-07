@@ -1,9 +1,10 @@
 import { Spinner } from "keep-react";
 import { useState } from "react";
 import Categories from "../../Components/Categories/Categories";
-import PriceRangeSlider from "../../Components/PriceRangeSlider/PriceRangeSlider";
+// import PriceRangeSlider from "../../Components/PriceRangeSlider/PriceRangeSlider";
 import Product from "../../Components/Product/Product";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
+import Brands from "../../Components/Brands/Brands";
 // import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
 
 // import { usePageTitle } from "../../hooks/usePageTitle/usePageTitle";
@@ -13,15 +14,16 @@ const Shop = () => {
 
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const [priceRange, setPriceRange] = useState([0, 100]);
+  // const [priceRange, setPriceRange] = useState([0, 100]);
 
   const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
 
   const products = data?.data;
+  console.log(products);
 
-  const handleSliderChange = (e) => {
-    setPriceRange([priceRange[0], parseInt(e.target.value, 10)]);
-  };
+  // const handleSliderChange = (e) => {
+  //   setPriceRange([priceRange[0], parseInt(e.target.value, 10)]);
+  // };
 
   // const products = products.filter((product) => {
   //   const productPrice = product.price;
@@ -49,7 +51,7 @@ const Shop = () => {
   return (
     <div>
       <section>
-        <div className=" grid grid-cols-6 items-started container mx-auto my-12 gap-1">
+        <div className=" grid grid-cols-6 items-started container mx-auto  gap-1">
           <div className="col-span-1">
             <h1 className="text-[#191C1F] font-semibold text-xl  pt-3 =">
               Categories
@@ -59,11 +61,10 @@ const Shop = () => {
               selectedCategory={selectedCategory}
             ></Categories>
 
+            <hr className="my-5" />
+
             <div>
-              <PriceRangeSlider
-                priceRange={priceRange}
-                handleSliderChange={handleSliderChange}
-              ></PriceRangeSlider>
+              <Brands></Brands>
             </div>
           </div>
 
