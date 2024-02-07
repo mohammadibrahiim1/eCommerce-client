@@ -29,17 +29,17 @@ const Category = ({ category, setSelectedCategory }) => {
   };
 
   return (
-    <div className="mt-3">
+    <div className="mt-2">
       <div key={_id}>
         <div
           type={"primary"}
-          className={`flex items-center justify-between  font-semibold text-red-500 p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+          className={`flex items-center justify-between  text-gray-400 p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
             activeIndex === index ? "active" : ""
           }`}
           onClick={() => toggleAccordion(index)}
         >
           <div className="flex items-center gap-3">{name}</div>
-          <CaretDown size={16} />
+          <CaretDown size={14} />
         </div>
 
         {activeIndex === i && (
@@ -49,7 +49,7 @@ const Category = ({ category, setSelectedCategory }) => {
                 <div>
                   <div
                     type={"primary"}
-                    className={`flex items-center justify-between  font-semibold text-[#86B6F6] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                    className={`flex items-center justify-between  text-gray-500 p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
                       activeChildIndex === i ? "active" : ""
                     }`}
                     onClick={
@@ -62,7 +62,7 @@ const Category = ({ category, setSelectedCategory }) => {
                       -{subItem?.name}
                     </div>
                     {subItem?.subCategories?.length > 0 ? (
-                      <CaretDown size={16} />
+                      <CaretDown size={14} />
                     ) : (
                       ""
                     )}
@@ -75,7 +75,7 @@ const Category = ({ category, setSelectedCategory }) => {
                           <div>
                             <div
                               type={"primary"}
-                              className={`flex items-center justify-between  font-semibold text-[#176B87] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                              className={`flex items-center justify-between   text-gray-400  p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
                                 activeChildSubIndex === idx ? "active" : ""
                               }`}
                               onClick={
@@ -89,7 +89,7 @@ const Category = ({ category, setSelectedCategory }) => {
                               </div>
 
                               {child?.subCategories?.length > 0 ? (
-                                <CaretDown size={16} />
+                                <CaretDown size={14} />
                               ) : (
                                 ""
                               )}
@@ -102,7 +102,7 @@ const Category = ({ category, setSelectedCategory }) => {
                                     <div>
                                       <div
                                         type={"primary"}
-                                        className={`flex items-center justify-between  font-semibold text-[#2F58CD] p-2 hover:bg-gray-100 rounded-sm cursor-pointer ${
+                                        className={`flex items-center justify-between   text-gray-500  p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
                                           activeChildSubIndex === idx
                                             ? "active"
                                             : ""
@@ -119,7 +119,7 @@ const Category = ({ category, setSelectedCategory }) => {
                                         </div>
 
                                         {subChild?.subCategories?.length > 0 ? (
-                                          <CaretDown size={16} />
+                                          <CaretDown size={14} />
                                         ) : (
                                           ""
                                         )}
