@@ -8,6 +8,8 @@ import ProductDetails from "../Components/ProductDetails/ProductDetails";
 import SignUp from "../Pages/SignUp/SignUp";
 import Login from "../Pages/Login/Login";
 import TrackOrder from "../Pages/TrackOrder/TrackOrder";
+import Compare from "../Pages/Compare/Compare";
+import CustomerSupport from "../Pages/CustomerSupport/CustomerSupport";
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +36,7 @@ export const router = createBrowserRouter([
         path: "/productDetails/:id",
         element: <ProductDetails></ProductDetails>,
         loader: async ({ params }) =>
-        fetch(`http://localhost:5000/api/v1/products/${params.id}`),
+          fetch(`http://localhost:5000/api/v1/products/${params.id}`),
       },
       {
         path: "/signUp",
@@ -47,6 +49,14 @@ export const router = createBrowserRouter([
       {
         path: "/trackOrder",
         element: <TrackOrder></TrackOrder>,
+      },
+      {
+        path: "/compare",
+        element: <Compare></Compare>,
+      },
+      {
+        path: "/customerSupport",
+        element: <CustomerSupport></CustomerSupport>,
       },
     ],
   },

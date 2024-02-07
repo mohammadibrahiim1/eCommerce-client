@@ -48,13 +48,13 @@ const Nav = () => {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+                      className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-[120px] mt-4"
                     >
                       <li>
-                        <a>Item 1</a>
+                        <a>Dollar(USD)</a>
                       </li>
                       <li>
-                        <a>Item 2</a>
+                        <a>Euro(EUR)</a>
                       </li>
                     </ul>
                   </div>
@@ -69,13 +69,13 @@ const Nav = () => {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+                      className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-[120px] mt-4"
                     >
                       <li>
-                        <a>Item 1</a>
+                        <a>English</a>
                       </li>
                       <li>
-                        <a>Item 2</a>
+                        <a>Bangla</a>
                       </li>
                     </ul>
                   </div>

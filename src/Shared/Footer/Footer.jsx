@@ -1,30 +1,91 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div>
       <h1>
-        <footer className="footer p-10 bg-base-200 text-base-content">
-          <nav>
-            <header className="footer-title">Services</header>
-            <a className="link link-hover">Branding</a>
-            <a className="link link-hover">Design</a>
-            <a className="link link-hover">Marketing</a>
-            <a className="link link-hover">Advertisement</a>
-          </nav>
-          <nav>
-            <header className="footer-title">Company</header>
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
-          </nav>
-          <nav>
-            <header className="footer-title">Legal</header>
-            <a className="link link-hover">Terms of use</a>
-            <a className="link link-hover">Privacy policy</a>
-            <a className="link link-hover">Cookie policy</a>
-          </nav>
+        <footer className="p-10 bg-[#191C1F]  text-white">
+          <div className="footer  w-[1320px] mx-auto  items-start justify-between gap-5">
+            <div>
+              <header className="footer-title">Services</header>
+              <div>
+                <h5 className="capitalize text-[#77878F] text-xs">
+                  customer supports:
+                </h5>
+                <h5 className="text-sm"> +88016 2561 9689</h5>
+              </div>
+              <div>
+                <h5 className="capitalize text-[#77878F] text-xs">
+                  4517 Washington Ave.
+                </h5>
+                <h5 className="text-xs text-[#77878F]">
+                  Manchester, Kentucky 39495
+                </h5>
+              </div>
+              <div>
+                <h5 className="text-white text-xs">
+                  mohammadibrahiim1@gmail.com
+                </h5>
+              </div>
+            </div>
+            <div>
+              <header className="footer-title">Top Category</header>
+              <Link to={"/"} className="link link-hover">
+                Computer & Laptop
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                SmartPhone
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                Headphone
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                Accessories
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                Camera & Photo
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                TV & Homes
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                Browse All Product
+              </Link>
+            </div>
+            <div>
+              <header className="footer-title">Quick links</header>
+              <Link to={"/shop"} className="link link-hover">
+                Shop Product
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                Shopping Cart
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                WishList
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                Compare
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                Track Order
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                Customer Help
+              </Link>
+              <Link to={"/"} className="link link-hover">
+                About Us
+              </Link>
+            </div>
+
+            <div>
+              <header className="footer-title">Others</header>
+              <a className="link link-hover">Terms of use</a>
+              <a className="link link-hover">Privacy policy</a>
+              <a className="link link-hover">Cookie policy</a>
+            </div>
+          </div>
         </footer>
-        <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+        <footer className="footer px-10 py-4 border-t bg-[#191C1F] text-white border-base-300">
           <aside className="items-center grid-flow-col">
             <svg
               width="24"
@@ -42,7 +103,7 @@ const Footer = () => {
               Providing reliable tech since 1992
             </p>
           </aside>
-          <nav className="md:place-self-center md:justify-self-end">
+          <div className="md:place-self-center md:justify-self-end">
             <div className="grid grid-flow-col gap-4">
               <a>
                 <svg
@@ -78,7 +139,7 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
-          </nav>
+          </div>
         </footer>
       </h1>
     </div>
