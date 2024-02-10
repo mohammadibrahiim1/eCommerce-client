@@ -13,6 +13,8 @@ const Shop = () => {
   // const pageTitle = usePageTitle();
 
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedBrands, setSelectedBrands] = useState("");
+  console.log(selectedBrands);
 
   // const [priceRange, setPriceRange] = useState([0, 100]);
 
@@ -64,7 +66,10 @@ const Shop = () => {
             <hr className="my-5" />
 
             <div>
-              <Brands></Brands>
+              <Brands
+                setSelectedBrands={setSelectedBrands}
+                selectedBrands={selectedBrands}
+              ></Brands>
             </div>
           </div>
 

@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 
 const brands = [
   {
@@ -38,28 +39,35 @@ const brands = [
     slug: "samsung",
   },
   {
-    id: 7,
+    id: 8,
     title: "Asus",
     slug: "asus",
   },
   {
-    id: 7,
+    id: 9,
     title: "Dell",
     slug: "dell",
   },
   {
-    id: 7,
+    id: 10,
     title: "Intel",
     slug: "intel",
   },
   {
-    id: 7,
+    id: 11,
     title: "AMD Ryzen",
     slug: "ryzen",
   },
 ];
 
-const Brands = () => {
+const Brands = ({ selectedBrands, setSelectedBrands }) => {
+  // const handleBrandChange = (slug) => {
+  //   if (selectedBrands.includes(slug)) {
+  //     setSelectedBrands(selectedBrands.filter((item) => item !== slug));
+  //   } else {
+  //     setSelectedBrands([...selectedBrands, slug]);
+  //   }
+  // };
   return (
     <div>
       <section>
@@ -68,21 +76,19 @@ const Brands = () => {
             Popular Brands
           </h1>
 
-          <div className="grid grid-cols-2 justify-between items-center gap-3 cursor-pointer">
+          <div className="grid grid-cols-2 justify-between items-center gap-3">
             {brands?.map((brand) => (
               <>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 cursor-pointer">
                   <input
                     type="checkbox"
                     id="checkbox"
-                    className="form-checkbox h-4 w-4 text-indigo-600"
+                    // checked={selectedBrands}
+                    onClick={() => setSelectedBrands(brand.slug)}
+                    className="form-checkbox  text-indigo-600"
                   />
 
-                  <label
-                    // eslint-disable-next-line react/no-unknown-property
-                    for="checkbox"
-                    className="text-sm font-medium text-gray-700"
-                  >
+                  <label className="text-sm font-medium text-gray-700">
                     {brand.title}
                   </label>
                 </div>
