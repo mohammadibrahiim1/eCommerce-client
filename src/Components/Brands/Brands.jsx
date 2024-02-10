@@ -14,10 +14,12 @@ const brands = [
   },
   {
     id: 3,
+    title: "Nokia",
     slug: "nokia",
   },
   {
     id: 4,
+    title: "One Plus",
     slug: "one-plus",
   },
   {
@@ -66,11 +68,23 @@ const Brands = () => {
             Popular Brands
           </h1>
 
-          <div>
+          <div className="grid grid-cols-2 justify-between items-center gap-3 cursor-pointer">
             {brands?.map((brand) => (
               <>
-                <div>
-                  <h1>{brand.title}</h1>
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="checkbox"
+                    className="form-checkbox h-4 w-4 text-indigo-600"
+                  />
+
+                  <label
+                    // eslint-disable-next-line react/no-unknown-property
+                    for="checkbox"
+                    className="text-sm font-medium text-gray-700"
+                  >
+                    {brand.title}
+                  </label>
                 </div>
               </>
             ))}
