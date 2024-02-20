@@ -88,9 +88,7 @@ const Brands = ({ selectedBrands, setSelectedBrands }) => {
                     className="form-checkbox  text-indigo-600"
                   />
 
-                  <label className="text-sm font-medium text-gray-700">
-                    {brand.title}
-                  </label>
+                  <label className="text-sm text-gray-500">{brand.title}</label>
                 </div>
               </>
             ))}

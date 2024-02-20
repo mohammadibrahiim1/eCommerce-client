@@ -14,11 +14,14 @@ const Shop = () => {
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedBrands, setSelectedBrands] = useState("");
-  console.log(selectedBrands);
+  console.log(selectedBrands, selectedCategory);
 
   // const [priceRange, setPriceRange] = useState([0, 100]);
 
-  const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
+  const { data, error, isLoading } = useGetProductsQuery({
+    brand: selectedBrands,
+    category: selectedCategory,
+  });
 
   const products = data?.data;
   console.log(products);
@@ -77,7 +80,7 @@ const Shop = () => {
             <div className="flex justify-between items-center gap-5">
               <div>
                 <h1 className="font-semibold text-red-500">
-                  <span className="text-purple-600">{products.length}</span>{" "}
+                  <span className="text-purple-600">{products?.length}</span>{" "}
                   Results found
                 </h1>
               </div>

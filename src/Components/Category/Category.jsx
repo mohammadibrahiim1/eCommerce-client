@@ -20,7 +20,7 @@ const Category = ({ category, setSelectedCategory }) => {
     setActiveChildSubIndex(activeChildIndex === idx ? null : idx);
   };
 
-  console.log(category);
+  // console.log(category);
 
   const { name, _id, index, subCategories, i } = category;
 
