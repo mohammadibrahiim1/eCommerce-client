@@ -61,13 +61,6 @@ const brands = [
 ];
 
 const Brands = ({ selectedBrands, setSelectedBrands }) => {
-  // const handleBrandChange = (slug) => {
-  //   if (selectedBrands.includes(slug)) {
-  //     setSelectedBrands(selectedBrands.filter((item) => item !== slug));
-  //   } else {
-  //     setSelectedBrands([...selectedBrands, slug]);
-  //   }
-  // };
   return (
     <div>
       <section>
@@ -82,13 +75,20 @@ const Brands = ({ selectedBrands, setSelectedBrands }) => {
                 <div className="flex items-center space-x-2 cursor-pointer">
                   <input
                     type="checkbox"
-                    id="checkbox"
-                    // checked={selectedBrands}
-                    onClick={() => setSelectedBrands(brand.slug)}
+                    id="flexCheckDefault"
+                    value=""
+                    checked={selectedBrands}
+                    // value="International"
+                    onClick={(e) => setSelectedBrands(e.target.checked)}
                     className="form-checkbox  text-indigo-600"
                   />
 
-                  <label className="text-sm text-gray-500">{brand.title}</label>
+                  <label
+                    className="text-sm    capitalize text-gray-500"
+                    id="flexCheckDefault"
+                  >
+                    apple
+                  </label>
                 </div>
               </>
             ))}

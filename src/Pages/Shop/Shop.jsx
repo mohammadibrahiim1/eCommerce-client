@@ -13,7 +13,7 @@ const Shop = () => {
   // const pageTitle = usePageTitle();
 
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedBrands, setSelectedBrands] = useState("");
+  const [selectedBrands, setSelectedBrands] = useState(false);
   console.log(selectedBrands, selectedCategory);
 
   // const [priceRange, setPriceRange] = useState([0, 100]);
