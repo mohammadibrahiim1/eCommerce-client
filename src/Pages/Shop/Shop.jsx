@@ -5,6 +5,7 @@ import Categories from "../../Components/Categories/Categories";
 import Product from "../../Components/Product/Product";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import Brands from "../../Components/Brands/Brands";
+import { useGetBrandsQuery } from "../../redux/features/api/brandApi/brandApi";
 // import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
 
 // import { usePageTitle } from "../../hooks/usePageTitle/usePageTitle";
@@ -13,27 +14,27 @@ const Shop = () => {
   // const pageTitle = usePageTitle();
 
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedBrands, setSelectedBrands] = useState(false);
-  console.log(selectedBrands, selectedCategory);
+  const [isChecked, setIsChecked] = useState(false);
+  console.log(isChecked);
+  // console.log(selectedBrand);
 
-  // const [priceRange, setPriceRange] = useState([0, 100]);
+  const { data: brands } = useGetBrandsQuery();
 
-  const { data, error, isLoading } = useGetProductsQuery({
-    brand: selectedBrands,
-    category: selectedCategory,
-  });
+  console.log(brands?.data);
+
+  const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
 
   const products = data?.data;
   console.log(products);
 
-  // const handleSliderChange = (e) => {
-  //   setPriceRange([priceRange[0], parseInt(e.target.value, 10)]);
-  // };
-
-  // const products = products.filter((product) => {
-  //   const productPrice = product.price;
-  //   return productPrice >= priceRange[0] && productPrice <= priceRange[1];
-  // });
+  const handleCheckboxFilter = (e) => {
+    const checked = e.target.checked;
+    setIsChecked(checked);
+    if (checked) {
+      const filtered = products.filter((item) => item.brand === checked);
+      return filtered;
+    }
+  };
 
   if (isLoading) {
     return (
@@ -70,8 +71,9 @@ const Shop = () => {
 
             <div>
               <Brands
-                setSelectedBrands={setSelectedBrands}
-                selectedBrands={selectedBrands}
+                brands={brands}
+                isChecked={isChecked}
+                handleCheckboxFilter={handleCheckboxFilter}
               ></Brands>
             </div>
           </div>
