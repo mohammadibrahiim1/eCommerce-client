@@ -207,12 +207,14 @@ const Cart = () => {
                       </span>
                     </h2>
 
-                    <Button size={"xs"} width="full">
-                      <span className="text-[#2DA5F3]">
-                        Proceed to Checkout
-                      </span>
-                      <ArrowRight className="mx-2 text-[#2DA5F3]" size={16} />
-                    </Button>
+                    <Link to={"/billingDetails"}>
+                      <Button size={"xs"} width="full">
+                        <span className="text-[#2DA5F3]">
+                          Proceed to Checkout
+                        </span>
+                        <ArrowRight className="mx-2 text-[#2DA5F3]" size={16} />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>

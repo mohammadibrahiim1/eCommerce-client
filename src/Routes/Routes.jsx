@@ -10,7 +10,7 @@ import Login from "../Pages/Login/Login";
 import TrackOrder from "../Pages/TrackOrder/TrackOrder";
 import Compare from "../Pages/Compare/Compare";
 import CustomerSupport from "../Pages/CustomerSupport/CustomerSupport";
-
+import BillingDetails from "../Pages/BillingDetails/BillingDetails";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +46,7 @@ export const router = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       },
+
       {
         path: "/trackOrder",
         element: <TrackOrder></TrackOrder>,
@@ -54,6 +55,11 @@ export const router = createBrowserRouter([
         path: "/compare",
         element: <Compare></Compare>,
       },
+      {
+        path: "/billingDetails",
+        element: <BillingDetails></BillingDetails>,
+      },
+
       {
         path: "/customerSupport",
         element: <CustomerSupport></CustomerSupport>,

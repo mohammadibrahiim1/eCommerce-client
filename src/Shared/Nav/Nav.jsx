@@ -11,6 +11,7 @@ import {
 import { FaCartShopping } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
+import { IoBagCheckOutline } from "react-icons/io5";
 
 const Nav = () => {
   return (
@@ -148,6 +149,9 @@ const Nav = () => {
           </div>
 
           <div className="navbar-end gap-5 ">
+            <Link to={"/billingDetails"}>
+              <IoBagCheckOutline className="text-[#FFF] w-6 h-6" />
+            </Link>
             <Link to={"/cart"}>
               <FaCartShopping className="text-[#FFF] w-6 h-6" />
             </Link>
