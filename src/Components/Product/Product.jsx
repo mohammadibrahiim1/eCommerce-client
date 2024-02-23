@@ -113,11 +113,11 @@ const Product = ({ product }) => {
           <div className="px-4 py-1">
             <Link
               to={`/productDetails/${_id} `}
-              className="font-semibold text-[14px]"
+              className="font-semibold text-[13px] hover:text-[#2DA5F3] duration-300"
             >
-              {model}
+              {model.slice(0, 27)}...
             </Link>
-            <div className="card-actions font-semibold justify-between items-center mt-2 flex  ">
+            <div className="card-actions font-semibold justify-between items-center mt-5 flex  ">
               <div className="badge badge-outline text-[#2DA5F3]">${price}</div>
               <div className="flex justify-between items-center gap-1">
                 <div

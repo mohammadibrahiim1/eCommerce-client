@@ -57,7 +57,7 @@ const Shop = () => {
   return (
     <div>
       <section>
-        <div className=" grid grid-cols-6 items-started container mx-auto  gap-1">
+        <div className=" grid grid-cols-6 items-started container mx-auto gap-5">
           <div className="col-span-1">
             <h1 className="text-[#191C1F] font-semibold text-xl  pt-3 =">
               Categories
@@ -82,7 +82,7 @@ const Shop = () => {
             <div className="flex justify-between items-center gap-5">
               <div>
                 <h1 className="font-semibold text-red-500">
-                  <span className="text-purple-600">{products?.length}</span>{" "}
+                  <span className="text-purple-600">{products?.length}</span>
                   Results found
                 </h1>
               </div>
@@ -109,9 +109,14 @@ const Shop = () => {
             </div>
 
             <div>
+              <div className="bg-[#F2F4F5] text-[#191C1F] font-semibold">
+                {products.length}
+                <span className="text-[#5F6C72]">Results found</span>
+              </div>
+
               {products?.length ? (
-                <div className="grid grid-cols-4 justify-center items-center gap-3 mt-2">
-                  {products?.map((product) => (
+                <div className="grid grid-cols-4 justify-center items-center my-3 gap-6">
+                  {products?.slice(0, 12)?.map((product) => (
                     <Product product={product} key={product._id}></Product>
                   ))}
                 </div>
