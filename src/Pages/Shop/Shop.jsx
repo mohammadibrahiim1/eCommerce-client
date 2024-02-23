@@ -16,7 +16,6 @@ const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   console.log(isChecked);
-  // console.log(selectedBrand);
 
   const { data: brands } = useGetBrandsQuery();
 
@@ -24,14 +23,14 @@ const Shop = () => {
 
   const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
 
-  const products = data?.data;
+  const products = data?.data; 
   console.log(products);
 
   const handleCheckboxFilter = (e) => {
     const checked = e.target.checked;
     setIsChecked(checked);
     if (checked) {
-      const filtered = products.filter((item) => item.brand === checked);
+      const filtered = products.filter((item) => item.brand === checked);  
       return filtered;
     }
   };
