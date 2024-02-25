@@ -30,6 +30,15 @@ export const createUser = createAsyncThunk(
   }
 );
 
+export const getUser = createAsyncThunk("auth/getUser", async (email) => {
+  const response = await fetch(` http://localhost:5173/api/v1/user/${email}`);
+  const data = await response.json();
+  if (data.status) {
+    return data;
+  }
+  return email;
+});
+
 export const authSlice = createSlice({
   name: "auth",
   initialState,

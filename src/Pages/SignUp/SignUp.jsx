@@ -3,10 +3,14 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { createUser } from "../../redux/features/api/auth/authSlice";
+import toast from "react-hot-toast";
+import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
 
 const SignUp = () => {
+  const [postUser, { isLoading, error, isError }] = usePostUserMutation();
   const dispatch = useDispatch();
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -15,6 +19,14 @@ const SignUp = () => {
     console.log(name, email, password);
 
     dispatch(createUser({ name, email: email, password: password }));
+    toast.success("User created successfully");
+
+    const userInfo = {
+      displayName: name,
+      email: email,
+    };
+
+    await postUser({ ...userInfo, applicants: [], queries: [] });
   };
 
   return (
