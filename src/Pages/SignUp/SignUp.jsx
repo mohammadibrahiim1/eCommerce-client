@@ -1,8 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { createUser } from "../../redux/features/api/auth/authSlice";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password);
+
+    dispatch(createUser({ name, email: email, password: password }));
+  };
+
   return (
     <div>
       <div className="bg-base-100">
@@ -11,7 +25,7 @@ const SignUp = () => {
             <h2 className="font-semibold border-b ps-8 py-4 bg-[#1b6392] text-white">
               Sign up
             </h2>
-            <form className="py-2 px-5">
+            <form onSubmit={handleSubmit} className="py-2 px-5">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Name</span>
@@ -19,7 +33,8 @@ const SignUp = () => {
                 <input
                   type="text"
                   placeholder="Name"
-                  className="input input-bordered rounded-none focus:outline-none focus:border-indigo-500"
+                  name="name"
+                  className="input input-bordered rounded-none focus:outline-none focus:border-[#FA8232]"
                   required
                 />
               </div>
@@ -29,8 +44,9 @@ const SignUp = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="email"
-                  className="input input-bordered rounded-none focus:outline-none focus:border-indigo-500"
+                  className="input input-bordered rounded-none focus:outline-none focus:border-[#FA8232]"
                   required
                 />
               </div>
@@ -41,7 +57,8 @@ const SignUp = () => {
                 <input
                   type="password"
                   placeholder="password"
-                  className="input input-bordered rounded-none focus:outline-none focus:border-indigo-500"
+                  name="password"
+                  className="input input-bordered rounded-none focus:outline-none focus:border-[#FA8232]"
                   required
                 />
               </div>

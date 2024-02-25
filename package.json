@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "autoprefixer": "^10.4.16",
+    "firebase": "^10.8.0",
     "keep-react": "^1.0.2",
     "phosphor-react": "^1.4.1",
     "postcss": "^8.4.32",

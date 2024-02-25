@@ -8,14 +8,16 @@ const authApi = baseApi.injectEndpoints({
         method: "POST",
         body: data,
       }),
-      async onQueryStarted(data, { dispatch, queryFulfilled }) {
-        try {
-          const res = await queryFulfilled;
-          await dispatch()
-        } catch (error) {
-          console.log(error);
-        }
-      },
+      // async onQueryStarted(data, { dispatch, queryFulfilled }) {
+      //   try {
+      //     const res = await queryFulfilled;
+      //     await dispatch();
+      //   } catch (error) {
+      //     console.log(error);
+      //   }
+      // },
     }),
   }),
 });
+
+export const { useRegisterMutation } = authApi;
