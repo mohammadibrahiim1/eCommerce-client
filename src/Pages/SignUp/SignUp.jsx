@@ -1,13 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { createUser } from "../../redux/features/api/auth/authSlice";
+import {
+  createUser,
+  googleSignIn,
+} from "../../redux/features/api/auth/authSlice";
 import toast from "react-hot-toast";
 import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
+import { data } from "autoprefixer";
 
 const SignUp = () => {
   const [postUser, { isLoading, error, isError }] = usePostUserMutation();
+
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -28,6 +33,18 @@ const SignUp = () => {
 
     await postUser({ ...userInfo, applicants: [], queries: [] });
   };
+
+  const handleGoogleSignIn = () => {
+    dispatch(googleSignIn())
+      .then(() => {
+        toast.success("successfully created account with google");
+      })
+      .catch((error) => console.log(error));
+  };
+
+  if (isError) {
+    return toast.error(error.data.message);
+  }
 
   return (
     <div>
@@ -122,7 +139,10 @@ const SignUp = () => {
               <span>Or</span>
             </div>
             <div className="mx-5">
-              <button className="inline-flex h-10 w-full  mx-auto items-center justify-evenly gap-5 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
+              <button
+                onClick={handleGoogleSignIn}
+                className="inline-flex h-10 w-full  mx-auto items-center justify-evenly gap-5 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60"
+              >
                 <img
                   src="https://www.svgrepo.com/show/475656/google-color.svg"
                   alt="Google"

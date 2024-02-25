@@ -1,8 +1,29 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  googleSignIn,
+  loginUser,
+} from "../../redux/features/api/auth/authSlice";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    dispatch(loginUser({ email, password }));
+    toast.success("User login successfully");
+  };
+
+  const handleGoogleSignIn = () => {
+    dispatch(googleSignIn());
+  };
   return (
     <div>
       <section>
@@ -12,7 +33,7 @@ const Login = () => {
               <h2 className="font-semibold border-b ps-8 py-4 bg-[#1b6392] text-white">
                 Login
               </h2>
-              <form className="py-2 px-5">
+              <form onSubmit={handleSubmit} className="py-2 px-5">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text font-semibold">Email</span>
@@ -20,6 +41,7 @@ const Login = () => {
                   <input
                     type="email"
                     placeholder="email"
+                    name="email"
                     className="input input-bordered rounded-none focus:outline-none focus:border-indigo-500"
                     required
                   />
@@ -31,6 +53,7 @@ const Login = () => {
                   <input
                     type="password"
                     placeholder="password"
+                    name="password"
                     className="input input-bordered rounded-none focus:outline-none focus:border-indigo-500"
                     required
                   />
@@ -70,7 +93,7 @@ const Login = () => {
               <div className="text-yellow-500 flex justify-center items-center py-2">
                 <span>Or</span>
               </div>
-              <div className="mx-5">
+              <div onClick={handleGoogleSignIn} className="mx-5">
                 <button className="inline-flex h-10 w-full  mx-auto items-center justify-evenly gap-5 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
                   <img
                     src="https://www.svgrepo.com/show/475656/google-color.svg"

@@ -1,7 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
+  signInWithEmailAndPassword,
+  signInWithPopup,
   updateProfile,
 } from "firebase/auth";
 import app from "../../../../firebase/firebase.config";
@@ -39,6 +42,22 @@ export const getUser = createAsyncThunk("auth/getUser", async (email) => {
   return email;
 });
 
+export const loginUser = createAsyncThunk(
+  "auth/loginUser",
+  async ({ email, password }) => {
+    const data = await signInWithEmailAndPassword(auth, email, password);
+    console.log(data);
+    return data.user.email;
+  }
+);
+
+export const googleSignIn = createAsyncThunk("auth/googleSignIn", async () => {
+  const googleProvider = new GoogleAuthProvider();
+  const data = await signInWithPopup(auth, googleProvider);
+  console.log(data);
+  return data.user.email;
+});
+
 export const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -74,9 +93,64 @@ export const authSlice = createSlice({
         state.user.email = "";
         state.isError = true;
         state.error = action.error.message;
+      })
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+        state.error = "";
+      })
+      .addCase(loginUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user.email = payload;
+        state.isError = false;
+        state.error = "";
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.user.email = "";
+        state.isError = true;
+        state.error = action.error.message;
+      })
+      .addCase(googleSignIn.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+        state.error = "";
+      })
+      .addCase(googleSignIn.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user.email = payload;
+        state.isError = false;
+        state.error = "";
+      })
+      .addCase(googleSignIn.rejected, (state, action) => {
+        state.isLoading = false;
+        state.user.email = "";
+        state.isError = true;
+        state.error = action.error.message;
+      })
+      .addCase(getUser.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+        state.error = "";
+      })
+      .addCase(getUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        if (payload.status) {
+          state.user = payload.data;
+        } else {
+          state.user.email = payload;
+        }
+        state.isError = false;
+        state.error = "";
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.user.email = "";
+        state.isError = true;
+        state.error = action.error.message;
       });
   },
 });
 
-export const { logOUt } = authSlice.actions;
+export const { logOUt, setUser, toggleLoading } = authSlice.actions;
 export default authSlice.reducer;
