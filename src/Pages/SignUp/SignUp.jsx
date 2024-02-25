@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const SignUp = () => {
   return (
     <div>
-      <div className="bg-base-100 mt-5">
+      <div className="bg-base-100">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card  w-[424px] h-[744px] shadow-2xl bg-base-100 rounded-none">
+          <div className="card w-[424px] h-[644px] shadow-2xl bg-base-100 rounded-none">
             <h2 className="font-semibold border-b ps-8 py-4 bg-[#1b6392] text-white">
               Sign up
             </h2>
@@ -62,9 +62,19 @@ const SignUp = () => {
                 <button className="btn btn-primary bg-[#FA8232] border-[#FA8232] hover:bg-[#FA8232] hover:border-[#fa8232e8] text-white rounded-none">
                   Sign up
                 </button>
+
+                <span className=" text-[#1B6392] font-semibold text-sm my-1">
+                  Already have an account?
+                  <Link
+                    to={"/login"}
+                    className="text-[#1B6392] hover:text-yellow-600 ms-1"
+                  >
+                    Login
+                  </Link>
+                </span>
               </div>
 
-              <div className="text-yellow-500 flex justify-center items-center py-5">
+              {/* <div className="text-yellow-500 flex justify-center items-center py-5">
                 <span>or</span>
               </div>
               <div>
@@ -76,11 +86,11 @@ const SignUp = () => {
                     Login
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </form>
 
-            <div className="text-yellow-500 flex justify-center items-center py-5">
-              <span>Or create account with</span>
+            <div className="text-yellow-500 flex justify-center items-center py-2">
+              <span>Or</span>
             </div>
             <div className="mx-5">
               <button className="inline-flex h-10 w-full  mx-auto items-center justify-evenly gap-5 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
