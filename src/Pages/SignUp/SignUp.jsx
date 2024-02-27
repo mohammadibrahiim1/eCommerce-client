@@ -31,7 +31,8 @@ const SignUp = () => {
         displayName: name,
         email: email,
       };
-      await postUser({ ...userInfo, applicants: [], queries: [] });
+
+      dispatch(await postUser({ ...userInfo, applicants: [], queries: [] }));
     } catch (error) {
       console.log(error);
     }
