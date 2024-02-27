@@ -2,8 +2,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  googleSignIn,
   loginUser,
+  signInWithGoogle,
 } from "../../redux/features/api/auth/authSlice";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
@@ -22,7 +22,7 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    dispatch(googleSignIn());
+    dispatch(signInWithGoogle());
   };
   return (
     <div>

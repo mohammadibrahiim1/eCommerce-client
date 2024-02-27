@@ -1,17 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   createUser,
-  googleSignIn,
+  signInWithGoogle,
 } from "../../redux/features/api/auth/authSlice";
 import toast from "react-hot-toast";
 import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
-import { data } from "autoprefixer";
 
 const SignUp = () => {
   const [postUser, { isLoading, error, isError }] = usePostUserMutation();
+  const user = useSelector((state) => state.auth);
+  console.log(user);
 
   const dispatch = useDispatch();
 
@@ -23,28 +24,32 @@ const SignUp = () => {
     const password = form.password.value;
     console.log(name, email, password);
 
-    dispatch(createUser({ name, email: email, password: password }));
-    toast.success("User created successfully");
+    try {
+      dispatch(createUser({ name, email: email, password: password }));
 
-    const userInfo = {
-      displayName: name,
-      email: email,
-    };
-
-    await postUser({ ...userInfo, applicants: [], queries: [] });
+      const userInfo = {
+        displayName: name,
+        email: email,
+      };
+      await postUser({ ...userInfo, applicants: [], queries: [] });
+    } catch (error) {
+      console.log(error);
+    }
+    return toast.error(user?.error);
   };
 
   const handleGoogleSignIn = () => {
-    dispatch(googleSignIn())
-      .then(() => {
-        toast.success("successfully created account with google");
-      })
-      .catch((error) => console.log(error));
-  };
+    dispatch(signInWithGoogle());
 
-  if (isError) {
-    return toast.error(error.data.message);
-  }
+    dispatch(
+      postUser({
+        displayName: user.displayName,
+        email: user.email,
+        applicants: [],
+        queries: [],
+      })
+    );
+  };
 
   return (
     <div>

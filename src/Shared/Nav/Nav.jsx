@@ -9,11 +9,16 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
 
 const Nav = () => {
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  const user = useSelector((state) => state);
+
   return (
     <div className="bg-[#1B6392]">
       <div className="flex justify-between items-center gap-4 w-[1320px] mx-auto py-5">
@@ -159,9 +164,13 @@ const Nav = () => {
             <Link to={"/wishList"}>
               <FaHeart className="text-[#FFF] w-6 h-6" />
             </Link>
-            <Link to={"/signUp"}>
-              <FaUser className="text-[#FFF] w-6 h-6" />
-            </Link>
+            {user?.email ? (
+              <button className="btn btn-xs">Logout</button>
+            ) : (
+              <Link to={"/signUp"}>
+                <FaUser className="text-[#FFF] w-6 h-6" />
+              </Link>
+            )}
           </div>
         </div>
       </div>

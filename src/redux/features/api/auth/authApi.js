@@ -5,7 +5,7 @@ const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     postUser: builder.mutation({
       query: (data) => ({
-        url: "/user",
+        url: "/users",
         method: "POST",
         body: data,
       }),
@@ -13,7 +13,7 @@ const authApi = baseApi.injectEndpoints({
         try {
           const res = await queryFulfilled;
           console.log(res);
-          await dispatch(getUser(data.email));
+          await dispatch(getUser(data?.email));
         } catch (error) {
           console.log(error);
         }

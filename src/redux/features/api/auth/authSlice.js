@@ -19,6 +19,7 @@ const initialState = {
   isLoading: true,
   isError: false,
   error: "",
+  
 };
 
 export const createUser = createAsyncThunk(
@@ -29,13 +30,14 @@ export const createUser = createAsyncThunk(
       displayName: name,
     });
     console.log(data);
+    // return data.user.email;
     return { name: data.user.displayName, email: data.user.email };
   }
 );
 
 export const getUser = createAsyncThunk("auth/getUser", async (email) => {
-  const response = await fetch(` http://localhost:5173/api/v1/user/${email}`);
-  const data = await response.json();
+  const res = await fetch(` http://localhost:5173/api/v1/users/${email}`);
+  const data = await res.json();
   if (data.status) {
     return data;
   }
@@ -51,12 +53,15 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-export const googleSignIn = createAsyncThunk("auth/googleSignIn", async () => {
-  const googleProvider = new GoogleAuthProvider();
-  const data = await signInWithPopup(auth, googleProvider);
-  console.log(data);
-  return data.user.email;
-});
+export const signInWithGoogle = createAsyncThunk(
+  "auth/signInWithGoogle",
+  async () => {
+    const googleProvider = new GoogleAuthProvider();
+    const data = await signInWithPopup(auth, googleProvider);
+    console.log(data);
+    return data.user.email;
+  }
+);
 
 export const authSlice = createSlice({
   name: "auth",
@@ -81,8 +86,10 @@ export const authSlice = createSlice({
         state.isLoading = true;
         state.isError = false;
         state.error = "";
+        
       })
       .addCase(createUser.fulfilled, (state, { payload }) => {
+        console.log(payload);
         state.isLoading = false;
         state.user.email = payload;
         state.isError = false;
@@ -93,6 +100,7 @@ export const authSlice = createSlice({
         state.user.email = "";
         state.isError = true;
         state.error = action.error.message;
+        
       })
       .addCase(loginUser.pending, (state) => {
         state.isLoading = true;
@@ -111,18 +119,19 @@ export const authSlice = createSlice({
         state.isError = true;
         state.error = action.error.message;
       })
-      .addCase(googleSignIn.pending, (state) => {
+      .addCase(signInWithGoogle.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.error = "";
       })
-      .addCase(googleSignIn.fulfilled, (state, { payload }) => {
+      .addCase(signInWithGoogle.fulfilled, (state, { payload }) => {
+        console.log(payload);
         state.isLoading = false;
         state.user.email = payload;
         state.isError = false;
         state.error = "";
       })
-      .addCase(googleSignIn.rejected, (state, action) => {
+      .addCase(signInWithGoogle.rejected, (state, action) => {
         state.isLoading = false;
         state.user.email = "";
         state.isError = true;
