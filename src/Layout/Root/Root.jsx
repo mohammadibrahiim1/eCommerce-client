@@ -9,7 +9,7 @@ const Root = () => {
       <div>
         <Nav></Nav>
         <CurrentTitle></CurrentTitle>
-        <div className="w-[1320px] mx-auto">
+        <div>
           <Outlet></Outlet>
         </div>
         <Footer></Footer>

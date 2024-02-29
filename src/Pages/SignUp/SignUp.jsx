@@ -8,35 +8,19 @@ import {
 } from "../../redux/features/api/auth/authSlice";
 import toast from "react-hot-toast";
 import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
+import { useForm } from "react-hook-form";
 
 const SignUp = () => {
-  const [postUser, { isLoading, error, isError }] = usePostUserMutation();
+  const dispatch = useDispatch();
+  const { register, handleSubmit, reset } = useForm();
+  const [postUser, { isLoading, error }] = usePostUserMutation();
   const user = useSelector((state) => state.auth);
   console.log(user);
 
-  const dispatch = useDispatch();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    console.log(name, email, password);
-
-    try {
-      dispatch(createUser({ name, email: email, password: password }));
-
-      const userInfo = {
-        displayName: name,
-        email: email,
-      };
-
-      dispatch(await postUser({ ...userInfo, applicants: [], queries: [] }));
-    } catch (error) {
-      console.log(error);
-    }
-    return toast.error(user?.error);
+  const onSubmit = ({ name, email, password }) => {
+    console.log({ name, email, password });
+    dispatch(createUser({ name, email, password }));
+    reset();
   };
 
   const handleGoogleSignIn = () => {
@@ -60,7 +44,7 @@ const SignUp = () => {
             <h2 className="font-semibold border-b ps-8 py-4 bg-[#1b6392] text-white">
               Sign up
             </h2>
-            <form onSubmit={handleSubmit} className="py-2 px-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="py-2 px-5">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Name</span>
@@ -71,6 +55,7 @@ const SignUp = () => {
                   name="name"
                   className="input input-bordered rounded-none focus:outline-none focus:border-[#FA8232]"
                   required
+                  {...register("name")}
                 />
               </div>
               <div className="form-control">
@@ -83,6 +68,7 @@ const SignUp = () => {
                   placeholder="email"
                   className="input input-bordered rounded-none focus:outline-none focus:border-[#FA8232]"
                   required
+                  {...register("email")}
                 />
               </div>
               <div className="form-control">
@@ -95,6 +81,7 @@ const SignUp = () => {
                   name="password"
                   className="input input-bordered rounded-none focus:outline-none focus:border-[#FA8232]"
                   required
+                  {...register("password")}
                 />
               </div>
               <div className="font-semibold text-sm flex items-start  gap-1 mt-3">

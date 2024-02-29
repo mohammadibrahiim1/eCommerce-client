@@ -29,13 +29,13 @@ const BillingDetails = () => {
   };
   return (
     <div>
-      <section>
-        <div className=" bg-white">
-          <div className="max-lg:max-w-xl mx-auto w-full">
-            <div className="grid lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2 max-lg:order-1 p-6 max-w-4xl mx-auto w-full">
+      <section className="bg-[#F9FAFB]">
+        <div>
+          <div className="max-w-screen-2xl  max-lg:max-w-xl mx-auto">
+            <div className="grid lg:grid-cols-3 my-12">
+              <div className="lg:col-span-2 max-lg:order-1 max-w-4xl mx-auto w-full">
                 <div className="text-center max-lg:hidden">
-                  <h2 className="text-md font-semibold text-[#191C1F]  border-b border-[#333]">
+                  <h2 className="text-md font-extrabold text-[#333] border-b border-[#333]">
                     Billing Information
                   </h2>
                 </div>
@@ -207,10 +207,10 @@ const BillingDetails = () => {
                   </div>
                 </form>
               </div>
-              <div className="bg-gray-100 lg:h-screen lg:sticky lg:top-0">
+              <div className=" lg:h-screen lg:sticky lg:top-0">
                 <div className="relative h-full">
-                  <div className="p-8 lg:overflow-auto lg:h-[calc(100vh-60px)] max-lg:mb-8">
-                    <h2 className="text-2xl font-extrabold text-[#333]">
+                  <div className=" lg:overflow-auto  max-lg:mb-8">
+                    <h2 className="text-md font-extrabold text-[#333] border-b border-[#333]">
                       Order Summary
                     </h2>
                     <div className="space-y-6 mt-10">
@@ -290,7 +290,17 @@ const BillingDetails = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute left-0 bottom-0 bg-gray-200 w-full p-4">
+                  <div className="w-full py-4">
+                    <div className="flex justify-center items-center gap-2">
+                      <input
+                        type="text"
+                        placeholder="Input your coupon code"
+                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-2 rounded focus:border-[#10B981] outline-none"
+                      />
+                      <button className="btn btn-secondary btn-md bg-gray-100 text-[#333333]  hover:text-white hover:bg-[#10B981] hover:border-[#10B981] border-gray-500 duration-300 rounded">
+                        Apply
+                      </button>
+                    </div>
                     <h4 className="flex flex-wrap gap-4 text-base text-[#333] font-bold">
                       Total <span className="ml-auto">$240.00</span>
                     </h4>
