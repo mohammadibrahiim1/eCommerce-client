@@ -265,59 +265,60 @@ const BillingDetails = () => {
                           </ul>
                         </div>
                       </div>
-                      {/* <div className="grid sm:grid-cols-2 items-start gap-6">
-                        <div className="max-w-[190px] px-4 py-6 shrink-0 bg-gray-200 rounded-md">
+                      <div className="grid sm:grid-cols-3 items-center">
+                        <div className=" p-6 shrink-0 bg-gray-200 rounded-md">
                           <img
-                            src="https://readymadeui.com/images/product11.webp"
-                            className="w-full object-contain"
+                            src="https://readymadeui.com/images/product10.webp"
+                            className="w-[80px] mx-auto object-contain"
                           />
                         </div>
+                        <div className="flex items-center justify-center">
+                          <div className="border border-gray-400 rounded">
+                            <button
+                              id="decreaseBtn"
+                              className=" px-3 py-1  text-gray-700 font-semibold "
+                            >
+                              -
+                            </button>
+                            <input
+                              id="quantityInput"
+                              type="text"
+                              value="1"
+                              className="w-12 py-1 text-center "
+                            />
+                            <button
+                              id="increaseBtn"
+                              className=" px-3 py-1   font-semibold"
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+
                         <div>
-                          <h3 className="text-base text-[#333]">
-                            VelvetGlide Boots
+                          <h3 className="text-sm text-[#333]">
+                            Apex: Split Sneakers
                           </h3>
                           <ul className="text-xs text-[#333] space-y-2 mt-2">
-                            <li>
-                              Size <span className="float-right">37</span>
-                            </li>
-                            <li>
-                              Quantity <span className="float-right">2</span>
-                            </li>
-                            <li>
-                              Total Price{" "}
-                              <span className="float-right">$40</span>
+                            <div className="grid grid-cols-2 items-center">
+                              <li className="flex items-center gap-2">
+                                Size :<span className="text-[#059669]">37</span>
+                              </li>
+                              <li className="flex items-center gap-2">
+                                Quantity :
+                                <span className="text-[#059669]">2</span>
+                              </li>
+                            </div>
+                            <li className="flex flex-wrap gap-2">
+                              Total Price :
+                              <span className=" text-[#059669]">$40</span>
                             </li>
                           </ul>
                         </div>
                       </div>
-                      <div className="grid sm:grid-cols-2 items-start gap-6">
-                        <div className="max-w-[190px] px-4 py-6 shrink-0 bg-gray-200 rounded-md">
-                          <img
-                            src="https://readymadeui.com/images/product14.webp"
-                            className="w-full object-contain"
-                          />
-                        </div>
-                        <div>
-                          <h3 className="text-base text-[#333]">
-                            Echo Elegance
-                          </h3>
-                          <ul className="text-xs text-[#333] space-y-2 mt-2">
-                            <li>
-                              Size <span className="float-right">37</span>
-                            </li>
-                            <li>
-                              Quantity <span className="float-right">2</span>
-                            </li>
-                            <li>
-                              Total Price{" "}
-                              <span className="float-right">$40</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div> */}
                     </div>
                   </div>
-                  <div className="w-full py-4">
+                  <div className="w-full my-5">
                     <div className="flex justify-center items-center gap-2">
                       <input
                         type="text"
