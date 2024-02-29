@@ -214,31 +214,58 @@ const BillingDetails = () => {
                       Order Summary
                     </h2>
                     <div className="space-y-6 mt-10">
-                      <div className="grid sm:grid-cols-2 items-start gap-6">
-                        <div className="max-w-[190px] px-4 py-6 shrink-0 bg-gray-200 rounded-md">
+                      <div className="grid sm:grid-cols-3 items-center">
+                        <div className=" p-6 shrink-0 bg-gray-200 rounded-md">
                           <img
                             src="https://readymadeui.com/images/product10.webp"
-                            className="w-full object-contain"
+                            className="w-[80px] mx-auto object-contain"
                           />
                         </div>
+                        <div className="flex items-center justify-center">
+                          <div className="border border-gray-400 rounded">
+                            <button
+                              id="decreaseBtn"
+                              className=" px-3 py-1  text-gray-700 font-semibold "
+                            >
+                              -
+                            </button>
+                            <input
+                              id="quantityInput"
+                              type="text"
+                              value="1"
+                              className="w-12 py-1 text-center "
+                            />
+                            <button
+                              id="increaseBtn"
+                              className=" px-3 py-1   font-semibold"
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+
                         <div>
-                          <h3 className="text-base text-[#333]">
+                          <h3 className="text-sm text-[#333]">
                             Apex: Split Sneakers
                           </h3>
                           <ul className="text-xs text-[#333] space-y-2 mt-2">
-                            <li className="flex flex-wrap gap-4">
-                              Size <span className="ml-auto">37</span>
-                            </li>
-                            <li className="flex flex-wrap gap-4">
-                              Quantity <span className="ml-auto">2</span>
-                            </li>
-                            <li className="flex flex-wrap gap-4">
-                              Total Price <span className="ml-auto">$40</span>
+                            <div className="grid grid-cols-2 items-center">
+                              <li className="flex items-center gap-2">
+                                Size :<span className="text-[#059669]">37</span>
+                              </li>
+                              <li className="flex items-center gap-2">
+                                Quantity :
+                                <span className="text-[#059669]">2</span>
+                              </li>
+                            </div>
+                            <li className="flex flex-wrap gap-2">
+                              Total Price :
+                              <span className=" text-[#059669]">$40</span>
                             </li>
                           </ul>
                         </div>
                       </div>
-                      <div className="grid sm:grid-cols-2 items-start gap-6">
+                      {/* <div className="grid sm:grid-cols-2 items-start gap-6">
                         <div className="max-w-[190px] px-4 py-6 shrink-0 bg-gray-200 rounded-md">
                           <img
                             src="https://readymadeui.com/images/product11.webp"
@@ -287,7 +314,7 @@ const BillingDetails = () => {
                             </li>
                           </ul>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="w-full py-4">
@@ -301,8 +328,24 @@ const BillingDetails = () => {
                         Apply
                       </button>
                     </div>
-                    <h4 className="flex flex-wrap gap-4 text-base text-[#333] font-bold">
-                      Total <span className="ml-auto">$240.00</span>
+
+                    <div>
+                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
+                        Subtotal
+                        <span className="ml-auto text-[#333333]">$240.00</span>
+                      </h4>
+                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
+                        Shipping Cost
+                        <span className="ml-auto text-[#333333]">$240.00</span>
+                      </h4>
+                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
+                        Discount
+                        <span className="ml-auto text-[#333333]">$240.00</span>
+                      </h4>
+                    </div>
+
+                    <h4 className="flex flex-wrap gap-4 text-lg text-[#059669] font-semibold border-t py-3">
+                      Total Cost <span className="ml-auto">$240.00</span>
                     </h4>
                   </div>
                 </div>
