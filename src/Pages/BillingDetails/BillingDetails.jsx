@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { usePostOrderMutation } from "../../redux/features/api/orderApi/orderApi";
+import { BsCreditCard2FrontFill } from "react-icons/bs";
+import { FaSackDollar } from "react-icons/fa6";
 
 const BillingDetails = () => {
   const [postOrder, { isLoading, error, isError }] = usePostOrderMutation();
@@ -49,42 +51,42 @@ const BillingDetails = () => {
                         type="text"
                         placeholder="Name"
                         name="name"
-                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="email"
                         name="email"
                         placeholder="Email address"
-                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="text"
                         placeholder="Street address"
                         name="address"
-                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="text"
                         placeholder="City"
                         name="city"
-                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="text"
                         placeholder="State"
                         name="state"
-                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="number"
                         placeholder="Postal code"
                         name="postalCode"
-                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                     </div>
                   </div>
                   <div className="mt-12">
-                    <h2 className="text-md font-semibold text-[#191C1F]">
+                    <h2 className="text-md font-semibold text-[#191C1F] border-b border-gray-200 pb-1">
                       Payment method
                     </h2>
                     <div className="grid gap-4 sm:grid-cols-2 mt-8">
@@ -116,29 +118,29 @@ const BillingDetails = () => {
                           />
                         </label>
                       </div>
-                      <div className="flex items-center">
+
+                      <div className="flex items-center border justify-between px-4">
+                        <div className="flex items-center gap-2">
+                          <FaSackDollar className="h-5 w-6 mr-1" />
+                          <label
+                            htmlFor="paypal"
+                            className="mr-4 flex gap-2 cursor-pointer font-semibold"
+                          >
+                            Cash on Delivery
+                          </label>
+                        </div>
                         <input
                           type="radio"
-                          className="w-5 h-5 cursor-pointer"
+                          className="w-4 h-4 cursor-pointer"
                           id="paypal"
                         />
-                        <label
-                          htmlFor="paypal"
-                          className="ml-4 flex gap-2 cursor-pointer"
-                        >
-                          <img
-                            src="https://readymadeui.com/images/paypal.webp"
-                            className="w-20"
-                            alt="paypalCard"
-                          />
-                        </label>
                       </div>
                     </div>
                     <div className="grid gap-6 mt-8">
                       <input
                         type="text"
                         placeholder="Cardholder's Name"
-                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <div className="flex bg-white border-b-2 focus-within:border-[#333] overflow-hidden">
                         <svg
@@ -167,12 +169,12 @@ const BillingDetails = () => {
                         <input
                           type="number"
                           placeholder="EXP."
-                          className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                          className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                         />
                         <input
                           type="number"
                           placeholder="CVV"
-                          className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"
+                          className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                         />
                       </div>
                       <div className="flex items-center">
