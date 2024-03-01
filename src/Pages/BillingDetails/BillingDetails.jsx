@@ -6,13 +6,20 @@ import { FaSackDollar } from "react-icons/fa6";
 import { IoReturnUpBack } from "react-icons/io5";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const BillingDetails = () => {
   const [selectedOption, setSelectedOption] = useState("");
+  const [shippingCost, setShippingCost] = useState("");
+  console.log("shippingCost", shippingCost);
 
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
   };
+  const handleShippingCost = (e) => {
+    setShippingCost(e.target.value);
+  };
+
   const [postOrder, { isLoading, error, isError }] = usePostOrderMutation();
 
   const handlePlaceOrder = (event) => {
@@ -42,7 +49,7 @@ const BillingDetails = () => {
       <section className="bg-[#F9FAFB]">
         <div>
           <div className="max-w-screen-2xl  max-lg:max-w-xl mx-auto">
-            <div className="grid lg:grid-cols-3 my-12">
+            <div className="grid lg:grid-cols-3 my-5">
               <div className="lg:col-span-2 max-lg:order-1 max-w-4xl mx-auto w-full">
                 <div className="text-center max-lg:hidden">
                   <h2 className="text-md font-extrabold text-[#333] border-b border-[#333]">
@@ -59,36 +66,42 @@ const BillingDetails = () => {
                         type="text"
                         placeholder="Name"
                         name="name"
+                        required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="email"
                         name="email"
                         placeholder="Email address"
+                        required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="text"
                         placeholder="Street address"
                         name="address"
+                        required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="text"
                         placeholder="City"
                         name="city"
+                        required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="text"
                         placeholder="State"
                         name="state"
+                        required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
                         type="number"
                         placeholder="Postal code"
                         name="postalCode"
+                        required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                     </div>
@@ -99,7 +112,7 @@ const BillingDetails = () => {
                       Shipping Cost
                     </h2>
                     <div className="grid gap-4 sm:grid-cols-2 mt-8">
-                      <div className="form-control border px-2 rounded">
+                      <div className="form-control border border-1 border-[#059669] px-2 ">
                         <label className="label cursor-pointer">
                           <div className="label-text flex items-center gap-2">
                             <LiaShippingFastSolid className="h-8 w-8" />
@@ -111,12 +124,15 @@ const BillingDetails = () => {
                           <input
                             type="radio"
                             name="shipping"
-                            className="radio checked:bg-red-500 radio-sm"
-                            checked
+                            id="60.00"
+                            defaultValue={"60.00"}
+                            // checked={selectedOption === "60.00"}
+                            onChange={handleShippingCost}
+                            className="radio radio-accent radio-sm"
                           />
                         </label>
                       </div>
-                      <div className="form-control border rounded px-2">
+                      <div className="form-control border border-[#059669] rounded px-2">
                         <label className="label cursor-pointer">
                           <span className="label-text flex items-center gap-2">
                             <LiaShippingFastSolid className="h-8 w-8" />
@@ -128,8 +144,11 @@ const BillingDetails = () => {
                           <input
                             type="radio"
                             name="shipping"
-                            className="radio checked:bg-blue-500 radio-sm"
-                            checked
+                            id="20.00"
+                            defaultValue={"20.00"}
+                            // checked={selectedOption === "20.00"}
+                            onChange={handleShippingCost}
+                            className="radio radio-accent radio-sm"
                           />
                         </label>
                       </div>
@@ -185,7 +204,7 @@ const BillingDetails = () => {
                       Payment method
                     </h2>
                     <div className="grid gap-4 sm:grid-cols-2 mt-8">
-                      <div className="form-control border p-2 rounded">
+                      <div className="form-control border border-[#059669] p-2 rounded">
                         <label className="label cursor-pointer">
                           <div className="label-text flex items-center gap-2">
                             <BsCreditCard2FrontFill className="h-5 w-5" />
@@ -200,7 +219,7 @@ const BillingDetails = () => {
                           />
                         </label>
                       </div>
-                      <div className="form-control border p-2 rounded">
+                      <div className="form-control border border-[#059669] p-2 rounded">
                         <label className="label cursor-pointer">
                           <div className="label-text flex items-center gap-2">
                             <FaSackDollar className="h-5 w-5" />
@@ -213,7 +232,7 @@ const BillingDetails = () => {
                             name="payment"
                             value={"cashOnDelivery"}
                             onChange={handleOptionChange}
-                            className="radio radio-error radio-sm"
+                            className="radio radio-accent radio-sm"
                           />
                         </label>
                       </div>
@@ -265,10 +284,13 @@ const BillingDetails = () => {
                   </div>
 
                   <div className="flex  gap-4 mt-8">
-                    <button className="w-full flex justify-center items-center gap-2 px-6 py-3 text-md bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300">
+                    <Link
+                      to={"/shop"}
+                      className="w-full flex justify-center items-center gap-2 px-6 py-3 text-md bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300"
+                    >
                       <IoReturnUpBack className="h-5 w-5" />
                       <span>Continue Shopping</span>
-                    </button>
+                    </Link>
                     <button className="w-full flex justify-center items-center gap-2 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300">
                       <span> Confirm Order</span>
                       <HiMiniArrowLongRight className=" h-5 w-5 mt-1" />
@@ -279,7 +301,7 @@ const BillingDetails = () => {
               <div className=" lg:h-screen lg:sticky lg:top-0">
                 <div className="relative h-full">
                   <div className=" lg:overflow-auto  max-lg:mb-8">
-                    <h2 className="text-md font-extrabold text-[#333] border-b border-[#333]">
+                    <h2 className="text-md text-center font-extrabold text-[#333] border-b border-[#333]">
                       Order Summary
                     </h2>
                     <div className="space-y-6 mt-10">
@@ -394,8 +416,8 @@ const BillingDetails = () => {
                         placeholder="Input your coupon code"
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-2 rounded focus:border-[#10B981] outline-none"
                       />
-                      <button className="btn btn-secondary btn-md bg-gray-100 text-[#333333]  hover:text-white hover:bg-[#10B981] hover:border-[#10B981] border-gray-500 duration-300 rounded">
-                        Apply
+                      <button className=" px-6 py-3  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300">
+                        <span>Apply</span>
                       </button>
                     </div>
 
@@ -406,11 +428,17 @@ const BillingDetails = () => {
                       </h4>
                       <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
                         Shipping Cost
-                        <span className="ml-auto text-[#333333]">$240.00</span>
+                        {shippingCost ? (
+                          <span className="ml-auto text-[#333333]">
+                            ${shippingCost}
+                          </span>
+                        ) : (
+                          <span className="ml-auto text-[#333333]">$00.00</span>
+                        )}
                       </h4>
                       <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
                         Discount
-                        <span className="ml-auto text-[#333333]">$240.00</span>
+                        <span className="ml-auto text-[#FB923C]">$00.00</span>
                       </h4>
                     </div>
 
