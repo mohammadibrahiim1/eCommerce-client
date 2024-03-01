@@ -98,55 +98,39 @@ const BillingDetails = () => {
                       Shipping Cost
                     </h2>
                     <div className="grid gap-4 sm:grid-cols-2 mt-8">
-                      <div className="flex items-center border justify-between px-4 py-3">
-                        <div className="flex items-center gap-2">
-                          <LiaShippingFastSolid className="h-5 w-6 mr-1" />
-                          <label
-                            htmlFor="today"
-                            className="mr-4 flex gap-2 cursor-pointer font-semibold"
-                          >
-                            <div>
-                              <h5 className="text-sm">USB</h5>
-                              <h6 className="text-xs">
-                                Delivery: Today Cost : $60.00
-                              </h6>
+                      <div className="form-control border px-2 rounded">
+                        <label className="label cursor-pointer">
+                          <div className="label-text flex items-center gap-2">
+                            <LiaShippingFastSolid className="h-8 w-8" />
+                            <div className="font-semibold">
+                              <h5>UPS</h5>
+                              <h6>Delivery : Today Cost : $60.00 </h6>
                             </div>
-                          </label>
-                        </div>
-                        <input
-                          type="radio"
-                          className="w-4 h-4 cursor-pointer"
-                          id="today"
-                          name="shipping"
-                          value={"creditCard"}
-                          // checked={selectedOption === "creditCard"}
-                          // onChange={handleOptionChange}
-                        />
+                          </div>
+                          <input
+                            type="radio"
+                            name="shipping"
+                            className="radio checked:bg-red-500 radio-sm"
+                            checked
+                          />
+                        </label>
                       </div>
-
-                      <div className="flex items-center border justify-between px-4 py-3">
-                        <div className="flex items-center gap-2">
-                          <LiaShippingFastSolid className="h-5 w-6 mr-1" />
-                          <label
-                            htmlFor="paypal"
-                            className="mr-4 flex gap-2 cursor-pointer font-semibold"
-                          >
-                            <div>
-                              <h5 className="text-sm">USB</h5>
-                              <h6 className="text-xs ">
-                                Delivery: 7days Cost : $20.00
-                              </h6>
+                      <div className="form-control border rounded px-2">
+                        <label className="label cursor-pointer">
+                          <span className="label-text flex items-center gap-2">
+                            <LiaShippingFastSolid className="h-8 w-8" />
+                            <div className="font-semibold">
+                              <h5>UPS</h5>
+                              <h6>Delivery : 7days Cost : $20.00 </h6>
                             </div>
-                          </label>
-                        </div>
-                        <input
-                          type="radio"
-                          className="w-4 h-4 cursor-pointer"
-                          id="7days"
-                          name="shipping"
-                          // value={"cashOnDelivery"}
-                          // onChange={handleOptionChange}
-                        />
+                          </span>
+                          <input
+                            type="radio"
+                            name="shipping"
+                            className="radio checked:bg-blue-500 radio-sm"
+                            checked
+                          />
+                        </label>
                       </div>
                     </div>
                     {/* {selectedOption === "creditCard" && (
@@ -200,45 +184,37 @@ const BillingDetails = () => {
                       Payment method
                     </h2>
                     <div className="grid gap-4 sm:grid-cols-2 mt-8">
-                      <div className="flex items-center border justify-between px-4 py-3">
-                        <div className="flex items-center gap-2">
-                          <BsCreditCard2FrontFill className="h-5 w-6 mr-1" />
-                          <label
-                            htmlFor="paypal"
-                            className="mr-4 flex gap-2 cursor-pointer font-semibold"
-                          >
-                            Credit Card
-                          </label>
-                        </div>
-                        <input
-                          type="radio"
-                          className="w-4 h-4 cursor-pointer"
-                          id="paypal"
-                          name="payment"
-                          value={"creditCard"}
-                          checked={selectedOption === "creditCard"}
-                          onChange={handleOptionChange}
-                        />
+                      <div className="form-control border p-2 rounded">
+                        <label className="label cursor-pointer">
+                          <div className="label-text flex items-center gap-2">
+                            <BsCreditCard2FrontFill className="h-5 w-5" />
+                            <span className="font-semibold"> Credit Card</span>
+                          </div>
+                          <input
+                            type="radio"
+                            name="payment"
+                            value={"creditCard"}
+                            onChange={handleOptionChange}
+                            className="radio radio-accent radio-sm"
+                          />
+                        </label>
                       </div>
-
-                      <div className="flex items-center border justify-between px-4 py-3">
-                        <div className="flex items-center gap-2">
-                          <FaSackDollar className="h-5 w-6 mr-1" />
-                          <label
-                            htmlFor="paypal"
-                            className="mr-4 flex gap-2 cursor-pointer font-semibold"
-                          >
-                            Cash on Delivery
-                          </label>
-                        </div>
-                        <input
-                          type="radio"
-                          className="w-4 h-4 cursor-pointer"
-                          id="paypal"
-                          name="payment"
-                          value={"cashOnDelivery"}
-                          onChange={handleOptionChange}
-                        />
+                      <div className="form-control border p-2 rounded">
+                        <label className="label cursor-pointer">
+                          <div className="label-text flex items-center gap-2">
+                            <FaSackDollar className="h-5 w-5" />
+                            <span className="font-semibold">
+                              Cash on delivery
+                            </span>
+                          </div>
+                          <input
+                            type="radio"
+                            name="payment"
+                            value={"cashOnDelivery"}
+                            onChange={handleOptionChange}
+                            className="radio radio-error radio-sm"
+                          />
+                        </label>
                       </div>
                     </div>
                     {selectedOption === "creditCard" && (
