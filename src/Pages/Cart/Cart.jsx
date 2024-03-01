@@ -6,8 +6,7 @@ import {
   incrementQuantity,
   removeFromCart,
 } from "../../redux/features/cart/cartSlice";
-import { ArrowLeft, ArrowRight, X } from "phosphor-react";
-import { Button } from "keep-react";
+import { Arrowcenter, ArrowRight, X } from "phosphor-react";
 import { Link } from "react-router-dom";
 import { BsBagPlusFill } from "react-icons/bs";
 import { FaShoppingBag } from "react-icons/fa";
@@ -63,20 +62,20 @@ const Cart = () => {
                   <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                     <table className="min-w-full leading-normal">
                       <thead className="bg-emerald-100">
-                        <tr>
-                          <th className="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
-                            Products
+                        <tr className="">
+                          <th className=" py-3 border-gray-200  text-center text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                            Product
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className="py-3 border-gray-200  text-center text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Price
                           </th>
-                          <th className="ps-12 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" text-center py-3 border-gray-200   text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Quantity
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" py-3 border-gray-200  text-center text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Sub-total
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" py-3 border-gray-200  text-center text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Action
                           </th>
                         </tr>
@@ -85,8 +84,8 @@ const Cart = () => {
                       {itemsInCart?.map((cartItem) => (
                         <>
                           <tbody>
-                            <tr>
-                              <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                            <tr className="border-b">
+                              <td className="px-5 py-2 border-gray-200 bg-white text-sm">
                                 <div className="flex items-center">
                                   <div className="flex-shrink-0 w-16 h-16">
                                     <img
@@ -102,35 +101,33 @@ const Cart = () => {
                                   </div>
                                 </div>
                               </td>
-                              <td className="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                              <td className="py-2 border-gray-200 bg-white text-sm text-center">
                                 <p className="text-gray-900 whitespace-no-wrap font-semibold text-md">
                                   ${cartItem.price}
                                 </p>
                               </td>
-                              <td className=" flex items-center gap-3 px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <Button
+                              <td className=" flex items-center gap-3  border-gray-200 bg-white text-sm">
+                                <button
                                   className=" px-0.5 rounded-full"
-                                  size={"sm"}
                                   onClick={() =>
                                     handleDecrementQuantity(cartItem)
                                   }
                                 >
                                   -
-                                </Button>
-                                <span className="text-orange-500 font-semibold text-md  ">
+                                </button>
+                                <span className="text-orange-500 font-semibold text-md">
                                   {cartItem?.cartQuantity}
                                 </span>
-                                <Button
+                                <button
                                   className="rounded-full"
-                                  size={"sm"}
                                   onClick={() =>
                                     handleIncrementQuantity(cartItem)
                                   }
                                 >
                                   +
-                                </Button>
+                                </button>
                               </td>
-                              <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+                              <td className="px-5 py-5 border-gray-200 bg-white text-sm ">
                                 <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                   <span
                                     aria-hidden
@@ -141,7 +138,7 @@ const Cart = () => {
                                   </span>
                                 </span>
                               </td>
-                              <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                              <td className="px-5 py-5 border-gray-200 bg-white text-sm">
                                 <span
                                   onClick={() => handleRemoveFromCart(cartItem)}
                                   className="relative inline-block p-2  font-semibold text-red-900 leading-tight cursor-pointer"
@@ -163,26 +160,19 @@ const Cart = () => {
                   </div>
                   <div className="flex justify-between items-center mt-1">
                     <Link to={"/shop"}>
-                      <Button
-                        size={"xs"}
-                        className="w-full flex justify-center items-center gap-2 px-6 py-1 text-sm bg-gray-100 text-[#10B981] rounded-md hover:bg-gray-200 font-semibold duration-300"
-                      >
-                        <ArrowLeft className="mx-2" size={17} />
+                      <button className="w-full flex justify-center items-center  px-6 py-3 text-sm bg-gray-100 text-[#10B981] rounded-md hover:bg-gray-200 font-semibold duration-300">
+                        <Arrowcenter className="mx-2" size={17} />
                         <span>Shop more</span>
-                      </Button>
+                      </button>
                     </Link>
 
-                    <Button
-                      size={"xs"}
-                      color={"error"}
-                      className=" flex justify-center items-center gap-2 px-6 py-1 text-sm bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300"
-                    >
+                    <button className=" flex justify-center items-center gap-2 px-6 py-3 text-sm bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300">
                       <span className="text-[#10B981]">Sub-total : </span>
                       <span className="text-orange-500 ms-1">
                         {" "}
                         ${totalAmount}
                       </span>
-                    </Button>
+                    </button>
                   </div>
                 </div>
 
@@ -219,10 +209,10 @@ const Cart = () => {
                       to={"/billingDetails"}
                       className="w-full flex justify-center items-center gap-2 px-6 py-2 text-sm bg-emerald-100 text-[#10B981] hover:text-[#FFFFFF] rounded-md hover:bg-[#10B981] font-semibold duration-300"
                     >
-                      <Button size={"xs"} width="full">
+                      <button size={"xs"} width="full">
                         <span className="">Proceed to Checkout</span>
                         <ArrowRight className="mx-2 " size={16} />
-                      </Button>
+                      </button>
                     </Link>
                   </div>
                 </div>
