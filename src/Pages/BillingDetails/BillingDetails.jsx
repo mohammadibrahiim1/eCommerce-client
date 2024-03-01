@@ -5,6 +5,7 @@ import { BsCreditCard2FrontFill } from "react-icons/bs";
 import { FaSackDollar } from "react-icons/fa6";
 import { IoReturnUpBack } from "react-icons/io5";
 import { LiaShippingFastSolid } from "react-icons/lia";
+import { HiMiniArrowLongRight } from "react-icons/hi2";
 
 const BillingDetails = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -268,8 +269,9 @@ const BillingDetails = () => {
                       <IoReturnUpBack className="h-5 w-5" />
                       <span>Continue Shopping</span>
                     </button>
-                    <button className="w-full  px-6 py-3 text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300">
+                    <button className="w-full flex justify-center items-center gap-2 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300">
                       <span> Confirm Order</span>
+                      <HiMiniArrowLongRight className=" h-5 w-5 mt-1" />
                     </button>
                   </div>
                 </form>
