@@ -62,21 +62,21 @@ const Cart = () => {
                 <div className="-mx-4 sm:-mx-8 px-4 sm:px-8  overflow-x-auto col-span-8">
                   <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                     <table className="min-w-full leading-normal">
-                      <thead>
+                      <thead className="bg-emerald-100">
                         <tr>
-                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
+                          <th className="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Products
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
+                          <th className="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Price
                           </th>
-                          <th className="ps-12 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
+                          <th className="ps-12 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Quantity
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
+                          <th className="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Sub-total
                           </th>
-                          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-[#2DA5F3] uppercase tracking-wider">
+                          <th className="px-5 py-3 border-b-2 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Action
                           </th>
                         </tr>
@@ -117,8 +117,8 @@ const Cart = () => {
                                 >
                                   -
                                 </Button>
-                                <span className="text-[#2DA5F3] font-semibold text-md  ">
-                                  {cartItem.cartQuantity}
+                                <span className="text-orange-500 font-semibold text-md  ">
+                                  {cartItem?.cartQuantity}
                                 </span>
                                 <Button
                                   className="rounded-full"
@@ -161,11 +161,11 @@ const Cart = () => {
                       ))}
                     </table>
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mt-1">
                     <Link to={"/shop"}>
                       <Button
                         size={"xs"}
-                        className="flex items-center justify-between text-[#2DA5F3]"
+                        className="w-full flex justify-center items-center gap-2 px-6 py-1 text-sm bg-gray-100 text-[#10B981] rounded-md hover:bg-gray-200 font-semibold duration-300"
                       >
                         <ArrowLeft className="mx-2" size={17} />
                         <span>Shop more</span>
@@ -175,9 +175,13 @@ const Cart = () => {
                     <Button
                       size={"xs"}
                       color={"error"}
-                      className="flex items-center justify-between"
+                      className=" flex justify-center items-center gap-2 px-6 py-1 text-sm bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300"
                     >
-                      <span>Sub-total : ${totalAmount}</span>
+                      <span className="text-[#10B981]">Sub-total : </span>
+                      <span className="text-orange-500 ms-1">
+                        {" "}
+                        ${totalAmount}
+                      </span>
                     </Button>
                   </div>
                 </div>
@@ -211,12 +215,13 @@ const Cart = () => {
                       </span>
                     </h2>
 
-                    <Link to={"/billingDetails"}>
+                    <Link
+                      to={"/billingDetails"}
+                      className="w-full flex justify-center items-center gap-2 px-6 py-2 text-sm bg-emerald-100 text-[#10B981] hover:text-[#FFFFFF] rounded-md hover:bg-[#10B981] font-semibold duration-300"
+                    >
                       <Button size={"xs"} width="full">
-                        <span className="text-[#2DA5F3]">
-                          Proceed to Checkout
-                        </span>
-                        <ArrowRight className="mx-2 text-[#2DA5F3]" size={16} />
+                        <span className="">Proceed to Checkout</span>
+                        <ArrowRight className="mx-2 " size={16} />
                       </Button>
                     </Link>
                   </div>
