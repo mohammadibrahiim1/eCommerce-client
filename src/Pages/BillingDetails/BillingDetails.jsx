@@ -291,7 +291,7 @@ const BillingDetails = () => {
                       <IoReturnUpBack className="h-5 w-5" />
                       <span>Continue Shopping</span>
                     </Link>
-                    <button className="w-full flex justify-center items-center gap-2 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300">
+                    <button className="w-full flex justify-center items-center gap-1 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300">
                       <span> Confirm Order</span>
                       <HiMiniArrowLongRight className=" h-5 w-5 mt-1" />
                     </button>

@@ -23,14 +23,14 @@ const Shop = () => {
 
   const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
 
-  const products = data?.data; 
+  const products = data?.data;
   console.log(products);
 
   const handleCheckboxFilter = (e) => {
     const checked = e.target.checked;
     setIsChecked(checked);
     if (checked) {
-      const filtered = products.filter((item) => item.brand === checked);  
+      const filtered = products.filter((item) => item.brand === checked);
       return filtered;
     }
   };
@@ -54,8 +54,8 @@ const Shop = () => {
   }
 
   return (
-    <div>
-      <section>
+    <div className="bg-[#F9FAFB]">
+      <section className="max-w-screen-2xl mx-auto ">
         <div className=" grid grid-cols-6 items-started container mx-auto gap-5">
           <div className="col-span-1">
             <h1 className="text-[#191C1F] font-semibold text-xl  pt-3 =">
@@ -108,13 +108,13 @@ const Shop = () => {
             </div>
 
             <div>
-              <div className="bg-[#F2F4F5] text-[#191C1F] font-semibold">
+              {/* <div className="bg-[#F2F4F5] text-[#191C1F] font-semibold">
                 {products.length}
                 <span className="text-[#5F6C72]">Results found</span>
-              </div>
+              </div> */}
 
               {products?.length ? (
-                <div className="grid grid-cols-4 justify-center items-center my-3 gap-6">
+                <div className="grid grid-cols-4 justify-center items-center my-3 gap-y-5">
                   {products?.slice(0, 12)?.map((product) => (
                     <Product product={product} key={product._id}></Product>
                   ))}
