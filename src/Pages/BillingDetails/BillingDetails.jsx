@@ -126,7 +126,6 @@ const BillingDetails = () => {
                             name="shipping"
                             id="60.00"
                             defaultValue={"60.00"}
-                            // checked={selectedOption === "60.00"}
                             onChange={handleShippingCost}
                             className="radio radio-accent radio-sm"
                           />
@@ -146,7 +145,6 @@ const BillingDetails = () => {
                             name="shipping"
                             id="20.00"
                             defaultValue={"20.00"}
-                            // checked={selectedOption === "20.00"}
                             onChange={handleShippingCost}
                             className="radio radio-accent radio-sm"
                           />

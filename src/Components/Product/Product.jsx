@@ -51,7 +51,7 @@ const Product = ({ product }) => {
                 </div> */}
                 <div
                   onClick={handleAddToCart}
-                  className="cursor-pointer border rounded p-2 text-[#10B981]"
+                  className="cursor-pointer border rounded p-2 text-[#10B981] hover:bg-[#10B981] hover:text-[#FFF] duration-300"
                 >
                   <BsBagPlusFill className="h-6 w-6" />
                 </div>

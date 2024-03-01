@@ -9,6 +9,9 @@ import {
 import { ArrowLeft, ArrowRight, X } from "phosphor-react";
 import { Button } from "keep-react";
 import { Link } from "react-router-dom";
+import { BsBagPlusFill } from "react-icons/bs";
+import { FaShoppingBag } from "react-icons/fa";
+import { IoReturnUpBack } from "react-icons/io5";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -40,20 +43,21 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="max-w-screen-2xl mx-auto">
         <div className=" px-4 sm:px-8">
-          <div className="py-8">
+          <div className="py-[9.2px]">
             <div className="flex justify-between items-center ">
-              <h2 className="text-xl font-semibold leading-tight text-[#1B6392] mb-3">
-                Shopping Cart
+              <h2 className="text-xl flex items-center  gap-2 font-semibold leading-tight text-[#10B981] mb-3">
+                <BsBagPlusFill className="h-6 w-6 " /> Shopping Cart
               </h2>
-              <h2 className="text-xl font-semibold leading-tight text-[#1B6392] mb-3">
-                Total-items : {itemsInCart.length}
+              <h2 className="text-xl font-semibold leading-tight text-[#10B981] mb-3">
+                Total-items :
+                <span className="text-orange-500"> {itemsInCart.length}</span>
               </h2>
             </div>
             <hr />
 
-            {itemsInCart.length ? (
+            {itemsInCart?.length ? (
               <div className="grid grid-cols-12 gap-12 pt-10">
                 <div className="-mx-4 sm:-mx-8 px-4 sm:px-8  overflow-x-auto col-span-8">
                   <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
@@ -220,7 +224,25 @@ const Cart = () => {
               </div>
             ) : (
               <div className="text-center text-error-500 font-semibold text-2xl">
-                No product found in Cart
+                <div className="my-16">
+                  <div className="avatar rounded-full">
+                    <FaShoppingBag className=" text-[#10B981] flex justify-center items-center w-24 h-24  bg-emerald-100 rounded-full p-5" />
+                  </div>
+                  <h2 className="text-gray-500 font-semibold text-[28px]">
+                    Your cart is empty
+                  </h2>
+                  <h6 className="text-sm font-semibold mt-1 text-orange-500">
+                    No items added in your cart. Please add product to your cart
+                    list.
+                  </h6>
+                </div>
+                <Link
+                  to={"/shop"}
+                  className="w-full flex justify-center items-center gap-2 px-6 py-3 text-sm bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300"
+                >
+                  <IoReturnUpBack className="h-5 w-5" />
+                  <span>Return to shop</span>
+                </Link>
               </div>
             )}
           </div>
