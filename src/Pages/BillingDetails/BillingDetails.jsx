@@ -449,6 +449,31 @@ const BillingDetails = () => {
             </div>
           </div>
         </div>
+
+        <div className="bg-[#EEF2FF] flex justify-center items-center gap-5 text-center">
+          <div className="w-[500px] h-[394px]">
+            <img
+              src="https://i.ibb.co/rmyL4tM/ecommerce-web-page-concept-illustration-114360-8204.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <h1 className="font-bold text-3xl ">
+              Shop Your Daily Needs From Our kiChai Store
+            </h1>
+            <h6 className="text-xl mt-2  w-[50%]  mx-auto">
+              There are many products you will find in our shop, Choose your
+              daily necessary product from our KachaBazar shop and get some
+              special offers.
+            </h6>
+          </div>
+          <div className="w-[500px] h-[394px] ">
+            <img
+              src="https://i.ibb.co/HqpV2Jk/Pngtree-online-shopping-concept-for-landing-5347803.png"
+              alt=""
+            />
+          </div>
+        </div>
       </section>
     </div>
   );

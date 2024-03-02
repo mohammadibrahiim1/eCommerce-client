@@ -9,7 +9,7 @@ import {
   FaTwitter,
   FaUser,
 } from "react-icons/fa";
-// import { FaCartShopping } from "react-icons/fa6";
+import { FaCartShopping } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { IoBagCheckOutline } from "react-icons/io5";
@@ -21,14 +21,14 @@ const Nav = () => {
   const user = useSelector((state) => state);
 
   return (
-    <div className="">
-      <div className="flex justify-between items-center gap-4 w-[1320px] mx-auto py-5 bg-[#F3F4F6]">
+    <div className="bg-[#1B6392]">
+      <div className="flex justify-between items-center gap-4 w-[1320px] mx-auto py-5">
         <h3 className="text-[#FFFFFF] font-semibold text-[14px] ">
           Welcome to Clicon online eCommerce store.
         </h3>
         <div className="flex justify-center items-center gap-3">
           <h1 className="text-[#FFFFFF] font-semibold text-[14px]">
-            Follow us on :
+            Follow us on :{" "}
           </h1>
           <div className="flex  items-center  gap-3">
             <Link to={"https://www.facebook.com/"}>
@@ -155,6 +155,9 @@ const Nav = () => {
           </div>
 
           <div className="navbar-end gap-5 ">
+            <Link to={"/billingDetails"}>
+              <IoBagCheckOutline className="text-[#FFF] w-6 h-6" />
+            </Link>
             <Link to={"/cart"}>
               <FaShoppingBag className="text-[#FFF] w-6 h-6" />
             </Link>
