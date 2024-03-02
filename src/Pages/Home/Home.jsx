@@ -15,10 +15,10 @@ import Popup from "../../Components/Popup/Popup";
 
 const Home = () => {
   return (
-    <div>
+    <div className="max-w-screen-2xl mx-auto">
       <Header></Header>
       <section>
-        <div className="flex justify-between items-center container mx-auto bg-[#FFEDD5] rounded-lg p-6 mt-5">
+        <div className="flex justify-between items-center  bg-[#FFEDD5] rounded-lg p-6 mt-5">
           <div className="flex justify-between items-center gap-2">
             <TbTruckDelivery className="w-8 h-8" />
             <div>

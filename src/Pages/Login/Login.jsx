@@ -28,7 +28,7 @@ const Login = () => {
     <div>
       <section>
         <div className="bg-base-100">
-          <div className="hero-content flex-col lg:flex-row-reverse">
+          <div className="hero-content flex-col lg:flex-row-reverse max-w-screen-2xl mx-auto">
             <div className="card w-[424px] h-[500px] shadow-2xl bg-base-100 rounded-none">
               <h2 className="font-semibold border-b ps-8 py-4 bg-[#1b6392] text-white">
                 Login

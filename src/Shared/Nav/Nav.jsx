@@ -5,10 +5,11 @@ import {
   FaHeart,
   FaHome,
   FaInstagram,
+  FaShoppingBag,
   FaTwitter,
   FaUser,
 } from "react-icons/fa";
-import { FaCartShopping } from "react-icons/fa6";
+// import { FaCartShopping } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { IoBagCheckOutline } from "react-icons/io5";
@@ -154,11 +155,8 @@ const Nav = () => {
           </div>
 
           <div className="navbar-end gap-5 ">
-            <Link to={"/billingDetails"}>
-              <IoBagCheckOutline className="text-[#FFF] w-6 h-6" />
-            </Link>
             <Link to={"/cart"}>
-              <FaCartShopping className="text-[#FFF] w-6 h-6" />
+              <FaShoppingBag className="text-[#FFF] w-6 h-6" />
             </Link>
 
             <Link to={"/wishList"}>

@@ -6,11 +6,12 @@ import {
   incrementQuantity,
   removeFromCart,
 } from "../../redux/features/cart/cartSlice";
-import { Arrowcenter, ArrowRight, X } from "phosphor-react";
 import { Link } from "react-router-dom";
 import { BsBagPlusFill } from "react-icons/bs";
 import { FaShoppingBag } from "react-icons/fa";
 import { IoReturnUpBack } from "react-icons/io5";
+import { LuMoveRight } from "react-icons/lu";
+import { RxCross2 } from "react-icons/rx";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -61,21 +62,21 @@ const Cart = () => {
                 <div className="-mx-4 sm:-mx-8 px-4 sm:px-8  overflow-x-auto col-span-8">
                   <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                     <table className="min-w-full leading-normal">
-                      <thead className="bg-emerald-100">
+                      <thead className="bg-emerald-100 whitespace-nowrap">
                         <tr className="">
-                          <th className=" py-3 border-gray-200  text-center text-xs font-semibold text-[#10B981] uppercase tracking-wider">
-                            Product
+                          <th className=" py-3  border-gray-200 text-left px-5 text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                            Products
                           </th>
-                          <th className="py-3 border-gray-200  text-center text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className="py-3 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Price
                           </th>
-                          <th className=" text-center py-3 border-gray-200   text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" pr-5 py-3 border-gray-200   text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Quantity
                           </th>
-                          <th className=" py-3 border-gray-200  text-center text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" py-3 border-gray-200   pr-6 text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Sub-total
                           </th>
-                          <th className=" py-3 border-gray-200  text-center text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" py-3 border-gray-200  text-start text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Action
                           </th>
                         </tr>
@@ -85,7 +86,7 @@ const Cart = () => {
                         <>
                           <tbody>
                             <tr className="border-b">
-                              <td className="px-5 py-2 border-gray-200 bg-white text-sm">
+                              <td className="px-5 py-2 text-start border-gray-200 bg-white text-sm">
                                 <div className="flex items-center">
                                   <div className="flex-shrink-0 w-16 h-16">
                                     <img
@@ -101,12 +102,12 @@ const Cart = () => {
                                   </div>
                                 </div>
                               </td>
-                              <td className="py-2 border-gray-200 bg-white text-sm text-center">
+                              <td className="py-2 border-gray-200  bg-white text-sm text-start">
                                 <p className="text-gray-900 whitespace-no-wrap font-semibold text-md">
                                   ${cartItem.price}
                                 </p>
                               </td>
-                              <td className=" flex items-center gap-3  border-gray-200 bg-white text-sm">
+                              <td className=" pt-8 mx-12 flex items-center gap-3 text-start border-gray-200 bg-white text-sm">
                                 <button
                                   className=" px-0.5 rounded-full"
                                   onClick={() =>
@@ -129,11 +130,11 @@ const Cart = () => {
                               </td>
                               <td className="px-5 py-5 border-gray-200 bg-white text-sm ">
                                 <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                  <span
+                                  {/* <span
                                     aria-hidden
-                                    className="absolute inset-0 bg-red-100 opacity-50 rounded-full"
-                                  ></span>
-                                  <span className="relative">
+                                    className="absolute inset-0   opacity-50 rounded-full"
+                                  ></span> */}
+                                  <span className="relative text-orange-500 font-semibold">
                                     ${cartItem.price * cartItem.cartQuantity}
                                   </span>
                                 </span>
@@ -148,7 +149,7 @@ const Cart = () => {
                                     className="absolute inset-0 bg-red-400 opacity-50 rounded-full"
                                   ></span>
                                   <span className="relative">
-                                    <X />
+                                    <RxCross2 />
                                   </span>
                                 </span>
                               </td>
@@ -161,7 +162,7 @@ const Cart = () => {
                   <div className="flex justify-between items-center mt-1">
                     <Link to={"/shop"}>
                       <button className="w-full flex justify-center items-center  px-6 py-3 text-sm bg-gray-100 text-[#10B981] rounded-md hover:bg-gray-200 font-semibold duration-300">
-                        <Arrowcenter className="mx-2" size={17} />
+                        <IoReturnUpBack className="mx-2" size={17} />
                         <span>Shop more</span>
                       </button>
                     </Link>
@@ -169,7 +170,6 @@ const Cart = () => {
                     <button className=" flex justify-center items-center gap-2 px-6 py-3 text-sm bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300">
                       <span className="text-[#10B981]">Sub-total : </span>
                       <span className="text-orange-500 ms-1">
-                        {" "}
                         ${totalAmount}
                       </span>
                     </button>
@@ -207,12 +207,12 @@ const Cart = () => {
 
                     <Link
                       to={"/billingDetails"}
-                      className="w-full flex justify-center items-center gap-2 px-6 py-2 text-sm bg-emerald-100 text-[#10B981] hover:text-[#FFFFFF] rounded-md hover:bg-[#10B981] font-semibold duration-300"
+                      className="w-full flex justify-center items-center gap-1 mt-5 px-6 py-3 text-sm bg-emerald-100 text-[#10B981] hover:text-[#FFFFFF] rounded-md hover:bg-[#10B981] font-semibold duration-300"
                     >
-                      <button size={"xs"} width="full">
+                      <button>
                         <span className="">Proceed to Checkout</span>
-                        <ArrowRight className="mx-2 " size={16} />
                       </button>
+                      <LuMoveRight className="mx-2 " size={16} />
                     </Link>
                   </div>
                 </div>
