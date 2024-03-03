@@ -176,31 +176,35 @@ const Cart = () => {
                   </div>
                 </div>
 
-                <div className="border p-5 rounded col-span-4 h-[300px]">
-                  <h1 className="font-semibold text-md ">Cart Totals</h1>
-                  <div className="">
-                    <h2 className="flex justify-between items-center py-1 text-[#5F6C72] font-semibold text-sm">
+                <div className="border p-5 rounded col-span-4 h-[350px]">
+                  <h1 className="font-semibold text-lg  text-orange-500  ">
+                    Cart Totals
+                  </h1>
+                  <div>
+                    <h2 className="flex justify-between items-center py-2 text-[#5F6C72] font-semibold text-md">
                       <span>Sub-total : </span>
-                      <span> ${totalAmount} </span>
+                      <span className="text-orange-500"> ${totalAmount} </span>
                     </h2>
-                    <h2 className="flex justify-between items-center py-1 text-[#5F6C72] font-semibold text-sm">
+                    <h2 className="flex justify-between items-center py-2 text-[#5F6C72] font-semibold text-md">
                       <span>Shipping : </span>
-                      <span> $25 </span>
+                      <span className="text-orange-500"> $25 </span>
                     </h2>
-                    <h2 className="flex justify-between items-center py-1 text-[#5F6C72] font-semibold text-sm">
+                    <h2 className="flex justify-between items-center py-2 text-[#5F6C72] font-semibold text-md">
                       <span>Discount : </span>
-                      <span> $100 </span>
+                      <span className="text-orange-500"> $100 </span>
                     </h2>
-                    <h2 className="flex  justify-between items-center py-1 text-[#5F6C72]  font-semibold text-sm">
+                    <h2 className="flex  justify-between items-center py-2 text-[#5F6C72]  font-semibold text-md">
                       <span>Tax : </span>
-                      <span> ${taxDue.toFixed()} </span>
+                      <span className="text-orange-500">
+                        ${taxDue.toFixed()}
+                      </span>
                     </h2>
 
                     <hr />
 
-                    <h2 className="flex  justify-between items-center py-5 text-[#5F6C72]  font-semibold text-sm">
+                    <h2 className="flex  justify-between items-center py-5 text-[#5F6C72]  font-semibold text-md">
                       <span>Total : </span>
-                      <span className="text-red-500 font-semibold">
+                      <span className="text-green-500 font-semibold">
                         ${total.toFixed()}
                       </span>
                     </h2>
