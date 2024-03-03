@@ -296,7 +296,7 @@ const BillingDetails = () => {
                   </div>
                 </form>
               </div>
-              <div className=" lg:h-screen lg:sticky lg:top-0">
+              <div className=" lg:sticky lg:top-0">
                 <div className="relative h-full">
                   <div className=" lg:overflow-auto  max-lg:mb-8">
                     <h2 className="text-md text-center font-extrabold text-[#333] border-b border-[#333]">
@@ -450,28 +450,47 @@ const BillingDetails = () => {
           </div>
         </div>
 
-        <div className="bg-[#EEF2FF] flex justify-center items-center gap-5 text-center">
-          <div className="w-[500px] h-[394px]">
-            <img
-              src="https://i.ibb.co/rmyL4tM/ecommerce-web-page-concept-illustration-114360-8204.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h1 className="font-bold text-3xl ">
-              Shop Your Daily Needs From Our kiChai Store
-            </h1>
-            <h6 className="text-xl mt-2  w-[50%]  mx-auto">
-              There are many products you will find in our shop, Choose your
-              daily necessary product from our KachaBazar shop and get some
-              special offers.
-            </h6>
-          </div>
-          <div className="w-[500px] h-[394px] ">
-            <img
-              src="https://i.ibb.co/HqpV2Jk/Pngtree-online-shopping-concept-for-landing-5347803.png"
-              alt=""
-            />
+        <div className="bg-[#EEF2FF]">
+          <div className="max-w-screen-2xl mx-auto grid grid-cols-3 justify-center items-center gap-5 text-center py-12">
+            <div className="w-[500px]">
+              <img
+                src="https://i.ibb.co/yfFZL9M/app-download-img-c7xqg4.webp"
+                alt=""
+              />
+            </div>
+            <div>
+              <h1 className="font-bold text-4xl ">
+                Shop Your Daily Needs From Our kiChai Store
+              </h1>
+              <h6 className="text-[17px] mt-2">
+                There are many products you will find in our shop, Choose your
+                daily necessary product from our kiChai shop and get some
+                special offers.
+              </h6>
+
+              <div className="flex items-center gap-2 justify-center">
+                <Link to={"https://www.apple.com/app-store/"}>
+                  <img
+                    src="https://i.ibb.co/4WZCRJ0/download-on-the-app-store-apple-logo-svgrepo-com.png "
+                    alt=""
+                    className="w-[200px]"
+                  />
+                </Link>
+                <Link to={"https://play.google.com/store/games?hl=en&gl=US"}>
+                  <img
+                    src=" https://i.ibb.co/6nB6K9s/google-play-badge-logo-svgrepo-com.png "
+                    alt=""
+                    className="w-[200px]"
+                  />
+                </Link>
+              </div>
+            </div>
+            <div className="w-[500px]  ">
+              <img
+                src="https://i.ibb.co/HqpV2Jk/Pngtree-online-shopping-concept-for-landing-5347803.png"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </section>
