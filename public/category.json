@@ -126,6 +126,81 @@
     ]
   },
   {
+    "name": "Drinks",
+    "slug": "drinks",
+    "subCategories": [
+      {
+        "name": "Electrolyte Drinks",
+        "slug": "electrolyte-drinks",
+        "subCategories": [
+          {
+            "name": "Orange",
+            "slug": "orange"
+          },
+          {
+            "name": "Lemon",
+            "slug": "lemon"
+          },
+
+          {
+            "name": "Accessories",
+            "slug": "accessories",
+            "subCategories": [
+              {
+                "name": "Monitors",
+                "slug": "monitors"
+              },
+              {
+                "name": "Keyboards",
+                "slug": "keyboards"
+              },
+              {
+                "name": "Mice",
+                "slug": "mice"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Soft Drinks",
+        "slug": "soft-drinks",
+        "subCategories": [
+          {
+            "name": "Tasty Tongue Mango",
+            "slug": "tasty-tongue-mango"
+          },
+          {
+            "name": "Tasty Tongue Orange",
+            "slug": "tasty-tongue-orange"
+          },
+          {
+            "name": "Tasty Saline",
+            "slug": "tasty-saline"
+          },
+          {
+            "name": "Accessories",
+            "slug": "accessories",
+            "subCategories": [
+              {
+                "name": "Cases",
+                "slug": "cases"
+              },
+              {
+                "name": "Chargers",
+                "slug": "chargers"
+              },
+              {
+                "name": "Screen Protectors",
+                "slug": "screen-protectors"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Books",
     "slug": "books"
   },
