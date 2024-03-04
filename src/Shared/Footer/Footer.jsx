@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="p-10 bg-[#191C1F]  text-white">
           <div className="footer  w-[1320px] mx-auto  items-start justify-between gap-5">
             <div>
-              <header className="footer-title">Services</header>
+              <header className="footer-title">KI CHAI</header>
               <div>
                 <h5 className="capitalize text-[#77878F] text-xs">
                   customer supports:
