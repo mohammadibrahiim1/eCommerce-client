@@ -4,9 +4,9 @@ import React from "react";
 const Newsletter = () => {
   return (
     <div>
-      <section>
+      <section className="my-3">
         <div
-          className=" mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:py-12 lg:px-8"
+          className=" mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:py-12 lg:px-8"
           style={{ "background-color": "#1B6392" }}
         >
           <div className="px-6 py-6 rounded-lg md:py-12 md:px-12 lg:py-10 lg:px-16 xl:flex xl:items-center">
@@ -34,8 +34,8 @@ const Newsletter = () => {
                   <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                     <button
                       className="w-full flex items-center justify-center px-5 py-3 text-base leading-6
-                            font-medium rounded-md text-white bg-indigo-500 focus:ring
-                            hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400
+                            font-medium rounded-md text-white bg-[#00A2C9] focus:ring
+                            hover:bg-[#00E3D0] focus:outline-[#00E3D0] focus:bg-[#00E3D0]
                             transition duration-150 ease-in-out"
                       type="submit"
                     >

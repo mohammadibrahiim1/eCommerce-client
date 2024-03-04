@@ -12,6 +12,7 @@ import News from "../../Components/News/News";
 import ExclusiveItems from "../../Components/ExclusiveItems/ExclusiveItems";
 import Newsletter from "../../Components/Newsletter/Newsletter";
 import Popup from "../../Components/Popup/Popup";
+import DeliveryBoy from "../../Components/DeliveryBoy/DeliveryBoy";
 
 const Home = () => {
   return (
@@ -64,6 +65,7 @@ const Home = () => {
       <Accessories></Accessories>
       <Advertise></Advertise>
       <ExclusiveItems></ExclusiveItems>
+      <DeliveryBoy></DeliveryBoy>
       <News></News>
       <Newsletter></Newsletter>
       <Popup></Popup>
