@@ -6,20 +6,34 @@ import {
   createUser,
   signInWithGoogle,
 } from "../../redux/features/api/auth/authSlice";
-import toast from "react-hot-toast";
 import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
 import { useForm } from "react-hook-form";
 
 const SignUp = () => {
   const dispatch = useDispatch();
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, control } = useForm();
   const [postUser, { isLoading, error }] = usePostUserMutation();
   const user = useSelector((state) => state.auth);
   console.log(user);
 
-  const onSubmit = ({ name, email, password }) => {
+  const onSubmit = async ({ name, email, password }) => {
     console.log({ name, email, password });
-    dispatch(createUser({ name, email, password }));
+    dispatch(
+      createUser({
+        name: name,
+        email: email,
+        password: password,
+      })
+    );
+
+    dispatch(
+      postUser({
+        displayName: user.name,
+        email: user.email,
+        applicants: [],
+        queries: [],
+      })
+    );
     reset();
   };
 

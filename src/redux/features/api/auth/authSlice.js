@@ -181,7 +181,9 @@ import app from "../../../../firebase/firebase.config";
 const auth = getAuth(app);
 
 const initialState = {
-  user: null,
+  name: "",
+  email: "",
+  role: "",
   isLoading: true,
   isError: false,
   error: "",
@@ -195,7 +197,7 @@ export const createUser = createAsyncThunk(
       displayName: name,
     });
     console.log(data);
-    return data;
+    return { name: data.user.displayName, email: data.user.email };
   }
 );
 
@@ -250,76 +252,61 @@ export const authSlice = createSlice({
       .addCase(createUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
-        state.user = null;
+        state.name = "";
+        state.email = "";
         state.error = "";
       })
       .addCase(createUser.fulfilled, (state, { payload }) => {
         console.log(payload);
         state.isLoading = false;
-        state.user = payload;
         state.isError = false;
+        state.name = payload.name;
+        state.email = payload.email;
         state.error = "";
       })
       .addCase(createUser.rejected, (state, action) => {
         state.isLoading = false;
-        state.user = null;
         state.isError = true;
+        state.name = "";
+        state.email = "";
         state.error = action.error.message;
-      })
-      .addCase(loginUser.pending, (state) => {
-        state.isLoading = true;
-        state.isError = false;
-        state.error = "";
       })
       .addCase(loginUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.user.email = payload;
         state.isError = false;
+        state.name = payload.name;
+        state.email = payload.email;
         state.error = "";
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.isLoading = false;
-        state.user.email = "";
         state.isError = true;
+        state.name = "";
+        state.email = "";
         state.error = action.error.message;
       })
       .addCase(signInWithGoogle.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
+        state.name = "";
+        state.email = "";
+        state.photoURL = "";
         state.error = "";
       })
       .addCase(signInWithGoogle.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.isLoading = false;
-        state.user.email = payload;
         state.isError = false;
+        state.name = payload.name;
+        state.email = payload.email;
+        state.photoURL = payload.photoURL;
         state.error = "";
       })
       .addCase(signInWithGoogle.rejected, (state, action) => {
         state.isLoading = false;
-        state.user.email = "";
         state.isError = true;
-        state.error = action.error.message;
-      })
-      .addCase(getUser.pending, (state) => {
-        state.isLoading = true;
-        state.isError = false;
-        state.error = "";
-      })
-      .addCase(getUser.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
-        if (payload.status) {
-          state.user = payload.data;
-        } else {
-          state.user.email = payload;
-        }
-        state.isError = false;
-        state.error = "";
-      })
-      .addCase(getUser.rejected, (state, action) => {
-        state.isLoading = false;
-        state.user.email = "";
-        state.isError = true;
+        state.name = "";
+        state.email = "";
+        state.photoURL = "";
         state.error = action.error.message;
       });
   },
