@@ -11,10 +11,12 @@ const slides = [
 const Header = () => {
   return (
     <div>
-      <section className="max-w-lg">
+      <section className="max-w-[1200px]">
         <Carousel autoSlide={true}>
           {slides?.map((slide) => (
-            <img src={slide} alt="" srcSet="" />
+            <>
+              <img src={slide} alt="" srcSet="" />
+            </>
           ))}
         </Carousel>
       </section>

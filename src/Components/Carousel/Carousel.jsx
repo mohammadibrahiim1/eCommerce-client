@@ -29,7 +29,7 @@ const Carousel = ({
     <div className="overflow-hidden relative ">
       <div
         className="flex transition-transform ease-out duration-500"
-        style={{ transform: ` translateX(-${current * 100}%)      ` }}
+        style={{ transform: ` translateX(-${current * 100}%)` }}
       >
         {slides}
       </div>
