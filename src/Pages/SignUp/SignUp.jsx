@@ -28,7 +28,7 @@ const SignUp = () => {
 
     dispatch(
       postUser({
-        displayName: user.name,
+        name: user.name,
         email: user.email,
         applicants: [],
         queries: [],

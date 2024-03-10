@@ -1,9 +1,24 @@
+/* eslint-disable react/jsx-key */
+import Carousel from "../Carousel/Carousel";
 import "./Header.css";
+
+const slides = [
+  "https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg",
+  "https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg",
+  "https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg",
+];
 
 const Header = () => {
   return (
     <div>
-      <div className="carousel w-full my-2">
+      <section className="max-w-lg">
+        <Carousel autoSlide={true}>
+          {slides?.map((slide) => (
+            <img src={slide} alt="" srcSet="" />
+          ))}
+        </Carousel>
+      </section>
+      {/* <div className="carousel w-full my-2">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
@@ -60,7 +75,7 @@ const Header = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
