@@ -19,7 +19,7 @@ const Home = () => {
     <div className="max-w-screen-2xl mx-auto">
       <Header></Header>
       <section>
-        <div className="flex justify-between items-center  bg-[#FFEDD5] rounded-lg p-6 mt-5">
+        <div className="flex justify-between items-center bg-[#00a1c92d]   rounded-sm p-6  mt-5 border  border-[#00A2C9]">
           <div className="flex justify-between items-center gap-2">
             <TbTruckDelivery className="w-8 h-8" />
             <div>

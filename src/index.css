@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-img {
+.slider-container img {
   position: relative;
-  width: 100%;
-  margin: 0 auto;
+  height: 380px;
+  /* width: 100%; */
+  /* margin: 0 auto; */
 }
 .slick-arrow {
   background-color: grey;
@@ -13,6 +14,6 @@ img {
 .slick-arrow:hover {
   background-color: grey;
 }
-/* .slick-arrow:focus {
+.slick-arrow:focus {
   background-color: grey;
-} */
+}
