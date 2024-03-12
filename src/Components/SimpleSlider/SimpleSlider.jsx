@@ -61,7 +61,7 @@ const SimpleSlider = () => {
   };
 
   return (
-    <div className="slider-container w-[60%] mx-7 ">
+    <div className="slider-container w-[60%]">
       <Slider {...settings}>
         <div>
           <img
