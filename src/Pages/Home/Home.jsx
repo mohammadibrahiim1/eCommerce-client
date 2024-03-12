@@ -16,9 +16,9 @@ import DeliveryBoy from "../../Components/DeliveryBoy/DeliveryBoy";
 
 const Home = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto">
+    <div>
       <Header></Header>
-      <section>
+      <section className="max-w-screen-2xl mx-auto">
         <div className="flex justify-between items-center bg-[#00a1c92d]   rounded-sm p-6  mt-5 border  border-[#00A2C9]">
           <div className="flex justify-between items-center gap-2">
             <TbTruckDelivery className="w-8 h-8" />
@@ -65,9 +65,9 @@ const Home = () => {
       <Accessories></Accessories>
       <Advertise></Advertise>
       <ExclusiveItems></ExclusiveItems>
-      <DeliveryBoy></DeliveryBoy>
-      <News></News>
       <Newsletter></Newsletter>
+      <News></News>
+      <DeliveryBoy></DeliveryBoy>
       <Popup></Popup>
     </div>
   );

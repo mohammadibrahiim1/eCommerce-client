@@ -6,7 +6,7 @@ const Advertise = () => {
   return (
     <div>
       <section>
-        <div className="mt-[72px]">
+        <div className=" max-w-screen-2xl mx-auto mt-[72px]">
           <div className="flex justify-between items-center gap-[40px] p-[44px] bg-[#FFE7D6] h-[424px]">
             <div>
               <button className="btn btn-sm rounded-none bg-[#2DA5F3] hover:bg-[#2DA5F3] text-white">

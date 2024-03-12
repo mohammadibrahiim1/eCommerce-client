@@ -4,8 +4,8 @@ import React from "react";
 const DeliveryBoy = () => {
   return (
     <div>
-      <section>
-        <div className=" p-16 border border-[#00A2C9]  bg-[#00A2C9] rounded-lg my-12">
+      <section className=" bg-[#00A2C9]">
+        <div className=" max-w-screen-2xl mx-auto p-16 border border-[#00A2C9]  rounded-lg ">
           <div className="flex  justify-between items-center  mx-auto bg-[#FFFFFF] p-6 rounded-lg">
             <div className="w-[800px]">
               <h3 className="text-[22px] font-semibold ">

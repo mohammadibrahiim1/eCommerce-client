@@ -4,7 +4,7 @@ import React from "react";
 const Newsletter = () => {
   return (
     <div>
-      <section className="my-3">
+      <section className="  mt-16">
         <div
           className=" mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:py-12 lg:px-8"
           style={{ "background-color": "#1B6392" }}

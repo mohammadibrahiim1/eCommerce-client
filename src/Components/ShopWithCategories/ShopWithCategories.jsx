@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const ShopWithCategories = () => {
   return (
     <div>
-      <section className="mt-[72px]">
+      <section className=" max-w-screen-2xl mx-auto mt-[72px]">
         <h1 className="text-[#00A2C9] text-[24px] font-semibold text-center">
           Shop with Categories
         </h1>

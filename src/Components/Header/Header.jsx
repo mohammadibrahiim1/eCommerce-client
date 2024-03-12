@@ -12,7 +12,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <div>
-      <section className="flex items-center justify-between gap-2 py-5 ">
+      <section className="flex items-center justify-between gap-2 py-5 max-w-screen-2xl mx-auto">
         <SimpleSlider></SimpleSlider>
         <div className="flex items-center gap-[40px] p-[44px] bg-[#F2F4F5] w-[648px] h-[380px]">
           <div>
