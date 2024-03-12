@@ -114,8 +114,8 @@ const Accessories = () => {
           </div>
         </div>
 
-        <div className="flex flex-col  gap-[24px]">
-          <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-4 h-[368px] w-[312px]">
+        <div className="flex flex-col  gap-[44px]">
+          <div className="bg-[#F3DE6D] flex flex-col justify-center items-center gap-4 h-[370px] w-[312px]">
             <h2 className="text-[#BE4646] font-semibold text-xs ">
               COMPUTER & ACCESSORIES
             </h2>
