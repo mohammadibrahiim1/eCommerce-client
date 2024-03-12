@@ -81,14 +81,14 @@ const items = [
 const ExclusiveItems = () => {
   return (
     <div>
-      <section>
+      <section className="max-w-screen-2xl mx-auto">
         <div>
-          <h1 className="font-semibold text-[24px] text-[#191C1F] mt-[72px] mb-[24px]">
+          <h1 className="font-semibold text-[24px] text-[#00A2C9] mt-[72px] mb-[24px]">
             FLASH SALE TODAY
           </h1>
         </div>
 
-        <div className="grid grid-cols-4 justify-center items-center w-[1320px]  gap-5">
+        <div className="grid grid-cols-5 justify-center items-center  gap-5">
           {items.map((item) => (
             <>
               <div className="">
