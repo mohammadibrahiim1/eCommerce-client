@@ -26,6 +26,7 @@ const SimpleSlider = () => {
   // }, []);
 
   const settings = {
+    focusOnSelect: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -46,6 +47,20 @@ const SimpleSlider = () => {
         <div>
           <img
             src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+            alt=""
+            srcSet=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+            alt=""
+            srcSet=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
             alt=""
             srcSet=""
           />
