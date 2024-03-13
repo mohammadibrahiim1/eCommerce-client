@@ -226,7 +226,7 @@ export const signInWithGoogle = createAsyncThunk(
     const googleProvider = new GoogleAuthProvider();
     const data = await signInWithPopup(auth, googleProvider);
     console.log(data);
-    return data.user.email;
+    return { name: data.user.displayName, email: data.user.email };
   }
 );
 

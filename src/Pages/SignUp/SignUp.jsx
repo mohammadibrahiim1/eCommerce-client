@@ -34,14 +34,12 @@ const SignUp = () => {
   const handleGoogleSignIn = () => {
     dispatch(signInWithGoogle());
 
-    dispatch(
-      postUser({
-        name: user.displayName,
-        email: user.email,
-        applicants: [],
-        queries: [],
-      })
-    );
+    postUser({
+      displayName: user?.name,
+      email: user?.email,
+      // applicants: [],
+      // queries: [],
+    });
   };
 
   return (
