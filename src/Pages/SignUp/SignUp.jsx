@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -13,27 +13,21 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const { register, handleSubmit, reset, control } = useForm();
   const [postUser, { isLoading, error }] = usePostUserMutation();
+  // const [userData, setUserData] = useState({});
   const user = useSelector((state) => state.auth);
   console.log(user);
 
-  const onSubmit = async ({ name, email, password }) => {
-    console.log({ name, email, password });
+  const onSubmit = (data) => {
+    console.log(data);
     dispatch(
       createUser({
-        name: name,
-        email: email,
-        password: password,
+        name: data?.name,
+        email: data?.email,
+        password: data?.password,
       })
     );
 
-    dispatch(
-      postUser({
-        name: user.name,
-        email: user.email,
-        applicants: [],
-        queries: [],
-      })
-    );
+    postUser({ displayName: data?.name, email: data?.email });
     reset();
   };
 
@@ -42,7 +36,7 @@ const SignUp = () => {
 
     dispatch(
       postUser({
-        displayName: user.displayName,
+        name: user.displayName,
         email: user.email,
         applicants: [],
         queries: [],

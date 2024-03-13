@@ -193,6 +193,7 @@ export const createUser = createAsyncThunk(
   "auth/createUser",
   async ({ name, email, password }) => {
     const data = await createUserWithEmailAndPassword(auth, email, password);
+
     await updateProfile(auth.currentUser, {
       displayName: name,
     });
