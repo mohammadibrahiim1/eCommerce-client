@@ -218,7 +218,7 @@ export const loginUser = createAsyncThunk(
   async ({ email, password }) => {
     const data = await signInWithEmailAndPassword(auth, email, password);
     console.log(data);
-    return data.user.email;
+    return data;
   }
 );
 
@@ -228,7 +228,7 @@ export const signInWithGoogle = createAsyncThunk(
     const googleProvider = new GoogleAuthProvider();
     const data = await signInWithPopup(auth, googleProvider);
     console.log(data);
-    return { name: data.user.displayName, email: data.user.email };
+    return data;
   }
 );
 
@@ -241,9 +241,9 @@ export const authSlice = createSlice({
     },
 
     setUser: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.user = action.payload;
-      // state.name = payload;
+
       state.isLoading = false;
     },
     toggleLoading: (state) => {
@@ -257,8 +257,7 @@ export const authSlice = createSlice({
         state.isLoading = true;
         state.isError = false;
         state.user = "";
-        // state.name = "";
-        // state.email = "";
+
         state.error = "";
       })
       .addCase(createUser.fulfilled, (state, { payload }) => {
@@ -266,53 +265,73 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isError = false;
         state.user = payload;
-        // state.name = payload.name;
-        // state.email = payload.email;
+
         state.error = "";
       })
       .addCase(createUser.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.name = "";
-        state.email = "";
+        state.user = "";
+
         state.error = action.error.message;
+      })
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+        state.error = "";
       })
       .addCase(loginUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.isError = false;
-        state.name = payload.name;
-        state.email = payload.email;
+        state.user = payload;
+
         state.error = "";
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.name = "";
-        state.email = "";
+        state.user = "";
+
         state.error = action.error.message;
       })
       .addCase(signInWithGoogle.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
-        state.name = "";
-        state.email = "";
-        state.photoURL = "";
+
         state.error = "";
       })
       .addCase(signInWithGoogle.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.isError = false;
-        state.name = payload.name;
-        state.email = payload.email;
-        state.photoURL = payload.photoURL;
+        state.user = payload;
+
         state.error = "";
       })
       .addCase(signInWithGoogle.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.name = "";
-        state.email = "";
-        state.photoURL = "";
+        state.user = "";
+        state.error = action.error.message;
+      })
+      .addCase(getUser.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+        state.error = "";
+      })
+      .addCase(getUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        if (payload.status) {
+          state.user = payload.data;
+        } else {
+          state.user = payload;
+        }
+        state.isError = false;
+        state.error = "";
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.user = "";
+        state.isError = true;
         state.error = action.error.message;
       });
   },

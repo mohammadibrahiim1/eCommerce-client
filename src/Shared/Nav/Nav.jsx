@@ -153,7 +153,7 @@ const Nav = () => {
               </ul>
             </div>
             <Link to={"/"} className=" text-xl text-white">
-              Army Pharma
+              KI CHAI
             </Link>
           </div>
           <div>

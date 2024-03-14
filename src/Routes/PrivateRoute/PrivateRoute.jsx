@@ -3,39 +3,22 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { setUser } from "../../redux/features/api/auth/authSlice";
 
 const PrivateRoute = ({ children }) => {
-  // const dispatch = useDispatch();
-  const location = useLocation();
-  const user = useSelector((state) => state?.auth?.user);
+  const { user, isLoading } = useSelector((state) => state?.auth);
   console.log(user);
 
-  // useEffect(() => {
-  //   onAuthStateChanged(getAuth, (user) => {
-  //     if (user) {
-  //       dispatch(
-  //         setUser({
-  //           name: user.displayName,
-  //           email: user.email,
-  //         })
-  //       );
-  //     }
-  //   });
-  // }, [dispatch]);
+  if (isLoading) {
+    return <span className="loading loading-ring loading-lg"></span>;
+  }
 
-  if (!user) {
-    return (
-      <Navigate to={"/login"} state={{ from: location }} replace></Navigate>
-    );
+  if (!user && !isLoading) {
+    return <Navigate to={"/login"} replace />;
   } else {
     return children;
   }
-
-  // if (!isLoading && !email) {
-  //   return <Navigate to={"/login"} state={{ path: pathName }}></Navigate>;
-  // }
 };
 
 export default PrivateRoute;
