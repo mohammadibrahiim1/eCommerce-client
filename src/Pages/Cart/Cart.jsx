@@ -160,7 +160,7 @@ const Cart = () => {
                     </table>
                   </div>
                   <div className="flex justify-between items-center mt-1">
-                    <Link to={"/shop"}>
+                    <Link to={"/store"}>
                       <button className="w-full flex justify-center items-center  px-6 py-3 text-sm bg-gray-100 text-[#10B981] rounded-md hover:bg-gray-200 font-semibold duration-300">
                         <IoReturnUpBack className="mx-2" size={17} />
                         <span>Shop more</span>

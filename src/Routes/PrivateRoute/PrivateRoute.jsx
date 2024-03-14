@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
-import { setUser } from "../../redux/features/api/auth/authSlice";
+
 
 const PrivateRoute = ({ children }) => {
   const { user, isLoading } = useSelector((state) => state?.auth);
