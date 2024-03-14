@@ -181,9 +181,10 @@ import app from "../../../../firebase/firebase.config";
 const auth = getAuth(app);
 
 const initialState = {
-  name: "",
-  email: "",
-  role: "",
+  user: null,
+  // name: "",
+  // email: "",
+  // role: "",
   isLoading: true,
   isError: false,
   error: "",
@@ -198,7 +199,8 @@ export const createUser = createAsyncThunk(
       displayName: name,
     });
     console.log(data);
-    return { name: data.user.displayName, email: data.user.email };
+    return data;
+    // { name: data.user.displayName, email: data.user.email };
   }
 );
 
@@ -208,7 +210,7 @@ export const getUser = createAsyncThunk("auth/getUser", async (email) => {
   if (data.status) {
     return data;
   }
-  return email;
+  return data;
 });
 
 export const loginUser = createAsyncThunk(
@@ -238,9 +240,10 @@ export const authSlice = createSlice({
       state.user = { email: "", role: "" };
     },
 
-    setUser: (state, { payload }) => {
-      console.log(payload);
-      state.user = payload;
+    setUser: (state, action) => {
+      console.log(action.payload);
+      state.user = action.payload;
+      // state.name = payload;
       state.isLoading = false;
     },
     toggleLoading: (state) => {
@@ -253,16 +256,18 @@ export const authSlice = createSlice({
       .addCase(createUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
-        state.name = "";
-        state.email = "";
+        state.user = "";
+        // state.name = "";
+        // state.email = "";
         state.error = "";
       })
       .addCase(createUser.fulfilled, (state, { payload }) => {
         console.log(payload);
         state.isLoading = false;
         state.isError = false;
-        state.name = payload.name;
-        state.email = payload.email;
+        state.user = payload;
+        // state.name = payload.name;
+        // state.email = payload.email;
         state.error = "";
       })
       .addCase(createUser.rejected, (state, action) => {

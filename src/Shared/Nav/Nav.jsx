@@ -13,12 +13,24 @@ import { FaCartShopping } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { IoIosLogOut } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
+import { getAuth, signOut } from "firebase/auth";
+import { logOUt } from "../../redux/features/api/auth/authSlice";
 
 const Nav = () => {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  const user = useSelector((state) => state);
+  const auth = getAuth();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.auth.user);
+  console.log(user);
+
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      dispatch(logOUt());
+      navigate("/login");
+    });
+  };
 
   return (
     <div className="bg-[#1B6392]">
@@ -166,7 +178,9 @@ const Nav = () => {
               <FaHeart className="text-[#FFF] w-6 h-6" />
             </Link>
             {user?.email ? (
-              <button className="btn btn-xs">Logout</button>
+              <div onClick={handleSignOut}>
+                <IoIosLogOut className="text-[#FFF] w-6 h-6 cursor-pointer" />
+              </div>
             ) : (
               <Link to={"/signUp"}>
                 <FaUser className="text-[#FFF] w-6 h-6" />

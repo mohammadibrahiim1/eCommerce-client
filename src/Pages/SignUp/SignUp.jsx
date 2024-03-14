@@ -1,21 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   createUser,
   signInWithGoogle,
 } from "../../redux/features/api/auth/authSlice";
 import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
 import { useForm } from "react-hook-form";
+import useRedirectToPrevious from "../../hooks/useRedirectToPrevious/useRedirectToPrevious";
 
 const SignUp = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { register, handleSubmit, reset, control } = useForm();
   const [postUser, { isLoading, error }] = usePostUserMutation();
-  // const [userData, setUserData] = useState({});
-  const user = useSelector((state) => state.auth);
-  console.log(user);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -29,17 +28,13 @@ const SignUp = () => {
 
     postUser({ displayName: data?.name, email: data?.email });
     reset();
+    navigate("/store");
   };
 
   const handleGoogleSignIn = () => {
     dispatch(signInWithGoogle());
 
-    postUser({
-      displayName: user?.name,
-      email: user?.email,
-      // applicants: [],
-      // queries: [],
-    });
+    // postUser({ displayName: user?.displayName, email: user?.email });
   };
 
   return (

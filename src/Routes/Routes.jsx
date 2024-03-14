@@ -11,6 +11,7 @@ import TrackOrder from "../Pages/TrackOrder/TrackOrder";
 import Compare from "../Pages/Compare/Compare";
 import CustomerSupport from "../Pages/CustomerSupport/CustomerSupport";
 import BillingDetails from "../Pages/BillingDetails/BillingDetails";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -22,7 +23,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/store",
-        element: <Shop></Shop>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Shop></Shop>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/cart",

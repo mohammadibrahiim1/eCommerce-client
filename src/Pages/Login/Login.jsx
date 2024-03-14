@@ -1,15 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   loginUser,
   signInWithGoogle,
 } from "../../redux/features/api/auth/authSlice";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
+import useRedirectToPrevious from "../../hooks/useRedirectToPrevious/useRedirectToPrevious";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const redirectToPrevious = useRedirectToPrevious();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,10 +22,14 @@ const Login = () => {
 
     dispatch(loginUser({ email, password }));
     toast.success("User login successfully");
+    // redirectToPrevious();
+
+    navigate("/store");
   };
 
   const handleGoogleSignIn = () => {
     dispatch(signInWithGoogle());
+    redirectToPrevious();
   };
   return (
     <div>

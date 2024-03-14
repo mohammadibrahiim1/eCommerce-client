@@ -7,32 +7,35 @@ import { Navigate, useLocation } from "react-router-dom";
 import { setUser } from "../../redux/features/api/auth/authSlice";
 
 const PrivateRoute = ({ children }) => {
-  const dispatch = useDispatch();
-  const pathName = useLocation();
+  // const dispatch = useDispatch();
+  const location = useLocation();
+  const user = useSelector((state) => state?.auth?.user);
+  console.log(user);
 
-  const { email, isLoading } = useSelector((state) => state);
+  // useEffect(() => {
+  //   onAuthStateChanged(getAuth, (user) => {
+  //     if (user) {
+  //       dispatch(
+  //         setUser({
+  //           name: user.displayName,
+  //           email: user.email,
+  //         })
+  //       );
+  //     }
+  //   });
+  // }, [dispatch]);
 
-  useEffect(() => {
-    onAuthStateChanged(getAuth, (user) => {
-      if (user) {
-        dispatch(
-          setUser({
-            name: user.displayName,
-            email: user.email,
-          })
-        );
-      }
-    });
-  }, [dispatch]);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
+  if (!user) {
+    return (
+      <Navigate to={"/login"} state={{ from: location }} replace></Navigate>
+    );
+  } else {
+    return children;
   }
 
-  if (!isLoading && !email) {
-    return <Navigate to={"/login"} state={{ path: pathName }}></Navigate>;
-  }
-  return children;
+  // if (!isLoading && !email) {
+  //   return <Navigate to={"/login"} state={{ path: pathName }}></Navigate>;
+  // }
 };
 
 export default PrivateRoute;
