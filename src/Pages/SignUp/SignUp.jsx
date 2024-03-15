@@ -11,7 +11,7 @@ import {
 
 const SignUp = () => {
   const { error } = useSelector((state) => state?.auth);
-  console.log(error);
+  console.log({error});
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -41,7 +41,16 @@ const SignUp = () => {
   return (
     <div>
       <div className="bg-base-100">
-        <div className="hero-content flex-col lg:flex-row-reverse max-w-screen-2xl mx-auto">
+        <div className="hero-content flex-col lg:flex-row max-w-screen-2xl mx-auto gap-12 items-center">
+          <div>
+            <img
+              className="w-[70%]"
+              src="../../../public/images/sign-up.png"
+              alt=""
+              srcSet=""
+            />
+          </div>
+
           <div className="card w-[424px] h-[644px] shadow-2xl bg-base-100 rounded-none">
             <h2 className="font-semibold border-b ps-8 py-4 bg-[#1b6392] text-white">
               Sign up
