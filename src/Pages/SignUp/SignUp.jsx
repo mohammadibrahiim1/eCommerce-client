@@ -1,22 +1,26 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import {
   createUser,
   signInWithGoogle,
 } from "../../redux/features/api/auth/authSlice";
-import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
+// import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
 import { useForm } from "react-hook-form";
-import useRedirectToPrevious from "../../hooks/useRedirectToPrevious/useRedirectToPrevious";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
+  const { error } = useSelector((state) => state?.auth);
+  // console.log(error);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { register, handleSubmit, reset, control } = useForm();
-  const [postUser, { isLoading, error }] = usePostUserMutation();
 
-  const onSubmit = (data) => {
+  // const [postUser, { isLoading, error }] = usePostUserMutation();
+
+  const onSubmit = async (data) => {
     console.log(data);
     dispatch(
       createUser({
@@ -25,10 +29,8 @@ const SignUp = () => {
         password: data?.password,
       })
     );
-
-    postUser({ displayName: data?.name, email: data?.email });
+    navigate("/");
     reset();
-    navigate("/store");
   };
 
   const handleGoogleSignIn = () => {
@@ -72,6 +74,12 @@ const SignUp = () => {
                   {...register("email")}
                 />
               </div>
+              {/* Display error message */}
+              {error && (
+                <div className="text-error text-sm font-semibold py-1">
+                  {error}
+                </div>
+              )}{" "}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Password</span>
@@ -113,7 +121,6 @@ const SignUp = () => {
                   </Link>
                 </span>
               </div>
-
               {/* <div className="text-yellow-500 flex justify-center items-center py-5">
                 <span>or</span>
               </div>

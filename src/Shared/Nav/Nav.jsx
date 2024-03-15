@@ -22,7 +22,7 @@ const Nav = () => {
   const auth = getAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state?.auth?.user?.user);
   console.log(user);
 
   const handleSignOut = () => {

@@ -177,17 +177,16 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../../../../firebase/firebase.config";
+import toast from "react-hot-toast";
 
 const auth = getAuth(app);
 
 const initialState = {
   user: null,
-  // name: "",
-  // email: "",
-  // role: "",
   isLoading: true,
   isError: false,
-  error: "",
+  error: null,
+  message: null,
 };
 
 export const createUser = createAsyncThunk(
@@ -199,8 +198,8 @@ export const createUser = createAsyncThunk(
       displayName: name,
     });
     console.log(data);
+    toast.success("User created successfully");
     return data;
-    // { name: data.user.displayName, email: data.user.email };
   }
 );
 
@@ -218,6 +217,7 @@ export const loginUser = createAsyncThunk(
   async ({ email, password }) => {
     const data = await signInWithEmailAndPassword(auth, email, password);
     console.log(data);
+    toast.success("User login successfully");
     return data;
   }
 );
@@ -249,6 +249,16 @@ export const authSlice = createSlice({
     toggleLoading: (state) => {
       state.isLoading = false;
     },
+    setMessage: (state, action) => {
+      console.log(action.payload);
+      state.isLoading = false;
+      state.message = action.payload;
+      state.error = null;
+    },
+    setError: (state, action) => {
+      state.error = action.payload;
+      state.message = null;
+    },
   },
 
   extraReducers: (builder) => {
@@ -256,67 +266,70 @@ export const authSlice = createSlice({
       .addCase(createUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
-        state.user = "";
-
-        state.error = "";
+        state.user = null;
+        state.error = null;
+        state.message = null;
       })
       .addCase(createUser.fulfilled, (state, { payload }) => {
         console.log(payload);
         state.isLoading = false;
         state.isError = false;
         state.user = payload;
-
-        state.error = "";
+        state.message = payload.message;
+        state.error = null;
       })
       .addCase(createUser.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.user = "";
-
+        state.user = null;
+        state.message = null;
         state.error = action.error.message;
       })
       .addCase(loginUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
-        state.error = "";
+        state.error = null;
+        state.message = null;
       })
       .addCase(loginUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.isError = false;
         state.user = payload;
-
-        state.error = "";
+        state.message = payload.message;
+        state.error = null;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.user = "";
-
+        state.user = null;
         state.error = action.error.message;
+        state.message = null;
       })
       .addCase(signInWithGoogle.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
-
-        state.error = "";
+        state.message = null;
+        state.error = null;
       })
       .addCase(signInWithGoogle.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.isError = false;
         state.user = payload;
-
-        state.error = "";
+        state.message = payload.message;
+        state.error = null;
       })
       .addCase(signInWithGoogle.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
-        state.user = "";
+        state.user = null;
+        state.message = null;
         state.error = action.error.message;
       })
       .addCase(getUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
-        state.error = "";
+        state.error = null;
+        state.message = null;
       })
       .addCase(getUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
@@ -326,13 +339,15 @@ export const authSlice = createSlice({
           state.user = payload;
         }
         state.isError = false;
-        state.error = "";
+        state.error = null;
+        state.message = payload.message;
       })
       .addCase(getUser.rejected, (state, action) => {
         state.isLoading = false;
-        state.user = "";
+        state.user = null;
         state.isError = true;
         state.error = action.error.message;
+        state.message = null;
       });
   },
 });

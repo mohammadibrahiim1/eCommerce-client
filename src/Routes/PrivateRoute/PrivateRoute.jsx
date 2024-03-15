@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
-
 const PrivateRoute = ({ children }) => {
   const { user, isLoading } = useSelector((state) => state?.auth);
   console.log(user);

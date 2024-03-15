@@ -24,7 +24,7 @@ const Shop = () => {
   const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
 
   const products = data?.data;
-  // console.log(products);
+  console.log(products);
 
   const handleCheckboxFilter = (e) => {
     const checked = e.target.checked;

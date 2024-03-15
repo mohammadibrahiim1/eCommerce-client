@@ -1,33 +1,30 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   loginUser,
   signInWithGoogle,
+  toggleLoading,
 } from "../../redux/features/api/auth/authSlice";
 import { useDispatch } from "react-redux";
-import toast from "react-hot-toast";
-import useRedirectToPrevious from "../../hooks/useRedirectToPrevious/useRedirectToPrevious";
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const redirectToPrevious = useRedirectToPrevious();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     dispatch(loginUser({ email, password }));
-    toast.success("User login successfully");
     navigate("/store");
   };
 
   const handleGoogleSignIn = () => {
     dispatch(signInWithGoogle());
-    redirectToPrevious();
   };
+
   return (
     <div>
       <section>
