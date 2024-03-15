@@ -1,23 +1,28 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import React from "react";
+import { Navigate, useLocation } from "react-router-dom";
+// import Loading from "../components/reusable/Loading";
+import { useSelector } from "react-redux";
 
 const PrivateRoute = ({ children }) => {
-  const { user, isLoading } = useSelector((state) => state?.auth);
-  console.log(user);
+  const { pathname } = useLocation();
+  const {
+    isLoading,
+    user: { email },
+  } = useSelector((state) => state.auth);
+  // const isLoading = false;
+  // const email = "test@gmail.com";
 
   if (isLoading) {
-    return <span className="loading loading-ring loading-lg"></span>;
+    return <span>Loading...</span>;
   }
 
-  if (!user && !isLoading) {
-    return <Navigate to={"/login"} replace />;
-  } else {
-    return children;
+  if (!isLoading && !email) {
+    return <Navigate to="/login" state={{ path: pathname }} />;
   }
+
+  return children;
 };
 
 export default PrivateRoute;

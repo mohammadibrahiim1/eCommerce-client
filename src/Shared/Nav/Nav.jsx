@@ -16,18 +16,20 @@ import { IoBagCheckOutline } from "react-icons/io5";
 import { IoIosLogOut } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
-import { logOUt } from "../../redux/features/api/auth/authSlice";
+import { logOut } from "../../redux/features/api/auth/authSlice";
+import auth from "../../firebase/firebase.config";
 
 const Nav = () => {
-  const auth = getAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state?.auth?.user?.user);
-  console.log(user);
+
+  const {
+    user: { email, role },
+  } = useSelector((state) => state.auth);
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      dispatch(logOUt());
+      dispatch(logOut());
       navigate("/login");
     });
   };
@@ -177,7 +179,7 @@ const Nav = () => {
             <Link to={"/wishList"}>
               <FaHeart className="text-[#FFF] w-6 h-6" />
             </Link>
-            {user?.email ? (
+            {email ? (
               <div onClick={handleSignOut}>
                 <IoIosLogOut className="text-[#FFF] w-6 h-6 cursor-pointer" />
               </div>

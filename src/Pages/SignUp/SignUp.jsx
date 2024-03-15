@@ -2,17 +2,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+
+import { useForm } from "react-hook-form";
 import {
   createUser,
-  signInWithGoogle,
+  googleSignIn,
 } from "../../redux/features/api/auth/authSlice";
-// import { usePostUserMutation } from "../../redux/features/api/auth/authApi";
-import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 
 const SignUp = () => {
   const { error } = useSelector((state) => state?.auth);
-  // console.log(error);
+  console.log(error);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,12 +28,12 @@ const SignUp = () => {
         password: data?.password,
       })
     );
-    navigate("/");
+    // navigate("/");
     reset();
   };
 
   const handleGoogleSignIn = () => {
-    dispatch(signInWithGoogle());
+    dispatch(googleSignIn());
 
     // postUser({ displayName: user?.displayName, email: user?.email });
   };

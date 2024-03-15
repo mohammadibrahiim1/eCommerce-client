@@ -2,11 +2,11 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
+  googleSignIn,
   loginUser,
-  signInWithGoogle,
-  toggleLoading,
 } from "../../redux/features/api/auth/authSlice";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,8 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    dispatch(signInWithGoogle());
+    dispatch(googleSignIn());
+    toast.success("Successfully login");
   };
 
   return (
