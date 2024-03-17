@@ -18,6 +18,7 @@ import { RxCross2 } from "react-icons/rx";
 
 const BillingDetails = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const cart = useSelector((state) => state.cart);
   console.log(totalAmount);
   const [selectedOption, setSelectedOption] = useState("");
   const [shippingCost, setShippingCost] = useState("");
@@ -37,10 +38,7 @@ const BillingDetails = () => {
   console.log(data?.url);
 
   const user = useSelector((state) => state?.auth?.user);
-  // console.log(user);
 
-  // const cart = useSelector((state) => state.cart);
-  // console.log(cart);
   const itemsInCart = useSelector((state) => state?.cart?.cartItems);
   console.log(itemsInCart);
 
@@ -83,7 +81,8 @@ const BillingDetails = () => {
 
   useEffect(() => {
     dispatch(getTotal());
-  }, [dispatch]);
+  }, [cart, dispatch]);
+
   return (
     <div>
       <section className="bg-[#F9FAFB]">
@@ -346,126 +345,102 @@ const BillingDetails = () => {
 
                   <div className=" lg:overflow-auto  max-lg:mb-8">
                     <div className="space-y-6 mt-10 h-[100px]">
-                      {itemsInCart?.map((item) => (
-                        <>
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center justify-between gap-5">
-                              <img
-                                src={item?.image}
-                                className="w-[80px] h-[80px] p-4  bg-gray-200 rounded-md object-contain"
-                              />
-                              <div className="text-xs font-semibold text-[#333] space-y-1">
-                                <h3>{item?.model}</h3>
-
-                                <h3 className="flex items-center gap-2">
-                                  Quantity :
-                                  <span className="text-[#059669]">
-                                    {item?.cartQuantity}
-                                  </span>
-                                </h3>
-
-                                <h3 className="flex flex-wrap gap-2">
-                                  Total Price :
-                                  <span className=" text-[#059669]">
-                                    ${item?.price * item.cartQuantity}
-                                  </span>
-                                </h3>
-                              </div>
-                            </div>
-
-                            <div className="flex items-center justify-center ">
-                              <div className="border border-gray-400 rounded">
-                                <button
-                                  onClick={() => handleDecrementQuantity(item)}
-                                  id="decreaseBtn"
-                                  className=" px-3 py-1  text-gray-700 font-semibold "
-                                >
-                                  -
-                                </button>
-                                <input
-                                  id="quantityInput"
-                                  type="text"
-                                  value={item.cartQuantity}
-                                  className="w-12 py-1 text-center "
-                                />
-                                <button
-                                  onClick={() => handleIncrementQuantity(item)}
-                                  id="increaseBtn"
-                                  className=" px-3 py-1   font-semibold"
-                                >
-                                  +
-                                </button>
-                              </div>
-                            </div>
-
-                            <div className="px-5 py-5 border-gray-200  text-sm">
-                              <span
-                                onClick={() => handleRemoveFromCart(item)}
-                                className="relative inline-block p-2  font-semibold text-red-900 leading-tight cursor-pointer"
-                              >
-                                <span
-                                  aria-hidden
-                                  className="absolute inset-0 bg-red-400 opacity-50 rounded-full"
-                                ></span>
-                                <span className="relative">
-                                  <RxCross2 className="w-4 h-4" />
-                                </span>
-                              </span>
-                            </div>
-                          </div>
-                        </>
-                      ))}
-                      {/* <div className="grid sm:grid-cols-3 items-center">
-                        <div className=" p-6 shrink-0 bg-gray-200 rounded-md">
-                          <img
-                            src="https://readymadeui.com/images/product10.webp"
-                            className="w-[80px] mx-auto object-contain"
-                          />
-                        </div>
-                        <div className="flex items-center justify-center">
-                          <div className="border border-gray-400 rounded">
-                            <button
-                              id="decreaseBtn"
-                              className=" px-3 py-1  text-gray-700 font-semibold "
-                            >
-                              -
-                            </button>
-                            <input
-                              id="quantityInput"
-                              type="text"
-                              value="1"
-                              className="w-12 py-1 text-center "
-                            />
-                            <button
-                              id="increaseBtn"
-                              className=" px-3 py-1   font-semibold"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
+                      {itemsInCart?.length ? (
                         <div>
-                          <h3 className="text-sm text-[#333]">
-                            Apex: Split Sneakers
-                          </h3>
-                          <ul className="text-xs text-[#333] space-y-2 mt-2">
-                            <div className="grid grid-cols-2 items-center">
-                              <li className="flex items-center gap-2">
-                                Size :<span className="text-[#059669]">37</span>
-                              </li>
-                              <li className="flex items-center gap-2">
-                                Quantity :
-                                <span className="text-[#059669]">2</span>
-                              </li>
-                            </div>
-                            <li className="flex flex-wrap gap-2">
-                              Total Price :
-                              <span className=" text-[#059669]">$40</span>
-                            </li>
-                          </ul>
+                          {itemsInCart?.map((item) => (
+                            <>
+                              <div className="flex items-center justify-between ">
+                                <div className="flex items-center justify-between gap-5">
+                                  <img
+                                    src={item?.image}
+                                    className="w-[80px] h-[80px] p-4  bg-gray-200 rounded-md object-contain"
+                                  />
+                                  <div className="text-xs font-semibold text-[#333] space-y-1">
+                                    <h3>{item?.model}</h3>
+
+                                    <h3 className="flex items-center gap-2">
+                                      Quantity :
+                                      <span className="text-[#059669]">
+                                        {item?.cartQuantity}
+                                      </span>
+                                    </h3>
+
+                                    <h3 className="flex flex-wrap gap-2">
+                                      <span>Total Price :</span>
+                                      <span className=" text-[#059669]">
+                                        ${item?.price * item.cartQuantity}
+                                      </span>
+                                    </h3>
+                                  </div>
+                                </div>
+
+                                <div className="flex items-center justify-center font-sans ">
+                                  <div className="border border-gray-400 rounded">
+                                    <button
+                                      onClick={() =>
+                                        handleDecrementQuantity(item)
+                                      }
+                                      id="decreaseBtn"
+                                      className=" px-3 py-1  text-gray-700 font-semibold "
+                                    >
+                                      -
+                                    </button>
+                                    <input
+                                      id="quantityInput"
+                                      type="text"
+                                      value={item.cartQuantity}
+                                      className="w-12 py-1 text-center "
+                                    />
+                                    <button
+                                      onClick={() =>
+                                        handleIncrementQuantity(item)
+                                      }
+                                      id="increaseBtn"
+                                      className=" px-3 py-1   font-semibold"
+                                    >
+                                      +
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <div className="px-5 py-5 border-gray-200  text-sm">
+                                  <span
+                                    onClick={() => handleRemoveFromCart(item)}
+                                    className="relative inline-block p-2  font-semibold text-red-900 leading-tight cursor-pointer"
+                                  >
+                                    <span
+                                      aria-hidden
+                                      className="absolute inset-0 bg-red-400 opacity-50 rounded-full"
+                                    ></span>
+                                    <span className="relative">
+                                      <RxCross2 className="w-4 h-4" />
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </>
+                          ))}
                         </div>
-                      </div> */}
+                      ) : (
+                        <div className="text-center font-sans">
+                          <span className="flex justify-center mx-auto text-gray-500 font-semibold text-4xl">
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              strokeWidth="0"
+                              viewBox="0 0 512 512"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M454.65 169.4A31.82 31.82 0 00432 160h-64v-16a112 112 0 00-224 0v16H80a32 32 0 00-32 32v216c0 39 33 72 72 72h272a72.22 72.22 0 0050.48-20.55 69.48 69.48 0 0021.52-50.2V192a31.75 31.75 0 00-9.35-22.6zM176 144a80 80 0 01160 0v16H176zm192 96a112 112 0 01-224 0v-16a16 16 0 0132 0v16a80 80 0 00160 0v-16a16 16 0 0132 0z"></path>
+                            </svg>
+                          </span>
+                          <h2 className="font-medium  text-sm pt-2 text-gray-600">
+                            No Item Added Yet!
+                          </h2>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="w-full my-5">
@@ -475,19 +450,19 @@ const BillingDetails = () => {
                         placeholder="Input your coupon code"
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-2 rounded focus:border-[#10B981] outline-none"
                       />
-                      <button className=" px-6 py-3  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300">
+                      <button className=" px-6 py-3  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold font-sans duration-300">
                         <span>Apply</span>
                       </button>
                     </div>
 
                     <div>
-                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
+                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold font-sans">
                         Subtotal
                         <span className="ml-auto text-[#333333]">
                           ${totalAmount}
                         </span>
                       </h4>
-                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
+                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold font-sans">
                         Shipping Cost
                         {shippingCost ? (
                           <span className="ml-auto text-[#333333]">
@@ -497,13 +472,13 @@ const BillingDetails = () => {
                           <span className="ml-auto text-[#333333]">$00.00</span>
                         )}
                       </h4>
-                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
+                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold font-sans">
                         Discount
                         <span className="ml-auto text-[#FB923C]">$00.00</span>
                       </h4>
                     </div>
 
-                    <h4 className="flex flex-wrap gap-4 text-lg text-[#059669] font-semibold border-t py-3">
+                    <h4 className="flex flex-wrap gap-4 text-lg text-[#059669]  font-semibold border-t py-2 font-sans">
                       Total Cost <span className="ml-auto">${totalPrice}</span>
                     </h4>
                   </div>
