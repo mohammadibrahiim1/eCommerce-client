@@ -229,7 +229,7 @@ const Nav = () => {
             </ul>
           </div>
 
-          <div className="navbar-end gap-5   lg:flex md:flex md:me-4 lg:me-0  items-center text-[#484848]">
+          <div className="navbar-end gap-5   lg:flex md:flex md:me-4 lg:me-0 me-3  items-center text-[#484848]">
             {email ? (
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="avatar">
