@@ -401,6 +401,7 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async ({ email, password }) => {
     const data = await signInWithEmailAndPassword(auth, email, password);
+    toast.success("Successfully login user");
     return data.user.email;
   }
 );
@@ -408,6 +409,7 @@ export const loginUser = createAsyncThunk(
 export const googleSignIn = createAsyncThunk("auth/googleSignIn", async () => {
   const googleProvider = new GoogleAuthProvider();
   const data = await signInWithPopup(auth, googleProvider);
+  toast.success("successfully created user with google");
   return data.user.email;
 });
 

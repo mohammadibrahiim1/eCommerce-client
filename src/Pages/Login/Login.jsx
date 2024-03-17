@@ -21,9 +21,9 @@ const Login = () => {
     navigate("/store");
   };
 
-  const handleGoogleSignIn = () => {
+  const handleGoogleSignIn = async () => {
     dispatch(googleSignIn());
-    toast.success("Successfully login");
+    navigate("/store");
   };
 
   return (

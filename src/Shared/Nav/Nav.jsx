@@ -1,21 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import {
-  FaAngleDown,
-  FaHeart,
-  FaHome,
-  FaInstagram,
-  FaShoppingBag,
-  FaTwitter,
-  FaUser,
-} from "react-icons/fa";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaAngleDown, FaInstagram, FaTwitter, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
-import { IoBagCheckOutline } from "react-icons/io5";
-import { IoIosLogOut } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { logOut } from "../../redux/features/api/auth/authSlice";
 import auth from "../../firebase/firebase.config";
 
@@ -24,7 +13,7 @@ const Nav = () => {
   const navigate = useNavigate();
 
   const {
-    user: { email, role },
+    user: { email, role, photoURL },
   } = useSelector((state) => state.auth);
 
   const handleSignOut = () => {
@@ -234,7 +223,11 @@ const Nav = () => {
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="avatar">
                   <div className="w-12 rounded-full">
-                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    {photoURL ? (
+                      <img src={photoURL} />
+                    ) : (
+                      <img src="https://i.ibb.co/6yLkr57/hipster-chicken-avatar-free-vector.jpg" />
+                    )}
                   </div>
                 </div>
                 <ul

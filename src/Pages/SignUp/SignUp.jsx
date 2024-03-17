@@ -11,7 +11,7 @@ import {
 
 const SignUp = () => {
   const { error } = useSelector((state) => state?.auth);
-  console.log({error});
+  console.log({ error });
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -28,14 +28,13 @@ const SignUp = () => {
         password: data?.password,
       })
     );
-    // navigate("/");
     reset();
+    navigate("/store");
   };
 
   const handleGoogleSignIn = () => {
     dispatch(googleSignIn());
-
-    // postUser({ displayName: user?.displayName, email: user?.email });
+    navigate("/store");
   };
 
   return (
