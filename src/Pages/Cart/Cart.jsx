@@ -19,11 +19,11 @@ const Cart = () => {
   const itemsInCart = useSelector((state) => state.cart.cartItems);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
-  let shipping = 25;
-  let taxRate = 2;
-  const taxDue = totalAmount * (taxRate / 100);
+  // let shipping = 25;
+  // let taxRate = 2;
+  // const taxDue = totalAmount * (taxRate / 100);
 
-  const total = totalAmount + shipping + taxDue;
+  // const total = totalAmount + shipping + taxDue;
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -187,17 +187,15 @@ const Cart = () => {
                     </h2>
                     <h2 className="flex justify-between items-center py-2 text-[#5F6C72] font-semibold text-md">
                       <span>Shipping : </span>
-                      <span className="text-orange-500"> $25 </span>
+                      <span className="text-orange-500"> $0.00 </span>
                     </h2>
                     <h2 className="flex justify-between items-center py-2 text-[#5F6C72] font-semibold text-md">
                       <span>Discount : </span>
-                      <span className="text-orange-500"> $100 </span>
+                      <span className="text-orange-500"> $0.00 </span>
                     </h2>
                     <h2 className="flex  justify-between items-center py-2 text-[#5F6C72]  font-semibold text-md">
                       <span>Tax : </span>
-                      <span className="text-orange-500">
-                        ${taxDue.toFixed()}
-                      </span>
+                      <span className="text-orange-500">$0.00</span>
                     </h2>
 
                     <hr />
@@ -205,7 +203,7 @@ const Cart = () => {
                     <h2 className="flex  justify-between items-center py-5 text-[#5F6C72]  font-semibold text-md">
                       <span>Total : </span>
                       <span className="text-green-500 font-semibold">
-                        ${total.toFixed()}
+                        ${totalAmount.toFixed()}
                       </span>
                     </h2>
 

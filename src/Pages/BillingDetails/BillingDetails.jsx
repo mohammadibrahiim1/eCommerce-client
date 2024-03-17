@@ -1,37 +1,48 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePostOrderMutation } from "../../redux/features/api/orderApi/orderApi";
 import { BsCreditCard2FrontFill } from "react-icons/bs";
 import { FaSackDollar } from "react-icons/fa6";
 import { IoReturnUpBack } from "react-icons/io5";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getTotal } from "../../redux/features/cart/cartSlice";
 
 const BillingDetails = () => {
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+  console.log(totalAmount);
   const [selectedOption, setSelectedOption] = useState("");
   const [shippingCost, setShippingCost] = useState("");
-  console.log("shippingCost", shippingCost);
-
+  console.log(shippingCost);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const totalPrice = totalAmount + shippingCost;
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
   };
   const handleShippingCost = (e) => {
-    setShippingCost(e.target.value);
+    setShippingCost(parseInt(e.target.value));
   };
 
-  const [postOrder, { isLoading, error, isError }] = usePostOrderMutation();
+  const [postOrder, { data, isLoading, error, isError }] =
+    usePostOrderMutation();
+  console.log(data?.url);
 
-  const handlePlaceOrder = (event) => {
+  const user = useSelector((state) => state?.auth?.user);
+  // console.log(user);
+
+  const handlePlaceOrder = async (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
-    const email = form.email.value;
+    const name = user?.displayName || "unregistered";
+    const email = user?.email || "unregistered";
     const address = form.address.value;
     const city = form.city.value;
     const state = form.state.value;
     const postalCode = form.postalCode.value;
-    // console.log(name, email, address, city, state, postalCode);
+    console.log(name, email, address, city, state, postalCode);
 
     const order = {
       userName: name,
@@ -40,10 +51,16 @@ const BillingDetails = () => {
       city,
       state,
       postalCode,
+      price: totalPrice,
     };
     console.log(order);
-    postOrder({ ...order, applicants: [], queries: [] });
+    await postOrder({ ...order, applicants: [], queries: [] });
+    window.location.replace(data?.url);
   };
+
+  useEffect(() => {
+    dispatch(getTotal());
+  }, [dispatch]);
   return (
     <div>
       <section className="bg-[#F9FAFB]">
@@ -67,6 +84,7 @@ const BillingDetails = () => {
                         placeholder="Name"
                         name="name"
                         required
+                        defaultValue={user?.displayName}
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
@@ -74,6 +92,7 @@ const BillingDetails = () => {
                         name="email"
                         placeholder="Email address"
                         required
+                        defaultValue={user?.email}
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
@@ -125,7 +144,7 @@ const BillingDetails = () => {
                             type="radio"
                             name="shipping"
                             id="60.00"
-                            defaultValue={"60.00"}
+                            defaultValue={60}
                             onChange={handleShippingCost}
                             className="radio radio-accent radio-sm"
                           />
@@ -144,7 +163,7 @@ const BillingDetails = () => {
                             type="radio"
                             name="shipping"
                             id="20.00"
-                            defaultValue={"20.00"}
+                            defaultValue={20}
                             onChange={handleShippingCost}
                             className="radio radio-accent radio-sm"
                           />
@@ -422,7 +441,9 @@ const BillingDetails = () => {
                     <div>
                       <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
                         Subtotal
-                        <span className="ml-auto text-[#333333]">$240.00</span>
+                        <span className="ml-auto text-[#333333]">
+                          ${totalAmount}
+                        </span>
                       </h4>
                       <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold">
                         Shipping Cost
@@ -441,7 +462,7 @@ const BillingDetails = () => {
                     </div>
 
                     <h4 className="flex flex-wrap gap-4 text-lg text-[#059669] font-semibold border-t py-3">
-                      Total Cost <span className="ml-auto">$240.00</span>
+                      Total Cost <span className="ml-auto">${totalPrice}</span>
                     </h4>
                   </div>
                 </div>

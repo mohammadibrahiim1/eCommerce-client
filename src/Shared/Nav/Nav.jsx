@@ -35,23 +35,24 @@ const Nav = () => {
   };
 
   return (
-    <div className="bg-[#1B6392]">
-      <div className="flex justify-between items-center gap-4 w-[1320px] mx-auto py-5">
-        <h3 className="text-[#FFFFFF] font-semibold text-[14px] ">
-          Welcome to Clicon online eCommerce store.
+    <div className="bg-[#F2F2F2]">
+      <div className="flex justify-between items-center gap-4 max-w-screen-2xl mx-auto py-5">
+        <h3 className="text-[#484848] font-semibold text-[14px] ">
+          Welcome to <span className="text-[#5DBF9D]">KI CHAI</span> online
+          eCommerce store.
         </h3>
         <div className="flex justify-center items-center gap-3">
-          <h1 className="text-[#FFFFFF] font-semibold text-[14px]">
+          <h1 className="text-[#5DBF9D] font-semibold text-[14px]">
             Follow us on :{" "}
           </h1>
           <div className="flex  items-center  gap-3">
             <Link to={"https://www.facebook.com/"}>
-              <FaFacebook className=" text-white" />
+              <FaFacebook className=" text-[#484848]" />
             </Link>
-            <Link className=" text-white" to={"https://www.facebook.com/"}>
+            <Link className=" text-[#484848]" to={"https://www.facebook.com/"}>
               <FaInstagram />
             </Link>
-            <Link className=" text-white" to={"https://www.facebook.com/"}>
+            <Link className=" text-[#484848]" to={"https://www.facebook.com/"}>
               <FaTwitter />
             </Link>
 
@@ -62,7 +63,7 @@ const Nav = () => {
                     <div
                       tabIndex={0}
                       role="button"
-                      className="btn btn-xs btn-ghost rounded-btn text-white gap-1"
+                      className="btn btn-xs btn-ghost rounded-btn text-[#484848] gap-1"
                     >
                       <span>USD</span>
                       <FaAngleDown />
@@ -83,7 +84,7 @@ const Nav = () => {
                     <div
                       tabIndex={0}
                       role="button"
-                      className="btn btn-xs btn-ghost rounded-btn text-white gap-1"
+                      className="btn btn-xs btn-ghost rounded-btn text-[#484848] gap-1"
                     >
                       <span>Language</span>
                       <FaAngleDown />
@@ -108,7 +109,7 @@ const Nav = () => {
       </div>
       <hr className="text-gray-600" />
       <div>
-        <div className="navbar w-[1320px] mx-auto pt-5">
+        <div className="navbar max-w-screen-2xl mx-auto pt-5">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -154,7 +155,7 @@ const Nav = () => {
                 </li>
               </ul>
             </div>
-            <Link to={"/"} className=" text-xl text-white">
+            <Link to={"/"} className=" text-xl text-[#5DBF9D] font-semibold">
               KI CHAI
             </Link>
           </div>
@@ -170,28 +171,28 @@ const Nav = () => {
 
           <div className="navbar-end gap-5 ">
             <Link to={"/billingDetails"}>
-              <IoBagCheckOutline className="text-[#FFF] w-6 h-6" />
+              <IoBagCheckOutline className="text-[#484848] w-6 h-6" />
             </Link>
             <Link to={"/cart"}>
-              <FaShoppingBag className="text-[#FFF] w-6 h-6" />
+              <FaShoppingBag className="text-[#484848] w-6 h-6" />
             </Link>
 
             <Link to={"/wishList"}>
-              <FaHeart className="text-[#FFF] w-6 h-6" />
+              <FaHeart className="text-[#484848] w-6 h-6" />
             </Link>
             {email ? (
               <div onClick={handleSignOut}>
-                <IoIosLogOut className="text-[#FFF] w-6 h-6 cursor-pointer" />
+                <IoIosLogOut className="text-[#484848] w-6 h-6 cursor-pointer" />
               </div>
             ) : (
               <Link to={"/signUp"}>
-                <FaUser className="text-[#FFF] w-6 h-6" />
+                <FaUser className="text-[#484848] w-6 h-6" />
               </Link>
             )}
           </div>
         </div>
       </div>
-      <div className="bg-[#1B6392] flex justify-between items-center w-[1320px] mx-auto mt-3">
+      <div className="bg-[#F2F2F2] flex justify-between items-center max-w-screen-2xl mx-auto mt-3">
         <div className="dropdown">
           <div
             tabIndex={0}
@@ -213,7 +214,7 @@ const Nav = () => {
           </ul>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-md font-semibold text-[#FFF]">
+          <ul className="menu menu-horizontal px-1 text-md font-semibold text-[#484848]">
             <li>
               <Link to={"/"}>Home</Link>
             </li>
@@ -233,7 +234,9 @@ const Nav = () => {
           </ul>
         </div>
         <div>
-          <h1 className="text-[#fff] font-semibold text-md">+8801625619689</h1>
+          <h1 className="text-[#484848] font-semibold text-md">
+            +8801625619689
+          </h1>
         </div>
       </div>
     </div>
