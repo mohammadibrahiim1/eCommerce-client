@@ -166,7 +166,7 @@ const Nav = () => {
           </div>
           <div>
             <input
-              className="border w-[646px] md:w-[323px]  h-[42px] p-2 rounded focus:outline-none "
+              className="border lg:w-[646px] md:w-[425px] sm:w-[23px] hidden md:flex lg:flex  h-[42px] p-2 rounded focus:outline-none "
               type="search"
               name="search"
               placeholder="search..."
@@ -229,7 +229,7 @@ const Nav = () => {
             </ul>
           </div>
 
-          <div className="navbar-end gap-5  hidden lg:flex md:flex md:me-4 lg:me-0  items-center text-[#484848]">
+          <div className="navbar-end gap-5   lg:flex md:flex md:me-4 lg:me-0  items-center text-[#484848]">
             {email ? (
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="avatar">
