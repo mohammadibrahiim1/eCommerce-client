@@ -169,29 +169,88 @@ const Nav = () => {
             />
           </div>
 
-          <div className="navbar-end gap-5 ">
-            <Link to={"/billingDetails"}>
-              <IoBagCheckOutline className="text-[#484848] w-6 h-6" />
-            </Link>
-            <Link to={"/cart"}>
-              <FaShoppingBag className="text-[#484848] w-6 h-6" />
-            </Link>
+          <div className="navbar-center hidden lg:flex items-center">
+            <ul className="menu menu-horizontal px-1 text-md font-semibold text-[#484848]">
+              <li>
+                <Link
+                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  to={"/"}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  to={"/store"}
+                >
+                  Store
+                </Link>
+              </li>
 
-            <Link to={"/wishList"}>
-              <FaHeart className="text-[#484848] w-6 h-6" />
-            </Link>
+              <li>
+                <Link
+                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  to={"/trackOrder"}
+                >
+                  Track Order
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  to={"/wishList"}
+                >
+                  Wishlist
+                </Link>
+                {/* <Link
+                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  to={"/customerSupport"}
+                >
+                  Customer Support
+                </Link> */}
+              </li>
+              <li>
+                <Link
+                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  to={"/billingDetails"}
+                >
+                  Checkout
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  to={"/cart"}
+                >
+                  Cart
+                  {/* <FaShoppingBag className="text-[#484848] hover:text-[#4293D9] duration-300 w-6 h-6" /> */}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="navbar-end gap-5 menu menu-horizontal px-1 text-md font-semibold text-[#484848]">
             {email ? (
-              <div onClick={handleSignOut}>
-                <IoIosLogOut className="text-[#484848] w-6 h-6 cursor-pointer" />
+              <div
+                className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
+                onClick={handleSignOut}
+              >
+                Logout
               </div>
             ) : (
-              <Link to={"/signUp"}>
-                <FaUser className="text-[#484848] w-6 h-6" />
+              <Link
+                className="text-[#484848]  font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
+                to={"/signUp"}
+              >
+                {/* <FaUser className="text-[#484848] w-6 h-6" /> */}
+                Signup
               </Link>
             )}
           </div>
         </div>
       </div>
+
       <div className="bg-[#F2F2F2] flex justify-between items-center max-w-screen-2xl mx-auto mt-3">
         <div className="dropdown">
           <div
@@ -213,7 +272,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        {/* <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-md font-semibold text-[#484848]">
             <li>
               <Link to={"/"}>Home</Link>
@@ -232,7 +291,7 @@ const Nav = () => {
               <Link to={"/compare"}>Compare</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
         <div>
           <h1 className="text-[#484848] font-semibold text-md">
             +8801625619689
