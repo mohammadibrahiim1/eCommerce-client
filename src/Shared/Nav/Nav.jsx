@@ -166,7 +166,7 @@ const Nav = () => {
           </div>
           <div>
             <input
-              className="border w-[646px] h-[42px] p-2 rounded focus:outline-none "
+              className="border w-[646px] md:w-[323px]  h-[42px] p-2 rounded focus:outline-none "
               type="search"
               name="search"
               placeholder="search..."
@@ -174,7 +174,7 @@ const Nav = () => {
             />
           </div>
 
-          <div className="navbar-center hidden lg:flex items-center">
+          <div className="navbar-center hidden lg:flex  items-center">
             <ul className="menu menu-horizontal px-1 text-md font-semibold text-[#484848]">
               <li>
                 <Link
@@ -208,12 +208,6 @@ const Nav = () => {
                 >
                   Wishlist
                 </Link>
-                {/* <Link
-                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
-                  to={"/customerSupport"}
-                >
-                  Customer Support
-                </Link> */}
               </li>
               <li>
                 <Link
@@ -229,14 +223,13 @@ const Nav = () => {
                   to={"/cart"}
                 >
                   Cart
-                  {/* <FaShoppingBag className="text-[#484848] hover:text-[#4293D9] duration-300 w-6 h-6" /> */}
                 </Link>
               </li>
               <li></li>
             </ul>
           </div>
 
-          <div className="navbar-end gap-5  hidden lg:flex items-center text-[#484848]">
+          <div className="navbar-end gap-5  hidden lg:flex md:flex md:me-4 lg:me-0  items-center text-[#484848]">
             {email ? (
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="avatar">
@@ -278,29 +271,6 @@ const Nav = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="bg-[#F2F2F2] flex justify-between items-center max-w-screen-2xl mx-auto mt-3">
-        <div className="dropdown">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-sm  rounded-none m-1"
-          >
-            All category
-          </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-          </ul>
-        </div>
-      </div> */}
     </div>
   );
 };
