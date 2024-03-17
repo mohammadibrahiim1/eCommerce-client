@@ -8,7 +8,13 @@ import { LiaShippingFastSolid } from "react-icons/lia";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getTotal } from "../../redux/features/cart/cartSlice";
+import {
+  decrementQuantity,
+  getTotal,
+  incrementQuantity,
+  removeFromCart,
+} from "../../redux/features/cart/cartSlice";
+import { RxCross2 } from "react-icons/rx";
 
 const BillingDetails = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
@@ -32,6 +38,23 @@ const BillingDetails = () => {
 
   const user = useSelector((state) => state?.auth?.user);
   // console.log(user);
+
+  // const cart = useSelector((state) => state.cart);
+  // console.log(cart);
+  const itemsInCart = useSelector((state) => state?.cart?.cartItems);
+  console.log(itemsInCart);
+
+  const handleRemoveFromCart = (cartItem) => {
+    dispatch(removeFromCart(cartItem));
+  };
+
+  const handleDecrementQuantity = (cartItem) => {
+    dispatch(decrementQuantity(cartItem));
+  };
+
+  const handleIncrementQuantity = (cartItem) => {
+    dispatch(incrementQuantity(cartItem));
+  };
 
   const handlePlaceOrder = async (event) => {
     event.preventDefault();
@@ -317,12 +340,82 @@ const BillingDetails = () => {
               </div>
               <div className=" lg:sticky lg:top-0">
                 <div className="relative h-full">
+                  <h2 className="text-md text-center font-extrabold text-[#333] border-b border-[#333] ">
+                    Order Summary
+                  </h2>
+
                   <div className=" lg:overflow-auto  max-lg:mb-8">
-                    <h2 className="text-md text-center font-extrabold text-[#333] border-b border-[#333]">
-                      Order Summary
-                    </h2>
-                    <div className="space-y-6 mt-10">
-                      <div className="grid sm:grid-cols-3 items-center">
+                    <div className="space-y-6 mt-10 h-[100px]">
+                      {itemsInCart?.map((item) => (
+                        <>
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center justify-between gap-5">
+                              <img
+                                src={item?.image}
+                                className="w-[80px] h-[80px] p-4  bg-gray-200 rounded-md object-contain"
+                              />
+                              <div className="text-xs font-semibold text-[#333] space-y-1">
+                                <h3>{item?.model}</h3>
+
+                                <h3 className="flex items-center gap-2">
+                                  Quantity :
+                                  <span className="text-[#059669]">
+                                    {item?.cartQuantity}
+                                  </span>
+                                </h3>
+
+                                <h3 className="flex flex-wrap gap-2">
+                                  Total Price :
+                                  <span className=" text-[#059669]">
+                                    ${item?.price * item.cartQuantity}
+                                  </span>
+                                </h3>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center justify-center ">
+                              <div className="border border-gray-400 rounded">
+                                <button
+                                  onClick={() => handleDecrementQuantity(item)}
+                                  id="decreaseBtn"
+                                  className=" px-3 py-1  text-gray-700 font-semibold "
+                                >
+                                  -
+                                </button>
+                                <input
+                                  id="quantityInput"
+                                  type="text"
+                                  value={item.cartQuantity}
+                                  className="w-12 py-1 text-center "
+                                />
+                                <button
+                                  onClick={() => handleIncrementQuantity(item)}
+                                  id="increaseBtn"
+                                  className=" px-3 py-1   font-semibold"
+                                >
+                                  +
+                                </button>
+                              </div>
+                            </div>
+
+                            <div className="px-5 py-5 border-gray-200  text-sm">
+                              <span
+                                onClick={() => handleRemoveFromCart(item)}
+                                className="relative inline-block p-2  font-semibold text-red-900 leading-tight cursor-pointer"
+                              >
+                                <span
+                                  aria-hidden
+                                  className="absolute inset-0 bg-red-400 opacity-50 rounded-full"
+                                ></span>
+                                <span className="relative">
+                                  <RxCross2 className="w-4 h-4" />
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </>
+                      ))}
+                      {/* <div className="grid sm:grid-cols-3 items-center">
                         <div className=" p-6 shrink-0 bg-gray-200 rounded-md">
                           <img
                             src="https://readymadeui.com/images/product10.webp"
@@ -372,58 +465,7 @@ const BillingDetails = () => {
                             </li>
                           </ul>
                         </div>
-                      </div>
-                      <div className="grid sm:grid-cols-3 items-center">
-                        <div className=" p-6 shrink-0 bg-gray-200 rounded-md">
-                          <img
-                            src="https://readymadeui.com/images/product10.webp"
-                            className="w-[80px] mx-auto object-contain"
-                          />
-                        </div>
-                        <div className="flex items-center justify-center">
-                          <div className="border border-gray-400 rounded">
-                            <button
-                              id="decreaseBtn"
-                              className=" px-3 py-1  text-gray-700 font-semibold "
-                            >
-                              -
-                            </button>
-                            <input
-                              id="quantityInput"
-                              type="text"
-                              value="1"
-                              className="w-12 py-1 text-center "
-                            />
-                            <button
-                              id="increaseBtn"
-                              className=" px-3 py-1   font-semibold"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
-                        <div>
-                          <h3 className="text-sm text-[#333]">
-                            Apex: Split Sneakers
-                          </h3>
-                          <ul className="text-xs text-[#333] space-y-2 mt-2">
-                            <div className="grid grid-cols-2 items-center">
-                              <li className="flex items-center gap-2">
-                                Size :<span className="text-[#059669]">37</span>
-                              </li>
-                              <li className="flex items-center gap-2">
-                                Quantity :
-                                <span className="text-[#059669]">2</span>
-                              </li>
-                            </div>
-                            <li className="flex flex-wrap gap-2">
-                              Total Price :
-                              <span className=" text-[#059669]">$40</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <div className="w-full my-5">
