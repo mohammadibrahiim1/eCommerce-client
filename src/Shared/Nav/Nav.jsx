@@ -41,7 +41,12 @@ const Nav = () => {
           Welcome to <span className="text-[#5DBF9D]">KI CHAI</span> online
           eCommerce store.
         </h3>
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex justify-between items-center gap-5">
+          <div>
+            <span className="text-[#ffa52f]  font-semibold text-sm">
+              +8801625619689
+            </span>
+          </div>
           <h1 className="text-[#5DBF9D] font-semibold text-[14px]">
             Follow us on :{" "}
           </h1>
@@ -109,7 +114,7 @@ const Nav = () => {
       </div>
       <hr className="text-gray-600" />
       <div>
-        <div className="navbar max-w-screen-2xl mx-auto pt-5">
+        <div className="navbar max-w-screen-2xl mx-auto py-3">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -227,31 +232,54 @@ const Nav = () => {
                   {/* <FaShoppingBag className="text-[#484848] hover:text-[#4293D9] duration-300 w-6 h-6" /> */}
                 </Link>
               </li>
+              <li></li>
             </ul>
           </div>
 
-          <div className="navbar-end gap-5 menu menu-horizontal px-1 text-md font-semibold text-[#484848]">
+          <div className="navbar-end gap-5  hidden lg:flex items-center text-[#484848]">
             {email ? (
-              <div
-                className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
-                onClick={handleSignOut}
-              >
-                Logout
+              <div className="dropdown dropdown-end">
+                <div tabIndex={0} role="button" className="avatar">
+                  <div className="w-12 rounded-full">
+                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link
+                      to={"/"}
+                      className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
+                    >
+                      User Dashboard
+                    </Link>
+                  </li>
+                  <li>
+                    <span
+                      className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
+                      onClick={handleSignOut}
+                    >
+                      Logout
+                    </span>
+                  </li>
+                </ul>
               </div>
             ) : (
               <Link
-                className="text-[#484848]  font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
+                className="text-[#484848]  font-semibold hover:text-[#4293D9] duration-300 cursor-pointer flex tooltip"
+                data-tip="Sign up/Login"
                 to={"/signUp"}
               >
-                {/* <FaUser className="text-[#484848] w-6 h-6" /> */}
-                Signup
+                <FaUser className="text-[#484848] w-7 h-7" />
               </Link>
             )}
           </div>
         </div>
       </div>
 
-      <div className="bg-[#F2F2F2] flex justify-between items-center max-w-screen-2xl mx-auto mt-3">
+      {/* <div className="bg-[#F2F2F2] flex justify-between items-center max-w-screen-2xl mx-auto mt-3">
         <div className="dropdown">
           <div
             tabIndex={0}
@@ -272,32 +300,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        {/* <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-md font-semibold text-[#484848]">
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link to={"/store"}>Store</Link>
-            </li>
-
-            <li>
-              <Link to={"/trackOrder"}>Track Order</Link>
-            </li>
-            <li>
-              <Link to={"/customerSupport"}>Customer Support</Link>
-            </li>
-            <li>
-              <Link to={"/compare"}>Compare</Link>
-            </li>
-          </ul>
-        </div> */}
-        <div>
-          <h1 className="text-[#484848] font-semibold text-md">
-            +8801625619689
-          </h1>
-        </div>
-      </div>
+      </div> */}
     </div>
   );
 };
