@@ -346,7 +346,7 @@ const BillingDetails = () => {
                   <div className=" lg:overflow-auto  max-lg:mb-8">
                     <div className="space-y-6 mt-10 h-[100px]">
                       {itemsInCart?.length ? (
-                        <div>
+                        <div className="space-y-6 ">
                           {itemsInCart?.map((item) => (
                             <>
                               <div className="flex items-center justify-between ">
