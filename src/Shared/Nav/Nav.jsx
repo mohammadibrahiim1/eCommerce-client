@@ -160,8 +160,8 @@ const Nav = () => {
                 </li>
               </ul>
             </div>
-            <Link to={"/"} className=" text-xl text-[#5DBF9D] font-semibold">
-              KI CHAI
+            <Link to={"/"} className="text-lg text-[#5DBF9D] font-semibold">
+              কী চাই!
             </Link>
           </div>
           <div>
