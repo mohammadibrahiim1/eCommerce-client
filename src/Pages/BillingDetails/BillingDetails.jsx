@@ -23,6 +23,7 @@ const BillingDetails = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const [shippingCost, setShippingCost] = useState("");
   console.log(shippingCost);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const totalPrice = totalAmount + shippingCost;
@@ -107,6 +108,7 @@ const BillingDetails = () => {
                         name="name"
                         required
                         defaultValue={user?.displayName}
+                        disabled
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
@@ -115,6 +117,7 @@ const BillingDetails = () => {
                         placeholder="Email address"
                         required
                         defaultValue={user?.email}
+                        disabled
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                       <input
@@ -146,6 +149,7 @@ const BillingDetails = () => {
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                       />
                     </div>
+                    2
                   </div>
 
                   <div className="mt-12">

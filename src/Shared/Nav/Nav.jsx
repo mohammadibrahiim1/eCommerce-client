@@ -25,7 +25,7 @@ const Nav = () => {
 
   return (
     <div className="bg-[#F2F2F2]">
-      <div className="flex justify-between items-center gap-4 max-w-screen-2xl mx-auto py-5">
+      <div className="flex justify-between items-center gap-4 max-w-screen-2xl mx-auto py-2">
         <h3 className="text-[#484848] font-semibold text-[14px] ">
           Welcome to <span className="text-[#5DBF9D]">KI CHAI</span> online
           eCommerce store.

@@ -6,8 +6,8 @@ const TrackOrder = () => {
   return (
     <div>
       <section>
-        <div className="bg-gray-100 py-16 my-24">
-          <div className="max-w-4xl  px-4">
+        <div className="bg-gray-100 py-16">
+          <div className="max-w-4xl mx-auto  px-4">
             <h2 className="text-3xl font-semibold text-indigo-500">
               Track Your Order
             </h2>
