@@ -6,6 +6,7 @@ import Product from "../../Components/Product/Product";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import Brands from "../../Components/Brands/Brands";
 import { useGetBrandsQuery } from "../../redux/features/api/brandApi/brandApi";
+import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
 // import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
 
 // import { usePageTitle } from "../../hooks/usePageTitle/usePageTitle";
@@ -58,15 +59,16 @@ const Shop = () => {
       <section className="max-w-screen-2xl mx-auto ">
         <div className=" grid grid-cols-6 items-started container mx-auto gap-5">
           <div className="col-span-1">
-            <h1 className="text-[#191C1F] font-semibold text-xl  pt-3 =">
+            <h1 className="text-[#10B981] font-semibold text-md  pt-3 pb-1 ">
               Categories
             </h1>
+            <hr />
             <Categories
               setSelectedCategory={setSelectedCategory}
               selectedCategory={selectedCategory}
             ></Categories>
 
-            <hr className="my-5" />
+            <hr className="my-3" />
 
             <div>
               <Brands
@@ -80,14 +82,17 @@ const Shop = () => {
           <div className="col-span-5">
             <div className="flex justify-between items-center gap-5">
               <div>
-                <h1 className="font-semibold text-red-500">
-                  <span className="text-purple-600">{products?.length}</span>
-                  Results found
-                </h1>
+                <CurrentTitle></CurrentTitle>
               </div>
 
               <div className="flex justify-end items-center gap-2">
-                <h1 className="font-semibold text-gray-500">Sort by : </h1>
+                <h1 className="font-semibold mr-12">
+                  <span className="text-sm">Total items : </span>
+                  <span className="text-sm text-orange-500">{products?.length}</span>
+                </h1>
+                <h1 className=" text-sm capitalize font-semibold text-gray-500">
+                  Sort by :
+                </h1>
                 <div className="dropdown dropdown-end">
                   <div tabIndex={0} role="button" className="btn btn-sm m-1">
                     Dropdown
@@ -106,6 +111,8 @@ const Shop = () => {
                 </div>
               </div>
             </div>
+
+            <hr />
 
             <div>
               {/* <div className="bg-[#F2F4F5] text-[#191C1F] font-semibold">

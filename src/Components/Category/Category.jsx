@@ -33,7 +33,7 @@ const Category = ({ category, setSelectedCategory }) => {
       <div key={_id}>
         <div
           type={"primary"}
-          className={`flex items-center justify-between  text-gray-400 p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
+          className={`flex items-center justify-between font-semibold p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
             activeIndex === index ? "active" : ""
           }`}
           onClick={() => toggleAccordion(index)}
@@ -49,7 +49,7 @@ const Category = ({ category, setSelectedCategory }) => {
                 <div>
                   <div
                     type={"primary"}
-                    className={`flex items-center justify-between  text-gray-500 p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
+                    className={`flex items-center justify-between font-semibold p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
                       activeChildIndex === i ? "active" : ""
                     }`}
                     onClick={
@@ -75,7 +75,7 @@ const Category = ({ category, setSelectedCategory }) => {
                           <div>
                             <div
                               type={"primary"}
-                              className={`flex items-center justify-between   text-gray-400  p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
+                              className={`flex items-center justify-between   font font-semibold  p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
                                 activeChildSubIndex === idx ? "active" : ""
                               }`}
                               onClick={

@@ -14,6 +14,7 @@
     "autoprefixer": "^10.4.16",
     "axios": "^1.6.7",
     "firebase": "^10.8.0",
+    "framer-motion": "^11.0.24",
     "keep-react": "^1.0.2",
     "phosphor-react": "^1.4.1",
     "postcss": "^8.4.32",

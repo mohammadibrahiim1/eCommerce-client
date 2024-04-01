@@ -10,10 +10,10 @@ const Brands = ({ brands, handleCheckboxFilter, isChecked }) => {
     <div>
       <section>
         <div>
-          <h1 className="font-semibold text-[16px] text-gray-400 mb-3">
+          <h1 className="font-semibold text-[16px] text-[#10B981] mb-2">
             Popular Brands
           </h1>
-
+          {/* <hr /> */}
           <div className="grid grid-cols-2 justify-between items-center gap-3">
             {brands?.data?.map((brand) => {
               return (
@@ -31,7 +31,7 @@ const Brands = ({ brands, handleCheckboxFilter, isChecked }) => {
                         onChange={handleCheckboxFilter}
                       />
                       <span
-                        className="text-sm  font-semibold capitalize "
+                        className="text-sm font-semibold capitalize"
                         htmlFor={brand._id}
                       >
                         {brand.slug}
@@ -41,28 +41,8 @@ const Brands = ({ brands, handleCheckboxFilter, isChecked }) => {
                 </>
               );
             })}
-            {/* {brands?.map((brand) => (
-              <>
-                <div className="flex items-center space-x-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    id="flexCheckDefault"
-                    value=""
-                    checked={selectedBrands}
-                    onClick={(e) => setSelectedBrands(e.target.checked)}
-                    className="form-checkbox  text-indigo-600"
-                  />
-
-                  <label
-                    className="text-sm    capitalize text-gray-500"
-                    id="flexCheckDefault"
-                  >
-                    {brand.slug}
-                  </label>
-                </div>
-              </>
-            ))} */}
           </div>
+          <hr className="my-3" />
         </div>
       </section>
     </div>
