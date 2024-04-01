@@ -1,14 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
 
 const TrackOrder = () => {
   return (
-    <div>
-      <section>
-        <div className="bg-gray-100 py-16">
-          <div className="max-w-4xl mx-auto  px-4">
-            <h2 className="text-3xl font-semibold text-indigo-500">
+    <div className="bg-gray-100  ">
+      <section className="max-w-4xl mx-auto">
+        <div className="w-[110px] ">
+          <CurrentTitle></CurrentTitle>
+        </div>
+        <div>
+          <div className="pt-5 pb-[136px]">
+            <h2 className="text-3xl font-semibold text-[#10b981]">
               Track Your Order
             </h2>
             <h4 className="mb-4 text-sm font-semibold mt-2">
@@ -53,7 +57,7 @@ const TrackOrder = () => {
               <div className="text-start">
                 <button
                   type="submit"
-                  className="bg-indigo-500 text-white px-6 py-3 rounded-md font-semibold uppercase tracking-wide focus:outline-none hover:bg-indigo-600 flex gap-2 items-center"
+                  className="bg-[#1cd698] text-white px-6 py-3 rounded-md font-semibold uppercase tracking-wide focus:outline-none hover:bg-[#10b981] flex gap-2 items-center duration-300"
                 >
                   <span> Track Order</span>
                   <FaArrowRightLong />
