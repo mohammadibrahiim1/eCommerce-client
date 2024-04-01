@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import { FaAngleDown, FaInstagram, FaTwitter, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
@@ -7,8 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { logOut } from "../../redux/features/api/auth/authSlice";
 import auth from "../../firebase/firebase.config";
+import { getTotal } from "../../redux/features/cart/cartSlice";
 
 const Nav = () => {
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,6 +25,10 @@ const Nav = () => {
       navigate("/login");
     });
   };
+
+  useEffect(() => {
+    dispatch(getTotal());
+  }, [cart, dispatch]);
 
   return (
     <div className="bg-[#F2F2F2]">
@@ -167,7 +174,7 @@ const Nav = () => {
             <ul className="menu menu-horizontal px-1 text-md font-semibold text-[#484848]">
               <li>
                 <Link
-                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  className="hover:bg-[#f2f2f2] hover:text-[#10b981] duration-300"
                   to={"/"}
                 >
                   Home
@@ -175,7 +182,7 @@ const Nav = () => {
               </li>
               <li>
                 <Link
-                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  className="hover:bg-[#f2f2f2] hover:text-[#10b981] duration-300"
                   to={"/store"}
                 >
                   Store
@@ -184,23 +191,23 @@ const Nav = () => {
 
               <li>
                 <Link
-                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  className="hover:bg-[#f2f2f2] hover:text-[#10b981] duration-300"
                   to={"/trackOrder"}
                 >
                   Track Order
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
                   to={"/wishList"}
                 >
                   Wishlist
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
-                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  className="hover:bg-[#f2f2f2] hover:text-[#10b981] duration-300"
                   to={"/billingDetails"}
                 >
                   Checkout
@@ -208,13 +215,15 @@ const Nav = () => {
               </li>
               <li>
                 <Link
-                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
+                  className="hover:bg-[#f2f2f2] hover:text-[#10b981] duration-300 border border-[#10b981]"
                   to={"/cart"}
                 >
-                  Cart
+                  Cart :
+                  <span className="text-[#10b981] font-semibold">
+                    ${totalAmount.toFixed()}
+                  </span>
                 </Link>
               </li>
-              <li></li>
             </ul>
           </div>
 
