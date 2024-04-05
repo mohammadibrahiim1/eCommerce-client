@@ -9,7 +9,9 @@ import { BsBagPlusFill } from "react-icons/bs";
 // import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+
 const Product = ({ product }) => {
+  
   const dispatch = useDispatch();
   const { model, image, price, _id, status } = product;
 
@@ -17,6 +19,7 @@ const Product = ({ product }) => {
     dispatch(addToCart(product));
   };
 
+  
   // const handleAddToWishList = () => {
   //   dispatch(addToWishList(product));
   // };
@@ -24,42 +27,38 @@ const Product = ({ product }) => {
   return (
     <div>
       <div>
-        <div className="card w-[296px] h-[320px] bg-base-100 shadow-xl rounded-none">
-          <button className="text-start p-1  font-semibold text-[#10B981]">
-            Stock : <span className="text-orange-500">{status}</span>
+        <div className="card w-[250px] h-[288px] bg-base-100 shadow-xl rounded-none">
+          <button className="text-start text-sm p-1  font-semibold text-[#10B981]">
+            Stock : <span className="text-orange-500 capitalize">{status}</span>
           </button>
           <Link to={`/productDetails/${_id} `}>
             <img
-              className="w-[217px] h-[189px] mx-auto rounded-sm py-3"
+              className="w-[180px] h-[180px] mx-auto rounded-sm py-3"
               src={image}
               alt={model}
             />
           </Link>
 
-          <div className="px-4 py-1">
+          <div className="px-4">
             <h4 className="font-semibold text-[14px] text-[#10B981] duration-300">
               {model.slice(0, 27)}...
             </h4>
-            <div className="card-actions font-semibold justify-between items-center mt-5 flex  ">
-              <div className=" text-lg text-orange-500">${price}</div>
+            <div className="card-actions font-semibold justify-between items-center mt-3 flex  ">
+              <div className=" text-sm text-orange-500">${price}</div>
               <div className="flex justify-between items-center gap-1">
-                {/* <div
-                  onClick={handleAddToWishList}
-                  className="btn btn-sm text-[#2DA5F3] px-3"
-                >
-                  <FaHeart />
-                </div> */}
                 <div
                   onClick={handleAddToCart}
                   className="cursor-pointer border rounded p-2 text-[#10B981] hover:bg-[#10B981] hover:text-[#FFF] duration-300"
                 >
-                  <BsBagPlusFill className="h-6 w-6" />
+                  <BsBagPlusFill className="h-4 w-4" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      
     </div>
   );
 };

@@ -7,13 +7,16 @@ import { useGetProductsQuery } from "../../redux/features/api/productsApi/produc
 import Brands from "../../Components/Brands/Brands";
 import { useGetBrandsQuery } from "../../redux/features/api/brandApi/brandApi";
 import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
+import ListProduct from "../../Components/ListProduct/ListProduct";
+import { LuLayoutList } from "react-icons/lu";
+import { IoGrid } from "react-icons/io5";
 // import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
 
 // import { usePageTitle } from "../../hooks/usePageTitle/usePageTitle";
 
 const Shop = () => {
   // const pageTitle = usePageTitle();
-
+  const [layout, setLayout] = useState("grid");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   // console.log(isChecked);
@@ -54,6 +57,10 @@ const Shop = () => {
     );
   }
 
+  const showLayout = (layoutOption) => {
+    setLayout(layoutOption);
+  };
+
   return (
     <div className="bg-[#F9FAFB]">
       <section className="max-w-screen-2xl mx-auto ">
@@ -79,7 +86,7 @@ const Shop = () => {
             </div>
           </div>
 
-          <div className="col-span-5">
+          <div className="col-span-5 mt-4">
             <div className="flex justify-between items-center gap-5">
               <div>
                 <CurrentTitle></CurrentTitle>
@@ -88,26 +95,22 @@ const Shop = () => {
               <div className="flex justify-end items-center gap-2">
                 <h1 className="font-semibold mr-12">
                   <span className="text-sm">Total items : </span>
-                  <span className="text-sm text-orange-500">{products?.length}</span>
+                  <span className="text-sm text-orange-500">
+                    {products?.length}
+                  </span>
                 </h1>
                 <h1 className=" text-sm capitalize font-semibold text-gray-500">
-                  Sort by :
+                  view :
                 </h1>
-                <div className="dropdown dropdown-end">
-                  <div tabIndex={0} role="button" className="btn btn-sm m-1">
-                    Dropdown
-                  </div>
-                  <ul
-                    tabIndex={0}
-                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-                  >
-                    <li>
-                      <a>Most Popular</a>
-                    </li>
-                    <li>
-                      <a>Price</a>
-                    </li>
-                  </ul>
+                <div className="flex items-center justify-between gap-3">
+                  <LuLayoutList
+                    className="w-5 cursor-pointer"
+                    onClick={() => showLayout("list")}
+                  />
+                  <IoGrid
+                    className="w-5 cursor-pointer"
+                    onClick={() => showLayout("grid")}
+                  />
                 </div>
               </div>
             </div>
@@ -115,17 +118,27 @@ const Shop = () => {
             <hr />
 
             <div>
-              {/* <div className="bg-[#F2F4F5] text-[#191C1F] font-semibold">
-                {products.length}
-                <span className="text-[#5F6C72]">Results found</span>
-              </div> */}
-
               {products?.length ? (
-                <div className="grid grid-cols-4 justify-center items-center my-3 gap-y-5">
-                  {products?.slice(0, 12)?.map((product) => (
-                    <Product product={product} key={product._id}></Product>
-                  ))}
-                </div>
+                <>
+                  {layout === "grid" && (
+                    <div className="grid grid-cols-5 justify-center items-center my-3 gap-y-1">
+                      {products?.slice(0, 12)?.map((product) => (
+                        <Product product={product} key={product._id}></Product>
+                      ))}
+                    </div>
+                  )}
+
+                  {layout === "list" && (
+                    <div className="grid grid-cols-2 justify-center items-center my-3 gap-2">
+                      {products?.slice(0, 12)?.map((product) => (
+                        <ListProduct
+                          product={product}
+                          key={product._id}
+                        ></ListProduct>
+                      ))}
+                    </div>
+                  )}
+                </>
               ) : (
                 <div className="text-red-500 text-center mt-12 font-semibold text-xl">
                   No items found
