@@ -10,6 +10,7 @@ import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
 import ListProduct from "../../Components/ListProduct/ListProduct";
 import { LuLayoutList } from "react-icons/lu";
 import { IoGrid } from "react-icons/io5";
+import DeliveryBoy from "../../Components/DeliveryBoy/DeliveryBoy";
 // import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
 
 // import { usePageTitle } from "../../hooks/usePageTitle/usePageTitle";
@@ -145,9 +146,18 @@ const Shop = () => {
                 </div>
               )}
             </div>
+
+            <div className=" flex justify-center my-5">
+              <button className="btn btn-md capitalize bg-green-500 hover:bg-green-600 duration-300 text-white w-[25%] mx-auto">
+                show more
+              </button>
+            </div>
           </div>
         </div>
       </section>
+      <div className="mt-[70px]">
+        <DeliveryBoy></DeliveryBoy>
+      </div>
     </div>
   );
 };
