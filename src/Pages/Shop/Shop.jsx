@@ -20,7 +20,9 @@ const Shop = () => {
   const [layout, setLayout] = useState("grid");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-  // console.log(isChecked);
+  const [showMore, setShowMore] = useState(12);
+  // const [showLess, setShowLess] = useState(showMore);
+  console.log(showMore);
 
   const { data: brands } = useGetBrandsQuery();
 
@@ -62,6 +64,13 @@ const Shop = () => {
     setLayout(layoutOption);
   };
 
+  const handleShowMore = () => {
+    setShowMore((preValue) => preValue + 2);
+  };
+
+  const handleShowLess = () => {
+    setShowMore(showMore - 2);
+  };
   return (
     <div className="bg-[#F9FAFB]">
       <section className="max-w-screen-2xl mx-auto ">
@@ -123,7 +132,7 @@ const Shop = () => {
                 <>
                   {layout === "grid" && (
                     <div className="grid grid-cols-5 justify-center items-center my-3 gap-y-1">
-                      {products?.slice(0, 12)?.map((product) => (
+                      {products?.slice(0, showMore)?.map((product) => (
                         <Product product={product} key={product._id}></Product>
                       ))}
                     </div>
@@ -131,7 +140,7 @@ const Shop = () => {
 
                   {layout === "list" && (
                     <div className="grid grid-cols-2 justify-center items-center my-3 gap-2">
-                      {products?.slice(0, 12)?.map((product) => (
+                      {products?.slice(0, showMore)?.map((product) => (
                         <ListProduct
                           product={product}
                           key={product._id}
@@ -148,8 +157,17 @@ const Shop = () => {
             </div>
 
             <div className=" flex justify-center my-5">
-              <button className="btn btn-md capitalize bg-green-500 hover:bg-green-600 duration-300 text-white w-[25%] mx-auto">
+              <button
+                onClick={handleShowMore}
+                className="btn btn-md capitalize bg-green-500 hover:bg-green-600 duration-300 text-white w-[25%] mx-auto"
+              >
                 show more
+              </button>
+              <button
+                onClick={handleShowLess}
+                className="btn btn-md capitalize bg-green-500 hover:bg-green-600 duration-300 text-white w-[25%] mx-auto"
+              >
+                show less
               </button>
             </div>
           </div>
