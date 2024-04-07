@@ -156,16 +156,16 @@ const Shop = () => {
               )}
             </div>
 
-            <div className=" flex justify-center my-5">
+            <div className="flex justify-center items-center my-5">
               <button
                 onClick={handleShowMore}
-                className="btn btn-md capitalize bg-green-500 hover:bg-green-600 duration-300 text-white w-[25%] mx-auto"
+                className="btn btn-md capitalize bg-green-500 hover:bg-green-600 duration-300 text-white "
               >
                 show more
               </button>
               <button
                 onClick={handleShowLess}
-                className="btn btn-md capitalize bg-green-500 hover:bg-green-600 duration-300 text-white w-[25%] mx-auto"
+                className="btn btn-md capitalize bg-green-500 hover:bg-green-600 duration-300 text-white "
               >
                 show less
               </button>
