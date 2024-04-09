@@ -15,33 +15,36 @@ import {
   removeFromCart,
 } from "../../redux/features/cart/cartSlice";
 import { RxCross2 } from "react-icons/rx";
+import { useForm } from "react-hook-form";
 
 const BillingDetails = () => {
+  // const { register, handleSubmit, reset, control } = useForm();
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const cart = useSelector((state) => state.cart);
-  console.log(totalAmount);
+  // console.log(totalAmount);
   const [selectedOption, setSelectedOption] = useState("");
   const [shippingCost, setShippingCost] = useState("");
-  console.log(shippingCost);
+  const [paymentMethod, setPaymentMethod] = useState("COD");
+  // console.log(shippingCost);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const totalPrice = totalAmount + shippingCost;
   const handleOptionChange = (e) => {
     setSelectedOption(e.target.value);
+    setPaymentMethod(e.target.value);
   };
   const handleShippingCost = (e) => {
     setShippingCost(parseInt(e.target.value));
   };
 
-  const [postOrder, { data, isLoading, error, isError }] =
-    usePostOrderMutation();
-  console.log(data?.url);
+  const [postOrder, { isLoading, isError, error }] = usePostOrderMutation();
+  // console.log(data?.url);
 
   const user = useSelector((state) => state?.auth?.user);
 
   const itemsInCart = useSelector((state) => state?.cart?.cartItems);
-  console.log(itemsInCart);
+  // console.log(itemsInCart);
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -76,8 +79,21 @@ const BillingDetails = () => {
       price: totalPrice,
     };
     console.log(order);
-    await postOrder({ ...order, applicants: [], queries: [] });
-    window.location.replace(data?.url);
+    try {
+      const response = await postOrder({ ...order, paymentMethod });
+      console.log(response);
+
+      if (paymentMethod === "COD") {
+        console.log("Order placed with COD!");
+      } else {
+        window.location.href = `/payment-confirmation/${response?.data?.id}`;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    // await postOrder(order);
+    // console.log("Order created successfully");
+    // window.location.replace(data?.url);
   };
 
   useEffect(() => {
@@ -110,6 +126,7 @@ const BillingDetails = () => {
                         defaultValue={user?.displayName}
                         disabled
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
+                        // {...register("name")}
                       />
                       <input
                         type="email"
@@ -119,6 +136,7 @@ const BillingDetails = () => {
                         defaultValue={user?.email}
                         disabled
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
+                        // {...register("email")}
                       />
                       <input
                         type="text"
@@ -126,6 +144,7 @@ const BillingDetails = () => {
                         name="address"
                         required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
+                        // {...register("address")}
                       />
                       <input
                         type="text"
@@ -133,6 +152,7 @@ const BillingDetails = () => {
                         name="city"
                         required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
+                        // {...register("city")}
                       />
                       <input
                         type="text"
@@ -140,6 +160,7 @@ const BillingDetails = () => {
                         name="state"
                         required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
+                        // {...register("state")}
                       />
                       <input
                         type="number"
@@ -147,9 +168,9 @@ const BillingDetails = () => {
                         name="postalCode"
                         required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
+                        // {...register("postalCode")}
                       />
                     </div>
-                    2
                   </div>
 
                   <div className="mt-12">
@@ -251,7 +272,7 @@ const BillingDetails = () => {
                         <label className="label cursor-pointer">
                           <div className="label-text flex items-center gap-2">
                             <BsCreditCard2FrontFill className="h-5 w-5" />
-                            <span className="font-semibold"> Credit Card</span>
+                            <span className="font-semibold">Credit Card</span>
                           </div>
                           <input
                             type="radio"
@@ -273,7 +294,7 @@ const BillingDetails = () => {
                           <input
                             type="radio"
                             name="payment"
-                            value={"cashOnDelivery"}
+                            value={"COD"}
                             onChange={handleOptionChange}
                             className="radio radio-accent radio-sm"
                           />
@@ -334,7 +355,11 @@ const BillingDetails = () => {
                       <IoReturnUpBack className="h-5 w-5" />
                       <span>Continue Shopping</span>
                     </Link>
-                    <button className="w-full flex justify-center items-center gap-1 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300">
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="w-full flex justify-center items-center gap-1 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300"
+                    >
                       <span> Confirm Order</span>
                       <HiMiniArrowLongRight className=" h-5 w-5 mt-1" />
                     </button>

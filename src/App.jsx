@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user);
+        // console.log(user);
         dispatch(setUser(user));
       } else {
         dispatch(toggleLoading());
