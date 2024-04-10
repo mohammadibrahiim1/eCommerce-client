@@ -8,6 +8,7 @@ import { LiaShippingFastSolid } from "react-icons/lia";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import toast from "react-hot-toast";
 import {
   decrementQuantity,
   getTotal,
@@ -82,9 +83,9 @@ const BillingDetails = () => {
     try {
       const response = await postOrder({ ...order, paymentMethod });
       console.log(response);
-
       if (paymentMethod === "COD") {
-        console.log("Order placed with COD!");
+        // console.log(response.data.message);
+        toast.success(response.data.message);
       } else {
         window.location.href = `/payment-confirmation/${response?.data?.id}`;
       }
