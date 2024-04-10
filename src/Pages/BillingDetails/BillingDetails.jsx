@@ -70,8 +70,8 @@ const BillingDetails = () => {
     console.log(name, email, address, city, state, postalCode);
 
     const order = {
-      userName: name,
-      userEmail: email,
+      name,
+      email,
       address,
       city,
       state,
