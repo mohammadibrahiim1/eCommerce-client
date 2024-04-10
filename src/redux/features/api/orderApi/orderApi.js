@@ -10,13 +10,12 @@ const orderApi = baseApi.injectEndpoints({
       }),
     }),
 
-    confirmPayment: builder.mutation({
+    getOrderById: builder.query({
       query: (orderId) => ({
-        url: ` /orders/confirm/${orderId} `,
-        method: "GET",
+        url: `/orders/${orderId} `,
       }),
     }),
   }),
 });
 
-export const { usePostOrderMutation, useConfirmPaymentMutation } = orderApi;
+export const { usePostOrderMutation, useGetOrderByIdQuery } = orderApi;

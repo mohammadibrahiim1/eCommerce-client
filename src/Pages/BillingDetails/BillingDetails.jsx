@@ -1,6 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useRef, useState } from "react";
-import { usePostOrderMutation } from "../../redux/features/api/orderApi/orderApi";
+import React, { useEffect,  useState } from "react";
+import {
+  useGetOrderByIdQuery,
+  usePostOrderMutation,
+} from "../../redux/features/api/orderApi/orderApi";
 import { BsCreditCard2FrontFill } from "react-icons/bs";
 import { FaSackDollar } from "react-icons/fa6";
 import { IoReturnUpBack } from "react-icons/io5";
@@ -17,12 +21,10 @@ import {
   removeFromCart,
 } from "../../redux/features/cart/cartSlice";
 import { RxCross2 } from "react-icons/rx";
-import { useForm } from "react-hook-form";
 
-const BillingDetails = () => {
+const BillingDetails = (params) => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const cart = useSelector((state) => state.cart);
-  console.log(cart.cartItems.map((item) => item.model));
   const [selectedOption, setSelectedOption] = useState("");
   const [shippingCost, setShippingCost] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("COD");
@@ -40,6 +42,9 @@ const BillingDetails = () => {
   };
 
   const [postOrder, { isLoading, isError, error }] = usePostOrderMutation();
+  const { data } = useGetOrderByIdQuery(params.orderId);
+  console.log(data);
+
   // console.log(data?.url);
 
   const user = useSelector((state) => state?.auth?.user);
@@ -80,9 +85,6 @@ const BillingDetails = () => {
       price: totalPrice,
       quantity: cart?.totalQuantity,
       itemPrice: cart?.totalAmount,
-      itemName: cart?.cartItems.map((item) => {
-        item?.model;
-      }),
     };
     console.log(order);
     try {
@@ -364,14 +366,15 @@ const BillingDetails = () => {
                       <IoReturnUpBack className="h-5 w-5" />
                       <span>Continue Shopping</span>
                     </Link>
-                    <button
+                    <Link
+                      to={`/orderInvoice/${params?.orderId} `}
                       type="submit"
                       disabled={!itemsInCart.length}
                       className="w-full flex justify-center items-center gap-1 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300"
                     >
                       <span> Confirm Order</span>
                       <HiMiniArrowLongRight className=" h-5 w-5 mt-1" />
-                    </button>
+                    </Link>
                   </div>
                 </form>
               </div>
@@ -486,21 +489,21 @@ const BillingDetails = () => {
                       <input
                         type="text"
                         placeholder="Input your coupon code"
-                        className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-2 rounded focus:border-[#10B981] outline-none"
+                        className="px-2 py-2 bg-white text-[#333] w-full text-sm border-2 rounded focus:border-[#10B981] outline-none"
                       />
-                      <button className=" px-6 py-3  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold font-sans duration-300">
+                      <button className=" px-6 py-2  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold font-sans duration-300">
                         <span>Apply</span>
                       </button>
                     </div>
 
                     <div>
-                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold font-sans">
+                      <h4 className="flex flex-wrap gap-4 text-sm py-2 text-gray-400 font-semibold font-sans">
                         Subtotal
                         <span className="ml-auto text-[#333333]">
                           ${totalAmount}
                         </span>
                       </h4>
-                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold font-sans">
+                      <h4 className="flex flex-wrap gap-4 text-sm py-2 text-gray-400 font-semibold font-sans">
                         Shipping Cost
                         {shippingCost ? (
                           <span className="ml-auto text-[#333333]">
@@ -510,13 +513,13 @@ const BillingDetails = () => {
                           <span className="ml-auto text-[#333333]">$00.00</span>
                         )}
                       </h4>
-                      <h4 className="flex flex-wrap gap-4 text-md py-2 text-gray-400 font-semibold font-sans">
+                      <h4 className="flex flex-wrap gap-4 text-sm py-2 text-gray-400 font-semibold font-sans">
                         Discount
                         <span className="ml-auto text-[#FB923C]">$00.00</span>
                       </h4>
                     </div>
 
-                    <h4 className="flex flex-wrap gap-4 text-lg text-[#059669]  font-semibold border-t py-2 font-sans">
+                    <h4 className="flex flex-wrap gap-4 text-md text-[#059669]  font-semibold border-t py-2 font-sans">
                       Total Cost <span className="ml-auto">${totalPrice}</span>
                     </h4>
                   </div>
