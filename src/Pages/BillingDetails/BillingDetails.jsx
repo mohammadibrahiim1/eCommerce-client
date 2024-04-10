@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { usePostOrderMutation } from "../../redux/features/api/orderApi/orderApi";
 import { BsCreditCard2FrontFill } from "react-icons/bs";
 import { FaSackDollar } from "react-icons/fa6";
@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import {
+  clearCart,
   decrementQuantity,
   getTotal,
   incrementQuantity,
@@ -19,10 +20,9 @@ import { RxCross2 } from "react-icons/rx";
 import { useForm } from "react-hook-form";
 
 const BillingDetails = () => {
-  // const { register, handleSubmit, reset, control } = useForm();
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const cart = useSelector((state) => state.cart);
-  // console.log(totalAmount);
+  console.log(cart.cartItems.map((item) => item.model));
   const [selectedOption, setSelectedOption] = useState("");
   const [shippingCost, setShippingCost] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("COD");
@@ -45,7 +45,7 @@ const BillingDetails = () => {
   const user = useSelector((state) => state?.auth?.user);
 
   const itemsInCart = useSelector((state) => state?.cart?.cartItems);
-  // console.log(itemsInCart);
+  console.log(itemsInCart);
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -78,10 +78,16 @@ const BillingDetails = () => {
       state,
       postalCode,
       price: totalPrice,
+      quantity: cart?.totalQuantity,
+      itemPrice: cart?.totalAmount,
+      itemName: cart?.cartItems.map((item) => {
+        item?.model;
+      }),
     };
     console.log(order);
     try {
       const response = await postOrder({ ...order, paymentMethod });
+      dispatch(clearCart());
       console.log(response);
       if (paymentMethod === "COD") {
         // console.log(response.data.message);
@@ -89,6 +95,8 @@ const BillingDetails = () => {
       } else {
         window.location.href = `/payment-confirmation/${response?.data?.id}`;
       }
+
+      navigate("/orderInvoice");
     } catch (error) {
       console.log(error);
     }
@@ -358,7 +366,7 @@ const BillingDetails = () => {
                     </Link>
                     <button
                       type="submit"
-                      disabled={isLoading}
+                      disabled={!itemsInCart.length}
                       className="w-full flex justify-center items-center gap-1 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300"
                     >
                       <span> Confirm Order</span>

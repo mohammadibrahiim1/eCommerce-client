@@ -12,6 +12,7 @@ import Compare from "../Pages/Compare/Compare";
 import CustomerSupport from "../Pages/CustomerSupport/CustomerSupport";
 import BillingDetails from "../Pages/BillingDetails/BillingDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import OrderInvoice from "../Pages/OrderInvoice/OrderInvoice";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
       {
         path: "/billingDetails",
         element: <BillingDetails></BillingDetails>,
+      },
+      {
+        path: "/orderInvoice",
+        element: <OrderInvoice></OrderInvoice>,
       },
 
       {
