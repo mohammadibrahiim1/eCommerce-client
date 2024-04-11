@@ -93,11 +93,10 @@ const BillingDetails = () => {
       const response = await postOrder({ ...order, paymentMethod });
       dispatch(clearCart());
       console.log(response);
-      if (paymentMethod === "COD") {
+      if (paymentMethod === "COD" || paymentMethod === "creditCard") {
         toast.success(response.data.message);
-      } else {
-        window.location.href = `/payment-confirmation/${response?.data?.id}`;
       }
+      navigate("/myOrders");
     } catch (error) {
       console.log(error);
     }
@@ -308,7 +307,7 @@ const BillingDetails = () => {
                         </label>
                       </div>
                     </div>
-                    {selectedOption === "creditCard" && (
+                    {/* {selectedOption === "creditCard" && (
                       <div className="grid gap-6 mt-8">
                         <input
                           type="text"
@@ -351,7 +350,7 @@ const BillingDetails = () => {
                           />
                         </div>
                       </div>
-                    )}
+                    ) } */}
                   </div>
 
                   <div className="flex  gap-4 mt-8">

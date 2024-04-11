@@ -13,6 +13,7 @@ import CustomerSupport from "../Pages/CustomerSupport/CustomerSupport";
 import BillingDetails from "../Pages/BillingDetails/BillingDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import OrderInvoice from "../Pages/OrderInvoice/OrderInvoice";
+import MyOrders from "../Pages/MyOrders/MyOrders";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "/compare",
         element: <Compare></Compare>,
+      },
+      {
+        path: "/myOrders",
+        element: <MyOrders></MyOrders>,
       },
       {
         path: "/billingDetails",
