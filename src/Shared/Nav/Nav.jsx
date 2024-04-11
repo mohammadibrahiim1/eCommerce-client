@@ -252,6 +252,14 @@ const Nav = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link
+                      to={"/myOrders"}
+                      className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
+                    >
+                      My Orders
+                    </Link>
+                  </li>
+                  <li>
                     <span
                       className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
                       onClick={handleSignOut}
