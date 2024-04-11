@@ -20,6 +20,17 @@ function App() {
       }
     });
   }, [dispatch]);
+
+  // const price = 500;
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/create-payment-intent`, {
+  //     method: "POST",
+  //     headers: { "content-type": "application/json" },
+  //     body: JSON.stringify({ price }),
+  //   });
+  // }, []);
+
   return (
     <div>
       <Toaster />

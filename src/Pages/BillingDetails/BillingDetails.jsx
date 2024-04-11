@@ -1,10 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useEffect,  useState } from "react";
-import {
-  useGetOrderByIdQuery,
-  usePostOrderMutation,
-} from "../../redux/features/api/orderApi/orderApi";
+import React, { useEffect, useState } from "react";
+import { usePostOrderMutation } from "../../redux/features/api/orderApi/orderApi";
 import { BsCreditCard2FrontFill } from "react-icons/bs";
 import { FaSackDollar } from "react-icons/fa6";
 import { IoReturnUpBack } from "react-icons/io5";
@@ -13,6 +10,7 @@ import { HiMiniArrowLongRight } from "react-icons/hi2";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
+import { loadStripe } from "@stripe/stripe-js";
 import {
   clearCart,
   decrementQuantity,
@@ -22,10 +20,17 @@ import {
 } from "../../redux/features/cart/cartSlice";
 import { RxCross2 } from "react-icons/rx";
 
-const BillingDetails = (params) => {
+// stripe payment
+const stripePromise = loadStripe(
+  "pk_test_51MlpzGLrYWLOOZ8UljA5X1ANJMi0EXPD3KZWZmLIjyuv5DQgLe3I2dZvA4TPFfa4n0opSlz0POZ3wbxzcy27Necr005pDnWQh8"
+);
+console.log(stripePromise);
+
+const BillingDetails = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const cart = useSelector((state) => state.cart);
   const [selectedOption, setSelectedOption] = useState("");
+  console.log(selectedOption);
   const [shippingCost, setShippingCost] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("COD");
   // console.log(shippingCost);
@@ -42,15 +47,11 @@ const BillingDetails = (params) => {
   };
 
   const [postOrder, { isLoading, isError, error }] = usePostOrderMutation();
-  const { data } = useGetOrderByIdQuery(params.orderId);
-  console.log(data);
-
-  // console.log(data?.url);
 
   const user = useSelector((state) => state?.auth?.user);
 
   const itemsInCart = useSelector((state) => state?.cart?.cartItems);
-  console.log(itemsInCart);
+  // console.log(itemsInCart);
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -71,20 +72,21 @@ const BillingDetails = (params) => {
     const email = user?.email || "unregistered";
     const address = form.address.value;
     const city = form.city.value;
-    const state = form.state.value;
+    const country = form.country.value;
     const postalCode = form.postalCode.value;
-    console.log(name, email, address, city, state, postalCode);
+    console.log(name, email, address, city, country, postalCode);
 
     const order = {
       name,
       email,
       address,
       city,
-      state,
+      country,
       postalCode,
       price: totalPrice,
       quantity: cart?.totalQuantity,
       itemPrice: cart?.totalAmount,
+      paymentOption: selectedOption,
     };
     console.log(order);
     try {
@@ -92,19 +94,13 @@ const BillingDetails = (params) => {
       dispatch(clearCart());
       console.log(response);
       if (paymentMethod === "COD") {
-        // console.log(response.data.message);
         toast.success(response.data.message);
       } else {
         window.location.href = `/payment-confirmation/${response?.data?.id}`;
       }
-
-      navigate("/orderInvoice");
     } catch (error) {
       console.log(error);
     }
-    // await postOrder(order);
-    // console.log("Order created successfully");
-    // window.location.replace(data?.url);
   };
 
   useEffect(() => {
@@ -167,8 +163,8 @@ const BillingDetails = (params) => {
                       />
                       <input
                         type="text"
-                        placeholder="State"
-                        name="state"
+                        placeholder="Country"
+                        name="country"
                         required
                         className="px-2 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#10B981] outline-none"
                         // {...register("state")}
@@ -366,15 +362,14 @@ const BillingDetails = (params) => {
                       <IoReturnUpBack className="h-5 w-5" />
                       <span>Continue Shopping</span>
                     </Link>
-                    <Link
-                      to={`/orderInvoice/${params?.orderId} `}
+                    <button
                       type="submit"
-                      disabled={!itemsInCart.length}
+                      disabled={!itemsInCart?.length}
                       className="w-full flex justify-center items-center gap-1 px-6  text-md bg-[#10B981] text-white rounded-md hover:bg-[#059669] font-semibold duration-300"
                     >
                       <span> Confirm Order</span>
                       <HiMiniArrowLongRight className=" h-5 w-5 mt-1" />
-                    </Link>
+                    </button>
                   </div>
                 </form>
               </div>

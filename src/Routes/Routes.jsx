@@ -70,10 +70,8 @@ export const router = createBrowserRouter([
         element: <BillingDetails></BillingDetails>,
       },
       {
-        path: "/orderInvoice/:id",
+        path: "/orderInvoice",
         element: <OrderInvoice></OrderInvoice>,
-        loader: async ({ params }) =>
-          fetch(`http://localhost:5000/api/v1/orders/${params.id}`),
       },
 
       {

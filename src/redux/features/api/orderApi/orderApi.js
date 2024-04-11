@@ -10,11 +10,11 @@ const orderApi = baseApi.injectEndpoints({
       }),
     }),
 
-    getOrderById: builder.query({
-      query: (orderId) => ({
-        url: `/orders/${orderId} `,
-      }),
-    }),
+    // getOrderById: builder.query({
+    //   query: (orderId) => ({
+    //     url: `/orders/${orderId} `,
+    //   }),
+    // }),
   }),
 });
 
