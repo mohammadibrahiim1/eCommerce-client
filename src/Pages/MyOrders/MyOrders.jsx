@@ -65,16 +65,16 @@ const MyOrders = () => {
                 <div className="p-2 font-semibold text-lg capitalize">
                   Your order id :
                   <span className="text-green-500"> {order?._id} </span>
-                  <span className="text-orange-500">
+                  {/* <span className="text-orange-500">
                     ( {itemsInCart?.length} items)
-                  </span>
+                  </span> */}
                   <h2 className="text-sm font-semibold">
                     Payable Amount :
                     <span className="text-green-500  uppercase  ms-1">
                       Tk.{order?.price}
                     </span>
                   </h2>
-                  <div className="flex items-center justify-start gap-3">
+                  {/* <div className="flex items-center justify-start gap-3">
                     {itemsInCart?.map((item) => (
                       <>
                         <div>
@@ -92,7 +92,7 @@ const MyOrders = () => {
                         </div>
                       </>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </>

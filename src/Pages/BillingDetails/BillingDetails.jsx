@@ -29,6 +29,7 @@ console.log(stripePromise);
 const BillingDetails = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const cart = useSelector((state) => state.cart);
+  console.log(cart);
   const [selectedOption, setSelectedOption] = useState("");
   console.log(selectedOption);
   const [shippingCost, setShippingCost] = useState("");
@@ -84,8 +85,7 @@ const BillingDetails = () => {
       country,
       postalCode,
       price: totalPrice,
-      quantity: cart?.totalQuantity,
-      itemPrice: cart?.totalAmount,
+      items: cart,
       paymentOption: selectedOption,
     };
     console.log(order);
