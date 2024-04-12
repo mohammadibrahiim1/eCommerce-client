@@ -253,7 +253,7 @@ const Nav = () => {
                   </li>
                   <li>
                     <Link
-                      to={"/user/myOrders"}
+                      to={"/user/dashboard"}
                       className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
                     >
                       User

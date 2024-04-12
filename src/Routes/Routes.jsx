@@ -17,6 +17,7 @@ import MyOrders from "../Pages/MyOrders/MyOrders";
 import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
 import UserDashboard from "../Layout/UserDashboard/UserDashboard";
 import OrderHistory from "../Pages/OrderHistory/OrderHistory";
+import MyAccount from "../Pages/MyAccount/MyAccount";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -42,10 +43,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "/wishList",
-        element: <WishList></WishList>,
-      },
+
       {
         path: "/productDetails/:id",
         element: <ProductDetails></ProductDetails>,
@@ -100,12 +98,20 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/user",
+    path: "/user/dashboard",
     element: <UserDashboard></UserDashboard>,
     children: [
       {
-        path: "/user/myOrders",
+        path: "/user/dashboard/myOrders",
         element: <MyOrders></MyOrders>,
+      },
+      {
+        path: "/user/dashboard/myAccount",
+        element: <MyAccount></MyAccount>,
+      },
+      {
+        path: "/user/dashboard/wishList",
+        element: <WishList></WishList>,
       },
     ],
   },

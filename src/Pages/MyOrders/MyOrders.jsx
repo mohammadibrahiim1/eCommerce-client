@@ -42,8 +42,8 @@ const MyOrders = () => {
 
   return (
     <div>
-      <section className="max-w-4xl mx-auto">
-        <div className="border border-gray-300 rounded p-4 my-12 shadow">
+      <section className="max-w-5xl mx-auto">
+        <div className="border border-gray-300 rounded p-4  shadow">
           <h1 className="font-semibold text-md">
             My orders
             <span className="text-orange-500 mx-1">
