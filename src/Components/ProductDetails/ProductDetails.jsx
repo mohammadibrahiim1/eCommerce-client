@@ -6,7 +6,7 @@ const ProductDetails = () => {
   const product = useLoaderData();
   console.log(product);
 
-  const { model, image, price } = product;
+  const { title, thumbnail, price } = product;
   return (
     <div>
       <section className="py-10 font-poppins dark:bg-gray-800">
@@ -35,7 +35,7 @@ const ProductDetails = () => {
                   </a>
                   <img
                     className="object-contain w-full lg:h-full"
-                    src={image}
+                    src={thumbnail}
                     alt=""
                   />
                   <a
@@ -116,7 +116,7 @@ const ProductDetails = () => {
                     New Arrival
                   </span>
                   <h2 className="max-w-xl mt-6 mb-6 text-xl font-semibold leading-loose tracking-wide text-gray-700 md:text-2xl dark:text-gray-300">
-                    {model}
+                    {title}
                   </h2>
                   <div className="flex flex-wrap items-center mb-6">
                     <ul className="flex mb-4 mr-2 lg:mb-0">

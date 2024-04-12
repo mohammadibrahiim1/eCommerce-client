@@ -81,11 +81,11 @@ const MyOrders = () => {
                           <div>
                             <img
                               className="h-[80px] w-[80px]"
-                              src={item?.image}
-                              alt={item?.model}
+                              src={item?.thumbnail}
+                              alt={item?.title}
                             />
                             <h1 className="text-xs ">
-                              {item?.model.slice(0, 12)}...
+                              {item?.title.slice(0, 12)}...
                             </h1>
                             <h6 className="text-xs">Tk : {item?.price}</h6>
                           </div>

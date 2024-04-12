@@ -90,13 +90,13 @@ const Cart = () => {
                                   <div className="flex-shrink-0 w-16 h-16">
                                     <img
                                       className="w-full h-full rounded"
-                                      src={cartItem.image}
+                                      src={cartItem.thumbnail}
                                       alt=""
                                     />
                                   </div>
                                   <div className="ml-3">
                                     <p className="text-gray-900 whitespace-no-wrap font-semibold capitalize">
-                                      {cartItem.model}
+                                      {cartItem.title}
                                     </p>
                                   </div>
                                 </div>

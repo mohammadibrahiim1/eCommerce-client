@@ -78,14 +78,14 @@ const Accessories = () => {
                     <Link to={`/productDetails/${product._id} `}>
                       <img
                         className="w-[160px] h-[180px] mx-auto rounded-sm py-3"
-                        src={product.image}
-                        alt={product.model}
+                        src={product.thumbnail}
+                        alt={product.title}
                       />
                     </Link>
 
                     <div className="px-4 py-1">
                       <h4 className="font-semibold text-[14px] text-[#10B981] duration-300">
-                        {product.model.slice(0, 27)}...
+                        {product.title}...
                       </h4>
                       <div className="card-actions font-semibold justify-between items-center mt-5 flex  ">
                         <div className=" text-lg text-orange-500">

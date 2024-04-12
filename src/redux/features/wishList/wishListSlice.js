@@ -18,7 +18,7 @@ const wishListSlice = createSlice({
     addToWishList: (state, action) => {
       console.log(action.payload);
       state.push(action.payload);
-      toast.success(`${action.payload.model} added to wishlist`, {
+      toast.success(`${action.payload.title} added to wishlist`, {
         position: "top-right",
       });
 
@@ -33,7 +33,7 @@ const wishListSlice = createSlice({
         saveWishListToLocalStorage(state);
       }
 
-      toast.error(`${payload.model} removed from wishList`, {
+      toast.error(`${payload.title} removed from wishList`, {
         position: "top-right",
       });
     },

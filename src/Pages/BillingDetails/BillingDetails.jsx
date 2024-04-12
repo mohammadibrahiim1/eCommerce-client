@@ -387,11 +387,11 @@ const BillingDetails = () => {
                               <div className="flex items-center justify-between ">
                                 <div className="flex items-center justify-between gap-5">
                                   <img
-                                    src={item?.image}
+                                    src={item?.thumbnail}
                                     className="w-[80px] h-[80px] p-4  bg-gray-200 rounded-md object-contain"
                                   />
                                   <div className="text-xs font-semibold text-[#333] space-y-1">
-                                    <h3>{item?.model}</h3>
+                                    <h3>{item?.title}</h3>
 
                                     <h3 className="flex items-center gap-2">
                                       Quantity :

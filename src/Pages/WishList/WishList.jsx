@@ -62,13 +62,13 @@ const WishList = () => {
                               <div className="flex-shrink-0 w-16 h-16">
                                 <img
                                   className="w-full h-full rounded"
-                                  src={item?.image}
+                                  src={item?.thumbnail}
                                   alt=""
                                 />
                               </div>
                               <div className="ml-3">
                                 <p className="text-gray-900 whitespace-no-wrap font-semibold capitalize">
-                                  {item?.model}
+                                  {item?.title}
                                 </p>
                               </div>
                             </div>

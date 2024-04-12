@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const ListProduct = ({ product }) => {
   const dispatch = useDispatch();
-  const { model, image, price, _id, status, brand, keyFeature } = product;
+  const { title, thumbnail, price, _id, status, brand, keyFeature } = product;
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
@@ -19,7 +19,7 @@ const ListProduct = ({ product }) => {
       <div>
         <div className="card card-side h-[220px] bg-base-100 shadow-xl mx-auto">
           <figure>
-            <img src={image} className="w-[180px] p-12" alt={model} />
+            <img src={thumbnail} className="w-[180px] p-12" alt={title} />
           </figure>
           <div className="card-body w-[500px]">
             <div className="flex justify-between items-center ">
@@ -36,7 +36,7 @@ const ListProduct = ({ product }) => {
             </div>
             <div className="flex justify-between items-center ">
               <h2 className="text-[#10B981] text-lg font-semibold">
-                {model.slice(0, 19)}...
+                {title.slice(0, 19)}...
               </h2>
               <Link
                 to={`/productDetails/${_id} `}
