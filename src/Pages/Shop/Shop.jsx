@@ -20,8 +20,7 @@ const Shop = () => {
   const [layout, setLayout] = useState("grid");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-  const [showMore, setShowMore] = useState(12);
-  // const [showLess, setShowLess] = useState(showMore);
+  const [showMore, setShowMore] = useState(15);
   console.log(showMore);
 
   const { data: brands } = useGetBrandsQuery();

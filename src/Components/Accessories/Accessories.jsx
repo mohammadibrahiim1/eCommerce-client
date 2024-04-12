@@ -73,7 +73,7 @@ const Accessories = () => {
                   <div className="card w-[290px] h-[305px] bg-base-100 shadow-xl rounded-none">
                     <button className="text-start p-1  font-semibold text-[#10B981]">
                       Stock :{" "}
-                      <span className="text-orange-500">{product.status}</span>
+                      <span className="text-orange-500">{product.stock}</span>
                     </button>
                     <Link to={`/productDetails/${product._id} `}>
                       <img

@@ -245,18 +245,18 @@ const Nav = () => {
                 >
                   <li>
                     <Link
-                      to={"/"}
+                      to={"/admin/orderHistory"}
                       className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
                     >
-                      User Dashboard
+                      Admin
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to={"/myOrders"}
+                      to={"/user/myOrders"}
                       className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
                     >
-                      My Orders
+                      User
                     </Link>
                   </li>
                   <li>

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const ListProduct = ({ product }) => {
   const dispatch = useDispatch();
-  const { title, thumbnail, price, _id, status, brand, keyFeature } = product;
+  const { title, thumbnail, price, _id, stock, brand, keyFeature } = product;
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
@@ -24,7 +24,7 @@ const ListProduct = ({ product }) => {
           <div className="card-body w-[500px]">
             <div className="flex justify-between items-center ">
               <strong className="text-green-500 capitalize text-xs">
-                Stock: {status}
+                Stock: {stock}
               </strong>
               {brand ? (
                 <strong className="text-orange-500 capitalize text-xs">

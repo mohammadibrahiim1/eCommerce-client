@@ -14,6 +14,9 @@ import BillingDetails from "../Pages/BillingDetails/BillingDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import OrderInvoice from "../Pages/OrderInvoice/OrderInvoice";
 import MyOrders from "../Pages/MyOrders/MyOrders";
+import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
+import UserDashboard from "../Layout/UserDashboard/UserDashboard";
+import OrderHistory from "../Pages/OrderHistory/OrderHistory";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -66,10 +69,10 @@ export const router = createBrowserRouter([
         path: "/compare",
         element: <Compare></Compare>,
       },
-      {
-        path: "/myOrders",
-        element: <MyOrders></MyOrders>,
-      },
+      // {
+      //   path: "/myOrders",
+      //   element: <MyOrders></MyOrders>,
+      // },
       {
         path: "/billingDetails",
         element: <BillingDetails></BillingDetails>,
@@ -82,6 +85,27 @@ export const router = createBrowserRouter([
       {
         path: "/customerSupport",
         element: <CustomerSupport></CustomerSupport>,
+      },
+    ],
+  },
+
+  {
+    path: "/admin",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "/admin/orderHistory",
+        element: <OrderHistory></OrderHistory>,
+      },
+    ],
+  },
+  {
+    path: "/user",
+    element: <UserDashboard></UserDashboard>,
+    children: [
+      {
+        path: "/user/myOrders",
+        element: <MyOrders></MyOrders>,
       },
     ],
   },

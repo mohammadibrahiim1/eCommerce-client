@@ -42,7 +42,7 @@
 // // export const getUser = createAsyncThunk("auth/getUser", async (email) => {
 // //   const res = await fetch(` http://localhost:5173/api/v1/users/${email}`);
 // //   const data = await res.json();
-// //   if (data.status) {
+// //   if (data.stock) {
 // //     return data;
 // //   }
 // //   return email;
@@ -147,7 +147,7 @@
 // //       })
 // //       .addCase(getUser.fulfilled, (state, { payload }) => {
 // //         state.loading = false;
-// //         if (payload.status) {
+// //         if (payload.stock) {
 // //           state.user = payload.data;
 // //         } else {
 // //           state.user.email = payload;
@@ -206,7 +206,7 @@
 // export const getUser = createAsyncThunk("auth/getUser", async (email) => {
 //   const res = await fetch(` http://localhost:5173/api/v1/users/${email}`);
 //   const data = await res.json();
-//   if (data.status) {
+//   if (data.stock) {
 //     return data;
 //   }
 //   return data;
@@ -333,7 +333,7 @@
 //       })
 //       .addCase(getUser.fulfilled, (state, { payload }) => {
 //         state.isLoading = false;
-//         if (payload.status) {
+//         if (payload.stock) {
 //           state.user = payload.data;
 //         } else {
 //           state.user = payload;
@@ -391,7 +391,7 @@ export const createUser = createAsyncThunk(
 export const getUser = createAsyncThunk("auth/getUser", async (email) => {
   const res = await fetch(`http://localhost:5000/user/${email}`);
   const data = await res.json();
-  if (data.status) {
+  if (data.stock) {
     return data;
   }
   return email;
@@ -490,7 +490,7 @@ export const authSlice = createSlice({
       })
       .addCase(getUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        if (payload.status) {
+        if (payload.stock) {
           state.user = payload.data;
         } else {
           state.user.email = payload;
