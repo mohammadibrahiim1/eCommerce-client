@@ -22,6 +22,7 @@ const MyOrders = () => {
   } = useGetUserOrdersQuery(email);
 
   console.log(orders);
+
   // const orders = data?.data;
   // console.log(orders);
 
@@ -52,61 +53,54 @@ const MyOrders = () => {
 
   return (
     <div>
-      <section className="max-w-5xl mx-auto">
-        <div className="border border-gray-300 rounded p-4  shadow">
-          <h1 className="font-semibold text-md">
+      <section className=" rounded  shadow max-w-5xl mx-auto">
+        <div className="">
+          <h1 className="font-semibold text-md py-2 px-2 bg-[#FA8232]">
             My orders
-            <span className="text-orange-500 mx-1">
-              (Your total orders :{" "}
-              <span className="text-green-400">{orders?.length}</span> )
+            <span className="text-white mx-1 ">
+              ( Your total orders : <span>{orders?.length}</span> )
             </span>
           </h1>
-
           <hr />
-          <h3 className="text-gray-600 font-semibold text-sm">
-            Order status : On hold
-          </h3>
         </div>
 
         <div>
-          {orders?.map((order) => (
-            <>
-              <div className="border">
-                <div className="p-2 font-semibold text-lg capitalize">
-                  Your order id :
-                  <span className="text-green-500"> {order?._id} </span>
-                  {/* <span className="text-orange-500">
-                    ( {itemsInCart?.length} items)
-                  </span> */}
-                  <h2 className="text-sm font-semibold">
-                    Payable Amount :
-                    <span className="text-green-500  uppercase  ms-1">
-                      Tk.{order?.price}
-                    </span>
-                  </h2>
-                  {/* <div className="flex items-center justify-start gap-3">
-                    {itemsInCart?.map((item) => (
-                      <>
-                        <div>
-                          <div>
-                            <img
-                              className="h-[80px] w-[80px]"
-                              src={item?.thumbnail}
-                              alt={item?.title}
-                            />
-                            <h1 className="text-xs ">
-                              {item?.title.slice(0, 12)}...
-                            </h1>
-                            <h6 className="text-xs">Tk : {item?.price}</h6>
-                          </div>
-                        </div>
-                      </>
-                    ))}
-                  </div> */}
-                </div>
-              </div>
-            </>
-          ))}
+          {/* {orders?.map((order) => (
+            <> */}
+          <div className="overflow-x-auto">
+            <table className="table">
+              {/* head */}
+              <thead className="bg-gray-100">
+                <tr>
+                  <th>ORDER ID</th>
+                  <th>STATUS</th>
+                  <th>DATE</th>
+                  <th>TOTAL</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              {orders.map((order) => (
+                <>
+                  <tbody>
+                    {/* row 1 */}
+                    <tr>
+                      <td>#{order._id}</td>
+                      <td>Quality Control Specialist</td>
+                      <td className="text-green-500">{order.createdAt}</td>
+                      <td className="text-green-500">
+                        ${order.price}
+                        <span className="text-orange-500 mx-1">
+                          ({order?.items?.cartItems?.length}products)
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </>
+              ))}
+            </table>
+          </div>
+          {/* </>
+          ))} */}
         </div>
       </section>
     </div>
