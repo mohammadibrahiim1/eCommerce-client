@@ -83,7 +83,9 @@ const MyOrders = () => {
                     {/* row 1 */}
                     <tr>
                       <td className="text-green-500">#{order._id}</td>
-                      <td>Quality Control Specialist</td>
+                      <td className="text-orange-500 capitalize">
+                        {order.status}
+                      </td>
                       <td className="text-green-500">{order.createdAt}</td>
                       <td className="text-red-500 font-semibold">
                         ${order.price}
