@@ -85,7 +85,7 @@ const MyOrders = () => {
                       <td className="text-green-500">#{order._id}</td>
                       <td>Quality Control Specialist</td>
                       <td className="text-green-500">{order.createdAt}</td>
-                      <td className="text-green-500">
+                      <td className="text-red-500 font-semibold">
                         ${order.price}
                         <span className="text-orange-500 mx-1">
                           ({order?.items?.cartItems?.length}products)
