@@ -5,6 +5,7 @@ import { useGetUserOrdersQuery } from "../../redux/features/api/orderApi/orderAp
 import { Spinner } from "keep-react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTotal } from "../../redux/features/cart/cartSlice";
+import { Link } from "react-router-dom";
 
 const MyOrders = () => {
   const cart = useSelector((state) => state.cart);
@@ -96,9 +97,12 @@ const MyOrders = () => {
                       <td className="text-green-500 cursor-pointer">
                         {order?.paymentOption === "creditCard" ? (
                           <>
-                            <button className="btn btn-sm border-none rounded-xs text-white btn-error">
+                            <Link
+                              to={`/payment/${order._id}`}
+                              className="btn btn-sm border-none rounded-xs text-white btn-error"
+                            >
                               payment
-                            </button>
+                            </Link>
                           </>
                         ) : (
                           <span className="capitalize text-error font-semibold">
