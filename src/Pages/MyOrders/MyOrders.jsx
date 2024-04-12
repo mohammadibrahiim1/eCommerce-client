@@ -65,8 +65,6 @@ const MyOrders = () => {
         </div>
 
         <div>
-          {/* {orders?.map((order) => (
-            <> */}
           <div className="overflow-x-auto">
             <table className="table">
               {/* head */}
@@ -84,7 +82,7 @@ const MyOrders = () => {
                   <tbody>
                     {/* row 1 */}
                     <tr>
-                      <td>#{order._id}</td>
+                      <td className="text-green-500">#{order._id}</td>
                       <td>Quality Control Specialist</td>
                       <td className="text-green-500">{order.createdAt}</td>
                       <td className="text-green-500">
@@ -93,14 +91,25 @@ const MyOrders = () => {
                           ({order?.items?.cartItems?.length}products)
                         </span>
                       </td>
+                      <td className="text-green-500 cursor-pointer">
+                        {order?.paymentOption === "creditCard" ? (
+                          <>
+                            <button className="btn btn-sm border-none rounded-xs text-white btn-error">
+                              payment
+                            </button>
+                          </>
+                        ) : (
+                          <span className="capitalize text-error font-semibold">
+                            cash on delivery
+                          </span>
+                        )}
+                      </td>
                     </tr>
                   </tbody>
                 </>
               ))}
             </table>
           </div>
-          {/* </>
-          ))} */}
         </div>
       </section>
     </div>
