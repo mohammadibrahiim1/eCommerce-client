@@ -96,7 +96,7 @@ const BillingDetails = () => {
       if (paymentMethod === "COD" || paymentMethod === "creditCard") {
         toast.success(response.data.message);
       }
-      navigate("/myOrders");
+      // navigate("/myOrders");
     } catch (error) {
       console.log(error);
     }

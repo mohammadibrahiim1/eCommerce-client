@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useEffect } from "react";
-import { useGetOrdersQuery } from "../../redux/features/api/orderApi/orderApi";
+import { useGetUserOrdersQuery } from "../../redux/features/api/orderApi/orderApi";
 import { Spinner } from "keep-react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTotal } from "../../redux/features/cart/cartSlice";
@@ -10,10 +10,20 @@ const MyOrders = () => {
   const cart = useSelector((state) => state.cart);
   const itemsInCart = useSelector((state) => state?.cart?.cartItems);
   console.log(itemsInCart);
-  const { data, isLoading, isError, error } = useGetOrdersQuery();
+  const {
+    user: { email },
+  } = useSelector((state) => state.auth);
+  console.log(email);
+  const {
+    data: orders,
+    isLoading,
+    isError,
+    error,
+  } = useGetUserOrdersQuery(email);
 
-  const orders = data?.data;
   console.log(orders);
+  // const orders = data?.data;
+  // console.log(orders);
 
   const dispatch = useDispatch();
 
