@@ -5,11 +5,10 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {
-  useCreatePaymentIntentMutation,
-  usePostPaymentMutation,
-} from "../../../redux/features/api/paymentApi/paymentApi";
-import { data } from "autoprefixer";
+// import { usePostPaymentMutation } from "../../../redux/features/api/payment/paymentApi";
+import { createPaymentIntent } from "../../../redux/features/api/payment/paymentSlice";
+import { useCreatePaymentIntentMutation } from "../../../redux/features/api/payment/paymentApi";
+import toast from "react-hot-toast";
 
 const CheckOutForm = ({ order }) => {
   const stripe = useStripe();
@@ -19,46 +18,53 @@ const CheckOutForm = ({ order }) => {
   // declare state for msg
   const [message, useMessage] = useState(null);
   // const [isLoading, setIsLoading] = useState(false);
+  const [clientSecret, setClientSecret] = useState("");
   const [cardError, setCardError] = useState("");
   const [processing, setProcessing] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState("");
-  const [clientSecret, setClientSecret] = useState("");
-  console.log(clientSecret);
   const [transactionId, setTransactionId] = useState("");
   const navigate = useNavigate();
-  // const [paymentIntentClientSecret, setPaymentIntentClientSecret] =
-  //   useState(null);
 
+  /* 
+  1.stripe install
+  2. card loadStripe
+  3.card elements
+  4.stripe,elements
+  5.check card error and display error
+  6.collect card information
+
+  
+  */
+  //  destructure order information
   const { price, _id, name, email } = order;
 
-  const [postPayment, { isLoading, error }] = usePostPaymentMutation();
-  console.log(data);
-
   useEffect(() => {
+    // create payment intents as soon as the page loads
     fetch("http://localhost:5000/api/v1/create-payment-intent", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify({
         price,
-        currency: "usd",
       }),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setClientSecret(data.client_secret);
-      });
+      .then((data) => setClientSecret(data.clientSecret));
   }, [price]);
 
   const handleSubmit = async (event) => {
+    // block native form submission
     event.preventDefault();
     if (!stripe || !elements) {
+      // stripe.js hasn't yet loaded
+      // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
 
+    //
     const card = elements.getElement(CardElement);
+
     if (card === null) {
       return;
     }
@@ -67,6 +73,7 @@ const CheckOutForm = ({ order }) => {
       type: "card",
       card,
     });
+    console.log(paymentMethod);
 
     if (error) {
       console.log(error);
@@ -80,13 +87,13 @@ const CheckOutForm = ({ order }) => {
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(
         clientSecret,
-        // '{PAYMENT_INTENT_CLIENT_SECRET}',
+
         {
           payment_method: {
             card: card,
             billing_details: {
-              name,
-              email,
+              name: name,
+              email: email,
             },
           },
         }
@@ -95,18 +102,21 @@ const CheckOutForm = ({ order }) => {
       setCardError(confirmError.message);
       return;
     }
-    if (paymentIntent.status === "succeeded") {
-      console.log("card info", card);
-      // store payment info in the database
-      const payment = {
-        name,
-        email,
-        price,
-        orderId: _id,
-        transactionId: paymentIntent.id,
-      };
 
-      dispatch(await postPayment(payment));
+    console.log("paymentIntent", paymentIntent);
+
+    if (paymentIntent.status === "succeeded") {
+      setPaymentSuccess("Congrats! your payment completed");
+      setTransactionId(paymentIntent.id);
+
+      // store payment info in the database
+      // const payment = {
+      //   name,
+      //   email,
+      //   price,
+      //   orderId: _id,
+      //   transactionId: paymentIntent.id,
+      // };
     }
     setProcessing(false);
     // console.log("paymentIntent", paymentIntent);
@@ -142,7 +152,7 @@ const CheckOutForm = ({ order }) => {
           >
             Pay
           </button>
-          <p className="text-danger">{cardError}</p>
+          <p className="text-error">{cardError}</p>
           {paymentSuccess && (
             <div>
               <p className="text-success">{paymentSuccess}</p>
