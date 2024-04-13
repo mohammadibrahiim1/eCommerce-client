@@ -1,22 +1,15 @@
 import { baseApi } from "../baseApi";
 
-const paymentApi = baseApi.injectEndpoints({
+export const paymentApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    createPaymentIntent: builder.mutation({
-      query: (data) => ({
-        url: "/create-payment-intent",
+    submitPayment: builder.mutation({
+      query: (paymentData) => ({
+        url: "/payment",
         method: "POST",
-        data: data,
+        body: paymentData,
       }),
     }),
-    // postPayment: builder.mutation({
-    //   query: (payment) => ({
-    //     url: "/payment",
-    //     method: "POST",
-    //     body: payment,
-    //   }),
-    // }),
   }),
 });
 
-export const { useCreatePaymentIntentMutation } = paymentApi;
+export const { useSubmitPaymentMutation } = paymentApi;

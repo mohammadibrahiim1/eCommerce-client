@@ -6,9 +6,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 // import { usePostPaymentMutation } from "../../../redux/features/api/payment/paymentApi";
-import { createPaymentIntent } from "../../../redux/features/api/payment/paymentSlice";
-import { useCreatePaymentIntentMutation } from "../../../redux/features/api/payment/paymentApi";
+// import { createPaymentIntent } from "../../../redux/features/api/payment/paymentSlice";
+import {
+  // useCreatePaymentIntentMutation,
+  useSubmitPaymentMutation,
+} from "../../../redux/features/api/payment/paymentApi";
 import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 const CheckOutForm = ({ order }) => {
   const stripe = useStripe();
@@ -17,7 +21,6 @@ const CheckOutForm = ({ order }) => {
 
   // declare state for msg
   const [message, useMessage] = useState(null);
-  // const [isLoading, setIsLoading] = useState(false);
   const [clientSecret, setClientSecret] = useState("");
   const [cardError, setCardError] = useState("");
   const [processing, setProcessing] = useState(false);
@@ -37,6 +40,10 @@ const CheckOutForm = ({ order }) => {
   */
   //  destructure order information
   const { price, _id, name, email } = order;
+
+  const [submitPayment, { isLoading, isError, error }] =
+    useSubmitPaymentMutation();
+  // console.log(submitPayment);
 
   useEffect(() => {
     // create payment intents as soon as the page loads
@@ -110,13 +117,20 @@ const CheckOutForm = ({ order }) => {
       setTransactionId(paymentIntent.id);
 
       // store payment info in the database
-      // const payment = {
-      //   name,
-      //   email,
-      //   price,
-      //   orderId: _id,
-      //   transactionId: paymentIntent.id,
-      // };
+      const payment = {
+        name,
+        email,
+        price,
+        orderId: _id,
+        transactionId: paymentIntent.id,
+      };
+
+      try {
+        await submitPayment(payment);
+        toast.success("Payment submitted successfully");
+      } catch (error) {
+        console.log("Failed to submit payment", error);
+      }
     }
     setProcessing(false);
     // console.log("paymentIntent", paymentIntent);
