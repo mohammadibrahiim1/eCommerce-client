@@ -2,11 +2,8 @@
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
-// import { addToWishList } from "../../redux/features/wishList/wishListSlice";
 import "./Product.css";
-// import { FaCartShopping } from "react-icons/fa6";
 import { BsBagPlusFill } from "react-icons/bs";
-// import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
@@ -16,10 +13,6 @@ const Product = ({ product }) => {
   const handleAddToCart = () => {
     dispatch(addToCart(product));
   };
-
-  // const handleAddToWishList = () => {
-  //   dispatch(addToWishList(product));
-  // };
 
   return (
     <div>

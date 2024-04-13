@@ -18,12 +18,6 @@ const Cart = () => {
   const itemsInCart = useSelector((state) => state.cart.cartItems);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
-  // let shipping = 25;
-  // let taxRate = 2;
-  // const taxDue = totalAmount * (taxRate / 100);
-
-  // const total = totalAmount + shipping + taxDue;
-
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
   };
@@ -129,10 +123,6 @@ const Cart = () => {
                               </td>
                               <td className="px-5 py-5 border-gray-200 bg-white text-sm ">
                                 <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                  {/* <span
-                                    aria-hidden
-                                    className="absolute inset-0   opacity-50 rounded-full"
-                                  ></span> */}
                                   <span className="relative text-orange-500 font-semibold">
                                     ${cartItem.price * cartItem.cartQuantity}
                                   </span>

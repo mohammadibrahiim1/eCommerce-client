@@ -149,12 +149,6 @@ const FeaturesProducts = () => {
                           ${product.price}
                         </div>
                         <div className="flex justify-between items-center gap-1">
-                          {/* <div
-                  onClick={handleAddToWishList}
-                  className="btn btn-sm text-[#2DA5F3] px-3"
-                >
-                  <FaHeart />
-                </div> */}
                           <div
                             onClick={() => handleAddToCart(product)}
                             className="cursor-pointer border rounded p-2 text-[#10B981] hover:bg-[#10B981] hover:text-[#FFF] duration-300"
@@ -165,31 +159,6 @@ const FeaturesProducts = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* <div className="card w-[248px] h-[296px] bg-base-100 shadow-xl rounded-none">
-                    <img
-                      className="w-[216px] h-[188px] mx-auto rounded-sm py-3"
-                      src={product.thumbnail}
-                      alt={product.title}
-                    />
-
-                    <div className="px-4 py-1">
-                      <p className="font-semibold text-[14px]">
-                        If a dog chews shoes whose shoes does he choose?
-                      </p>
-                      <div className="card-actions font-semibold justify-between items-center mt-2 flex  ">
-                        <div className="badge badge-outline text-[#2DA5F3]">
-                          ${product?.price}
-                        </div>
-                        <div
-                          onClick={() => handleAddToCart(product)}
-                          className="btn btn-sm text-[#2DA5F3] px-3"
-                        >
-                          <FaCartShopping />
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                 </>
               ))}
             </div>

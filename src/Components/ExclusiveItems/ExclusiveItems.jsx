@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-// https://i.ibb.co/gFnZ3mW/sony-phone.pngz
-// https://i.ibb.co/9gvSTfd/game-playstation.png
 
 const items = [
   {

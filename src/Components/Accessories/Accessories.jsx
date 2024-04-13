@@ -4,7 +4,7 @@ import { useGetProductsQuery } from "../../redux/features/api/productsApi/produc
 import { useDispatch } from "react-redux";
 import { Spinner } from "keep-react";
 import { addToCart } from "../../redux/features/cart/cartSlice";
-import { FaArrowRightLong, FaCartShopping } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { BsBagPlusFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -92,12 +92,6 @@ const Accessories = () => {
                           ${product.price}
                         </div>
                         <div className="flex justify-between items-center gap-1">
-                          {/* <div
-                  onClick={handleAddToWishList}
-                  className="btn btn-sm text-[#2DA5F3] px-3"
-                >
-                  <FaHeart />
-                </div> */}
                           <div
                             onClick={() => handleAddToCart(product)}
                             className="cursor-pointer border rounded p-2 text-[#10B981] hover:bg-[#10B981] hover:text-[#FFF] duration-300"

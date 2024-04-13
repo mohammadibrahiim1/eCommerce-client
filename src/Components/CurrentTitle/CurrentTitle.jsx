@@ -9,7 +9,6 @@ const CurrentTitle = () => {
     <div>
       <div className="">
         <div className="flex items-center justify-between">
-          {/* <MdHome className="w-4 h-4" /> */}
           <span className="text-xs font-semibold">Home</span>
           <MdKeyboardArrowRight className="mt-1" />
           <span className=" text-xs font-semibold capitalize">{pageTitle}</span>
