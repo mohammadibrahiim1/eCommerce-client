@@ -130,11 +130,15 @@ const CheckOutForm = ({ order }) => {
         toast.success("Payment submitted successfully");
       } catch (error) {
         console.log("Failed to submit payment", error);
+        toast.error(error.message);
       }
     }
     setProcessing(false);
     // console.log("paymentIntent", paymentIntent);
   };
+
+
+  
 
   return (
     <div>

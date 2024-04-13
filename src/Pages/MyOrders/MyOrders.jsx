@@ -97,12 +97,21 @@ const MyOrders = () => {
                       <td className="text-green-500 cursor-pointer">
                         {order?.paymentOption === "creditCard" ? (
                           <>
-                            <Link
-                              to={`/payment/${order._id}`}
-                              className="btn btn-sm border-none rounded-xs text-white btn-error"
-                            >
-                              payment
-                            </Link>
+                            {order?.status === "paid" ? (
+                              <button
+                                // to={`/payment/${order._id}`}
+                                className="btn btn-sm border-none rounded-xs text-white btn-error"
+                              >
+                                paid
+                              </button>
+                            ) : (
+                              <Link
+                                to={`/payment/${order._id}`}
+                                className="btn btn-sm border-none rounded-xs text-white btn-error"
+                              >
+                                payment
+                              </Link>
+                            )}
                           </>
                         ) : (
                           <span className="capitalize text-error font-semibold">
