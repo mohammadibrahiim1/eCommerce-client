@@ -20,7 +20,6 @@ import {
 } from "../../redux/features/cart/cartSlice";
 import { RxCross2 } from "react-icons/rx";
 
-
 // console.log(stripePromise);
 
 const BillingDetails = () => {
@@ -93,7 +92,7 @@ const BillingDetails = () => {
       if (paymentMethod === "COD" || paymentMethod === "creditCard") {
         toast.success(response.data.message);
       }
-      // navigate("/myOrders");
+      navigate("/user/dashboard/myOrders");
     } catch (error) {
       console.log(error);
     }

@@ -85,7 +85,11 @@ const MyOrders = () => {
                     <tr>
                       <td className="text-green-500">#{order._id}</td>
                       <td className="text-orange-500 capitalize">
-                        {order?.status}
+                        {order?.paymentOption === "COD" ? (
+                          <div>completed</div>
+                        ) : (
+                          <div>{order?.status}</div>
+                        )}
                       </td>
                       <td className="text-green-500">{order.createdAt}</td>
                       <td className="text-red-500 font-semibold">

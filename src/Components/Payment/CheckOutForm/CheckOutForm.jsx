@@ -134,11 +134,9 @@ const CheckOutForm = ({ order }) => {
       }
     }
     setProcessing(false);
+    navigate("/user/dashboard/myOrders");
     // console.log("paymentIntent", paymentIntent);
   };
-
-
-  
 
   return (
     <div>
