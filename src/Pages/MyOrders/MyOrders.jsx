@@ -85,7 +85,7 @@ const MyOrders = () => {
                     <tr>
                       <td className="text-green-500">#{order._id}</td>
                       <td className="text-orange-500 capitalize">
-                        {order.status}
+                        {order?.status}
                       </td>
                       <td className="text-green-500">{order.createdAt}</td>
                       <td className="text-red-500 font-semibold">
@@ -97,7 +97,7 @@ const MyOrders = () => {
                       <td className="text-green-500 cursor-pointer">
                         {order?.paymentOption === "creditCard" ? (
                           <>
-                            {order?.status === "paid" ? (
+                            {order?.paymentStatus === "paid" ? (
                               <button
                                 // to={`/payment/${order._id}`}
                                 className="btn btn-sm border-none rounded-xs text-white btn-error"
