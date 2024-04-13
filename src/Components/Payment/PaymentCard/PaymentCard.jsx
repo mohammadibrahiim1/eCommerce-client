@@ -10,13 +10,13 @@ const stripePromise = loadStripe(
   "pk_test_51MlpzGLrYWLOOZ8UljA5X1ANJMi0EXPD3KZWZmLIjyuv5DQgLe3I2dZvA4TPFfa4n0opSlz0POZ3wbxzcy27Necr005pDnWQh8"
 );
 const PaymentCard = () => {
-  const data = useLoaderData();
-  console.log(data);
+  const order = useLoaderData();
+  console.log(order);
   return (
     <div>
       <section className="max-w-screen-2xl mx-auto">
         <Elements stripe={stripePromise}>
-          <CheckOutForm data={data}></CheckOutForm>
+          <CheckOutForm order={order}></CheckOutForm>
         </Elements>
       </section>
     </div>
