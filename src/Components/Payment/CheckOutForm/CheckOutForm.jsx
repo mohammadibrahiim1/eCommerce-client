@@ -148,12 +148,12 @@ const CheckOutForm = ({ order }) => {
   }
   return (
     <div>
-      <section className="max-w-md mx-auto">
-        <h4 className="text-center text-primary mt-3 mb-5">
+      <section className="max-w-md h-[45vh] mx-auto pt-12">
+        <h4 className="text-start text-primary py-1">
           Please,make your payment here
         </h4>
         <form
-          className="payment-card bg-[#F2F4F5] py-14 px-3 rounded-lg my-12"
+          className="payment-card bg-[#F2F4F5] pt-12 pb-3 px-3 rounded-lg"
           onSubmit={handleSubmit}
         >
           <CardElement
@@ -162,7 +162,7 @@ const CheckOutForm = ({ order }) => {
                 base: {
                   iconColor: "#00935F",
                   color: "#5DBF9D",
-                  fontWeight: "400",
+                  fontWeight: "500",
                   fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
                   fontSize: "16px",
                   fontSmoothing: "antialiased",
@@ -189,11 +189,13 @@ const CheckOutForm = ({ order }) => {
           </button>
           <p className="text-error">{cardError}</p>
           {paymentSuccess && (
-            <div>
-              <p className="text-success">{paymentSuccess}</p>
-              <p className="text-success">
-                {" "}
-                your transactionId : {transactionId}
+            <div className="py-1">
+              <p className="text-success font-semibold text-sm">
+                {paymentSuccess}
+              </p>
+              <p className="text-success font-semibold text-sm">
+                <span className="capitalize"> your transactionId</span> :
+                {transactionId}
               </p>
             </div>
           )}
