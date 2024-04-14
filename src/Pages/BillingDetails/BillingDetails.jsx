@@ -7,10 +7,10 @@ import { FaSackDollar } from "react-icons/fa6";
 import { IoReturnUpBack } from "react-icons/io5";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, unstable_HistoryRouter, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import toast from "react-hot-toast";
-import { loadStripe } from "@stripe/stripe-js";
+// import toast from "react-hot-toast";
+// import { loadStripe } from "@stripe/stripe-js";
 import {
   clearCart,
   decrementQuantity,
@@ -19,6 +19,7 @@ import {
   removeFromCart,
 } from "../../redux/features/cart/cartSlice";
 import { RxCross2 } from "react-icons/rx";
+import toast from "react-hot-toast";
 
 // console.log(stripePromise);
 
@@ -87,12 +88,17 @@ const BillingDetails = () => {
     console.log(order);
     try {
       const response = await postOrder({ ...order, paymentMethod });
-       dispatch(  clearCart());
       console.log(response);
       if (paymentMethod === "COD" || paymentMethod === "creditCard") {
         toast.success(response.data.message);
       }
-      navigate("/user/dashboard/myOrders");
+      setTimeout(() => {
+        dispatch(clearCart());
+      }, 2000);
+
+      setTimeout(() => {
+        navigate("/user/dashboard/myOrders");
+      }, 4000);
     } catch (error) {
       console.log(error);
     }

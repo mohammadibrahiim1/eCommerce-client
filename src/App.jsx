@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUser, toggleLoading } from "./redux/features/api/auth/authSlice";
 import auth from "./firebase/firebase.config";
+// import { Bounce, ToastContainer } from "react-toastify";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,19 +22,24 @@ function App() {
     });
   }, [dispatch]);
 
-  // const price = 500;
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/create-payment-intent`, {
-  //     method: "POST",
-  //     headers: { "content-type": "application/json" },
-  //     body: JSON.stringify({ price }),
-  //   });
-  // }, []);
-
   return (
     <div>
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          success: {
+            style: {
+              background: "green",
+              color: "white",
+            },
+          },
+          error: {
+            style: {
+              background: "red",
+              color: "white",
+            },
+          },
+        }}
+      />
       <RouterProvider router={router}> </RouterProvider>
     </div>
   );

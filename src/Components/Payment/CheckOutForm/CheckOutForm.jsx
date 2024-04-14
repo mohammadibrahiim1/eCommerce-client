@@ -127,11 +127,12 @@ const CheckOutForm = ({ order }) => {
       try {
         await submitPayment(payment);
         toast.success("Payment submitted successfully");
+        // navigate("/user/dashboard/myOrders");
+        // window.location.reload();
       } catch (error) {
         console.log("Failed to submit payment", error);
         toast.error(error.message);
       }
-      navigate("/user/dashboard/myOrders");
     }
     setProcessing(false);
 
