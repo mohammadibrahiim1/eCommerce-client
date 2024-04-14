@@ -51,12 +51,7 @@ export const router = createBrowserRouter([
         loader: async ({ params }) =>
           fetch(`http://localhost:5000/api/v1/products/${params.id}`),
       },
-      {
-        path: "/payment/:id",
-        element: <PaymentCard></PaymentCard>,
-        loader: async ({ params }) =>
-          fetch(`http://localhost:5000/api/v2/orders/${params.id}`),
-      },
+
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
@@ -119,6 +114,12 @@ export const router = createBrowserRouter([
       {
         path: "/user/dashboard/wishList",
         element: <WishList></WishList>,
+      },
+      {
+        path: "/user/dashboard/payment/:id",
+        element: <PaymentCard></PaymentCard>,
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/api/v2/orders/${params.id}`),
       },
     ],
   },

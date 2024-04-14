@@ -17,7 +17,7 @@ import toast from "react-hot-toast";
 const CheckOutForm = ({ order }) => {
   const stripe = useStripe();
   const elements = useElements();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // declare state for msg
   const [clientSecret, setClientSecret] = useState("");
@@ -25,7 +25,7 @@ const CheckOutForm = ({ order }) => {
   const [processing, setProcessing] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState("");
   const [transactionId, setTransactionId] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   /* 
   1.stripe install
@@ -38,7 +38,8 @@ const CheckOutForm = ({ order }) => {
   
   */
   //  destructure order information
-  const { price, _id, name, email } = order;
+  const { price, _id, name, email, items, createdAt } = order;
+  console.log(order);
 
   const [submitPayment, { isLoading, isError, error }] =
     useSubmitPaymentMutation();
@@ -148,12 +149,17 @@ const CheckOutForm = ({ order }) => {
   }
   return (
     <div>
-      <section className="max-w-md h-[45vh] mx-auto pt-12">
-        <h4 className="text-start text-primary py-1">
-          Please,make your payment here
-        </h4>
+      <section className="max-w-md ms-[120px]">
+        <div>
+          <h4 className="text-start text-md text-white bg-[#FA8232] py-2 px-2 uppercase">
+            Please pay
+            <strong className="text-black px-1">${price}</strong>
+            for your order.
+          </h4>
+        </div>
+
         <form
-          className="payment-card bg-[#F2F4F5] pt-12 pb-3 px-3 rounded-lg"
+          className="payment-card bg-[#F2F4F5] pt-12 mt-3.5 pb-3  px-3 rounded-lg"
           onSubmit={handleSubmit}
         >
           <CardElement
@@ -180,25 +186,27 @@ const CheckOutForm = ({ order }) => {
               },
             }}
           />
-          <button
-            type="submit"
-            className="mt-5 btn btn-info px-7 text-white"
-            disabled={!stripe || !clientSecret || processing}
-          >
-            Pay
-          </button>
-          <p className="text-error">{cardError}</p>
-          {paymentSuccess && (
-            <div className="py-1">
-              <p className="text-success font-semibold text-sm">
-                {paymentSuccess}
-              </p>
-              <p className="text-success font-semibold text-sm">
-                <span className="capitalize"> your transactionId</span> :
-                {transactionId}
-              </p>
-            </div>
-          )}
+          <div className="flex items-center justify-between mt-12">
+            <button
+              type="submit"
+              className=" btn btn-info px-7 text-white"
+              disabled={!stripe || !clientSecret || processing}
+            >
+              Pay
+            </button>
+            <p className="text-error">{cardError}</p>
+            {paymentSuccess && (
+              <div className="py-1">
+                <p className="text-success font-semibold text-sm">
+                  {paymentSuccess}
+                </p>
+                <p className="text-success font-semibold text-sm">
+                  <span className="capitalize"> your transactionId</span> :
+                  {transactionId}
+                </p>
+              </div>
+            )}
+          </div>
         </form>
       </section>
     </div>

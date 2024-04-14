@@ -51,7 +51,7 @@ const MyOrders = () => {
 
   return (
     <div>
-      <section className=" rounded  shadow max-w-5xl mx-auto">
+      <section className=" rounded shadow max-w-5xl mx-auto">
         <div className="">
           <h1 className="font-semibold text-md py-2 px-2 bg-[#FA8232]">
             My orders
@@ -107,7 +107,7 @@ const MyOrders = () => {
                               </button>
                             ) : (
                               <Link
-                                to={`/payment/${order._id}`}
+                                to={`/user/dashboard/payment/${order._id}`}
                                 className="btn btn-sm border-none rounded-xs text-white btn-info"
                               >
                                 payment
