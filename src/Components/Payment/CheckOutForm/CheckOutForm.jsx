@@ -186,7 +186,7 @@ const CheckOutForm = ({ order }) => {
               },
             }}
           />
-          <div className="flex items-center justify-between mt-12">
+          <div className="flex items-center justify-start gap-1 mt-12">
             <button
               type="submit"
               className=" btn btn-info px-7 text-white"
@@ -200,9 +200,9 @@ const CheckOutForm = ({ order }) => {
                 <p className="text-success font-semibold text-sm">
                   {paymentSuccess}
                 </p>
-                <p className="text-success font-semibold text-sm">
-                  <span className="capitalize"> your transactionId</span> :
-                  {transactionId}
+                <p className="text-success font-semibold text-sm ">
+                  <span className="capitalize text-error"> transactionId</span>{" "}
+                  : {transactionId}
                 </p>
               </div>
             )}
