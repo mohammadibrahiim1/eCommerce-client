@@ -87,27 +87,25 @@ const ExclusiveItems = () => {
         </div>
 
         <div className="grid grid-cols-5 justify-center items-center  gap-5">
-          {items.map((item) => (
-            <>
-              <div className="">
-                <div className="flex max-w-[312px] h-[94px] bg-white shadow-lg rounded-lg overflow-hidden gap-5">
-                  <div
-                    className="w-[80px] h-[80px]  bg-cover "
-                    style={{
-                      "background-image": `url(${item.img})`,
-                    }}
-                  ></div>
-                  <div className="w-2/3">
-                    <h1 className="text-gray-900 font-bold text-xs">
-                      {item.name}
-                    </h1>
-                    <p className=" py-1 text-sm font-semibold text-[#2DA5F3]">
-                      ${item.price}
-                    </p>
-                  </div>
+          {items?.map((item) => (
+            <div key={item?.id}>
+              <div className="flex max-w-[312px] h-[94px] bg-white shadow-lg rounded-lg overflow-hidden gap-5">
+                <div
+                  className="w-[80px] h-[80px]  bg-cover "
+                  style={{
+                    backgroundImage: `url(${item.img})`,
+                  }}
+                ></div>
+                <div className="w-2/3">
+                  <h1 className="text-gray-900 font-bold text-xs">
+                    {item?.name}
+                  </h1>
+                  <p className=" py-1 text-sm font-semibold text-[#2DA5F3]">
+                    ${item?.price}
+                  </p>
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </section>

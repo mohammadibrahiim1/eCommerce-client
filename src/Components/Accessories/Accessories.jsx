@@ -69,7 +69,7 @@ const Accessories = () => {
 
             <div className="grid grid-cols-4 justify-between items-center gap-x-3 gap-y-3 mt-[24px]">
               {products?.slice(10, 18)?.map((product) => (
-                <>
+                <div key={product._id}>
                   <div className="card w-[290px] h-[305px] bg-base-100 shadow-xl rounded-none">
                     <button className="text-start p-1  font-semibold text-[#10B981]">
                       Stock :{" "}
@@ -102,7 +102,7 @@ const Accessories = () => {
                       </div>
                     </div>
                   </div>
-                </>
+                </div>
               ))}
             </div>
           </div>

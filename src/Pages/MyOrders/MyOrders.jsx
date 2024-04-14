@@ -24,9 +24,6 @@ const MyOrders = () => {
 
   console.log(orders);
 
-  // const orders = data?.data;
-  // console.log(orders);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -103,15 +100,15 @@ const MyOrders = () => {
                           <>
                             {order?.paymentStatus === "paid" ? (
                               <button
-                                // to={`/payment/${order._id}`}
-                                className="btn btn-sm border-none rounded-xs text-white btn-error"
+                                disabled
+                                className="btn btn-sm border-none rounded-xs"
                               >
                                 paid
                               </button>
                             ) : (
                               <Link
                                 to={`/payment/${order._id}`}
-                                className="btn btn-sm border-none rounded-xs text-white btn-error"
+                                className="btn btn-sm border-none rounded-xs text-white btn-info"
                               >
                                 payment
                               </Link>

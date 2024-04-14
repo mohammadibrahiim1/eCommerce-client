@@ -11,9 +11,17 @@ export const store = configureStore({
     cart: cartSlice,
     wishList: wishListSlice,
     auth: authSlice,
-    // payment: paymentSlice,
   },
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(baseApi.middleware),
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore these action types
+        ignoredActions: ["auth.user"],
+        // Ignore these field paths in all actions
+        ignoredActionPaths: ["meta.arg", "payload.timestamp"],
+        // Ignore these paths in the state
+        ignoredPaths: ["items.dates"],
+      },
+    }).concat(baseApi.middleware),
 });

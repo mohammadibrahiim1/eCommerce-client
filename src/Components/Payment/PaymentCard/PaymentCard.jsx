@@ -4,7 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 
 // stripe payment pk test
 const stripePromise = loadStripe(
@@ -15,6 +15,11 @@ const stripePromise = loadStripe(
 const PaymentCard = () => {
   const order = useLoaderData();
   // console.log(order);
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <span className="loading loading-ring loading-lg"></span>;
+  }
 
   return (
     <div>

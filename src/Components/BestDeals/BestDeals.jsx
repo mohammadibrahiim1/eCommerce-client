@@ -60,7 +60,7 @@ const BestDeals = () => {
 
         <div className="grid grid-cols-5 justify-between items-center gap-2 mt-[20px]">
           {products?.slice(0, 10)?.map((product) => (
-            <>
+            <div key={product?._id}>
               <div className="card w-[296px] h-[320px] bg-base-100 shadow-xl rounded-none">
                 <button className="text-start p-1  font-semibold text-[#10B981]">
                   Stock :{" "}
@@ -93,7 +93,7 @@ const BestDeals = () => {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </section>

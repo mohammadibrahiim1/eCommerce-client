@@ -87,7 +87,7 @@ const BillingDetails = () => {
     console.log(order);
     try {
       const response = await postOrder({ ...order, paymentMethod });
-      dispatch(clearCart());
+       dispatch(  clearCart());
       console.log(response);
       if (paymentMethod === "COD" || paymentMethod === "creditCard") {
         toast.success(response.data.message);

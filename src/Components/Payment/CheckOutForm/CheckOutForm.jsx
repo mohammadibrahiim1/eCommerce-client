@@ -20,7 +20,6 @@ const CheckOutForm = ({ order }) => {
   const dispatch = useDispatch();
 
   // declare state for msg
-  const [message, useMessage] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
   const [cardError, setCardError] = useState("");
   const [processing, setProcessing] = useState(false);
@@ -132,12 +131,20 @@ const CheckOutForm = ({ order }) => {
         console.log("Failed to submit payment", error);
         toast.error(error.message);
       }
+      navigate("/user/dashboard/myOrders");
     }
     setProcessing(false);
-    navigate("/user/dashboard/myOrders");
+
     // console.log("paymentIntent", paymentIntent);
   };
 
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
+
+  if (error) {
+    return <div>Something went wrong!</div>;
+  }
   return (
     <div>
       <section className="max-w-screen-2xl mx-auto">

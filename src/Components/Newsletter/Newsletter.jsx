@@ -7,7 +7,7 @@ const Newsletter = () => {
       <section className="  mt-16">
         <div
           className=" mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:py-12 lg:px-8"
-          style={{ "background-color": "#1B6392" }}
+          style={{ backgroundColor: "#1B6392" }}
         >
           <div className="px-6 py-6 rounded-lg md:py-12 md:px-12 lg:py-10 lg:px-16 xl:flex xl:items-center">
             <div className="xl:w-0 xl:flex-1">
@@ -30,6 +30,7 @@ const Newsletter = () => {
                     type="email"
                     value=""
                     aria-required="true"
+                    
                   />
                   <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                     <button
