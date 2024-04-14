@@ -148,30 +148,41 @@ const CheckOutForm = ({ order }) => {
   }
   return (
     <div>
-      <section className="max-w-screen-2xl mx-auto">
+      <section className="max-w-md mx-auto">
         <h4 className="text-center text-primary mt-3 mb-5">
           Please,make your payment here
         </h4>
-        <form className="payment-card" onSubmit={handleSubmit}>
+        <form
+          className="payment-card bg-[#F2F4F5] py-14 px-3 rounded-lg my-12"
+          onSubmit={handleSubmit}
+        >
           <CardElement
             options={{
               style: {
                 base: {
-                  fontSize: "15px",
-                  color: "#424770",
+                  iconColor: "#00935F",
+                  color: "#5DBF9D",
+                  fontWeight: "400",
+                  fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+                  fontSize: "16px",
+                  fontSmoothing: "antialiased",
+                  ":-webkit-autofill": {
+                    color: "#5DBF9D",
+                  },
                   "::placeholder": {
-                    color: "#aab7c4",
+                    color: "#00935F",
                   },
                 },
                 invalid: {
-                  color: "#9e2146",
+                  iconColor: "#EF4C53",
+                  color: "#EF4C53",
                 },
               },
             }}
           />
           <button
             type="submit"
-            className="mt-4 btn btn-primary"
+            className="mt-5 btn btn-info px-7 text-white"
             disabled={!stripe || !clientSecret || processing}
           >
             Pay

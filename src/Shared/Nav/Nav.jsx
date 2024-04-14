@@ -248,7 +248,7 @@ const Nav = () => {
                       to={"/admin/orderHistory"}
                       className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
                     >
-                      Admin
+                      Admin Dashboard
                     </Link>
                   </li>
                   <li>
@@ -256,7 +256,7 @@ const Nav = () => {
                       to={"/user/dashboard/myOrders"}
                       className="text-[#484848] font-semibold hover:text-[#4293D9] duration-300 cursor-pointer"
                     >
-                      User
+                      User Dashboard
                     </Link>
                   </li>
                   <li>
