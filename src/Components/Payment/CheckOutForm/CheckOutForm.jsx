@@ -3,21 +3,13 @@
 
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-// import { usePostPaymentMutation } from "../../../redux/features/api/payment/paymentApi";
-// import { createPaymentIntent } from "../../../redux/features/api/payment/paymentSlice";
-import {
-  // useCreatePaymentIntentMutation,
-  useSubmitPaymentMutation,
-} from "../../../redux/features/api/payment/paymentApi";
+
+import { useSubmitPaymentMutation } from "../../../redux/features/api/payment/paymentApi";
 import toast from "react-hot-toast";
-// import toast from "react-hot-toast";
 
 const CheckOutForm = ({ order }) => {
   const stripe = useStripe();
   const elements = useElements();
-  // const dispatch = useDispatch();
 
   // declare state for msg
   const [clientSecret, setClientSecret] = useState("");
@@ -25,7 +17,6 @@ const CheckOutForm = ({ order }) => {
   const [processing, setProcessing] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState("");
   const [transactionId, setTransactionId] = useState("");
-  // const navigate = useNavigate();
 
   /* 
   1.stripe install
@@ -34,9 +25,8 @@ const CheckOutForm = ({ order }) => {
   4.stripe,elements
   5.check card error and display error
   6.collect card information
-
-  
   */
+
   //  destructure order information
   const { price, _id, name, email, items, createdAt } = order;
   console.log(order);
