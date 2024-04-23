@@ -15,6 +15,15 @@ const Nav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const text = form.search.value;
+    console.log(text);
+  };
+
   const {
     user: { email, role, photoURL },
   } = useSelector((state) => state.auth);
@@ -161,13 +170,24 @@ const Nav = () => {
             </Link>
           </div>
           <div>
-            <input
-              className="border lg:w-[646px] md:w-[425px] sm:w-[23px] hidden md:flex lg:flex  h-[42px] p-2 rounded focus:outline-none "
-              type="search"
-              name="search"
-              placeholder="search..."
-              id="search"
-            />
+            <div>
+              <form onSubmit={handleSearch}>
+                <div className="flex">
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="search..."
+                    className="w-[600px]   rounded-none  input-sm  py-5 focus:outline-none "
+                  />
+                  <button
+                    type="submit"
+                    className="bg-[#0FB981] text-white px-6 text-xs font-semibold  rounded-r-md"
+                  >
+                    Go
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
 
           <div className="navbar-center hidden lg:flex  items-center">

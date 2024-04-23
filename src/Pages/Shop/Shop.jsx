@@ -19,26 +19,33 @@ const Shop = () => {
   // const pageTitle = usePageTitle();
   const [layout, setLayout] = useState("grid");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
+  // const [isChecked, setIsChecked] = useState(false);
+  const [selected, setSelected] = useState([]);
+  console.log(selected);
   const [showMore, setShowMore] = useState(15);
-  console.log(showMore);
+
+  // console.log(showMore);
 
   const { data: brands } = useGetBrandsQuery();
 
-  // console.log(brands?.data);
-
-  const { data, error, isLoading } = useGetProductsQuery(selectedCategory);
+  const { data, error, isLoading } = useGetProductsQuery(
+    selectedCategory,
+    selected
+  );
 
   const products = data?.data;
-  console.log(products);
+  // console.log(products);
 
-  const handleCheckboxFilter = (e) => {
-    const checked = e.target.checked;
-    setIsChecked(checked);
-    if (checked) {
-      const filtered = products.filter((item) => item.brand === checked);
-      return filtered;
+  const handleCheckboxFilter = (e, index) => {
+    console.log(e.target.value);
+    const activeData = document.getElementById(index).checked;
+    if (activeData === true) {
+      setSelected((oldData) => [...oldData, e.target.value]);
+    } else {
+      setSelected(selected.filter((values) => values !== e.target.value));
     }
+
+    console.log(activeData, "activeData");
   };
 
   if (isLoading) {
@@ -89,7 +96,7 @@ const Shop = () => {
             <div>
               <Brands
                 brands={brands}
-                isChecked={isChecked}
+                // isChecked={isChecked}
                 handleCheckboxFilter={handleCheckboxFilter}
               ></Brands>
             </div>

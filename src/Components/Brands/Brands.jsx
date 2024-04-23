@@ -1,11 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 // import { useGetBrandsQuery } from "../../redux/features/api/brandApi/brandApi";
 
 const Brands = ({ brands, handleCheckboxFilter, isChecked }) => {
   useEffect(() => {}, []);
 
+  // const [isChecked, setIsChecked] = useState(false);
+
+  // const handleCheckboxChange = (data) => {
+  //   console.log(data);
+  //   setIsChecked(!isChecked);
+  //   console.log(!isChecked);
+  // };
+
+  // console.log(brands);
   return (
     <div>
       <section>
@@ -15,26 +24,26 @@ const Brands = ({ brands, handleCheckboxFilter, isChecked }) => {
           </h1>
           {/* <hr /> */}
           <div className="grid grid-cols-2 justify-between items-center gap-3">
-            {brands?.data?.map((brand) => {
+            {brands?.data?.map(({ slug, _id }, i) => {
               return (
                 <>
                   <div className="form-control">
                     <label
-                      key={brand._id}
+                      key={i}
                       className=" flex gap-2 items-center cursor-pointer"
                     >
                       <input
                         type="checkbox"
-                        value={brand.slug}
-                        id={brand._id}
-                        className="checkbox checkbox-xs mt-1 rounded-none "
-                        onChange={handleCheckboxFilter}
+                        id={i}
+                        value={slug}
+                        className="checkbox checkbox-xs mt-1 rounded-none"
+                        onChange={(e) => handleCheckboxFilter(e, i)}
                       />
                       <span
                         className="text-sm font-semibold capitalize"
-                        htmlFor={brand._id}
+                        htmlFor={`${_id}`}
                       >
-                        {brand.slug}
+                        {slug}
                       </span>
                     </label>
                   </div>
