@@ -9,7 +9,7 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => {
 
   return (
     <div>
-      <div>
+      <div className="grid grid-cols-6 justify-between items-center gap-3  ">
         {categories?.map((category) => (
           <Category
             selectedCategory={selectedCategory}

@@ -3,9 +3,9 @@ import { baseApi } from "../baseApi";
 const productApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: (search, category, brand) => ({
+      query: () => ({
         url: `/products`,
-        params: { search, category, brand },
+        // body: products,
       }),
     }),
   }),

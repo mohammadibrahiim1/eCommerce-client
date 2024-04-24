@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 import { CaretDown } from "phosphor-react";
 import React, { useState } from "react";
+import { FcElectronics } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Category = ({ category, setSelectedCategory }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -29,117 +31,14 @@ const Category = ({ category, setSelectedCategory }) => {
   };
 
   return (
-    <div className="mt-2">
-      <div key={_id}>
-        <div
-          type={"primary"}
-          className={`flex items-center justify-between font-semibold p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
-            activeIndex === index ? "active" : ""
-          }`}
-          onClick={() => toggleAccordion(index)}
-        >
-          <div className="flex items-center gap-3">{name}</div>
-          <CaretDown size={14} />
-        </div>
-
-        {activeIndex === i && (
-          <div>
-            {subCategories?.map((subItem, i) => (
-              <>
-                <div>
-                  <div
-                    type={"primary"}
-                    className={`flex items-center justify-between font-semibold p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
-                      activeChildIndex === i ? "active" : ""
-                    }`}
-                    onClick={
-                      subItem?.subCategories?.length > 0
-                        ? () => childAccordion(i)
-                        : () => handleCategory(subItem?.slug)
-                    }
-                  >
-                    <div className="flex items-center gap-3 ms-4">
-                      -{subItem?.name}
-                    </div>
-                    {subItem?.subCategories?.length > 0 ? (
-                      <CaretDown size={14} />
-                    ) : (
-                      ""
-                    )}
-                  </div>
-
-                  {activeChildIndex === i && (
-                    <div>
-                      {subItem?.subCategories?.map((child, idx) => (
-                        <>
-                          <div>
-                            <div
-                              type={"primary"}
-                              className={`flex items-center justify-between   font font-semibold  p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
-                                activeChildSubIndex === idx ? "active" : ""
-                              }`}
-                              onClick={
-                                child?.subCategories?.length > 0
-                                  ? () => childSubAccordion(idx)
-                                  : () => handleCategory(child?.slug)
-                              }
-                            >
-                              <div className="flex items-center gap-3 ms-7">
-                                -{child?.name}
-                              </div>
-
-                              {child?.subCategories?.length > 0 ? (
-                                <CaretDown size={14} />
-                              ) : (
-                                ""
-                              )}
-                            </div>
-
-                            {activeChildSubIndex === idx && (
-                              <div>
-                                {child?.subCategories?.map((subChild, idx) => (
-                                  <>
-                                    <div>
-                                      <div
-                                        type={"primary"}
-                                        className={`flex items-center justify-between   text-gray-500  p-1 text-sm hover:bg-gray-100 rounded-sm cursor-pointer ${
-                                          activeChildSubIndex === idx
-                                            ? "active"
-                                            : ""
-                                        }`}
-                                        onClick={
-                                          subChild?.subCategories?.length > 0
-                                            ? () => childSubAccordion(idx)
-                                            : () =>
-                                                handleCategory(subChild?.slug)
-                                        }
-                                      >
-                                        <div className="flex items-center gap-3 ms-12">
-                                          -{subChild?.name}
-                                        </div>
-
-                                        {subChild?.subCategories?.length > 0 ? (
-                                          <CaretDown size={14} />
-                                        ) : (
-                                          ""
-                                        )}
-                                      </div>
-                                    </div>
-                                  </>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </>
-            ))}
-          </div>
-        )}
-      </div>
+    <div>
+      <Link
+        to={"/store"}
+        className="flex flex-col  items-center gap-1 border border-[#00A2C9] bg-[#D2EEF5] py-3"
+      >
+        <FcElectronics className="h-8 w-8" />
+        <h6 className="text-[14px] font-semibold text-[#00A2C9]">{name}</h6>
+      </Link>
     </div>
   );
 };

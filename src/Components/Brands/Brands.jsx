@@ -29,7 +29,7 @@ const Brands = ({ brands, handleCheckboxFilter, isChecked }) => {
                 <>
                   <div className="form-control">
                     <label
-                      key={i}
+                      key={_id}
                       className=" flex gap-2 items-center cursor-pointer"
                     >
                       <input
