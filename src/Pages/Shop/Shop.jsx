@@ -12,7 +12,7 @@ const Shop = () => {
   // console.log(error);
 
   const products = data?.products;
-  // console.log(products);
+  console.log(products);
 
   if (isLoading) {
     return (
@@ -46,7 +46,16 @@ const Shop = () => {
         </div>
 
         <div>
-          <div className="grid grid-cols-6 justify-between items-center gap-2">
+          <div>
+            <h1
+              className="text-blue-500 uppercase text-center font-sans font-semibold
+            "
+            >
+              total : {products?.length}
+            </h1>
+          </div>
+
+          <div className="grid grid-cols-6 justify-between items-center gap-2 mt-5">
             {products?.map((product) => (
               <Product key={product._id} product={product}></Product>
             ))}
