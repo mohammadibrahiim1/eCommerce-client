@@ -9,10 +9,10 @@ const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const { data, error, isLoading } = useGetProductsQuery();
-  console.log(error);
+  // console.log(error);
 
   const products = data?.products;
-  console.log(products);
+  // console.log(products);
 
   if (isLoading) {
     return (
@@ -33,7 +33,7 @@ const Shop = () => {
   }
 
   return (
-    <div className="bg-[#F9FAFB]">
+    <div className="">
       <section className="max-w-screen-2xl mx-auto ">
         <div className="">
           <h1 className="text-[#10B981] font-semibold text-[22px]  pt-3 pb-1 mx-auto capitalize text-center my-5">

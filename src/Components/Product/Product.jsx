@@ -17,14 +17,14 @@ const Product = ({ product }) => {
   return (
     <div>
       <div>
-        <div className="card w-[250px] h-[288px] bg-base-100 shadow-xl rounded-none">
+        <div className="card w-[240px] h-[350px] bg-gray-200  rounded-none">
           <button className="text-start text-sm p-1  font-semibold text-[#10B981]">
-            In stock :{" "}
+            In stock :
             <span className="text-orange-500 capitalize">{stock}</span>
           </button>
           <Link to={`/productDetails/${_id} `}>
             <img
-              className="w-[180px] h-[180px] mx-auto rounded-sm py-3"
+              className="w-[180px] h-[180px] mx-auto rounded-sm py-3 bg-gray-200"
               src={thumbnail}
               alt={title}
             />
