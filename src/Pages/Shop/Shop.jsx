@@ -144,6 +144,24 @@ const Shop = () => {
               </form>
             </div>
             <div>
+              <div className="dropdown">
+                <div tabIndex={0} role="button" className="btn m-1">
+                  View
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <a>Grid</a>
+                  </li>
+                  <li>
+                    <a>List</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="btn m-1">
                   Sort by price
