@@ -7,11 +7,11 @@ const CurrentTitle = () => {
   const pageTitle = usePageTitle();
   return (
     <div>
-      <div className="">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-semibold">Home</span>
-          <MdKeyboardArrowRight className="mt-1" />
-          <span className=" text-xs font-semibold capitalize">{pageTitle}</span>
+      <div className="uppercase">
+        <div className="flex items-center justify-center  mt-1 ">
+          <span className="text-xs font-bold">Home</span>
+          <MdKeyboardArrowRight />
+          <span className="text-xs font-bold">{pageTitle}</span>
         </div>
       </div>
     </div>

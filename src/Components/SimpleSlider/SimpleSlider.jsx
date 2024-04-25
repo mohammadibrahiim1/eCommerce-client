@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Slider from "react-slick";
 // // Import css files
