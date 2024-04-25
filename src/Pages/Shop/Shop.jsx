@@ -11,6 +11,8 @@ import { CgSmartphoneChip } from "react-icons/cg";
 import { PiHandSoapBold } from "react-icons/pi";
 import { MdOutlineEmojiFoodBeverage } from "react-icons/md";
 import { BiSolidBed } from "react-icons/bi";
+import { TfiLayoutGrid3Alt } from "react-icons/tfi";
+import { FaList } from "react-icons/fa";
 import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
 
 // function SampleNextArrow(props) {
@@ -78,33 +80,6 @@ const Shop = () => {
 
   return (
     <div className="">
-      <div className=" max-w-screen-2xl mx-auto my-5 flex items-center justify-between gap-1">
-        <div className="flex items-center font-semibold gap-1">
-          <CgSmartphoneChip className="w-8 h-8" />
-          <h6>Electronics</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <GiClothes className="w-8 h-8" />
-          <h6>Fashion</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <PiHandSoapBold className="w-7 h-7" />
-          <h6>Beauty products</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <GiHealthCapsule className="w-7 h-7" />
-          <h6>Health & Hygiene</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
-          <h6>Beverage</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <BiSolidBed className="w-7 h-7" />
-          <h6>Furniture</h6>
-        </div>
-      </div>
-
       <div className="bg-[url('https://i.ibb.co/ZgKybFj/pexels-karolina-grabowska-5650023.jpg')] bg-cover bg-center  bg-no-repeat">
         <div className="py-36">
           <h1 className="text-center  font-bold  uppercase text-gray-900 text-4xl">
@@ -114,9 +89,38 @@ const Shop = () => {
         </div>
       </div>
 
-      <section className="max-w-screen-2xl mx-auto ">
+      <div className=" max-w-screen-2xl mx-auto my-12 flex items-center justify-between gap-1 ">
+        <div className="flex items-center font-semibold gap-1  ">
+          <CgSmartphoneChip className="w-8 h-8" />
+          <h6 className="hover:text-green-500 duration-300">Electronics</h6>
+        </div>
+        <div className="flex items-center font-semibold gap-1">
+          <GiClothes className="w-8 h-8" />
+          <h6 className="hover:text-green-500 duration-300">Fashion</h6>
+        </div>
+        <div className="flex items-center font-semibold gap-1">
+          <PiHandSoapBold className="w-7 h-7" />
+          <h6 className="hover:text-green-500 duration-300">Beauty products</h6>
+        </div>
+        <div className="flex items-center font-semibold gap-1">
+          <GiHealthCapsule className="w-7 h-7" />
+          <h6 className="hover:text-green-500 duration-300">
+            Health & Hygiene
+          </h6>
+        </div>
+        <div className="flex items-center font-semibold gap-1">
+          <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
+          <h6 className="hover:text-green-500 duration-300">Beverage</h6>
+        </div>
+        <div className="flex items-center font-semibold gap-1">
+          <BiSolidBed className="w-7 h-7" />
+          <h6 className="hover:text-green-500 duration-300">Furniture</h6>
+        </div>
+      </div>
+
+      <section className="max-w-screen-2xl mx-auto  ">
         <div>
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-4 bg-gray-50 p-2">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 uppercase">
                 Featured products
@@ -125,6 +129,7 @@ const Shop = () => {
                 see our all products and search by category.
               </p>
             </div>
+
             <div>
               <form>
                 <div className="flex ">
@@ -132,33 +137,26 @@ const Shop = () => {
                     type="text"
                     name="search"
                     placeholder="search..."
-                    className="w-[350px] border  rounded-none  input-sm  py-5 focus:outline-none "
+                    className="w-[350px] border  rounded-sm  input-sm  py-5 focus:outline-none "
                   />
-                  {/* <button
-                  type="submit"
-                  className="bg-[#0FB981] text-white px-6 text-xs font-semibold  rounded-r-md"
-                >
-                  Go
-                </button> */}
                 </div>
               </form>
             </div>
+
             <div>
-              <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn m-1">
-                  View
+              <p className="text-sm text-gray-400 font-bold normal-case ">
+                {products.length} products found.
+              </p>
+            </div>
+            <div>
+              <div>
+                <div className="flex items-center justify-between gap-7 m-1 border px-5 py-2 ">
+                  <h1 className="font-semibold text-gray-900 ">View </h1>
+                  <div className="flex items-center justify-between gap-3">
+                    <TfiLayoutGrid3Alt className="w-4 h-4" />
+                    <FaList className="w-5 h-5" />
+                  </div>
                 </div>
-                <ul
-                  tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <a>Grid</a>
-                  </li>
-                  <li>
-                    <a>List</a>
-                  </li>
-                </ul>
               </div>
             </div>
             <div>
