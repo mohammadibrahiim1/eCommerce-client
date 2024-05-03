@@ -17,22 +17,17 @@ import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
 // import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Shop = () => {
-  const [category, setCategory] = useState("");
+const Store = () => {
+  const [category, setCategory] = useState(null);
   console.log(category);
-  const [brand, setBrand] = useState("");
-  const { data, error, isLoading } = useGetProductsQuery({ category, brand });
+  const [brand, setBrand] = useState(null);
+  const { data, error, isLoading } = useGetProductsQuery({
+    category,
+    brand,
+  });
 
-  const products = data?.products;
+  const products = data;
   console.log(products);
-
-  // const handleCategoryChange = (event) => {
-  //   setSelectedCategory(event.target.value);
-  // };
-
-  // const handleBrandChange = (event) => {
-  //   setSelectedBrand(event.target.value);
-  // };
 
   if (isLoading) {
     return (
@@ -57,7 +52,7 @@ const Shop = () => {
       <div className="bg-[url('https://i.ibb.co/ZgKybFj/pexels-karolina-grabowska-5650023.jpg')] bg-cover bg-center  bg-no-repeat">
         <div className="py-36">
           <h1 className="text-center  font-bold  uppercase text-gray-900 text-4xl">
-            Shop
+            Store
           </h1>
           <CurrentTitle></CurrentTitle>
         </div>
@@ -67,36 +62,48 @@ const Shop = () => {
         <div className=" max-w-screen-2xl mx-auto  flex items-center justify-between gap-1">
           <div
             // to={"/store/electronics"}
-            onClick={() => setCategory("laptops")}
+            onClick={() => setCategory("electronics")}
             className="flex items-center font-semibold gap-1  "
           >
             <CgSmartphoneChip className="w-8 h-8" />
             <h6 className="hover:text-green-500 duration-300">Electronics</h6>
           </div>
           <div
-            onClick={() => setBrand("fashion")}
+            onClick={() => setCategory("fashion")}
             className="flex items-center font-semibold gap-1"
           >
             <GiClothes className="w-8 h-8" />
             <h6 className="hover:text-green-500 duration-300">Fashion</h6>
           </div>
-          <div className="flex items-center font-semibold gap-1">
+          <div
+            onClick={() => setCategory("beauty product")}
+            className="flex items-center font-semibold gap-1"
+          >
             <PiHandSoapBold className="w-7 h-7" />
             <h6 className="hover:text-green-500 duration-300">
               Beauty products
             </h6>
           </div>
-          <div className="flex items-center font-semibold gap-1">
+          <div
+            onClick={() => setCategory("health&hygiene")}
+            className="flex items-center font-semibold gap-1"
+          >
             <GiHealthCapsule className="w-7 h-7" />
             <h6 className="hover:text-green-500 duration-300">
               Health & Hygiene
             </h6>
           </div>
-          <div className="flex items-center font-semibold gap-1">
+          <div
+            onClick={() => setCategory("beverage")}
+            className="flex items-center font-semibold gap-1"
+          >
             <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
             <h6 className="hover:text-green-500 duration-300">Beverage</h6>
           </div>
-          <div className="flex items-center font-semibold gap-1">
+          <div
+            onClick={() => setCategory("furniture")}
+            className="flex items-center font-semibold gap-1"
+          >
             <BiSolidBed className="w-7 h-7" />
             <h6 className="hover:text-green-500 duration-300">Furniture</h6>
           </div>
@@ -130,7 +137,13 @@ const Shop = () => {
 
             <div>
               <p className="text-sm text-gray-400 font-bold normal-case ">
-                {products?.length} products found.
+                <span className="text-error"> {products?.length}</span> products
+                found.
+                {category ? (
+                  <span className="text-green-500">
+                    (<span className="text-error">category:</span> {category})
+                  </span>
+                ) : null}
               </p>
             </div>
             <div>
@@ -165,9 +178,17 @@ const Shop = () => {
           </div>
 
           <div className="grid grid-cols-6 justify-between items-center gap-4 mt-5">
-            {products?.slice(0, 15)?.map((product) => (
-              <Product key={product?._id} product={product}></Product>
-            ))}
+            {products.length ? (
+              products
+                ?.slice(0, 15)
+                ?.map((product) => (
+                  <Product key={product?._id} product={product}></Product>
+                ))
+            ) : (
+              <span className="w-50 mx-auto text-error font-semibold text-2xl">
+                No products found
+              </span>
+            )}
           </div>
         </div>
       </section>
@@ -178,4 +199,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Store;
