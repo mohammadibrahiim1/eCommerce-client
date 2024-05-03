@@ -34,11 +34,11 @@ const SimpleSlider = () => {
     focusOnSelect: true,
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
@@ -48,35 +48,35 @@ const SimpleSlider = () => {
       <Slider {...settings}>
         <div>
           <img
-            src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+            src="https://i.ibb.co/kJZZtQm/Face-Book-Post-4.jpg"
             alt=""
             srcSet=""
           />
         </div>
         <div>
           <img
-            src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+            src="https://i.ibb.co/GFjDR1k/healthcare-and-hygiene.jpg"
             alt=""
             srcSet=""
           />
         </div>
         <div>
           <img
-            src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+            src="https://i.ibb.co/ww1yJNv/beauty-product.jpg"
             alt=""
             srcSet=""
           />
         </div>
         <div>
           <img
-            src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+            src="https://i.ibb.co/GFjDR1k/healthcare-and-hygiene.jpg"
             alt=""
             srcSet=""
           />
         </div>
         <div>
           <img
-            src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+            src="https://i.ibb.co/ww1yJNv/beauty-product.jpg"
             alt=""
             srcSet=""
           />
