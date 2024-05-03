@@ -540,6 +540,7 @@
     "stock": 54,
     "brand": "Golden",
     "sub_category": "home-decoration",
+    "category": "home decor",
 
     "thumbnail": "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg",
     "images": [
@@ -633,6 +634,7 @@
     "stock": 68,
     "brand": "AmnaMart",
     "sub_category": "indoor-furniture",
+    "category": "furniture",
     "thumbnail": "https://cdn.dummyjson.com/product-images/35/thumbnail.jpg",
     "images": [
       "https://cdn.dummyjson.com/product-images/35/1.jpg",
