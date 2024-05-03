@@ -1,20 +1,18 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
-// import { useGetBrandsQuery } from "../../redux/features/api/brandApi/brandApi";
+import React, { useEffect, useState } from "react";
+import Brand from "./Brand";
+import { useGetBrandsQuery } from "../../redux/features/api/brandApi/brandApi";
 
-const Brands = ({ brands, handleCheckboxFilter, isChecked }) => {
-  useEffect(() => {}, []);
-
-  // const [isChecked, setIsChecked] = useState(false);
-
-  // const handleCheckboxChange = (data) => {
-  //   console.log(data);
-  //   setIsChecked(!isChecked);
-  //   console.log(!isChecked);
-  // };
-
+const Brands = () => {
+  // useEffect(() => {}, []);
+  const { data } = useGetBrandsQuery();
+  const brands = data?.data;
   // console.log(brands);
+
+  const [selectedBrand, setSelectedBrand] = useState([]);
+  console.log(selectedBrand);
+
   return (
     <div>
       <section>
@@ -24,32 +22,15 @@ const Brands = ({ brands, handleCheckboxFilter, isChecked }) => {
           </h1>
           {/* <hr /> */}
           <div className="grid grid-cols-2 justify-between items-center gap-3">
-            {brands?.data?.map(({ slug, _id }, i) => {
-              return (
-                <>
-                  <div className="form-control">
-                    <label
-                      key={_id}
-                      className=" flex gap-2 items-center cursor-pointer"
-                    >
-                      <input
-                        type="checkbox"
-                        id={i}
-                        value={slug}
-                        className="checkbox checkbox-xs mt-1 rounded-none"
-                        onChange={(e) => handleCheckboxFilter(e, i)}
-                      />
-                      <span
-                        className="text-sm font-semibold capitalize"
-                        htmlFor={`${_id}`}
-                      >
-                        {slug}
-                      </span>
-                    </label>
-                  </div>
-                </>
-              );
-            })}
+            {brands?.map((brand, index) => (
+              <Brand
+                selectedBrand={selectedBrand}
+                setSelectedBrand={setSelectedBrand}
+                brand={brand}
+                key={brand._id}
+                index={index}
+              ></Brand>
+            ))}
           </div>
           <hr className="my-3" />
         </div>

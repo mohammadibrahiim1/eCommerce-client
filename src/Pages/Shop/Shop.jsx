@@ -14,38 +14,25 @@ import { BiSolidBed } from "react-icons/bi";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { FaList } from "react-icons/fa";
 import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
-
-// function SampleNextArrow(props) {
-//   console.log(props);
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       className={className}
-//       style={{ ...style, display: "none", background: "red" }}
-//       onClick={onClick}
-//     />
-//   );
-// }
-
-// function SamplePrevArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       className={className}
-//       style={{ ...style, display: "none", background: "green" }}
-//       onClick={onClick}
-//     />
-//   );
-// }
+// import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Shop = () => {
-  // const [selectedCategory, setSelectedCategory] = useState("");
-
-  const { data, error, isLoading } = useGetProductsQuery();
-  // console.log(error);
+  const [category, setCategory] = useState("");
+  console.log(category);
+  const [brand, setBrand] = useState("");
+  const { data, error, isLoading } = useGetProductsQuery({ category, brand });
 
   const products = data?.products;
   console.log(products);
+
+  // const handleCategoryChange = (event) => {
+  //   setSelectedCategory(event.target.value);
+  // };
+
+  // const handleBrandChange = (event) => {
+  //   setSelectedBrand(event.target.value);
+  // };
 
   if (isLoading) {
     return (
@@ -65,19 +52,6 @@ const Shop = () => {
     );
   }
 
-  // const settings = {
-  //   focusOnSelect: true,
-  //   dots: false,
-  //   infinite: true,
-  //   speed: 1000,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   autoplaySpeed: 5000,
-  //   nextArrow: <SampleNextArrow />,
-  //   prevArrow: <SamplePrevArrow />,
-  // };
-
   return (
     <div className="">
       <div className="bg-[url('https://i.ibb.co/ZgKybFj/pexels-karolina-grabowska-5650023.jpg')] bg-cover bg-center  bg-no-repeat">
@@ -89,32 +63,43 @@ const Shop = () => {
         </div>
       </div>
 
-      <div className=" max-w-screen-2xl mx-auto my-12 flex items-center justify-between gap-1 ">
-        <div className="flex items-center font-semibold gap-1  ">
-          <CgSmartphoneChip className="w-8 h-8" />
-          <h6 className="hover:text-green-500 duration-300">Electronics</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <GiClothes className="w-8 h-8" />
-          <h6 className="hover:text-green-500 duration-300">Fashion</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <PiHandSoapBold className="w-7 h-7" />
-          <h6 className="hover:text-green-500 duration-300">Beauty products</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <GiHealthCapsule className="w-7 h-7" />
-          <h6 className="hover:text-green-500 duration-300">
-            Health & Hygiene
-          </h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
-          <h6 className="hover:text-green-500 duration-300">Beverage</h6>
-        </div>
-        <div className="flex items-center font-semibold gap-1">
-          <BiSolidBed className="w-7 h-7" />
-          <h6 className="hover:text-green-500 duration-300">Furniture</h6>
+      <div className="bg-[#F9FAFB] py-12">
+        <div className=" max-w-screen-2xl mx-auto  flex items-center justify-between gap-1">
+          <div
+            // to={"/store/electronics"}
+            onClick={() => setCategory("laptops")}
+            className="flex items-center font-semibold gap-1  "
+          >
+            <CgSmartphoneChip className="w-8 h-8" />
+            <h6 className="hover:text-green-500 duration-300">Electronics</h6>
+          </div>
+          <div
+            onClick={() => setBrand("fashion")}
+            className="flex items-center font-semibold gap-1"
+          >
+            <GiClothes className="w-8 h-8" />
+            <h6 className="hover:text-green-500 duration-300">Fashion</h6>
+          </div>
+          <div className="flex items-center font-semibold gap-1">
+            <PiHandSoapBold className="w-7 h-7" />
+            <h6 className="hover:text-green-500 duration-300">
+              Beauty products
+            </h6>
+          </div>
+          <div className="flex items-center font-semibold gap-1">
+            <GiHealthCapsule className="w-7 h-7" />
+            <h6 className="hover:text-green-500 duration-300">
+              Health & Hygiene
+            </h6>
+          </div>
+          <div className="flex items-center font-semibold gap-1">
+            <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
+            <h6 className="hover:text-green-500 duration-300">Beverage</h6>
+          </div>
+          <div className="flex items-center font-semibold gap-1">
+            <BiSolidBed className="w-7 h-7" />
+            <h6 className="hover:text-green-500 duration-300">Furniture</h6>
+          </div>
         </div>
       </div>
 
@@ -145,7 +130,7 @@ const Shop = () => {
 
             <div>
               <p className="text-sm text-gray-400 font-bold normal-case ">
-                {products.length} products found.
+                {products?.length} products found.
               </p>
             </div>
             <div>
@@ -180,8 +165,8 @@ const Shop = () => {
           </div>
 
           <div className="grid grid-cols-6 justify-between items-center gap-4 mt-5">
-            {products.slice(0, 15)?.map((product) => (
-              <Product key={product._id} product={product}></Product>
+            {products?.slice(0, 15)?.map((product) => (
+              <Product key={product?._id} product={product}></Product>
             ))}
           </div>
         </div>

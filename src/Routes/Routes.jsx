@@ -19,6 +19,7 @@ import UserDashboard from "../Layout/UserDashboard/UserDashboard";
 import OrderHistory from "../Pages/OrderHistory/OrderHistory";
 import MyAccount from "../Pages/MyAccount/MyAccount";
 import PaymentCard from "../Components/Payment/PaymentCard/PaymentCard";
+import Electronics from "../Pages/Electronics/Electronics";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Shop></Shop>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/store/electronics",
+        element: (
+          <PrivateRoute>
+            <Electronics></Electronics>
           </PrivateRoute>
         ),
       },
