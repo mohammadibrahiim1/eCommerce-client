@@ -16,18 +16,27 @@ import { FaList } from "react-icons/fa";
 import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
 // import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Store = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [category, setCategory] = useState(null);
   console.log(category);
-  const [brand, setBrand] = useState(null);
+  // const [brand, setBrand] = useState(null);
   const { data, error, isLoading } = useGetProductsQuery({
     category,
-    brand,
+    // brand,
   });
 
-  const products = data;
+  const products = data?.products;
   console.log(products);
+
+  const handleCategory = (selectedCategory) => {
+    dispatch(setCategory(selectedCategory));
+    navigate(`/store/electronics`);
+  };
 
   if (isLoading) {
     return (
@@ -62,21 +71,21 @@ const Store = () => {
         <div className=" max-w-screen-2xl mx-auto  flex items-center justify-between gap-1">
           <div
             // to={"/store/electronics"}
-            onClick={() => setCategory("electronics")}
+            onClick={() => handleCategory("electronics")}
             className="flex items-center font-semibold gap-1  "
           >
             <CgSmartphoneChip className="w-8 h-8" />
             <h6 className="hover:text-green-500 duration-300">Electronics</h6>
           </div>
           <div
-            onClick={() => setCategory("fashion")}
+            onClick={() => handleCategory("fashion")}
             className="flex items-center font-semibold gap-1"
           >
             <GiClothes className="w-8 h-8" />
             <h6 className="hover:text-green-500 duration-300">Fashion</h6>
           </div>
           <div
-            onClick={() => setCategory("beauty product")}
+            onClick={() => handleCategory("beauty product")}
             className="flex items-center font-semibold gap-1"
           >
             <PiHandSoapBold className="w-7 h-7" />
@@ -85,7 +94,7 @@ const Store = () => {
             </h6>
           </div>
           <div
-            onClick={() => setCategory("health&hygiene")}
+            onClick={() => handleCategory("health&hygiene")}
             className="flex items-center font-semibold gap-1"
           >
             <GiHealthCapsule className="w-7 h-7" />
@@ -94,14 +103,14 @@ const Store = () => {
             </h6>
           </div>
           <div
-            onClick={() => setCategory("beverage")}
+            onClick={() => handleCategory("beverage")}
             className="flex items-center font-semibold gap-1"
           >
             <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
             <h6 className="hover:text-green-500 duration-300">Beverage</h6>
           </div>
           <div
-            onClick={() => setCategory("furniture")}
+            onClick={() => handleCategory("furniture")}
             className="flex items-center font-semibold gap-1"
           >
             <BiSolidBed className="w-7 h-7" />
