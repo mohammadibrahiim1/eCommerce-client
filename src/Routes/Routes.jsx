@@ -25,6 +25,7 @@ import Fashion from "../Pages/Fashion/Fashion";
 import BeautyProducts from "../Pages/BeautyProducts/BeautyProducts";
 import HealthHygiene from "../Pages/HealthHygiene/HealthHygiene";
 import Beverage from "../Pages/Beverage/Beverage";
+import Furniture from "../Pages/Furniture/Furniture";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: "/store/beverage",
         element: <Beverage></Beverage>,
+      },
+      {
+        path: "/store/furniture",
+        element: <Furniture></Furniture>,
       },
       {
         path: "/cart",

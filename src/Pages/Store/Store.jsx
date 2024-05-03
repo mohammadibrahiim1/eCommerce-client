@@ -38,7 +38,7 @@ const Store = () => {
 
     setTimeout(() => {
       navigate(`/store/${selectedCategory}`);
-    }, 2000);
+    }, 1000);
   };
 
   if (isLoading) {
@@ -88,7 +88,7 @@ const Store = () => {
             <h6 className="hover:text-green-500 duration-300">Fashion</h6>
           </div>
           <div
-            onClick={() => handleCategory("beauty product")}
+            onClick={() => handleCategory("beauty_product")}
             className="flex items-center font-semibold gap-1"
           >
             <PiHandSoapBold className="w-7 h-7" />
