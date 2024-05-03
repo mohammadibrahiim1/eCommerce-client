@@ -21,6 +21,10 @@ import MyAccount from "../Pages/MyAccount/MyAccount";
 import PaymentCard from "../Components/Payment/PaymentCard/PaymentCard";
 import Electronics from "../Pages/Electronics/Electronics";
 import Store from "../Pages/Store/Store";
+import Fashion from "../Pages/Fashion/Fashion";
+import BeautyProducts from "../Pages/BeautyProducts/BeautyProducts";
+import HealthHygiene from "../Pages/HealthHygiene/HealthHygiene";
+import Beverage from "../Pages/Beverage/Beverage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -40,11 +44,23 @@ export const router = createBrowserRouter([
       },
       {
         path: "/store/electronics",
-        element: (
-          <PrivateRoute>
-            <Electronics></Electronics>
-          </PrivateRoute>
-        ),
+        element: <Electronics></Electronics>,
+      },
+      {
+        path: "/store/fashion",
+        element: <Fashion></Fashion>,
+      },
+      {
+        path: "/store/beauty_product",
+        element: <BeautyProducts></BeautyProducts>,
+      },
+      {
+        path: "/store/health&hygiene",
+        element: <HealthHygiene></HealthHygiene>,
+      },
+      {
+        path: "/store/beverage",
+        element: <Beverage></Beverage>,
       },
       {
         path: "/cart",

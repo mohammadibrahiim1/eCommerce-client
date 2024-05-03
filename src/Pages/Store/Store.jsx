@@ -17,11 +17,11 @@ import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
 // import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 const Store = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [category, setCategory] = useState(null);
   console.log(category);
   // const [brand, setBrand] = useState(null);
@@ -34,8 +34,11 @@ const Store = () => {
   console.log(products);
 
   const handleCategory = (selectedCategory) => {
-    dispatch(setCategory(selectedCategory));
-    navigate(`/store/electronics`);
+    setCategory(selectedCategory);
+
+    setTimeout(() => {
+      navigate(`/store/${selectedCategory}`);
+    }, 2000);
   };
 
   if (isLoading) {
