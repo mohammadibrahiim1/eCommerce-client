@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Spinner } from "keep-react";
-// import { useState } from "react";
-// import Categories from "../../Components/Categories/Categories";
-import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
+// import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import DeliveryBoy from "../../Components/DeliveryBoy/DeliveryBoy";
 import Product from "../../Components/Product/Product";
-// import Slider from "react-slick";
 import { GiClothes, GiHealthCapsule } from "react-icons/gi";
 import { CgSmartphoneChip } from "react-icons/cg";
 import { PiHandSoapBold } from "react-icons/pi";
@@ -14,34 +11,40 @@ import { BiSolidBed } from "react-icons/bi";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { FaList } from "react-icons/fa";
 import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
-// import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchProducts,
+  selectProducts,
+} from "../../redux/features/products/productSlice";
 
 const Store = () => {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
-  const [category, setCategory] = useState(null);
-  console.log(category);
+  const dispatch = useDispatch();
+  // const [category, setCategory] = useState(null);
+  // console.log(category);
+  const { products, loading, error } = useSelector(selectProducts);
   // const [brand, setBrand] = useState(null);
-  const { data, error, isLoading } = useGetProductsQuery({
-    category,
-    // brand,
-  });
-
-  const products = data?.products;
+  // const { data, error, isLoading } = useGetProductsQuery({
+  //   category,
+  //   brand,
+  // });
   console.log(products);
 
-  const handleCategory = (selectedCategory) => {
-    setCategory(selectedCategory);
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
-    setTimeout(() => {
-      navigate(`/store/${selectedCategory}`);
-    }, 1000);
+  const handleCategory = (category) => {
+    dispatch(fetchProducts(category));
+    
+    console.log(category);
+
+    navigate(`/store/${category}`);
   };
 
-  if (isLoading) {
+  if (loading) {
     return (
       <Spinner
         className="flex justify-center items-center mx-auto my-12"
@@ -71,53 +74,58 @@ const Store = () => {
       </div>
 
       <div className="bg-[#F9FAFB] py-12">
-        <div className=" max-w-screen-2xl mx-auto  flex items-center justify-between gap-1">
-          <div
-            // to={"/store/electronics"}
-            onClick={() => handleCategory("electronics")}
-            className="flex items-center font-semibold gap-1  "
-          >
-            <CgSmartphoneChip className="w-8 h-8" />
-            <h6 className="hover:text-green-500 duration-300">Electronics</h6>
-          </div>
-          <div
-            onClick={() => handleCategory("fashion")}
-            className="flex items-center font-semibold gap-1"
-          >
-            <GiClothes className="w-8 h-8" />
-            <h6 className="hover:text-green-500 duration-300">Fashion</h6>
-          </div>
-          <div
-            onClick={() => handleCategory("beauty_product")}
-            className="flex items-center font-semibold gap-1"
-          >
-            <PiHandSoapBold className="w-7 h-7" />
-            <h6 className="hover:text-green-500 duration-300">
-              Beauty products
-            </h6>
-          </div>
-          <div
-            onClick={() => handleCategory("health&hygiene")}
-            className="flex items-center font-semibold gap-1"
-          >
-            <GiHealthCapsule className="w-7 h-7" />
-            <h6 className="hover:text-green-500 duration-300">
-              Health & Hygiene
-            </h6>
-          </div>
-          <div
-            onClick={() => handleCategory("beverage")}
-            className="flex items-center font-semibold gap-1"
-          >
-            <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
-            <h6 className="hover:text-green-500 duration-300">Beverage</h6>
-          </div>
-          <div
-            onClick={() => handleCategory("furniture")}
-            className="flex items-center font-semibold gap-1"
-          >
-            <BiSolidBed className="w-7 h-7" />
-            <h6 className="hover:text-green-500 duration-300">Furniture</h6>
+        <div className="max-w-screen-2xl mx-auto">
+          <h1 className="text-xl font-semibold mb-5 underline">
+            Popular Categories
+          </h1>
+          <div className=" flex items-center justify-between gap-1">
+            <div
+              // to={"/store/electronics"}
+              onClick={() => handleCategory("electronics")}
+              className="flex items-center font-semibold gap-1  "
+            >
+              <CgSmartphoneChip className="w-8 h-8" />
+              <h6 className="hover:text-green-500 duration-300">Electronics</h6>
+            </div>
+            <div
+              onClick={() => handleCategory("fashion")}
+              className="flex items-center font-semibold gap-1"
+            >
+              <GiClothes className="w-8 h-8" />
+              <h6 className="hover:text-green-500 duration-300">Fashion</h6>
+            </div>
+            <div
+              onClick={() => handleCategory("beauty_product")}
+              className="flex items-center font-semibold gap-1"
+            >
+              <PiHandSoapBold className="w-7 h-7" />
+              <h6 className="hover:text-green-500 duration-300">
+                Beauty products
+              </h6>
+            </div>
+            <div
+              onClick={() => handleCategory("health&hygiene")}
+              className="flex items-center font-semibold gap-1"
+            >
+              <GiHealthCapsule className="w-7 h-7" />
+              <h6 className="hover:text-green-500 duration-300">
+                Health & Hygiene
+              </h6>
+            </div>
+            <div
+              onClick={() => handleCategory("beverage")}
+              className="flex items-center font-semibold gap-1"
+            >
+              <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
+              <h6 className="hover:text-green-500 duration-300">Beverage</h6>
+            </div>
+            <div
+              onClick={() => handleCategory("furniture")}
+              className="flex items-center font-semibold gap-1"
+            >
+              <BiSolidBed className="w-7 h-7" />
+              <h6 className="hover:text-green-500 duration-300">Furniture</h6>
+            </div>
           </div>
         </div>
       </div>
@@ -151,11 +159,11 @@ const Store = () => {
               <p className="text-sm text-gray-400 font-bold normal-case ">
                 <span className="text-error"> {products?.length}</span> products
                 found.
-                {category ? (
+                {/* {category ? (
                   <span className="text-green-500">
                     (<span className="text-error">category:</span> {category})
                   </span>
-                ) : null}
+                ) : null} */}
               </p>
             </div>
             <div>
@@ -190,7 +198,7 @@ const Store = () => {
           </div>
 
           <div className="grid grid-cols-6 justify-between items-center gap-4 mt-5">
-            {products.length ? (
+            {products?.length ? (
               products
                 ?.slice(0, 15)
                 ?.map((product) => (

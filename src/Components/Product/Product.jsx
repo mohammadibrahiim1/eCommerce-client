@@ -1,18 +1,18 @@
 /* eslint-disable react/prop-types */
 
-// import { useDispatch } from "react-redux";
-// import { addToCart } from "../../redux/features/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/features/cart/cartSlice";
 import "./Product.css";
-// import { BsBagPlusFill } from "react-icons/bs";
+import { BsBagPlusFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { title, thumbnail, price, _id, stock } = product;
 
-  // const handleAddToCart = () => {
-  //   dispatch(addToCart(product));
-  // };
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
 
   return (
     <div>
@@ -37,14 +37,14 @@ const Product = ({ product }) => {
           </h4>
           <div className="card-actions font-semibold justify-between items-center flex pt-1 ">
             <div className=" text-sm text-orange-500">${price}</div>
-            {/* <div className="flex justify-between items-center gap-1">
-                <div
-                  onClick={handleAddToCart}
-                  className="cursor-pointer border rounded p-2 text-[#10B981] hover:bg-[#10B981] hover:text-[#FFF] duration-300"
-                >
-                  <BsBagPlusFill className="h-4 w-4" />
-                </div>
-              </div> */}
+            <div className="flex justify-between items-center gap-1">
+              <div
+                onClick={handleAddToCart}
+                className="cursor-pointer border rounded p-2 text-[#10B981] hover:bg-[#10B981] hover:text-[#FFF] duration-300"
+              >
+                <BsBagPlusFill className="h-4 w-4" />
+              </div>
+            </div>
           </div>
         </div>
       </Link>

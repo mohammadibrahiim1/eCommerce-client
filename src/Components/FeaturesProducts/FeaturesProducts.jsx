@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
-import { FaArrowRightLong, FaCartShopping } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import { Spinner } from "keep-react";
 import { Link } from "react-router-dom";
-import { BsBagPlusFill } from "react-icons/bs";
 
 const FeaturesProducts = () => {
   const dispatch = useDispatch();
