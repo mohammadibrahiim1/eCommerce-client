@@ -15,6 +15,10 @@ const Electronics = () => {
   // const { products, loading, error } = useSelector((state) => state.products);
   console.log(savedProducts);
 
+  const handleCategoryFilter = (selectedCategory) => {
+    console.log(selectedCategory);
+  };
+
   return (
     <div>
       <div className="bg-[#A1A4AD]">
@@ -47,22 +51,27 @@ const Electronics = () => {
       </div>
 
       <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1">
-        <div className="col-span-1">
-          <h1 className="uppercase font-semibold">sub category</h1>
-          <div>
+        <div className="col-span-1 border">
+          <h1 className="uppercase font-semibold border-b p-2">sub category</h1>
+          <div className="flex  flex-col justify-between  gap-y-1 ">
             <div
-              // to={"/store/electronics"}
-              // onClick={() => handleCategory("electronics")}
-              className="flex items-center font-semibold gap-1  "
+              onClick={() => handleCategoryFilter("smartphones")}
+              className="flex items-center font-semibold gap-1 cursor-pointer  p-2"
             >
               <SlScreenSmartphone className="w-5 h-5" />
               <h6 className="hover:text-green-500 duration-300">Smartphones</h6>
             </div>
-            <div className="flex items-center font-semibold gap-1  ">
+            <div
+              onClick={() => handleCategoryFilter("laptops")}
+              className="flex items-center font-semibold gap-1 cursor-pointer p-2"
+            >
               <MdComputer className="w-5 h-5" />
               <h6 className="hover:text-green-500 duration-300">Laptops</h6>
             </div>
-            <div className="flex items-center font-semibold gap-1  ">
+            <div
+              onClick={() => handleCategoryFilter("automotive")}
+              className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+            >
               <FcAutomotive className="w-5 h-5" />
               <h6 className="hover:text-green-500 duration-300">Automotive</h6>
             </div>
