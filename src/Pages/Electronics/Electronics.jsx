@@ -18,6 +18,9 @@ const Electronics = () => {
   const handleCategoryFilter = (selectedCategory) => {
     console.log(selectedCategory);
   };
+  const handleBrandFilter = (selectedBrand) => {
+    console.log(selectedBrand);
+  };
 
   return (
     <div>
@@ -52,7 +55,9 @@ const Electronics = () => {
 
       <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1">
         <div className="col-span-1 bg-gray-100 border-rounded">
-          <h1 className="uppercase font-semibold border-b p-2">sub category</h1>
+          <h1 className="uppercase font-semibold border-b p-2">
+            search by category
+          </h1>
           <div className="flex  flex-col justify-between  gap-y-1 ">
             <div
               onClick={() => handleCategoryFilter("smartphones")}
@@ -74,6 +79,60 @@ const Electronics = () => {
             >
               <FcAutomotive className="w-5 h-5" />
               <h6 className="hover:text-green-500 duration-300">Automotive</h6>
+            </div>
+          </div>
+          <h1 className="uppercase font-semibold border-b p-2">
+            search by brand
+          </h1>
+          <div className="flex  flex-col justify-between  gap-y-1 ">
+            <div
+              onClick={() => handleBrandFilter("Apple")}
+              className="flex items-center font-semibold gap-1 cursor-pointer  p-2"
+            >
+              <SlScreenSmartphone className="w-5 h-5" />
+              <h6 className="hover:text-green-500 duration-300">Apple</h6>
+            </div>
+            <div
+              onClick={() => handleBrandFilter("Samsung")}
+              className="flex items-center font-semibold gap-1 cursor-pointer p-2"
+            >
+              <MdComputer className="w-5 h-5" />
+              <h6 className="hover:text-green-500 duration-300">Samsung</h6>
+            </div>
+            <div
+              onClick={() => handleBrandFilter("OPPO")}
+              className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+            >
+              <FcAutomotive className="w-5 h-5" />
+              <h6 className="hover:text-green-500 duration-300">Oppo</h6>
+            </div>
+            <div
+              onClick={() => handleBrandFilter("Huawei")}
+              className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+            >
+              <FcAutomotive className="w-5 h-5" />
+              <h6 className="hover:text-green-500 duration-300">Huawei</h6>
+            </div>
+            <div
+              onClick={() => handleBrandFilter("Microsoft Surface")}
+              className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+            >
+              <FcAutomotive className="w-5 h-5" />
+              <h6 className="hover:text-green-500 duration-300">Microsoft</h6>
+            </div>
+            <div
+              onClick={() => handleBrandFilter("Infinix")}
+              className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+            >
+              <FcAutomotive className="w-5 h-5" />
+              <h6 className="hover:text-green-500 duration-300">Microsoft</h6>
+            </div>
+            <div
+              onClick={() => handleBrandFilter("HP Pavilion")}
+              className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+            >
+              <FcAutomotive className="w-5 h-5" />
+              <h6 className="hover:text-green-500 duration-300">Microsoft</h6>
             </div>
           </div>
         </div>
