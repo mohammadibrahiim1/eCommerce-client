@@ -154,11 +154,6 @@ const Store = () => {
               <p className="text-sm text-gray-400 font-bold normal-case ">
                 <span className="text-error"> {products?.length}</span> products
                 found.
-                {/* {category ? (
-                  <span className="text-green-500">
-                    (<span className="text-error">category:</span> {category})
-                  </span>
-                ) : null} */}
               </p>
             </div>
             <div>
