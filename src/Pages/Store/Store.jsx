@@ -31,8 +31,9 @@ const Store = () => {
   }, [dispatch]);
 
   const handleCategory = (category) => {
-    dispatch(fetchProducts(category));
-    console.log(category);
+    if (category) {
+      dispatch(fetchProducts(category));
+    }
     setTimeout(() => {
       navigate(`/store/${category}`);
     }, 1000);
