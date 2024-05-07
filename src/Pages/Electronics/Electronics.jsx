@@ -51,7 +51,7 @@ const Electronics = () => {
       </div>
 
       <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1">
-        <div className="col-span-1 border">
+        <div className="col-span-1 bg-gray-100 border-rounded">
           <h1 className="uppercase font-semibold border-b p-2">sub category</h1>
           <div className="flex  flex-col justify-between  gap-y-1 ">
             <div
