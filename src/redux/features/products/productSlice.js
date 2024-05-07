@@ -15,6 +15,7 @@ export const fetchProducts = createAsyncThunk(
         : `http://localhost:5000/api/v1/products`
     );
     const data = await res.json();
+    localStorage.setItem("products", JSON.stringify(data.products));
     return data.products;
   }
 );

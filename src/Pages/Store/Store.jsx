@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { Spinner } from "keep-react";
-// import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import DeliveryBoy from "../../Components/DeliveryBoy/DeliveryBoy";
 import Product from "../../Components/Product/Product";
 import { GiClothes, GiHealthCapsule } from "react-icons/gi";
@@ -22,14 +21,9 @@ import {
 const Store = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const [category, setCategory] = useState(null);
-  // console.log(category);
+
   const { products, loading, error } = useSelector(selectProducts);
-  // const [brand, setBrand] = useState(null);
-  // const { data, error, isLoading } = useGetProductsQuery({
-  //   category,
-  //   brand,
-  // });
+
   console.log(products);
 
   useEffect(() => {
@@ -38,10 +32,10 @@ const Store = () => {
 
   const handleCategory = (category) => {
     dispatch(fetchProducts(category));
-    
     console.log(category);
-
-    navigate(`/store/${category}`);
+    setTimeout(() => {
+      navigate(`/store/${category}`);
+    }, 1000);
   };
 
   if (loading) {

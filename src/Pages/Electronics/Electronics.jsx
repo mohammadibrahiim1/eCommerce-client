@@ -4,24 +4,25 @@ import { selectProducts } from "../../redux/features/products/productSlice";
 import { useSelector } from "react-redux";
 
 const Electronics = () => {
-  const { products, loading, error } = useSelector(selectProducts);
-  console.log(products);
+  const savedProducts = JSON.parse(localStorage.getItem("products"));
+  // const { products, loading, error } = useSelector((state) => state.products);
+  console.log(savedProducts);
 
-  if (loading) {
-    return (
-      <div>
-        <h1>Loading...</h1>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div>
+  //       <h1>Loading...</h1>
+  //     </div>
+  //   );
+  // }
 
-  if (error) {
-    return (
-      <div>
-        <h1>{error.message}</h1>
-      </div>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <div>
+  //       <h1>{error.message}</h1>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
