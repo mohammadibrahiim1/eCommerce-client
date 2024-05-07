@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import { selectProducts } from "../../redux/features/products/productSlice";
@@ -40,7 +41,7 @@ const Electronics = () => {
       </div>
 
       <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1">
-        <div className="col-span-1">sub category</div>
+        <div className="col-span-1 my-12">sub category</div>
 
         <div className="col-span-5 grid grid-cols-4 justify-between items-center gap-5 my-12 ">
           {savedProducts?.map(
@@ -60,7 +61,7 @@ const Electronics = () => {
             }) => (
               <>
                 <div key={_id}>
-                  <div className="card w-[310px] h-[430px] rounded-none  bg-gray-200 shadow-xl">
+                  <div className="card w-[310px] h-[430px] rounded-none  bg-[#EEEFF6] shadow-xl">
                     <figure>
                       <img
                         src={thumbnail}
@@ -75,9 +76,11 @@ const Electronics = () => {
                       <p className="uppercase font-semibold text-lg">
                         {title.slice(0, 25)}
                       </p>
-                      {/* <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                      </div> */}
+                      <div className="card-actions justify-start">
+                        <button className="border  border-gray-900 font-semibold my-3 btn-sm px-5 text-gray-500 hover:text-gray-900 duration-300">
+                          Buy Now
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
