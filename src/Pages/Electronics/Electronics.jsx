@@ -151,9 +151,13 @@ const Electronics = () => {
         <div className="col-span-5 border-s">
           <div className="flex items-center justify-between border-b p-3 text-green-800 text-lg  ">
             <div>
-              <div className="text-sm text-gray-400 font-bold normal-case ">
-                <span className="text-error"> {savedProducts?.length}</span>
-                products found.
+              <div className="text-xs text-[#000] font-bold uppercase ">
+                Showing{" "}
+                <span className="text-[#095256]">
+                  {" "}
+                  {savedProducts?.length}{" "}
+                </span>
+                results
               </div>
             </div>
 
