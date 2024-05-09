@@ -3,14 +3,14 @@
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import "./Product.css";
-import { BsBagPlusFill } from "react-icons/bs";
+// import { BsBagPlusFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const { title, thumbnail, price, _id, stock } = product;
+  const { title, thumbnail, price, _id, brand, rating } = product;
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
 
@@ -18,33 +18,37 @@ const Product = ({ product }) => {
     <div>
       <Link
         to={`/productDetails/${_id} `}
-        className="card w-[240px] h-[350px] bg-gray-100 rounded-none p-2"
+        className="grid__item card col-lg-4 col-md-6 col-sm-6 col-12 product-card border"
       >
-        <button className="text-start text-sm p-1  font-semibold text-[#10B981]">
-          In stock :<span className="text-orange-500 capitalize">{stock}</span>
-        </button>
-        <div>
+        <figure>
           <img
-            className="w-[219px] h-[190px] mx-auto rounded-sm p-5"
             src={thumbnail}
-            alt={title}
+            alt="Shoes"
+            className=" w-[330px] h-[280px] p-5"
           />
-        </div>
-
-        <div className="mt-[45px]">
-          <h4 className="font-semibold text-[14px] uppercase text-[#10B981] duration-300">
-            {title}
-          </h4>
-          <div className="card-actions font-semibold justify-between items-center flex pt-1 ">
-            <div className=" text-sm text-orange-500">${price}</div>
-            <div className="flex justify-between items-center gap-1">
-              <div
-                onClick={handleAddToCart}
-                className="cursor-pointer border rounded p-2 text-[#10B981] hover:bg-[#10B981] hover:text-[#FFF] duration-300"
-              >
-                <BsBagPlusFill className="h-4 w-4" />
-              </div>
-            </div>
+        </figure>
+        <div className="px-5">
+          <div className="flex justify-between items-center gap-5">
+            <h2 className="font-bold capitalize  text-xs text-[#095256]">
+              rating: {rating}
+            </h2>
+            <h2 className="font-bold uppercase text-xs text-[#095256]">
+              {brand}
+            </h2>
+          </div>
+          <div className="uppercase font-semibold text-lg text-[#095256] py-1">
+            {title.slice(0, 24)}
+          </div>
+          <div className="uppercase font-semibold text-lg text-[#095256]">
+            ${price}
+          </div>
+          <div
+            onClick={() => handleAddToCart(product)}
+            className="card-actions justify-start"
+          >
+            <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
+              Buy Now
+            </button>
           </div>
         </div>
       </Link>

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { selectProducts } from "../../redux/features/products/productSlice";
 import { useSelector } from "react-redux";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
@@ -15,12 +15,19 @@ const Electronics = () => {
   // const { products, loading, error } = useSelector((state) => state.products);
   console.log(savedProducts);
 
+  const [toggle, setToggle] = useState("grid");
+  console.log(toggle);
+
   const handleCategoryFilter = (selectedCategory) => {
     console.log(selectedCategory);
   };
   const handleBrandFilter = (selectedBrand) => {
     console.log(selectedBrand);
   };
+
+  // const handleToggleLayout = () => {
+  //   setIsGrid(!isGrid);
+  // };
 
   return (
     <div>
@@ -165,66 +172,113 @@ const Electronics = () => {
               <div className="flex items-center justify-between gap-7  border px-5  ">
                 <h1 className="font-semibold text-gray-900 ">View </h1>
                 <div className="flex items-center justify-between gap-3">
-                  <TfiLayoutGrid3Alt className="w-4 h-4" />
-                  <FaList className="w-4 h-4" />
+                  <TfiLayoutGrid3Alt
+                    onClick={() => setToggle("grid")}
+                    className="w-4 h-4"
+                  />
+                  <FaList
+                    onClick={() => setToggle("list")}
+                    className="w-4 h-4"
+                  />
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-4 justify-between items-center gap-5 m-3">
-            {savedProducts?.map(
-              ({
-                _id,
-                brand,
-                category,
-                description,
-                thumbnail,
-                sub_category,
-                price,
-                rating,
-                stock,
-                discount_percentage,
-                title,
-                images,
-              }) => (
-                <>
-                  <div key={_id}>
-                    <div className="grid__item card col-lg-4 col-md-6 col-sm-6 col-12 product-card border">
-                      <figure>
-                        <img
-                          src={thumbnail}
-                          alt="Shoes"
-                          className=" w-[330px] h-[280px] p-5"
-                        />
-                      </figure>
-                      <div className="px-5">
-                        <div className="flex justify-between items-center gap-5">
-                          <h2 className="font-bold capitalize  text-xs text-[#095256]">
-                            rating: {rating}
-                          </h2>
-                          <h2 className="font-bold uppercase text-xs text-[#095256]">
-                            {brand}
-                          </h2>
-                        </div>
-                        <div className="uppercase font-semibold text-lg text-[#095256] py-1">
-                          {title.slice(0, 24)}
-                        </div>
-                        <div className="uppercase font-semibold text-lg text-[#095256]">
-                          ${price}
-                        </div>
-                        <div className="card-actions justify-start">
-                          <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
-                            Buy Now
-                          </button>
+          {toggle === "grid" ? (
+            <div className="grid grid-cols-4 justify-between items-center gap-5 m-3">
+              {savedProducts?.map(
+                ({
+                  _id,
+                  brand,
+                  category,
+                  description,
+                  thumbnail,
+                  sub_category,
+                  price,
+                  rating,
+                  stock,
+                  discount_percentage,
+                  title,
+                  images,
+                }) => (
+                  <>
+                    <div key={_id}>
+                      <div className="grid__item card col-lg-4 col-md-6 col-sm-6 col-12 product-card border">
+                        <figure>
+                          <img
+                            src={thumbnail}
+                            alt="Shoes"
+                            className=" w-[330px] h-[280px] p-5"
+                          />
+                        </figure>
+                        <div className="px-5">
+                          <div className="flex justify-between items-center gap-5">
+                            <h2 className="font-bold capitalize  text-xs text-[#095256]">
+                              rating: {rating}
+                            </h2>
+                            <h2 className="font-bold uppercase text-xs text-[#095256]">
+                              {brand}
+                            </h2>
+                          </div>
+                          <div className="uppercase font-semibold text-lg text-[#095256] py-1">
+                            {title.slice(0, 24)}
+                          </div>
+                          <div className="uppercase font-semibold text-lg text-[#095256]">
+                            ${price}
+                          </div>
+                          <div className="card-actions justify-start">
+                            <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
+                              Buy Now
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </>
-              )
-            )}
-          </div>
+                  </>
+                )
+              )}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 justify-between items-center gap-5 m-3">
+              {savedProducts?.map(
+                ({
+                  _id,
+                  brand,
+                  category,
+                  description,
+                  thumbnail,
+                  sub_category,
+                  price,
+                  rating,
+                  stock,
+                  discount_percentage,
+                  title,
+                  images,
+                }) => (
+                  <>
+                    <div key={_id}>
+                      <div className="card card-side bg-base-100 shadow-xl">
+                        <figure>
+                          <img
+                            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+                            alt="Movie"
+                          />
+                        </figure>
+                        <div className="card-body">
+                          <h2 className="card-title">New movie is released!</h2>
+                          <p>Click the button to watch on Jetflix app.</p>
+                          <div className="card-actions justify-end">
+                            <button className="btn btn-primary">Watch</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )
+              )}
+            </div>
+          )}
         </div>
       </section>
     </div>

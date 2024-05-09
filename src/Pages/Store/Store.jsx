@@ -187,10 +187,10 @@ const Store = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-6 justify-between items-center gap-4 mt-5">
+          <div className="grid grid-cols-5 justify-between items-center gap-4 mt-5">
             {products?.length ? (
               products
-                ?.slice(0, 15)
+                ?.slice(0, 11)
                 ?.map((product) => (
                   <Product key={product?._id} product={product}></Product>
                 ))
