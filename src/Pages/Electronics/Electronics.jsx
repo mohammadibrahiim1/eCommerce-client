@@ -26,7 +26,7 @@ const Electronics = () => {
     <div>
       <div className="">
         <section className="">
-          <div className="px-12 py-40 bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/YbQQz1K/ki-chai-electronics-banner-img-1.png')] ">
+          <div className="px-12 py-32 bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/YbQQz1K/ki-chai-electronics-banner-img-1.png')] ">
             <div className="max-w-screen-2xl mx-auto">
               <h5 className="font-semibold text-lg text-[#000]">GERMNIL</h5>
               <h1 className="font-bold uppercase  text-2xl font-sans">
@@ -53,37 +53,48 @@ const Electronics = () => {
         </section>
       </div>
 
-      <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1  ">
-        <div className="col-span-1 border-rounded">
-          <div>Filters</div>
-          <hr />
+      <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1">
+        <div className="col-span-1 border-s border-b">
+          <div className="border-b p-3 text-green-800 text-lg font-semibold ">
+            Filters
+          </div>
 
-          <div className="flex  flex-col justify-between  gap-y-1 ">
-            <div
-              onClick={() => handleCategoryFilter("smartphones")}
-              className="flex items-center font-semibold gap-1 cursor-pointer  p-2"
-            >
-              <SlScreenSmartphone className="w-5 h-5" />
-              <h6 className="hover:text-green-500 duration-300">Smartphones</h6>
+          <div>
+            <div className="border-b p-3 text-green-800 text-sm font-semibold text-center ">
+              Category
             </div>
-            <div
-              onClick={() => handleCategoryFilter("laptops")}
-              className="flex items-center font-semibold gap-1 cursor-pointer p-2"
-            >
-              <MdComputer className="w-5 h-5" />
-              <h6 className="hover:text-green-500 duration-300">Laptops</h6>
-            </div>
-            <div
-              onClick={() => handleCategoryFilter("automotive")}
-              className="flex items-center font-semibold gap-1  cursor-pointer p-2"
-            >
-              <FcAutomotive className="w-5 h-5" />
-              <h6 className="hover:text-green-500 duration-300">Automotive</h6>
+            <div className="flex flex-col justify-between  gap-y-1 ">
+              <div
+                onClick={() => handleCategoryFilter("smartphones")}
+                className="flex items-center font-semibold gap-1 cursor-pointer  p-2"
+              >
+                <SlScreenSmartphone className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">
+                  Smartphones
+                </h6>
+              </div>
+              <div
+                onClick={() => handleCategoryFilter("laptops")}
+                className="flex items-center font-semibold gap-1 cursor-pointer p-2"
+              >
+                <MdComputer className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">Laptops</h6>
+              </div>
+              <div
+                onClick={() => handleCategoryFilter("automotive")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">
+                  Automotive
+                </h6>
+              </div>
             </div>
           </div>
-          <h1 className="uppercase font-semibold border-b p-2">
-            search by brand
-          </h1>
+
+          <div className="border-t border-b p-3 text-green-800 text-sm font-semibold text-center ">
+            Brand
+          </div>
           <div className="flex  flex-col justify-between  gap-y-1 ">
             <div
               onClick={() => handleBrandFilter("Apple")}
@@ -137,8 +148,8 @@ const Electronics = () => {
           </div>
         </div>
 
-        <div className="col-span-5">
-          <div className="flex items-center justify-between">
+        <div className="col-span-5 border-s">
+          <div className="flex items-center justify-between border-b p-3 text-green-800 text-lg  ">
             <div>
               <div className="text-sm text-gray-400 font-bold normal-case ">
                 <span className="text-error"> {savedProducts?.length}</span>
@@ -155,28 +166,9 @@ const Electronics = () => {
                 </div>
               </div>
             </div>
-
-            {/* <div>
-              <div className="dropdown dropdown-end">
-                <div tabIndex={0} role="button" className="btn m-1">
-                  Sort by price
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <a>Price: low to high</a>
-                  </li>
-                  <li>
-                    <a>Price : high to low</a>
-                  </li>
-                </ul>
-              </div>
-            </div> */}
           </div>
-          <hr />
-          <div className="grid grid-cols-4 justify-between items-center gap-5 py-2">
+
+          <div className="grid grid-cols-4 justify-between items-center gap-5 m-3">
             {savedProducts?.map(
               ({
                 _id,
@@ -218,7 +210,7 @@ const Electronics = () => {
                           ${price}
                         </div>
                         <div className="card-actions justify-start">
-                          <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#095256] duration-300">
+                          <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
                             Buy Now
                           </button>
                         </div>
