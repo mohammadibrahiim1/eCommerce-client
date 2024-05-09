@@ -24,37 +24,37 @@ const Electronics = () => {
 
   return (
     <div>
-      <div className="bg-[#A1A4AD]">
-        <section className="max-w-screen-2xl mx-auto ">
-          <div className=" px-12 py-36 bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/YbQQz1K/ki-chai-electronics-banner-img-1.png')] ">
-            <div>
+      <div className="">
+        <section className="">
+          <div className="px-12 py-40 bg-cover bg-no-repeat bg-center bg-[url('https://i.ibb.co/YbQQz1K/ki-chai-electronics-banner-img-1.png')] ">
+            <div className="max-w-screen-2xl mx-auto">
               <h5 className="font-semibold text-lg text-[#000]">GERMNIL</h5>
               <h1 className="font-bold uppercase  text-2xl font-sans">
                 Hand sanitizer 100ml(Spray)
               </h1>
-            </div>
 
-            <div className="mt-3">
-              <h1 className="capitalize font-semibold text-sm">
-                product detail :
-              </h1>
-              <h4 className="font-semibold text-xs text-gray-900">
-                ETHANOL 80%, HYDROGEN PEROXIDE, GLYCERIN
-              </h4>
-            </div>
-            <button className="border  border-gray-900 font-semibold my-3 btn-sm px-5 hover:text-gray-100 duration-300">
-              Buy Now
-            </button>
+              <div className="mt-3">
+                <h1 className="capitalize font-semibold text-sm">
+                  product detail :
+                </h1>
+                <h4 className="font-semibold text-xs text-gray-900">
+                  ETHANOL 80%, HYDROGEN PEROXIDE, GLYCERIN
+                </h4>
+              </div>
+              <button className="border  border-gray-900 font-semibold my-3 btn-sm px-5 hover:text-gray-100 duration-300">
+                Buy Now
+              </button>
 
-            <h5 className="text-sm font-semibold uppercase text-[#000]">
-              *Bulk order available
-            </h5>
+              <h5 className="text-sm font-semibold uppercase text-[#000]">
+                *Bulk order available
+              </h5>
+            </div>
           </div>
         </section>
       </div>
 
-      <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1">
-        <div className="col-span-1 bg-gray-100 border-rounded">
+      <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1  ">
+        <div className="col-span-1 border-rounded">
           <h1 className="uppercase font-semibold border-b p-2">
             search by category
           </h1>
@@ -118,7 +118,7 @@ const Electronics = () => {
               className="flex items-center font-semibold gap-1  cursor-pointer p-2"
             >
               <FcAutomotive className="w-5 h-5" />
-              <h6 className="hover:text-green-500 duration-300">Microsoft</h6>
+              <h6 className="hover:text-green-500 duration-300"> Microsoft</h6>
             </div>
             <div
               onClick={() => handleBrandFilter("Infinix")}
