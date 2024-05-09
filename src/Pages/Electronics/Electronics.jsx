@@ -55,9 +55,9 @@ const Electronics = () => {
 
       <section className="max-w-screen-2xl mx-auto grid grid-cols-6 items-start gap-1  ">
         <div className="col-span-1 border-rounded">
-          <h1 className="uppercase font-semibold border-b p-2">
-            search by category
-          </h1>
+          <div>Filters</div>
+          <hr />
+
           <div className="flex  flex-col justify-between  gap-y-1 ">
             <div
               onClick={() => handleCategoryFilter("smartphones")}
@@ -140,22 +140,22 @@ const Electronics = () => {
         <div className="col-span-5">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-400 font-bold normal-case ">
-                <span className="text-error"> {savedProducts?.length}</span>{" "}
+              <div className="text-sm text-gray-400 font-bold normal-case ">
+                <span className="text-error"> {savedProducts?.length}</span>
                 products found.
-              </p>
+              </div>
             </div>
+
             <div>
-              <div>
-                <div className="flex items-center justify-between gap-7 m-1 border px-5 py-1 ">
-                  <h1 className="font-semibold text-gray-900 ">View </h1>
-                  <div className="flex items-center justify-between gap-3">
-                    <TfiLayoutGrid3Alt className="w-4 h-4" />
-                    <FaList className="w-4 h-4" />
-                  </div>
+              <div className="flex items-center justify-between gap-7  border px-5  ">
+                <h1 className="font-semibold text-gray-900 ">View </h1>
+                <div className="flex items-center justify-between gap-3">
+                  <TfiLayoutGrid3Alt className="w-4 h-4" />
+                  <FaList className="w-4 h-4" />
                 </div>
               </div>
             </div>
+
             {/* <div>
               <div className="dropdown dropdown-end">
                 <div tabIndex={0} role="button" className="btn m-1">
@@ -175,6 +175,7 @@ const Electronics = () => {
               </div>
             </div> */}
           </div>
+          <hr />
           <div className="grid grid-cols-4 justify-between items-center gap-5 py-2">
             {savedProducts?.map(
               ({
@@ -193,7 +194,7 @@ const Electronics = () => {
               }) => (
                 <>
                   <div key={_id}>
-                    <div className="card w-[310px] h-[430px] rounded-none  bg-[#EEEFF6] shadow-xl">
+                    <div className="grid__item card col-lg-4 col-md-6 col-sm-6 col-12 product-card border">
                       <figure>
                         <img
                           src={thumbnail}
@@ -201,15 +202,23 @@ const Electronics = () => {
                           className=" w-[330px] h-[280px] p-5"
                         />
                       </figure>
-                      <div className="px-5 pt-8">
-                        <h2 className="font-bold uppercase text-sm text-gray-700">
-                          {brand}
-                        </h2>
-                        <p className="uppercase font-semibold text-lg">
-                          {title.slice(0, 20)}
-                        </p>
+                      <div className="px-5">
+                        <div className="flex justify-between items-center gap-5">
+                          <h2 className="font-bold capitalize  text-xs text-[#095256]">
+                            rating: {rating}
+                          </h2>
+                          <h2 className="font-bold uppercase text-xs text-[#095256]">
+                            {brand}
+                          </h2>
+                        </div>
+                        <div className="uppercase font-semibold text-lg text-[#095256] py-1">
+                          {title.slice(0, 24)}
+                        </div>
+                        <div className="uppercase font-semibold text-lg text-[#095256]">
+                          ${price}
+                        </div>
                         <div className="card-actions justify-start">
-                          <button className="border  border-gray-900 font-semibold my-3 btn-sm px-5 text-gray-500 hover:text-gray-900 duration-300">
+                          <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#095256] duration-300">
                             Buy Now
                           </button>
                         </div>
