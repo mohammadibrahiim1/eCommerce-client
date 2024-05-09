@@ -9,6 +9,7 @@ import { CgSmartphoneChip } from "react-icons/cg";
 import { SlScreenSmartphone } from "react-icons/sl";
 import { MdComputer } from "react-icons/md";
 import { FcAutomotive } from "react-icons/fc";
+import { IoInformationCircleSharp } from "react-icons/io5";
 
 const Electronics = () => {
   const savedProducts = JSON.parse(localStorage.getItem("products"));
@@ -221,9 +222,20 @@ const Electronics = () => {
                               {brand}
                             </h2>
                           </div>
-                          <div className="uppercase font-semibold text-lg text-[#095256] py-1">
-                            {title.slice(0, 24)}
+                          <div className="card-title text-[#095256] mt-2">
+                            <span>{title.slice(0, 23)}</span>
+                            <span>
+                              <div
+                                className="tooltip  tooltip-right cursor-pointer capitalize"
+                                data-tip="view details"
+                              >
+                                <IoInformationCircleSharp />
+                              </div>
+                            </span>
                           </div>
+                          {/* <div className="uppercase font-semibold text-lg text-[#095256] py-1">
+                            {title.slice(0, 24)}
+                          </div> */}
                           <div className="uppercase font-semibold text-lg text-[#095256]">
                             ${price}
                           </div>
@@ -258,18 +270,42 @@ const Electronics = () => {
                 }) => (
                   <>
                     <div key={_id}>
-                      <div className="card card-side bg-base-100 shadow-xl">
+                      <div className="card card-side  grid__item  col-lg-4 col-md-6 col-sm-6 col-12 product-card border">
                         <figure>
                           <img
-                            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+                            src={thumbnail}
                             alt="Movie"
+                            className=" w-[280px] h-[230px] p-7"
                           />
                         </figure>
                         <div className="card-body">
-                          <h2 className="card-title">New movie is released!</h2>
-                          <p>Click the button to watch on Jetflix app.</p>
+                          <div className="flex justify-between items-center gap-5">
+                            <h2 className="font-bold capitalize  text-xs text-[#095256]">
+                              rating: {rating}
+                            </h2>
+                            <h2 className="font-bold uppercase text-xs text-[#095256]">
+                              {brand}
+                            </h2>
+                          </div>
+                          <div className="card-title text-[#095256]">
+                            <span>{title.slice(0, 23)}</span>
+                            <span>
+                              <div
+                                className="tooltip  tooltip-right cursor-pointer capitalize"
+                                data-tip="view details"
+                              >
+                                <IoInformationCircleSharp />
+                              </div>
+                            </span>
+                          </div>
+                          <p className="font-semibold text-[#095256] text-sm btn bg-[#0952560e] btn-xs">
+                            ${price}
+                          </p>
                           <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Watch</button>
+                            {" "}
+                            <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
+                              Buy Now
+                            </button>
                           </div>
                         </div>
                       </div>
