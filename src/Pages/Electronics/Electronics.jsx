@@ -301,8 +301,11 @@ const Electronics = () => {
                           <p className="font-semibold text-[#095256] text-sm btn bg-[#0952560e] btn-xs">
                             ${price}
                           </p>
-                          <div className="card-actions justify-end">
+                          <div className="card-actions  flex items-center justify-between gap-5">
                             {" "}
+                            <span className="capitalize font-semibold text-[#095256]">
+                              in stock : {stock}
+                            </span>
                             <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
                               Buy Now
                             </button>
