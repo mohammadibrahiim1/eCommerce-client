@@ -22,10 +22,10 @@ import PaymentCard from "../Components/Payment/PaymentCard/PaymentCard";
 import Electronics from "../Pages/Electronics/Electronics";
 import Store from "../Pages/Store/Store";
 import Fashion from "../Pages/Fashion/Fashion";
-import BeautyProducts from "../Pages/BeautyProducts/BeautyProducts";
 import HealthHygiene from "../Pages/HealthHygiene/HealthHygiene";
 import Beverage from "../Pages/Beverage/Beverage";
 import Furniture from "../Pages/Furniture/Furniture";
+import BeautyProducts from "../Pages/BeautyProducts/BeautyProducts";
 export const router = createBrowserRouter([
   {
     path: "/",

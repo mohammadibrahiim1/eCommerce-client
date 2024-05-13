@@ -1,29 +1,40 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { selectProducts } from "../../redux/features/products/productSlice";
-import { useSelector } from "react-redux";
+
+import { useDispatch } from "react-redux";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { FaList } from "react-icons/fa";
-import { CgSmartphoneChip } from "react-icons/cg";
+// import { CgSmartphoneChip } from "react-icons/cg";
 import { SlScreenSmartphone } from "react-icons/sl";
 import { MdComputer } from "react-icons/md";
 import { FcAutomotive } from "react-icons/fc";
 import { IoInformationCircleSharp } from "react-icons/io5";
+import { BsSortDown, BsSortUp } from "react-icons/bs";
 
 const Electronics = () => {
-  const savedProducts = JSON.parse(localStorage.getItem("products"));
+  const dispatch = useDispatch();
+  const savedProducts = JSON.parse(localStorage?.getItem("products"));
   // const { products, loading, error } = useSelector((state) => state.products);
   console.log(savedProducts);
 
   const [toggle, setToggle] = useState("grid");
-  console.log(toggle);
+  // const [sort, setSort] = useState(null);
+
+  // console.log(sort);
 
   const handleCategoryFilter = (selectedCategory) => {
     console.log(selectedCategory);
   };
   const handleBrandFilter = (selectedBrand) => {
     console.log(selectedBrand);
+  };
+
+  // const [order, setOrder] = useState("");
+
+  const handleSort = (order) => {
+    // dispatch(fetchProducts(order));
+    console.log(order);
   };
 
   // const handleToggleLayout = () => {
@@ -169,17 +180,31 @@ const Electronics = () => {
               </div>
             </div>
 
+            <div className="flex items-center justify-between gap-7  border px-5 py-1  ">
+              <h1 className="font-semibold text-gray-900 text-sm ">Sort </h1>
+              <div className="flex items-center justify-between gap-3">
+                <BsSortDown
+                  onClick={() => handleSort("low")}
+                  className="w-5 h-5 cursor-pointer"
+                />
+                <BsSortUp
+                  onClick={() => handleSort("high")}
+                  className="w-5 h-5 cursor-pointer"
+                />
+              </div>
+            </div>
+
             <div>
-              <div className="flex items-center justify-between gap-7  border px-5  ">
-                <h1 className="font-semibold text-gray-900 ">View </h1>
+              <div className="flex items-center justify-between gap-7  border px-5 py-1  ">
+                <h1 className="font-semibold text-gray-900 text-sm ">View </h1>
                 <div className="flex items-center justify-between gap-3">
                   <TfiLayoutGrid3Alt
                     onClick={() => setToggle("grid")}
-                    className="w-4 h-4"
+                    className="w-4 h-4 cursor-pointer"
                   />
                   <FaList
                     onClick={() => setToggle("list")}
-                    className="w-4 h-4"
+                    className="w-4 h-4 cursor-pointer"
                   />
                 </div>
               </div>

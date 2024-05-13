@@ -2,44 +2,56 @@
 import { Spinner } from "keep-react";
 import DeliveryBoy from "../../Components/DeliveryBoy/DeliveryBoy";
 import Product from "../../Components/Product/Product";
-import { GiClothes, GiHealthCapsule } from "react-icons/gi";
-import { CgSmartphoneChip } from "react-icons/cg";
-import { PiHandSoapBold } from "react-icons/pi";
-import { MdOutlineEmojiFoodBeverage } from "react-icons/md";
-import { BiSolidBed } from "react-icons/bi";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { FaList } from "react-icons/fa";
 import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchProducts,
-  selectProducts,
-} from "../../redux/features/products/productSlice";
+import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
+import { useGetCategoriesQuery } from "../../redux/features/api/categoryApi/categoryApi";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+// import { useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { useDispatch, useSelector } from "react-redux";
+// import {
+// fetchProducts,
+// setSelectedCategory,
+// selectProducts,
+// } from "../../redux/features/products/productSlice";
 
 const Store = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const [selectedCategory, setSelectedCategory] = useState("");
+  // get products data or get products data by category
+  const { data } = useGetProductsQuery(selectedCategory);
+  const { data: categoriesData } = useGetCategoriesQuery();
+  const products = data?.data;
+  const categories = categoriesData?.data;
+  console.log("products", products, "categories", selectedCategory);
 
-  const { products, loading, error } = useSelector(selectProducts);
+  // const handleCategoryChanged = (selectedCategory) => {
+  //   console.log(selectedCategory);
+  // };
 
-  console.log(products);
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+  // const { products, status, error } = useSelector((state) => state);
+  // const selectedCategory = useSelector(
+  //   (state) => state.products?.filters?.category
+  // );
+  // console.log(selectedCategory);
 
-  const handleCategory = (category) => {
-    if (category) {
-      dispatch(fetchProducts(category));
-    }
-    setTimeout(() => {
-      navigate(`/store/${category}`);
-    }, 1000);
-  };
+  // const fetchedProducts = products?.products?.products;
+  // console.log(fetchedProducts);
+  // useEffect(() => {
+  //   dispatch(fetchProducts());
+  // }, [dispatch]);
 
-  if (loading) {
+  // const handleCategoryFilter = (selectCategory) => {
+  //   dispatch(setSelectedCategory(selectCategory));
+  //   dispatch(fetchProducts(selectCategory));
+  // };
+
+  if (status === "loading") {
     return (
       <Spinner
         className="flex justify-center items-center mx-auto my-12"
@@ -49,10 +61,10 @@ const Store = () => {
     );
   }
 
-  if (error) {
+  if (status === "failed") {
     return (
       <div className="text-red-500 text-center  py-12 font-semibold text-2xl">
-        {error.status}
+        {/* {error} */}
       </div>
     );
   }
@@ -74,23 +86,27 @@ const Store = () => {
             Popular Categories
           </h1>
           <div className=" flex items-center justify-between gap-1">
-            <div
-              // to={"/store/electronics"}
-              onClick={() => handleCategory("electronics")}
-              className="flex items-center font-semibold gap-1  "
-            >
-              <CgSmartphoneChip className="w-8 h-8" />
-              <h6 className="hover:text-green-500 duration-300">Electronics</h6>
-            </div>
-            <div
-              onClick={() => handleCategory("fashion")}
+            {categories?.map(({ slug, title, icon, _id }) => (
+              <Link
+                key={_id}
+                // to={"/store/electronics"}
+                onClick={() => setSelectedCategory(slug)}
+                className="flex items-center font-semibold gap-1  "
+              >
+                <img src={icon} alt={slug} srcSet="" />
+                <h6 className="hover:text-green-500 duration-300">{title}</h6>
+              </Link>
+            ))}
+
+            {/* <div
+              // onClick={() => handleCategoryFilter("fashion")}
               className="flex items-center font-semibold gap-1"
             >
               <GiClothes className="w-8 h-8" />
               <h6 className="hover:text-green-500 duration-300">Fashion</h6>
             </div>
             <div
-              onClick={() => handleCategory("beauty_product")}
+              // onClick={() => handleCategoryFilter("beauty_product")}
               className="flex items-center font-semibold gap-1"
             >
               <PiHandSoapBold className="w-7 h-7" />
@@ -99,7 +115,7 @@ const Store = () => {
               </h6>
             </div>
             <div
-              onClick={() => handleCategory("health&hygiene")}
+              // onClick={() => handleCategoryFilter("health&hygiene")}
               className="flex items-center font-semibold gap-1"
             >
               <GiHealthCapsule className="w-7 h-7" />
@@ -108,19 +124,19 @@ const Store = () => {
               </h6>
             </div>
             <div
-              onClick={() => handleCategory("beverage")}
+              // onClick={() => handleCategoryFilter("beverage")}
               className="flex items-center font-semibold gap-1"
             >
               <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
               <h6 className="hover:text-green-500 duration-300">Beverage</h6>
             </div>
             <div
-              onClick={() => handleCategory("furniture")}
+              // onClick={() => handleCategoryFilter("furniture")}
               className="flex items-center font-semibold gap-1"
             >
               <BiSolidBed className="w-7 h-7" />
               <h6 className="hover:text-green-500 duration-300">Furniture</h6>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -152,8 +168,8 @@ const Store = () => {
 
             <div>
               <p className="text-sm text-gray-400 font-bold normal-case ">
-                <span className="text-error"> {products?.length}</span> products
-                found.
+                <span className="text-error">{/* {products?.length} */}</span>{" "}
+                products found.
               </p>
             </div>
             <div>

@@ -3,7 +3,7 @@
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import "./Product.css";
-// import { BsBagPlusFill } from "react-icons/bs";
+import { IoInformationCircle } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
@@ -16,10 +16,7 @@ const Product = ({ product }) => {
 
   return (
     <div>
-      <Link
-        to={`/productDetails/${_id} `}
-        className="grid__item card col-lg-4 col-md-6 col-sm-6 col-12 product-card border"
-      >
+      <div className="grid__item card col-lg-4 col-md-6 col-sm-6 col-12 product-card border">
         <figure>
           <img
             src={thumbnail}
@@ -36,10 +33,17 @@ const Product = ({ product }) => {
               {brand}
             </h2>
           </div>
-          <div className="uppercase font-semibold text-lg text-[#095256] py-1">
-            {title.slice(0, 24)}
+          <div className="uppercase font-semibold text-lg text-[#095256] flex items-center gap-2 my-2">
+            <span>{title.slice(0, 18)}...</span>
+            <Link
+              className="tooltip"
+              data-tip="details"
+              to={`/productDetails/${_id} `}
+            >
+              <IoInformationCircle />
+            </Link>
           </div>
-          <div className="uppercase font-semibold text-lg text-[#095256]">
+          <div className="uppercase font-bold text-sm text-[#095256]">
             ${price}
           </div>
           <div
@@ -51,7 +55,7 @@ const Product = ({ product }) => {
             </button>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
