@@ -11,40 +11,30 @@ import { MdComputer } from "react-icons/md";
 import { FcAutomotive } from "react-icons/fc";
 import { IoInformationCircleSharp } from "react-icons/io5";
 import { BsSortDown, BsSortUp } from "react-icons/bs";
-import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
+import {
+  useGetProductsBySubCategoryQuery,
+  useGetProductsQuery,
+} from "../../redux/features/api/productsApi/productsApi";
 
 const Electronics = () => {
   const dispatch = useDispatch();
-  // const [selectedCategory, setSelectedCategory] = useState("");
-  // get products data or get products data by category
-  const { data } = useGetProductsQuery("electronics");
-  console.log(data);
-  const savedProducts = JSON.parse(localStorage?.getItem("products"));
-  // const { products, loading, error } = useSelector((state) => state.products);
-  console.log(savedProducts);
 
+  // state declare
   const [toggle, setToggle] = useState("grid");
-  // const [sort, setSort] = useState(null);
+  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
+  console.log(selectedSubCategory);
 
-  // console.log(sort);
+  const { data } = useGetProductsQuery("electronics");
+  const electronics = data?.data;
+  console.log(electronics);
+  const { data: productsBySubCategory } =
+    useGetProductsBySubCategoryQuery(selectedSubCategory);
+  //  const productsBySubCategory = data?.data;
+  console.log(productsBySubCategory);
 
-  const handleCategoryFilter = (selectedCategory) => {
-    console.log(selectedCategory);
-  };
   const handleBrandFilter = (selectedBrand) => {
     console.log(selectedBrand);
   };
-
-  // const [order, setOrder] = useState("");
-
-  const handleSort = (order) => {
-    // dispatch(fetchProducts(order));
-    console.log(order);
-  };
-
-  // const handleToggleLayout = () => {
-  //   setIsGrid(!isGrid);
-  // };
 
   return (
     <div>
@@ -89,7 +79,7 @@ const Electronics = () => {
             </div>
             <div className="flex flex-col justify-between  gap-y-1 ">
               <div
-                onClick={() => handleCategoryFilter("smartphones")}
+                onClick={() => setSelectedSubCategory("smartphones")}
                 className="flex items-center font-semibold gap-1 cursor-pointer  p-2"
               >
                 <SlScreenSmartphone className="w-5 h-5" />
@@ -98,14 +88,14 @@ const Electronics = () => {
                 </h6>
               </div>
               <div
-                onClick={() => handleCategoryFilter("laptops")}
+                onClick={() => setSelectedSubCategory("laptops")}
                 className="flex items-center font-semibold gap-1 cursor-pointer p-2"
               >
                 <MdComputer className="w-5 h-5" />
                 <h6 className="hover:text-green-500 duration-300">Laptops</h6>
               </div>
               <div
-                onClick={() => handleCategoryFilter("automotive")}
+                onClick={() => setSelectedSubCategory("automotive")}
                 className="flex items-center font-semibold gap-1  cursor-pointer p-2"
               >
                 <FcAutomotive className="w-5 h-5" />
@@ -199,8 +189,11 @@ const Electronics = () => {
             <div>
               <div className="text-xs text-[#000] font-bold uppercase ">
                 Showing{" "}
-                <span className="text-[#095256]">{data?.data?.length} </span>
-                results
+                <span className="text-[#095256]">{electronics?.length} </span>
+                results for <span className="text-[#095256]">
+                  electronics{" "}
+                </span>{" "}
+                products
               </div>
             </div>
 
@@ -208,11 +201,11 @@ const Electronics = () => {
               <h1 className="font-semibold text-gray-900 text-sm ">Sort </h1>
               <div className="flex items-center justify-between gap-3">
                 <BsSortDown
-                  onClick={() => handleSort("low")}
+                  // onClick={() => handleSort("low")}
                   className="w-5 h-5 cursor-pointer"
                 />
                 <BsSortUp
-                  onClick={() => handleSort("high")}
+                  // onClick={() => handleSort("high")}
                   className="w-5 h-5 cursor-pointer"
                 />
               </div>
@@ -237,7 +230,7 @@ const Electronics = () => {
 
           {toggle === "grid" ? (
             <div className="grid grid-cols-4 justify-between items-center gap-5 m-3">
-              {data?.data?.map(
+              {electronics?.map(
                 ({
                   _id,
                   brand,
@@ -302,7 +295,7 @@ const Electronics = () => {
             </div>
           ) : (
             <div className="grid grid-cols-2 justify-between items-center gap-5 m-3">
-              {data?.data?.map(
+              {electronics?.map(
                 ({
                   _id,
                   brand,

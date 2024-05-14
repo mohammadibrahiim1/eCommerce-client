@@ -13,7 +13,14 @@ const productApi = baseApi.injectEndpoints({
         return { error: "An error occurred while fetching products" };
       },
     }),
+
+    getProductsBySubCategory: builder.query({
+      query: (sub_category) => ({
+        url: `/products?sub_category=${sub_category}`,
+      }),
+    }),
   }),
 });
 
-export const { useGetProductsQuery } = productApi;
+export const { useGetProductsQuery, useGetProductsBySubCategoryQuery } =
+  productApi;
