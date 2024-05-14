@@ -11,9 +11,14 @@ import { MdComputer } from "react-icons/md";
 import { FcAutomotive } from "react-icons/fc";
 import { IoInformationCircleSharp } from "react-icons/io5";
 import { BsSortDown, BsSortUp } from "react-icons/bs";
+import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 
 const Electronics = () => {
   const dispatch = useDispatch();
+  // const [selectedCategory, setSelectedCategory] = useState("");
+  // get products data or get products data by category
+  const { data } = useGetProductsQuery("electronics");
+  console.log(data);
   const savedProducts = JSON.parse(localStorage?.getItem("products"));
   // const { products, loading, error } = useSelector((state) => state.products);
   console.log(savedProducts);
@@ -119,49 +124,71 @@ const Electronics = () => {
               onClick={() => handleBrandFilter("Apple")}
               className="flex items-center font-semibold gap-1 cursor-pointer  p-2"
             >
-              <SlScreenSmartphone className="w-5 h-5" />
+              <input
+                type="checkbox"
+                className="checkbox checkbox-xs rounded-none"
+              />
+              {/* <SlScreenSmartphone className="w-5 h-5" /> */}
               <h6 className="hover:text-green-500 duration-300">Apple</h6>
             </div>
             <div
               onClick={() => handleBrandFilter("Samsung")}
               className="flex items-center font-semibold gap-1 cursor-pointer p-2"
             >
-              <MdComputer className="w-5 h-5" />
+              <input
+                type="checkbox"
+                className="checkbox checkbox-xs rounded-none"
+              />
               <h6 className="hover:text-green-500 duration-300">Samsung</h6>
             </div>
             <div
               onClick={() => handleBrandFilter("OPPO")}
               className="flex items-center font-semibold gap-1  cursor-pointer p-2"
             >
-              <FcAutomotive className="w-5 h-5" />
+              <input
+                type="checkbox"
+                className="checkbox checkbox-xs rounded-none"
+              />
               <h6 className="hover:text-green-500 duration-300">Oppo</h6>
             </div>
             <div
               onClick={() => handleBrandFilter("Huawei")}
               className="flex items-center font-semibold gap-1  cursor-pointer p-2"
             >
-              <FcAutomotive className="w-5 h-5" />
+              <input
+                type="checkbox"
+                className="checkbox checkbox-xs rounded-none"
+              />
               <h6 className="hover:text-green-500 duration-300">Huawei</h6>
             </div>
             <div
               onClick={() => handleBrandFilter("Microsoft Surface")}
               className="flex items-center font-semibold gap-1  cursor-pointer p-2"
             >
-              <FcAutomotive className="w-5 h-5" />
+              <input
+                type="checkbox"
+                className="checkbox checkbox-xs rounded-none"
+              />
               <h6 className="hover:text-green-500 duration-300"> Microsoft</h6>
             </div>
             <div
               onClick={() => handleBrandFilter("Infinix")}
               className="flex items-center font-semibold gap-1  cursor-pointer p-2"
             >
-              <FcAutomotive className="w-5 h-5" />
+              <input
+                type="checkbox"
+                className="checkbox checkbox-xs rounded-none"
+              />
               <h6 className="hover:text-green-500 duration-300">Microsoft</h6>
             </div>
             <div
               onClick={() => handleBrandFilter("HP Pavilion")}
               className="flex items-center font-semibold gap-1  cursor-pointer p-2"
             >
-              <FcAutomotive className="w-5 h-5" />
+              <input
+                type="checkbox"
+                className="checkbox checkbox-xs rounded-none"
+              />
               <h6 className="hover:text-green-500 duration-300">Microsoft</h6>
             </div>
           </div>
@@ -172,10 +199,7 @@ const Electronics = () => {
             <div>
               <div className="text-xs text-[#000] font-bold uppercase ">
                 Showing{" "}
-                <span className="text-[#095256]">
-                  {" "}
-                  {savedProducts?.length}{" "}
-                </span>
+                <span className="text-[#095256]">{data?.data?.length} </span>
                 results
               </div>
             </div>
@@ -213,7 +237,7 @@ const Electronics = () => {
 
           {toggle === "grid" ? (
             <div className="grid grid-cols-4 justify-between items-center gap-5 m-3">
-              {savedProducts?.map(
+              {data?.data?.map(
                 ({
                   _id,
                   brand,
@@ -278,7 +302,7 @@ const Electronics = () => {
             </div>
           ) : (
             <div className="grid grid-cols-2 justify-between items-center gap-5 m-3">
-              {savedProducts?.map(
+              {data?.data?.map(
                 ({
                   _id,
                   brand,

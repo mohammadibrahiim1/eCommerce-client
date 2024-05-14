@@ -89,7 +89,7 @@ const Store = () => {
             {categories?.map(({ slug, title, icon, _id }) => (
               <Link
                 key={_id}
-                // to={"/store/electronics"}
+                to={"/store/electronics"}
                 onClick={() => setSelectedCategory(slug)}
                 className="flex items-center font-semibold gap-1  "
               >
@@ -97,46 +97,6 @@ const Store = () => {
                 <h6 className="hover:text-green-500 duration-300">{title}</h6>
               </Link>
             ))}
-
-            {/* <div
-              // onClick={() => handleCategoryFilter("fashion")}
-              className="flex items-center font-semibold gap-1"
-            >
-              <GiClothes className="w-8 h-8" />
-              <h6 className="hover:text-green-500 duration-300">Fashion</h6>
-            </div>
-            <div
-              // onClick={() => handleCategoryFilter("beauty_product")}
-              className="flex items-center font-semibold gap-1"
-            >
-              <PiHandSoapBold className="w-7 h-7" />
-              <h6 className="hover:text-green-500 duration-300">
-                Beauty products
-              </h6>
-            </div>
-            <div
-              // onClick={() => handleCategoryFilter("health&hygiene")}
-              className="flex items-center font-semibold gap-1"
-            >
-              <GiHealthCapsule className="w-7 h-7" />
-              <h6 className="hover:text-green-500 duration-300">
-                Health & Hygiene
-              </h6>
-            </div>
-            <div
-              // onClick={() => handleCategoryFilter("beverage")}
-              className="flex items-center font-semibold gap-1"
-            >
-              <MdOutlineEmojiFoodBeverage className="w-7 h-7" />
-              <h6 className="hover:text-green-500 duration-300">Beverage</h6>
-            </div>
-            <div
-              // onClick={() => handleCategoryFilter("furniture")}
-              className="flex items-center font-semibold gap-1"
-            >
-              <BiSolidBed className="w-7 h-7" />
-              <h6 className="hover:text-green-500 duration-300">Furniture</h6>
-            </div> */}
           </div>
         </div>
       </div>
@@ -168,7 +128,7 @@ const Store = () => {
 
             <div>
               <p className="text-sm text-gray-400 font-bold normal-case ">
-                <span className="text-error">{/* {products?.length} */}</span>{" "}
+                <span className="text-error"> {products?.length} </span>
                 products found.
               </p>
             </div>
