@@ -7,10 +7,11 @@ import { FaList } from "react-icons/fa";
 import CurrentTitle from "../../Components/CurrentTitle/CurrentTitle";
 import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 import { useGetCategoriesQuery } from "../../redux/features/api/categoryApi/categoryApi";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-// import { useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+// import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 // import {
 // fetchProducts,
@@ -19,17 +20,21 @@ import { useState } from "react";
 // } from "../../redux/features/products/productSlice";
 
 const Store = () => {
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const navigate = useNavigate();
+  const [category, setCategory] = useState("");
+  console.log(category);
   // get products data or get products data by category
-  const { data } = useGetProductsQuery(selectedCategory);
+  const { data } = useGetProductsQuery({ category });
   const { data: categoriesData } = useGetCategoriesQuery();
-  const products = data?.data;
+  const products = data;
   const categories = categoriesData?.data;
-  console.log("products", products, "categories", selectedCategory);
+  console.log("products", products, "categories", category);
 
-  // const handleCategoryChanged = (selectedCategory) => {
-  //   console.log(selectedCategory);
-  // };
+  const handleCategoryChanged = (selectedCategory) => {
+    setCategory(selectedCategory);
+    navigate(`/store/${selectedCategory}`);
+    console.log(category);
+  };
 
   // const navigate = useNavigate();
   // const dispatch = useDispatch();
@@ -89,8 +94,8 @@ const Store = () => {
             {categories?.map(({ slug, title, icon, _id }) => (
               <Link
                 key={_id}
-                to={"/store/electronics"}
-                onClick={() => setSelectedCategory(slug)}
+                // to={`/store/${slug}`}
+                onClick={() => handleCategoryChanged(slug)}
                 className="flex items-center font-semibold gap-1  "
               >
                 <img src={icon} alt={slug} srcSet="" />

@@ -11,26 +11,26 @@ import { MdComputer } from "react-icons/md";
 import { FcAutomotive } from "react-icons/fc";
 import { IoInformationCircleSharp } from "react-icons/io5";
 import { BsSortDown, BsSortUp } from "react-icons/bs";
-import {
-  useGetProductsBySubCategoryQuery,
-  useGetProductsQuery,
-} from "../../redux/features/api/productsApi/productsApi";
+import { useGetProductsQuery } from "../../redux/features/api/productsApi/productsApi";
 
 const Electronics = () => {
   const dispatch = useDispatch();
 
   // state declare
   const [toggle, setToggle] = useState("grid");
-  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
-  console.log(selectedSubCategory);
+  const [sub_category, setSubcategory] = useState("");
+  console.log(sub_category);
 
-  const { data } = useGetProductsQuery("electronics");
-  const electronics = data?.data;
-  console.log(electronics);
-  const { data: productsBySubCategory } =
-    useGetProductsBySubCategoryQuery(selectedSubCategory);
+  const { data } = useGetProductsQuery({
+    category: "electronics",
+    sub_category,
+  });
+  const electronics = data;
+  console.log(data);
+  // const { data: productsBySubCategory } =
+  //   useGetProductsBySubCategoryQuery(selectedSubCategory);
   //  const productsBySubCategory = data?.data;
-  console.log(productsBySubCategory);
+  // console.log(productsBySubCategory);
 
   const handleBrandFilter = (selectedBrand) => {
     console.log(selectedBrand);
@@ -79,7 +79,7 @@ const Electronics = () => {
             </div>
             <div className="flex flex-col justify-between  gap-y-1 ">
               <div
-                onClick={() => setSelectedSubCategory("smartphones")}
+                onClick={() => setSubcategory("smartphones")}
                 className="flex items-center font-semibold gap-1 cursor-pointer  p-2"
               >
                 <SlScreenSmartphone className="w-5 h-5" />
@@ -88,14 +88,14 @@ const Electronics = () => {
                 </h6>
               </div>
               <div
-                onClick={() => setSelectedSubCategory("laptops")}
+                onClick={() => setSubcategory("laptops")}
                 className="flex items-center font-semibold gap-1 cursor-pointer p-2"
               >
                 <MdComputer className="w-5 h-5" />
                 <h6 className="hover:text-green-500 duration-300">Laptops</h6>
               </div>
               <div
-                onClick={() => setSelectedSubCategory("automotive")}
+                onClick={() => setSubcategory("automotive")}
                 className="flex items-center font-semibold gap-1  cursor-pointer p-2"
               >
                 <FcAutomotive className="w-5 h-5" />
@@ -189,10 +189,8 @@ const Electronics = () => {
             <div>
               <div className="text-xs text-[#000] font-bold uppercase ">
                 Showing{" "}
-                <span className="text-[#095256]">{electronics?.length} </span>
-                results for <span className="text-[#095256]">
-                  electronics{" "}
-                </span>{" "}
+                {/* <span className="text-[#095256]">{electronics?.length} </span> */}
+                results for <span className="text-[#095256]">electronics </span>{" "}
                 products
               </div>
             </div>
@@ -275,9 +273,9 @@ const Electronics = () => {
                               </div>
                             </span>
                           </div>
-                          {/* <div className="uppercase font-semibold text-lg text-[#095256] py-1">
+                          <div className="uppercase font-semibold text-lg text-[#095256] py-1">
                             {title.slice(0, 24)}
-                          </div> */}
+                          </div>
                           <div className="uppercase font-semibold text-lg text-[#095256]">
                             ${price}
                           </div>
