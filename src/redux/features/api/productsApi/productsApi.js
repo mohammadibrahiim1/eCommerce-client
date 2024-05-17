@@ -13,7 +13,6 @@ const productApi = baseApi.injectEndpoints({
           url += `?subcategory=${sub_category}`;
         }
         return { url };
-        // url: `/products?category=${category}&sub_category=${sub_category}`,
       },
 
       // Enhanced error handling
@@ -22,12 +21,6 @@ const productApi = baseApi.injectEndpoints({
         return { error: "An error occurred while fetching products" };
       },
     }),
-
-    // getProductsBySubCategory: builder.query({
-    //   query: (sub_category) => ({
-    //     url: `/products?sub_category=${sub_category}`,
-    //   }),
-    // }),
   }),
 });
 

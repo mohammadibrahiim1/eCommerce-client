@@ -15,12 +15,15 @@ const Fashion = () => {
 
   // state declare
   const [toggle, setToggle] = useState("grid");
-  const [selectedSubCategory, setSelectedSubCategory] = useState("");
-  console.log(selectedSubCategory);
+  const [sub_category, setSubcategory] = useState("");
+  console.log(sub_category);
 
-  const { data } = useGetProductsQuery("fashion", selectedSubCategory);
-  const fashions = data?.data;
-  console.log(fashions);
+  const { data } = useGetProductsQuery({
+    category: "fashion",
+    sub_category,
+  });
+  const fashions = data;
+  console.log(data);
   // const { data: productsBySubCategory } =
   //   useGetProductsBySubCategoryQuery(selectedSubCategory);
   //  const productsBySubCategory = data?.data;
@@ -73,29 +76,99 @@ const Fashion = () => {
             </div>
             <div className="flex flex-col justify-between  gap-y-1 ">
               <div
-                onClick={() => setSelectedSubCategory("smartphones")}
+                onClick={() => setSubcategory("womens-dresses")}
                 className="flex items-center font-semibold gap-1 cursor-pointer  p-2"
               >
                 <SlScreenSmartphone className="w-5 h-5" />
                 <h6 className="hover:text-green-500 duration-300">
-                  Smartphones
+                  Womens dresses
                 </h6>
               </div>
               <div
-                onClick={() => setSelectedSubCategory("laptops")}
+                onClick={() => setSubcategory("womens-shoes")}
                 className="flex items-center font-semibold gap-1 cursor-pointer p-2"
               >
                 <MdComputer className="w-5 h-5" />
-                <h6 className="hover:text-green-500 duration-300">Laptops</h6>
+                <h6 className="hover:text-green-500 duration-300">
+                  Womens shoes
+                </h6>
               </div>
               <div
-                onClick={() => setSelectedSubCategory("automotive")}
+                onClick={() => setSubcategory("sunglasses")}
                 className="flex items-center font-semibold gap-1  cursor-pointer p-2"
               >
                 <FcAutomotive className="w-5 h-5" />
                 <h6 className="hover:text-green-500 duration-300">
-                  Automotive
+                  sunglasses
                 </h6>
+              </div>
+              <div
+                onClick={() => setSubcategory("womens-jewellery")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">
+                  Womens jewellery
+                </h6>
+              </div>
+              <div
+                onClick={() => setSubcategory("womens-bags")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">
+                  Womens bags
+                </h6>
+              </div>
+              <div
+                onClick={() => setSubcategory("womens-watches")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">
+                  Womens watches
+                </h6>
+              </div>
+              <div
+                onClick={() => setSubcategory("mens-watches")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">
+                  Mens watches
+                </h6>
+              </div>
+              <div
+                onClick={() => setSubcategory("mens-shoes")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">
+                  Mens shoes
+                </h6>
+              </div>
+              <div
+                onClick={() => setSubcategory("womens-shoes")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">
+                  Womens shoes
+                </h6>
+              </div>
+              <div
+                onClick={() => setSubcategory("tops")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">Tops</h6>
+              </div>
+              <div
+                onClick={() => setSubcategory("mens-shirts")}
+                className="flex items-center font-semibold gap-1  cursor-pointer p-2"
+              >
+                <FcAutomotive className="w-5 h-5" />
+                <h6 className="hover:text-green-500 duration-300">Mens shirts</h6>
               </div>
             </div>
           </div>
@@ -183,10 +256,8 @@ const Fashion = () => {
             <div>
               <div className="text-xs text-[#000] font-bold uppercase ">
                 Showing{" "}
-                <span className="text-[#095256]">{fashions?.length} </span>
-                results for <span className="text-[#095256]">
-                  electronics{" "}
-                </span>{" "}
+                {/* <span className="text-[#095256]">{electronics?.length} </span> */}
+                results for <span className="text-[#095256]">electronics </span>{" "}
                 products
               </div>
             </div>
@@ -269,9 +340,9 @@ const Fashion = () => {
                               </div>
                             </span>
                           </div>
-                          {/* <div className="uppercase font-semibold text-lg text-[#095256] py-1">
-                        {title.slice(0, 24)}
-                      </div> */}
+                          <div className="uppercase font-semibold text-lg text-[#095256] py-1">
+                            {title.slice(0, 24)}
+                          </div>
                           <div className="uppercase font-semibold text-lg text-[#095256]">
                             ${price}
                           </div>
