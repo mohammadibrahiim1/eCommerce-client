@@ -51,7 +51,7 @@ const Product = ({ product }) => {
             className="card-actions justify-start"
           >
             <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
-              Buy Now
+             Add to cart
             </button>
           </div>
         </div>

@@ -23,11 +23,7 @@ const Fashion = () => {
     sub_category,
   });
   const fashions = data;
-  console.log(data);
-  // const { data: productsBySubCategory } =
-  //   useGetProductsBySubCategoryQuery(selectedSubCategory);
-  //  const productsBySubCategory = data?.data;
-  // console.log(productsBySubCategory);
+  console.log(fashions);
 
   const handleBrandFilter = (selectedBrand) => {
     console.log(selectedBrand);
@@ -53,7 +49,7 @@ const Fashion = () => {
                 </h4>
               </div>
               <button className="border  border-gray-900 font-semibold my-3 btn-sm px-5 hover:text-gray-100 duration-300">
-                Buy Now
+                add to cart
               </button>
 
               <h5 className="text-sm font-semibold uppercase text-[#000]">
@@ -168,7 +164,9 @@ const Fashion = () => {
                 className="flex items-center font-semibold gap-1  cursor-pointer p-2"
               >
                 <FcAutomotive className="w-5 h-5" />
-                <h6 className="hover:text-green-500 duration-300">Mens shirts</h6>
+                <h6 className="hover:text-green-500 duration-300">
+                  Mens shirts
+                </h6>
               </div>
             </div>
           </div>
@@ -256,8 +254,10 @@ const Fashion = () => {
             <div>
               <div className="text-xs text-[#000] font-bold uppercase ">
                 Showing{" "}
-                {/* <span className="text-[#095256]">{electronics?.length} </span> */}
-                results for <span className="text-[#095256]">electronics </span>{" "}
+                <span className="text-[#095256]">{fashions?.length} </span>
+                results for <span className="text-[#095256]">
+                  electronics{" "}
+                </span>{" "}
                 products
               </div>
             </div>
@@ -312,7 +312,7 @@ const Fashion = () => {
                 }) => (
                   <>
                     <div key={_id}>
-                      <div className="grid__item card col-lg-4 col-md-6 col-sm-6 col-12 product-card border">
+                      <div className="grid__item card col-lg-4 col-md-6 col-sm-6 col-12 product-card border ">
                         <figure>
                           <img
                             src={thumbnail}
@@ -329,26 +329,23 @@ const Fashion = () => {
                               {brand}
                             </h2>
                           </div>
-                          <div className="card-title text-[#095256] mt-2">
-                            <span>{title.slice(0, 23)}</span>
-                            <span>
-                              <div
-                                className="tooltip  tooltip-right cursor-pointer capitalize"
-                                data-tip="view details"
-                              >
-                                <IoInformationCircleSharp />
-                              </div>
-                            </span>
+                          <div className="card-title text-[#095256] mt-2 flex items-center ">
+                            <div>{title.slice(0, 19)}</div>
+
+                            <div
+                              className="tooltip  tooltip-right cursor-pointer capitalize"
+                              data-tip="view details"
+                            >
+                              <IoInformationCircleSharp />
+                            </div>
                           </div>
-                          <div className="uppercase font-semibold text-lg text-[#095256] py-1">
-                            {title.slice(0, 24)}
-                          </div>
+
                           <div className="uppercase font-semibold text-lg text-[#095256]">
                             ${price}
                           </div>
                           <div className="card-actions justify-start">
-                            <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
-                              Buy Now
+                            <button className="border rounded-sm  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
+                              Add to cart
                             </button>
                           </div>
                         </div>
@@ -414,7 +411,7 @@ const Fashion = () => {
                               in stock : {stock}
                             </span>
                             <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
-                              Buy Now
+                              add to cart
                             </button>
                           </div>
                         </div>
