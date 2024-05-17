@@ -24,9 +24,10 @@ const Store = () => {
   const [category, setCategory] = useState("");
   console.log(category);
   // get products data or get products data by category
-  const { data } = useGetProductsQuery({ category });
-  const { data: categoriesData } = useGetCategoriesQuery();
+  const { data } = useGetProductsQuery(category);
+  console.log(data);
   const products = data;
+  const { data: categoriesData } = useGetCategoriesQuery();
   const categories = categoriesData?.data;
   console.log("products", products, "categories", category);
 
