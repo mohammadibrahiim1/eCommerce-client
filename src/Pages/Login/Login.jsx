@@ -80,8 +80,11 @@ const Login = () => {
               <div className="text-yellow-500 flex justify-center items-center py-2">
                 <span>Or</span>
               </div>
-              <div onClick={handleGoogleSignIn} className="mx-5">
-                <button className="inline-flex h-10 w-full  mx-auto items-center justify-evenly gap-5 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
+              <div className="mx-5">
+                <button
+                  onClick={handleGoogleSignIn}
+                  className="inline-flex h-10 w-full  mx-auto items-center justify-evenly gap-5 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60"
+                >
                   <img
                     src="https://www.svgrepo.com/show/475656/google-color.svg"
                     alt="Google"
