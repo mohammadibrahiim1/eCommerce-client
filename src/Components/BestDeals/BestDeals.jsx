@@ -15,7 +15,7 @@ const BestDeals = () => {
   const targetDate = new Date("2024-12-31T23:59:59").getTime();
   const { data, error, isLoading } = useGetProductsQuery("");
 
-  const products = data?.products;
+  const products = data;
   //   console.log(products);
 
   const handleAddToCart = (product) => {

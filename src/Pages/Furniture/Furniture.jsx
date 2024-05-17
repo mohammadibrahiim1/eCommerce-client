@@ -255,7 +255,7 @@ const Furniture = () => {
                 Showing{" "}
                 <span className="text-[#095256]">{allFurniture?.length} </span>
                 results for <span className="text-[#095256]">
-                  electronics{" "}
+                  furniture{" "}
                 </span>{" "}
                 products
               </div>

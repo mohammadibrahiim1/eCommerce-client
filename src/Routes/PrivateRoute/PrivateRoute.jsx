@@ -15,7 +15,15 @@ const PrivateRoute = ({ children }) => {
   // const email = "test@gmail.com";
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return (
+      <div className="flex items-center justify-center min-h-[300px]">
+        <img
+          src="https://i.ibb.co/Yp3JxHx/Animation-1715921357683.gif"
+          alt=""
+          srcSet=""
+        />
+      </div>
+    );
   }
 
   if (!isLoading && !email) {

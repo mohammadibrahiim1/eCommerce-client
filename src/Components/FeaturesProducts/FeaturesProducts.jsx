@@ -11,7 +11,7 @@ const FeaturesProducts = () => {
   const dispatch = useDispatch();
   const { data, error, isLoading } = useGetProductsQuery("");
 
-  const products = data?.products;
+  const products = data;
   console.log(products);
 
   if (isLoading) {

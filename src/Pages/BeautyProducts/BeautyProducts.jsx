@@ -254,12 +254,10 @@ const BeautyProducts = () => {
           <div className="flex items-center justify-between border-b p-3 text-green-800 text-lg  ">
             <div>
               <div className="text-xs text-[#000] font-bold uppercase ">
-                Showing{" "}
-                <span className="text-[#095256]">{beautyProducts?.length} </span>
-                results for <span className="text-[#095256]">
-                  electronics{" "}
-                </span>{" "}
-                products
+                Showing
+                <span className="text-[#095256] px-1">{beautyProducts?.length}</span>
+                results for
+                <span className="text-[#095256]"> Beauty products</span>
               </div>
             </div>
 
