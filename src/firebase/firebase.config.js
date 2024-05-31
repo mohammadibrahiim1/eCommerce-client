@@ -8,21 +8,20 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA_0hxaK7Di2htgjLu8qehbDzLbCRIxRco",
-  authDomain: "ai-tool-project.firebaseapp.com",
-  projectId: "ai-tool-project",
-  storageBucket: "ai-tool-project.appspot.com",
-  messagingSenderId: "170772501815",
-  appId: "1:170772501815:web:ab06af34f96b88cac4f6b2",
-  measurementId: "G-TJTKB376H4",
+  apiKey: "AIzaSyD4s-KheaKfEQz4Kn-WJC_b5Cxm8wYdSiI",
+  authDomain: "re-commerce-6e01b.firebaseapp.com",
+  projectId: "re-commerce-6e01b",
+  storageBucket: "re-commerce-6e01b.appspot.com",
+  messagingSenderId: "109500586763",
+  appId: "1:109500586763:web:566b752302175f0e8f200e",
+  measurementId: "G-RVSEE1YHSB",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
-// console.log(analytics);
+
 const auth = getAuth(app);
 
 export default auth;
-// export default app;
