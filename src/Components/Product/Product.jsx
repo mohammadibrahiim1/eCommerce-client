@@ -5,10 +5,11 @@ import { addToCart } from "../../redux/features/cart/cartSlice";
 import "./Product.css";
 import { IoInformationCircle } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { FaShoppingBag } from "react-icons/fa";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const { title, thumbnail, price, _id, brand, rating } = product;
+  const { title, thumbnail, price, _id, brand, rating, category } = product;
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -20,7 +21,7 @@ const Product = ({ product }) => {
         <figure>
           <img
             src={thumbnail}
-            alt="Shoes"
+            alt={title}
             className=" w-[330px] h-[280px] p-5"
           />
         </figure>
@@ -33,7 +34,7 @@ const Product = ({ product }) => {
               {brand}
             </h2>
           </div>
-          <div className="uppercase font-semibold text-lg text-[#095256] flex items-center gap-2 my-2">
+          <div className="capitalize font-semibold text-sm text-[#095256] flex items-center gap-2 my-2">
             <span>{title.slice(0, 18)}...</span>
             <Link
               className="tooltip"
@@ -43,15 +44,16 @@ const Product = ({ product }) => {
               <IoInformationCircle />
             </Link>
           </div>
-          <div className="uppercase font-bold text-sm text-[#095256]">
-            ${price}
+          <div className="capitalize font-semibold text-sm text-[#095256] flex justify-between items-center">
+            <span> ${price}</span>
+            <span className="text-[#00A250]">{category}</span>
           </div>
           <div
             onClick={() => handleAddToCart(product)}
             className="card-actions justify-start"
           >
-            <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
-             Add to cart
+            <button className="border border-[#00A250] rounded-md font-semibold my-3 btn-sm px-10 hover:text-[#FFFFFF] hover:bg-[#00a251f1]  duration-500 bg-[#00A250] text-white flex items-center justify-center gap-2 w-full">
+              <FaShoppingBag /> <span>Add to cart</span>
             </button>
           </div>
         </div>

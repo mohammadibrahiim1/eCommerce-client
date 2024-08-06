@@ -182,6 +182,12 @@ const Store = () => {
               </span>
             )}
           </div>
+
+          <div>
+            <button className="btn btn-sm bg-[#00A250] rounded-md items-center mx-auto my-5 flex justify-center w-[50%] text-white">
+              See More
+            </button>
+          </div>
         </div>
       </section>
       <div className="mt-[70px]">
