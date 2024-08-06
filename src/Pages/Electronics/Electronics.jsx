@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { useDispatch } from "react-redux";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
-import { FaList } from "react-icons/fa";
+import { FaList, FaShoppingBag } from "react-icons/fa";
 // import { CgSmartphoneChip } from "react-icons/cg";
 import { SlScreenSmartphone } from "react-icons/sl";
 import { MdComputer } from "react-icons/md";
@@ -262,7 +262,7 @@ const Electronics = () => {
                               {brand}
                             </h2>
                           </div>
-                          <div className="card-title text-[#095256] mt-2 flex items-center">
+                          <div className="card-title text-[#095256] mt-2 flex items-center text-sm">
                             <div>{title.slice(0, 19)}</div>
 
                             <div
@@ -273,12 +273,13 @@ const Electronics = () => {
                             </div>
                           </div>
 
-                          <div className="uppercase font-semibold text-lg text-[#095256]">
-                            ${price}
+                          <div className="capitalize flex justify-between items-center font-semibold text-sm my-2 text-[#095256]">
+                            <span>${price}</span>
+                            <span>{category}</span>
                           </div>
                           <div className="card-actions justify-start">
-                            <button className="border  border-[#095256] font-semibold my-3 btn-sm px-10 text-[#095256] hover:text-[#FFFFFF] hover:bg-[#095256]  duration-500">
-                              add to cart
+                            <button className="border  border-[#00A250] font-semibold my-3 btn-sm px-10 text-[#FFF] hover:text-[#FFFFFF] hover:bg-[#02944b]  duration-500 bg-[#00A250] w-full mx-auto flex justify-center items-center gap-2 rounded-md">
+                              <FaShoppingBag /> <span>Add to cart</span>
                             </button>
                           </div>
                         </div>
