@@ -26,10 +26,12 @@ import HealthHygiene from "../Pages/HealthHygiene/HealthHygiene";
 import Beverage from "../Pages/Beverage/Beverage";
 import Furniture from "../Pages/Furniture/Furniture";
 import BeautyProducts from "../Pages/BeautyProducts/BeautyProducts";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

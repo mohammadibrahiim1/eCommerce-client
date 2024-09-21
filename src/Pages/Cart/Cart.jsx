@@ -36,40 +36,43 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="max-w-screen-2xl mx-auto">
-        <div className=" px-4 sm:px-8">
+      <div className="">
+        <div className="sm:px-8">
           <div className="py-[9.2px]">
-            <div className="flex justify-between items-center ">
-              <h2 className="text-xl flex items-center  gap-2 font-semibold leading-tight text-[#10B981] mb-3">
+            <div className=" max-w-xl mx-auto my-5">
+              <h2 className="text-2xl flex items-center  gap-2 font-semibold leading-tight text-[#10B981] py-2">
                 <BsBagPlusFill className="h-6 w-6 " /> Shopping Cart
               </h2>
-              <h2 className="text-xl font-semibold leading-tight text-[#10B981] mb-3">
-                Total-items :
-                <span className="text-orange-500"> {itemsInCart.length}</span>
+              <h2 className="text-sm font-semibold leading-tight text-[#10B981] mb-3">
+                There are
+                <span className="text-orange-500 px-2">
+                  {itemsInCart?.length} products
+                </span>
+                in your cart.
               </h2>
             </div>
             <hr />
 
             {itemsInCart?.length ? (
-              <div className="grid grid-cols-12 gap-12 pt-10">
+              <div className="grid grid-cols-12 gap-12 pt-10 max-w-xl mx-auto ">
                 <div className="-mx-4 sm:-mx-8 px-4 sm:px-8  overflow-x-auto col-span-8">
-                  <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                  <div className="inline-block min-w-full shadow rounded-sm overflow-hidden">
                     <table className="min-w-full leading-normal">
                       <thead className="bg-emerald-100 whitespace-nowrap">
                         <tr className="">
-                          <th className=" py-3  border-gray-200 text-left px-5 text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" py-3 text-left px-5 text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Products
                           </th>
-                          <th className="py-3 border-gray-200  text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className="py-3   text-left text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Price
                           </th>
-                          <th className=" pr-5 py-3 border-gray-200   text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" pr-5 py-3    text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Quantity
                           </th>
-                          <th className=" py-3 border-gray-200   pr-6 text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" py-3    pr-6 text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Sub-total
                           </th>
-                          <th className=" py-3 border-gray-200  text-start text-xs font-semibold text-[#10B981] uppercase tracking-wider">
+                          <th className=" py-3   text-start text-xs font-semibold text-[#10B981] uppercase tracking-wider">
                             Action
                           </th>
                         </tr>
@@ -83,21 +86,21 @@ const Cart = () => {
                                 <div className="flex items-center">
                                   <div className="flex-shrink-0 w-16 h-16">
                                     <img
-                                      className="w-full h-full rounded"
-                                      src={cartItem.thumbnail}
+                                      className="w-full h-full rounded-lg"
+                                      src={cartItem?.thumbnail}
                                       alt=""
                                     />
                                   </div>
                                   <div className="ml-3">
                                     <p className="text-gray-900 whitespace-no-wrap font-semibold capitalize">
-                                      {cartItem.title}
+                                      {cartItem?.title}
                                     </p>
                                   </div>
                                 </div>
                               </td>
                               <td className="py-2 border-gray-200  bg-white text-sm text-start">
                                 <p className="text-gray-900 whitespace-no-wrap font-semibold text-md">
-                                  ${cartItem.price}
+                                  ${cartItem?.price}
                                 </p>
                               </td>
                               <td className=" pt-8 mx-12 flex items-center gap-3 text-start border-gray-200 bg-white text-sm">
@@ -124,7 +127,7 @@ const Cart = () => {
                               <td className="px-5 py-5 border-gray-200 bg-white text-sm ">
                                 <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                   <span className="relative text-orange-500 font-semibold">
-                                    ${cartItem.price * cartItem.cartQuantity}
+                                    ${cartItem?.price * cartItem?.cartQuantity}
                                   </span>
                                 </span>
                               </td>
@@ -152,7 +155,7 @@ const Cart = () => {
                     <Link to={"/store"}>
                       <button className="w-full flex justify-center items-center  px-6 py-3 text-sm bg-gray-100 text-[#10B981] rounded-md hover:bg-gray-200 font-semibold duration-300">
                         <IoReturnUpBack className="mx-2" size={17} />
-                        <span>Shop more</span>
+                        <span>Continue shopping</span>
                       </button>
                     </Link>
 
@@ -209,8 +212,8 @@ const Cart = () => {
                 </div>
               </div>
             ) : (
-              <div className="text-center text-error-500 font-semibold text-2xl">
-                <div className="my-[50px]">
+              <div className="text-center flex justify-center items-center text-error-500 font-semibold text-2xl min-h-[367px]">
+                <div className="">
                   <div className="avatar rounded-full text-emerald-600">
                     <span className="flex justify-center mx-auto text-gray-500 font-semibold text-4xl">
                       <svg
@@ -233,16 +236,62 @@ const Cart = () => {
                     No items added in your cart. Please add product to your cart
                     list.
                   </h6>
+
+                  <Link
+                    to={"/store"}
+                    className="max-w-sm mx-auto my-4 flex justify-center items-center gap-2 px-6 py-3 text-sm bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300"
+                  >
+                    <IoReturnUpBack className="h-5 w-5" />
+                    <span>Return to shop</span>
+                  </Link>
                 </div>
-                <Link
-                  to={"/shop"}
-                  className="w-full flex justify-center items-center gap-2 px-6 py-3 text-sm bg-gray-100 text-[#333] rounded-md hover:bg-gray-200 font-semibold duration-300"
-                >
-                  <IoReturnUpBack className="h-5 w-5" />
-                  <span>Return to shop</span>
-                </Link>
               </div>
             )}
+          </div>
+        </div>
+
+
+        <div className="bg-[#EEF2FF] mt-12">
+          <div className="max-w-screen-2xl mx-auto grid grid-cols-3 justify-center items-center gap-5 text-center py-8">
+            <div className="w-[350px] h-[350px]">
+              <img
+                src="https://i.ibb.co/yfFZL9M/app-download-img-c7xqg4.webp"
+                alt=""
+              />
+            </div>
+            <div>
+              <h1 className="font-bold text-4xl ">
+                Shop Your Daily Needs From Our kiChai Store
+              </h1>
+              <h6 className="text-[17px] mt-2">
+                There are many products you will find in our shop, Choose your
+                daily necessary product from our kiChai shop and get some
+                special offers.
+              </h6>
+
+              <div className="flex items-center gap-2 justify-center">
+                <Link to={"https://www.apple.com/app-store/"}>
+                  <img
+                    src="https://i.ibb.co/4WZCRJ0/download-on-the-app-store-apple-logo-svgrepo-com.png "
+                    alt=""
+                    className="w-[140px]"
+                  />
+                </Link>
+                <Link to={"https://play.google.com/store/games?hl=en&gl=US"}>
+                  <img
+                    src=" https://i.ibb.co/6nB6K9s/google-play-badge-logo-svgrepo-com.png "
+                    alt=""
+                    className="w-[140px]"
+                  />
+                </Link>
+              </div>
+            </div>
+            <div className="w-[350px] h-[350px] mx-auto">
+              <img
+                src="https://i.ibb.co/HqpV2Jk/Pngtree-online-shopping-concept-for-landing-5347803.png"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>

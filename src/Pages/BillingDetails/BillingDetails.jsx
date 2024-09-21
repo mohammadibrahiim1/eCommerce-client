@@ -112,15 +112,15 @@ const BillingDetails = () => {
     <div>
       <section className="bg-[#F9FAFB]">
         <div>
-          <div className="max-w-screen-2xl  max-lg:max-w-xl mx-auto">
-            <div className="grid lg:grid-cols-3 my-5">
-              <div className="lg:col-span-2 max-lg:order-1 max-w-4xl mx-auto w-full">
+          <div className="w-full max-w-xl max-lg:max-w-xl mx-auto">
+            <div className="my-5 grid grid-cols-3 justify-between items-start gap-5">
+              <div className="lg:col-span-2 max-lg:order-1 max-w-md">
                 <div className="text-center max-lg:hidden">
                   <h2 className="text-md font-extrabold text-[#333] border-b border-[#333]">
                     Billing Information
                   </h2>
                 </div>
-                <form onSubmit={handlePlaceOrder} className="lg:mt-12">
+                <form onSubmit={handlePlaceOrder} className="lg:mt-12 ">
                   <div>
                     <h2 className="text-md font-semibold text-[#191C1F]">
                       Shipping info
@@ -280,7 +280,7 @@ const BillingDetails = () => {
                   </div>
                 </form>
               </div>
-              <div className=" lg:sticky lg:top-0">
+              <div className="lg:sticky lg:top-0">
                 <div className="relative h-full">
                   <h2 className="text-md text-center font-extrabold text-[#333] border-b border-[#333] ">
                     Order Summary
@@ -296,7 +296,7 @@ const BillingDetails = () => {
                                 <div className="flex items-center justify-between gap-5">
                                   <img
                                     src={item?.thumbnail}
-                                    className="w-[80px] h-[80px] p-4  bg-gray-200 rounded-md object-contain"
+                                    className="w-[60px] h-[60px] p-4  bg-gray-200 rounded-md object-contain"
                                   />
                                   <div className="text-xs font-semibold text-[#333] space-y-1">
                                     <h3>{item?.title}</h3>
@@ -317,14 +317,14 @@ const BillingDetails = () => {
                                   </div>
                                 </div>
 
-                                <div className="flex items-center justify-center font-sans ">
+                                <div className="flex items-center justify-center font-sans">
                                   <div className="border border-gray-400 rounded">
                                     <button
                                       onClick={() =>
                                         handleDecrementQuantity(item)
                                       }
                                       id="decreaseBtn"
-                                      className=" px-3 py-1  text-gray-700 font-semibold "
+                                      className=" px-3 py-0  text-gray-700 font-semibold "
                                     >
                                       -
                                     </button>
@@ -332,14 +332,14 @@ const BillingDetails = () => {
                                       id="quantityInput"
                                       type="text"
                                       value={item.cartQuantity}
-                                      className="w-12 py-1 text-center "
+                                      className="w-5 py-0 text-center"
                                     />
                                     <button
                                       onClick={() =>
                                         handleIncrementQuantity(item)
                                       }
                                       id="increaseBtn"
-                                      className=" px-3 py-1   font-semibold"
+                                      className=" px-3 py-0   font-semibold"
                                     >
                                       +
                                     </button>
@@ -430,10 +430,9 @@ const BillingDetails = () => {
             </div>
           </div>
         </div>
-
-        <div className="bg-[#EEF2FF]">
-          <div className="max-w-screen-2xl mx-auto grid grid-cols-3 justify-center items-center gap-5 text-center py-12">
-            <div className="w-[500px]">
+        <div className="bg-[#EEF2FF] mt-12">
+          <div className="max-w-screen-2xl mx-auto grid grid-cols-3 justify-center items-center gap-5 text-center py-8">
+            <div className="w-[350px] h-[350px]">
               <img
                 src="https://i.ibb.co/yfFZL9M/app-download-img-c7xqg4.webp"
                 alt=""
@@ -454,19 +453,19 @@ const BillingDetails = () => {
                   <img
                     src="https://i.ibb.co/4WZCRJ0/download-on-the-app-store-apple-logo-svgrepo-com.png "
                     alt=""
-                    className="w-[200px]"
+                    className="w-[140px]"
                   />
                 </Link>
                 <Link to={"https://play.google.com/store/games?hl=en&gl=US"}>
                   <img
                     src=" https://i.ibb.co/6nB6K9s/google-play-badge-logo-svgrepo-com.png "
                     alt=""
-                    className="w-[200px]"
+                    className="w-[140px]"
                   />
                 </Link>
               </div>
             </div>
-            <div className="w-[500px]  ">
+            <div className="w-[350px] h-[350px] mx-auto">
               <img
                 src="https://i.ibb.co/HqpV2Jk/Pngtree-online-shopping-concept-for-landing-5347803.png"
                 alt=""

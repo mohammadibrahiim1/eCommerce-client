@@ -41,7 +41,7 @@ const Nav = () => {
 
   return (
     <div className="bg-[#F2F2F2]">
-      <div className="flex justify-between items-center gap-4 max-w-screen-2xl mx-auto py-2">
+      <div className="flex justify-between items-center gap-4 max-w-2xl mx-auto py-2">
         <h3 className="text-[#484848] font-semibold text-[14px] ">
           Welcome to <span className="text-[#5DBF9D]">KI CHAI</span> online
           eCommerce store.
@@ -119,7 +119,7 @@ const Nav = () => {
       </div>
       <hr className="text-gray-600" />
       <div>
-        <div className="navbar max-w-screen-2xl mx-auto py-3">
+        <div className="navbar max-w-2xl mx-auto py-3">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -217,14 +217,6 @@ const Nav = () => {
                   Track Order
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  className="hover:bg-[#f2f2f2] hover:text-[#4293D9] duration-300"
-                  to={"/wishList"}
-                >
-                  Wishlist
-                </Link>
-              </li> */}
               <li>
                 <Link
                   className="hover:bg-[#f2f2f2] hover:text-[#10b981] duration-300"

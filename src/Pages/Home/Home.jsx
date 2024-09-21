@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div>
       <Header></Header>
-      <section className="max-w-screen-2xl mx-auto">
+      <section className="max-w-xl mx-auto">
         <div className="flex justify-between items-center bg-[#00a1c92d]   rounded-sm p-6  mt-5 border  border-[#00A2C9]">
           <div className="flex justify-between items-center gap-2">
             <TbTruckDelivery className="w-8 h-8" />

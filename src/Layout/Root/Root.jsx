@@ -5,13 +5,9 @@ import Nav from "../../Shared/Nav/Nav";
 const Root = () => {
   return (
     <div>
-      <div>
-        <Nav></Nav>
-        <div>
-          <Outlet></Outlet>
-        </div>
-        <Footer></Footer>
-      </div>
+      <Nav></Nav>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   );
 };
